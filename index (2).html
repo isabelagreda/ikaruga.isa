@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Ventas — IKARUGA</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --ink2: #3d3028;
+    --ink3: #6b5a4e;
+    --paper: #faf7f2;
+    --paper2: #f2ede4;
+    --paper3: #e8e0d0;
+    --red: #c0392b;
+    --red-light: #fdf0ee;
+    --gold: #b8860b;
+    --gold-light: #fdf9ec;
+    --green: #2d6a4f;
+    --green-light: #edf7f2;
+    --teal: #1a6b72;
+    --teal-light: #edf5f6;
+    --accent: #7c3f2a;
+    --accent-light: #f7ede8;
+    --border: #d4c9b8;
+    --shadow: rgba(26,20,16,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 260px;
+    height: 100vh;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  .sidebar-logo {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .sidebar-logo .torii {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #e8c97a;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .sidebar-logo .subtitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+  }
+
+  .sidebar nav { padding: 16px 0; flex: 1; }
+
+  .nav-group { margin-bottom: 4px; }
+
+  .nav-group-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    padding: 12px 24px 4px;
+    font-weight: 600;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 24px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: all 0.15s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .nav-link.active { 
+    color: #e8c97a;
+    border-left: 2px solid #e8c97a;
+    padding-left: 22px;
+  }
+
+  .nav-link .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    flex-shrink: 0;
+  }
+
+  .nav-link.active .dot { background: #e8c97a; }
+
+  /* MAIN */
+  .main {
+    margin-left: 260px;
+    min-height: 100vh;
+  }
+
+  /* SECTIONS */
+  .section {
+    display: none;
+    padding: 48px 56px;
+    max-width: 900px;
+  }
+
+  .section.active { display: block; }
+
+  .section-header {
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink3);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .section-desc {
+    margin-top: 8px;
+    color: var(--ink3);
+    font-size: 14px;
+  }
+
+  /* MESSAGE CARDS */
+  .msg-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .msg-card-header {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .msg-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  .badge-green { background: var(--green-light); color: var(--green); }
+  .badge-gold { background: var(--gold-light); color: var(--gold); }
+  .badge-red { background: var(--red-light); color: var(--red); }
+  .badge-teal { background: var(--teal-light); color: var(--teal); }
+  .badge-accent { background: var(--accent-light); color: var(--accent); }
+
+  .copy-btn {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink3);
+    background: var(--paper2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .copy-btn:hover { background: var(--paper3); color: var(--ink); }
+  .copy-btn.copied { background: var(--green-light); color: var(--green); border-color: var(--green); }
+
+  .msg-body {
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink2);
+    background: #fdfcfb;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .msg-note {
+    padding: 10px 20px;
+    background: var(--gold-light);
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink3);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.15s;
+  }
+
+  .tab-btn:hover { background: var(--paper2); color: var(--ink); }
+  .tab-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* SCHEDULE TABLE */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .schedule-table th {
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  .schedule-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--paper3);
+    color: var(--ink2);
+    vertical-align: top;
+  }
+
+  .schedule-table tr:last-child td { border-bottom: none; }
+  .schedule-table tr:hover td { background: var(--paper); }
+
+  .level-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  /* PRICE TABLE */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+
+  .price-table th {
+    background: var(--ink2);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: right;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  .price-table th:first-child { text-align: left; }
+  .price-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper3); text-align: right; color: var(--ink2); }
+  .price-table td:first-child { text-align: left; font-weight: 500; }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-table tr:hover td { background: var(--paper); }
+  .price-table .highlight-row td { background: var(--red-light); color: var(--red); font-weight: 600; }
+  .price-table .section-row td { background: var(--paper2); font-weight: 600; color: var(--ink); font-size: 12px; letter-spacing: 0.5px; }
+
+  .country-flags { font-size: 13px; line-height: 1.8; color: var(--ink3); }
+
+  /* TIMEZONE NOTE */
+  .tz-box {
+    background: var(--teal-light);
+    border: 1px solid #b2d8db;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--teal);
+  }
+
+  .tz-box strong { font-weight: 600; }
+
+  /* INFO BLOCK */
+  .info-block {
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--gold);
+  }
+
+  /* POST-CALL SECTION */
+  .post-call-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .post-call-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+
+  .post-call-item h4 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 8px;
+  }
+
+  .post-call-item p {
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+
+  .checklist { list-style: none; }
+  .checklist li {
+    font-size: 13px;
+    color: var(--ink2);
+    padding: 5px 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .checklist li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+    margin-top: 28px;
+  }
+
+  h3:first-child { margin-top: 0; }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  .flag-emoji { font-size: 16px; }
+
+  @media (max-width: 768px) {
+    .sidebar { width: 100%; height: auto; position: relative; }
+    .main { margin-left: 0; }
+    .section { padding: 24px 20px; }
+    .post-call-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <span class="torii">⛩️ IKARUGA</span>
+    <span class="subtitle">Guía de Ventas · 2026</span>
+  </div>
+  <div style="padding:12px 24px 16px; border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:6px;">Asesor/a</div>
+    <select id="nombre-selector" onchange="updateNombre(this.value)" style="width:100%;padding:7px 10px;border-radius:8px;border:none;background:#fff;color:#1a1410;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;">
+      <option value="Isabel">Isabel</option>
+      <option value="Camilo">Camilo</option>
+      <option value="Nicolás">Nicolás</option>
+      <option value="Agustín">Agustín</option>
+      <option value="Emanuel">Emanuel</option>
+      <option value="Gonzalo">Gonzalo</option>
+      <option value="Ezequiel">Ezequiel</option>
+      <option value="Tomás">Tomás</option>
+      <option value="Luciano">Luciano</option>
+      <option value="Mateo">Mateo</option>
+      <option value="Matías">Matías</option>
+      <option value="Joaquín">Joaquín</option>
+    </select>
+  </div>
+  <nav>
+    <div class="nav-group">
+      <div class="nav-group-label">Primer contacto</div>
+      <button class="nav-link active" onclick="showSection('saludo')">
+        <span class="dot"></span> Saludo inicial
+      </button>
+      <button class="nav-link" onclick="showSection('seguimiento')">
+        <span class="dot"></span> Seguimiento 48hs / 7 días
+      </button>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Recuperación</div>
+      <button class="nav-link" onclick="showSection('recontacto')">
+        <span class="dot"></span> Recontacto de lead
+      </button>
+      <button class="nav-link" onclick="showSection('promo-full')">
+        <span class="dot"></span> ⚡ Promo Full Agosto
+      </button>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Post-llamada</div>
+      <button class="nav-link" onclick="showSection('postcall')">
+        <span class="dot"></span> Qué enviar tras la llamada
+      </button>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Horarios agosto 2026</div>
+      <button class="nav-link" onclick="showSection('horarios')">
+        <span class="dot"></span> Por idioma y nivel
+      </button>
+      <button class="nav-link" onclick="showSection('zonas')">
+        <span class="dot"></span> Horarios por país
+      </button>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Precios</div>
+      <button class="nav-link" onclick="showSection('precios-oriental')">
+        <span class="dot"></span> Japonés / Coreano / Chino / Tailandés / Alemán
+      </button>
+      <button class="nav-link" onclick="showSection('precios-italiano')">
+        <span class="dot"></span> Italiano
+      </button>
+      <button class="nav-link" onclick="showSection('precios-ingles')">
+        <span class="dot"></span> Inglés
+      </button>
+    </div>
+  </nav>
+</div>
+
+<div class="main">
+
+<!-- SALUDO INICIAL -->
+<div class="section active" id="saludo">
+  <div class="section-header">
+    <div class="section-tag">Primer contacto</div>
+    <h1 class="section-title">Saludo inicial</h1>
+    <p class="section-desc">Mensaje fijo para el primer contacto con el lead. Usarlo siempre que alguien deja sus datos.</p>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">
+        <span class="dot" style="width:8px;height:8px;background:#2d6a4f;border-radius:50%;display:inline-block;"></span>
+        Mensaje inicial · WhatsApp
+      </div>
+      <span class="badge badge-green">Usar siempre</span>
+    </div>
+    <div class="msg-body" id="msg-inicial">¡Hola! 👋 Soy {NOMBRE}, {TITULO} de IKARUGA. ⛩️
+
+Recibí tu consulta. Como tenemos diferentes niveles, metodologías de inmersión y la doble certificación (IKARUGA + UAI 🎓)... me gusta conocer primero en qué nivel estás y cuál es tu meta con el idioma.
+
+Para armarte tu ruta de aprendizaje ideal en solo 5 minutos:
+👉 ¿Preferís que te llame hoy por la mañana o te queda mejor por la tarde? 📞⏱️👇</div>
+    <div style="padding:10px 20px; border-top:1px solid var(--border); display:flex; justify-content:flex-end;">
+      <button class="copy-btn" onclick="copyMsg('msg-inicial', this)">Copiar mensaje</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEGUIMIENTO -->
+<div class="section" id="seguimiento">
+  <div class="section-header">
+    <div class="section-tag">Sin respuesta</div>
+    <h1 class="section-title">Seguimiento 48hs · 7 días</h1>
+    <p class="section-desc">Para leads que no respondieron al saludo inicial. Elegí la variante según el perfil del lead.</p>
+  </div>
+
+  <h3>⏰ A las 48 horas</h3>
+  <div class="info-block">Usá la <strong>opción 1 (números)</strong> si el lead fue frío en el primer contacto. Usá la <strong>opción 2 (Instagram)</strong> si querés generar más confianza visual antes de la llamada.</div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Opción 1 · Selección por idioma <span class="badge badge-gold">Lead frío</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-48-1', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-48-1">¡Hola! 👋 Soy {NOMBRE}, {TITULO} de IKARUGA. ⛩️
+
+Te contacto para avisarte que abrimos las nuevas comisiones de AGOSTO (con certificación oficial de la UAI 🎓) y me quedan los últimos cupos con Beneficio de Preventa ⚡.
+
+Para darte la información exacta, confirmame el idioma:
+1️⃣ 🇯🇵 Japonés | 2️⃣ 🇰🇷 Coreano | 3️⃣ 🇨🇳 Chino | 4️⃣ 🇹🇭 Tailandés | 5️⃣ 🇬🇧 Inglés
+
+👉 Para armar tu beneficio a medida, ¿te queda mejor una breve llamada hoy a la tarde o mañana a la mañana? 📞👇</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Opción 2 · Instagram <span class="badge badge-teal">Generar confianza</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-48-2', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-48-2">¡Hola! Retomo el contacto por tu solicitud pendiente. ⛩️
+
+A veces, con la rutina diaria, los mensajes quedan perdidos.
+
+Por si no recordás exactamente nuestra propuesta, te dejo nuestro Instagram para que veas cómo es la inmersión en IKARUGA: https://www.instagram.com/ikaruga.idiomas/ 📱
+
+Somos el principal instituto de idiomas con certificación oficial y aval de la UAI (Universidad Abierta Interamericana). 🎓
+
+Como habías dejado tus datos para aprender un idioma con nosotros, tengo disponibilidad en mi agenda para hacerte una breve llamada de orientación.
+
+Así te paso los valores y evaluamos si nuestro ciclo lectivo se ajusta a lo que buscás.
+
+¿Te queda mejor que te llame hoy por la tarde, o preferís mañana por la mañana? 📞👇</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>📅 A la semana</h3>
+  <div class="info-block">Este mensaje <strong>no amenaza con cerrar la ficha</strong>. Recuerda el motivo por el que el lead nos buscó y ofrece flexibilidad.</div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Mensaje semana · Puerta abierta</div>
+      <button class="copy-btn" onclick="copyMsg('msg-7', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-7">¡Hola [Nombre]! 👋 {NOMBRE} de IKARUGA por aquí. ⛩️
+
+Te contacto nuevamente porque estamos por iniciar las comisiones de AGOSTO y no quería dejar tu consulta sin respuesta final. Sé que a veces la semana se complica, pero mi intención es que no pierdas la oportunidad de sumarte a este ciclo.
+
+Recordá que el objetivo es que logres esa inmersión cultural real y el aval de la UAI 🎓, algo que no vas a encontrar en aplicaciones o cursos autodidactas.
+
+¿Te parece que conversamos unos minutos ahora? 📞 Mi idea es asesorarte sobre cuál de nuestras comisiones vigentes es la ideal para vos y asegurar que aproveches el beneficio de inscripción antes de que se completen los grupos.
+
+¿Te queda bien que te llame hoy por la tarde, o preferís mañana? 👇</div>
+    <div class="msg-note">⚠️ Reemplazá [Nombre] con el nombre real del lead.</div>
+  </div>
+</div>
+
+<!-- RECONTACTO -->
+<div class="section" id="recontacto">
+  <div class="section-header">
+    <div class="section-tag">Recuperación de lead</div>
+    <h1 class="section-title">Recontacto Mayo / Agosto 2026</h1>
+    <p class="section-desc">Para leads que respondieron en algún momento pero se enfriaron, no llegaron a la llamada pactada o dejaron de responder. Elegí la variante según la situación.</p>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Opción 1 · Meta pendiente <span class="badge badge-green">Muy cercano / empático</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-rec1', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-rec1">Hola! 👋 ¿Cómo estás? Soy {NOMBRE} de IKARUGA. ⛩️
+
+Te escribo porque me quedé pensando en nuestra charla anterior sobre el curso de [Idioma]. Me acordé de tus ganas de arrancar y no quería dejar pasar este NUEVO INICIO DE INSCRIPCIONES PARA AGOSTO SIN ESCRIBIRTE.
+
+Me gustaría que busquemos la mejor opción para que este año no se te pase sin haber empezado. 🚀
+
+¿Te parece que conversamos 5 minutos? 📞 Más allá de los números, quiero ver cómo podemos encontrar la mejor opción para que finalmente te sumes.
+
+¿A qué hora te queda bien que te llame? 👇</div>
+    <div class="msg-note">⚠️ Reemplazá [Idioma] con el idioma de interés del lead.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Opción 2 · Encontrar el camino <span class="badge badge-teal">Consultivo</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-rec2', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-rec2">¡Hola! 👋 Qué gusto saludarte de nuevo. Soy {NOMBRE}, {TITULO} de IKARUGA. ⛩️
+
+Retomo nuestro contacto porque estamos cerrando las vacantes para agosto y me daría mucha pena que te quedes afuera otra vez. Sé que tenías un interés real en el programa.
+
+Mi idea es que tengamos una llamada de 5 minutos 📞 para ver qué formato te queda más cómodo hoy. Mi objetivo es que encontremos juntos la solución para que el [dinero / tiempo] deje de ser una traba y sea tu oportunidad de empezar.
+
+¿Te puedo llamar ahora o preferís en otro momento? 👇</div>
+    <div class="msg-note">⚠️ Elegí entre [dinero] o [tiempo] según la objeción que haya tenido el lead.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Opción 3 · Beneficio exclusivo <span class="badge badge-gold">Para indecisos</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-rec3', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-rec3">¡Hola! 👋 ¡Tanto tiempo! Soy {NOMBRE} de IKARUGA. ⛩️
+
+Te contacto porque se abrieron los cupos de agosto con la Doble Certificación (UAI) y, como ya habíamos hablado antes, te guardé un beneficio especial por si todavía tenés interés en iniciar [Idioma].
+
+¿Te parece que hablemos brevemente? 📞 Quiero escucharte, ver en qué situación estás hoy y proponerte algo que realmente te sirva para arrancar de una vez por todas. ✨
+
+¿Me decís qué horario te queda mejor para una llamada breve? 👇</div>
+    <div class="msg-note">⚠️ Reemplazá [Idioma] con el idioma de interés del lead.</div>
+  </div>
+</div>
+
+<!-- POST LLAMADA -->
+<div class="section" id="postcall">
+  <div class="section-header">
+    <div class="section-tag">Luego de la llamada</div>
+    <h1 class="section-title">Qué enviar tras hablar con el lead</h1>
+    <p class="section-desc">Secuencia de envío para cerrar la venta después de cada llamada. El orden importa.</p>
+  </div>
+
+  <div class="info-block">
+    <strong>Orden de envío por WhatsApp:</strong> seguí esta secuencia para cada idioma / nivel consultado.
+  </div>
+
+  <ul class="checklist" style="margin-bottom:28px;">
+    <li>Mensaje de cierre cálido + resumen verbal de lo que acordaron</li>
+    <li>Descripción breve del curso (qué incluye, duración, método)</li>
+    <li>PDF del idioma y nivel correspondiente</li>
+    <li>Imagen de la certificación (IKARUGA + UAI según idioma)</li>
+    <li>Horario y fecha de inicio de la comisión elegida</li>
+    <li>Precio regular del programa</li>
+    <li>Precio con el descuento ofrecido en esa llamada</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <div class="tabs" id="lang-tabs">
+    <button class="tab-btn active" onclick="showTab('lang-tabs','tab-jp',this)">🇯🇵 Japonés</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-kr',this)">🇰🇷 Coreano</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-zh',this)">🇨🇳 Chino</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-th',this)">🇹🇭 Tailandés</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-en',this)">🇬🇧 Inglés</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-de',this)">🇩🇪 Alemán</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-it',this)">🇮🇹 Italiano</button>
+  </div>
+
+  <div class="tab-content active" id="tab-jp">
+    <div class="post-call-grid">
+      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 meses · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
+      <div class="post-call-item"><h4>Método</h4><p>Inmersión cultural real. Kana, kanji, conversación y cultura japonesa desde el inicio.</p></div>
+      <div class="post-call-item"><h4>Niveles disponibles</h4><p>Japonés 1 · Japonés 2 · Japonés 3 · Japonés 4</p></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Japonés</div><button class="copy-btn" onclick="copyMsg('pc-jp',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-jp">¡Fue un placer hablar con vos! 🌸
+
+Te comparto el resumen de lo que charlamos:
+
+📘 Curso: Japonés [NIVEL]
+📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
+🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+⏱️ Duración: 4/5 meses · 3 horas semanales en vivo
+🎓 Certificación: IKARUGA + UAI
+💰 Valor regular: $[PRECIO REGULAR]
+⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+
+En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-kr">
+    <div class="post-call-grid">
+      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 meses · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
+      <div class="post-call-item"><h4>Método</h4><p>Inmersión cultural. Hangul, fonética, vocabulario y cultura coreana desde el primer día.</p></div>
+      <div class="post-call-item"><h4>Niveles disponibles</h4><p>Coreano 1 · Coreano 2</p></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Coreano</div><button class="copy-btn" onclick="copyMsg('pc-kr',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-kr">¡Fue un placer hablar con vos! 🌸
+
+Te comparto el resumen de lo que charlamos:
+
+📘 Curso: Coreano [NIVEL]
+📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
+🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+⏱️ Duración: 4/5 meses · 3 horas semanales en vivo
+🎓 Certificación: IKARUGA + UAI
+💰 Valor regular: $[PRECIO REGULAR]
+⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+
+En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-zh">
+    <div class="post-call-grid">
+      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 meses · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
+      <div class="post-call-item"><h4>Método</h4><p>Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.</p></div>
+      <div class="post-call-item"><h4>Niveles disponibles</h4><p>Chino 1 · Chino 2</p></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Chino</div><button class="copy-btn" onclick="copyMsg('pc-zh',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-zh">¡Fue un placer hablar con vos! 🌸
+
+Te comparto el resumen de lo que charlamos:
+
+📘 Curso: Chino Mandarín [NIVEL]
+📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
+🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+⏱️ Duración: 4/5 meses · 3 horas semanales en vivo
+🎓 Certificación: IKARUGA + UAI
+💰 Valor regular: $[PRECIO REGULAR]
+⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+
+En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-th">
+    <div class="post-call-grid">
+      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 meses · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
+      <div class="post-call-item"><h4>Método</h4><p>Script tailandés, fonética tonal, vocabulario esencial y cultura de Tailandia.</p></div>
+      <div class="post-call-item"><h4>Niveles disponibles</h4><p>Tailandés 1 · Tailandés 2 · Tailandés 3</p></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Tailandés</div><button class="copy-btn" onclick="copyMsg('pc-th',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-th">¡Fue un placer hablar con vos! 🌸
+
+Te comparto el resumen de lo que charlamos:
+
+📘 Curso: Tailandés [NIVEL]
+📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
+🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+⏱️ Duración: 4/5 meses · 3 horas semanales en vivo
+🎓 Certificación: IKARUGA + UAI
+💰 Valor regular: $[PRECIO REGULAR]
+⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+
+En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-en">
+    <div class="post-call-grid">
+      <div class="post-call-item"><h4>Duración del curso</h4><p>3 meses · 2 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Certificación oficial IKARUGA 🎓</p></div>
+      <div class="post-call-item"><h4>Método</h4><p>Enfoque comunicativo con método propio IKARUGA. Gramática, conversación y comprensión.</p></div>
+      <div class="post-call-item"><h4>Niveles disponibles</h4><p>Inglés A1 · Inglés A2</p></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Inglés</div><button class="copy-btn" onclick="copyMsg('pc-en',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-en">¡Fue un placer hablar con vos! 🌸
+
+Te comparto el resumen de lo que charlamos:
+
+📘 Curso: Inglés [NIVEL]
+📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
+🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+⏱️ Duración: 3 meses · 2 horas semanales en vivo
+🎓 Certificación: Oficial IKARUGA
+💰 Valor regular: $[PRECIO REGULAR]
+⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+
+En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-de">
+    <div class="post-call-grid">
+      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 meses · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
+      <div class="post-call-item"><h4>Método</h4><p>Gramática estructurada, fonética alemana y contexto cultural europeo desde el inicio.</p></div>
+      <div class="post-call-item"><h4>Niveles disponibles</h4><p>Alemán A1 · Alemán A2</p></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Alemán</div><button class="copy-btn" onclick="copyMsg('pc-de',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-de">¡Fue un placer hablar con vos! 🌸
+
+Te comparto el resumen de lo que charlamos:
+
+📘 Curso: Alemán [NIVEL]
+📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
+🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+⏱️ Duración: 4/5 meses · 3 horas semanales en vivo
+🎓 Certificación: IKARUGA + UAI
+💰 Valor regular: $[PRECIO REGULAR]
+⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+
+En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-it">
+    <div class="post-call-grid">
+      <div class="post-call-item"><h4>Duración del curso</h4><p>3 meses · 2 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
+      <div class="post-call-item"><h4>Método</h4><p>Método propio IKARUGA. Conversación, gramática y cultura italiana.</p></div>
+      <div class="post-call-item"><h4>Niveles disponibles</h4><p>Italiano A1 · Italiano A2</p></div>
+    </div>
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Italiano</div><button class="copy-btn" onclick="copyMsg('pc-it',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-it">¡Fue un placer hablar con vos! 🌸
+
+Te comparto el resumen de lo que charlamos:
+
+📘 Curso: Italiano [NIVEL]
+📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
+🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+⏱️ Duración: 3 meses · 2 horas semanales en vivo
+🎓 Certificación: IKARUGA + UAI
+💰 Valor regular: $[PRECIO REGULAR]
+⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+
+En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+    </div>
+  </div>
+</div>
+
+<!-- HORARIOS -->
+<div class="section" id="horarios">
+  <div class="section-header">
+    <div class="section-tag">Agosto 2026</div>
+    <h1 class="section-title">Horarios por idioma y nivel</h1>
+    <p class="section-desc">Todas las comisiones disponibles. Horarios en hora Argentina (GMT-3).</p>
+  </div>
+
+  <div class="tabs" id="hor-tabs">
+    <button class="tab-btn active" onclick="showTab('hor-tabs','hor-jp',this)">🇯🇵 Japonés</button>
+    <button class="tab-btn" onclick="showTab('hor-tabs','hor-kr',this)">🇰🇷 Coreano</button>
+    <button class="tab-btn" onclick="showTab('hor-tabs','hor-zh',this)">🇨🇳 Chino</button>
+    <button class="tab-btn" onclick="showTab('hor-tabs','hor-th',this)">🇹🇭 Tailandés</button>
+    <button class="tab-btn" onclick="showTab('hor-tabs','hor-en',this)">🇬🇧 Inglés</button>
+    <button class="tab-btn" onclick="showTab('hor-tabs','hor-de',this)">🇩🇪 Alemán</button>
+    <button class="tab-btn" onclick="showTab('hor-tabs','hor-it',this)">🇮🇹 Italiano</button>
+  </div>
+
+  <div class="tab-content active" id="hor-jp">
+    <table class="schedule-table">
+      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 3</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 3</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 4</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-kr">
+    <table class="schedule-table">
+      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Coreano 1</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Coreano 2</span></td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-zh">
+    <table class="schedule-table">
+      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Chino 1</span></td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td></tr>
+        <tr><td><span class="level-pill">Chino 2</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-th">
+    <table class="schedule-table">
+      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Tailandés 1</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Tailandés 2</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
+        <tr><td><span class="level-pill">Tailandés 3</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-en">
+    <table class="schedule-table">
+      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Inglés A1</span></td><td>Jueves</td><td>20:00 – 22:00</td><td>20/08</td><td>12/11</td></tr>
+        <tr><td><span class="level-pill">Inglés A2</span></td><td>Miércoles</td><td>20:00 – 22:00</td><td>19/08</td><td>11/11</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-de">
+    <table class="schedule-table">
+      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Alemán A1</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Alemán A2</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-it">
+    <table class="schedule-table">
+      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Italiano A1</span></td><td>Lunes</td><td>20:00 – 22:00</td><td>24/08</td><td>09/11</td></tr>
+        <tr><td><span class="level-pill">Italiano A2</span></td><td>Sábados</td><td>17:00 – 19:00</td><td>22/08</td><td>14/11</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ZONAS HORARIAS -->
+<div class="section" id="zonas">
+  <div class="section-header">
+    <div class="section-tag">Horarios por país</div>
+    <h1 class="section-title">Conversión de zona horaria</h1>
+    <p class="section-desc">Todos los horarios base están en hora Argentina (GMT-3). Usá esta tabla para comunicarle al lead el horario en su país.</p>
+  </div>
+
+  <div class="tz-box">
+    <strong>Base: hora Argentina (GMT-3)</strong> · Los cursos son en vivo. La clase puntual es el horario Argentina; cada país suma o resta según la diferencia indicada.
+  </div>
+
+  <table class="schedule-table" style="margin-bottom:28px;">
+    <thead><tr><th>País</th><th>Diferencia con ARG</th><th>Sáb 16:00 ARG</th><th>Dom 14:00 ARG</th><th>Lun/Mié 21:00 ARG</th><th>Jue/Mié 20:00 ARG</th></tr></thead>
+    <tbody>
+      <tr><td>🇦🇷 Argentina</td><td>—</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
+      <tr><td>🇲🇽 México</td><td>−3 hs</td><td>13:00</td><td>11:00</td><td>18:00</td><td>17:00</td></tr>
+      <tr><td>🇧🇴 Bolivia</td><td>−1 h</td><td>15:00</td><td>13:00</td><td>20:00</td><td>19:00</td></tr>
+      <tr><td>🇵🇾 Paraguay</td><td>= ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
+      <tr><td>🇨🇱 Chile</td><td>= ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
+      <tr><td>🇨🇴 Colombia</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇵🇪 Perú</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇪🇨 Ecuador</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇵🇦 Panamá</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇭🇳 Honduras</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇸🇻 El Salvador</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇨🇷 Costa Rica</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-block">
+    <strong>Nota sobre México:</strong> México tiene cambio de horario estacional. En verano (abril–octubre) la diferencia puede ser −3 hs. Verificar con el lead si es necesario.
+  </div>
+</div>
+
+<!-- PRECIOS ORIENTAL/ALEMAN -->
+<div class="section" id="precios-oriental">
+  <div class="section-header">
+    <div class="section-tag">Tabla de precios</div>
+    <h1 class="section-title">Japonés · Coreano · Chino · Tailandés · Alemán</h1>
+    <p class="section-desc">Precios para cursos de 4 a 5 meses. La promo 3 es el pago total del curso (el descuento no aplica sobre el certificado).</p>
+  </div>
+
+  <h3>Desglose base</h3>
+  <table class="price-table">
+    <thead><tr><th>Concepto</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
+    <tbody>
+      <tr><td>Cuota mensual</td><td>$140.000</td><td>USD 77</td><td>$1.540</td></tr>
+      <tr><td>Matrícula y materiales</td><td>$226.000</td><td>USD 79</td><td>$1.590</td></tr>
+      <tr><td>Certificado</td><td>$40.000</td><td>USD 28</td><td>$570</td></tr>
+      <tr class="section-row"><td>Precio total sin descuento</td><td>$966.000</td><td>USD 492</td><td>$9.860</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Promo 3 · Pago total del curso</h3>
+  <div class="info-block">El descuento <strong>no se aplica sobre el certificado</strong>. Ofrecé siempre empezando por el 30–35% y bajá según la negociación.</div>
+  <table class="price-table">
+    <thead><tr><th>Descuento</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
+    <tbody>
+      <tr class="highlight-row"><td>45% 🔥</td><td>$549.000</td><td>USD 283</td><td>$5.690</td></tr>
+      <tr class="highlight-row"><td>40% 🔥</td><td>$595.000</td><td>USD 306</td><td>$6.160</td></tr>
+      <tr><td>35%</td><td>$642.000</td><td>USD 329</td><td>$6.620</td></tr>
+      <tr><td>30%</td><td>$688.000</td><td>USD 352</td><td>$7.090</td></tr>
+      <tr><td>25%</td><td>$734.000</td><td>USD 375</td><td>$7.550</td></tr>
+      <tr><td>20%</td><td>$780.000</td><td>USD 398</td><td>$8.020</td></tr>
+      <tr><td>15%</td><td>$827.000</td><td>USD 421</td><td>$8.480</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Beca Emergencia · 30% sobre la cuota mensual</h3>
+  <table class="price-table">
+    <thead><tr><th>Concepto</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
+    <tbody>
+      <tr><td>Cuota mensual con beca</td><td>$98.000</td><td>USD 55</td><td>$1.110</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PRECIOS ITALIANO -->
+<div class="section" id="precios-italiano">
+  <div class="section-header">
+    <div class="section-tag">Tabla de precios</div>
+    <h1 class="section-title">Italiano</h1>
+    <p class="section-desc">Precios para cursos de Italiano (3 meses · 2 hs semanales). Doble certificación IKARUGA + UAI.</p>
+  </div>
+
+  <h3>Desglose base</h3>
+  <table class="price-table">
+    <thead><tr><th>Concepto</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
+    <tbody>
+      <tr><td>Cuota mensual</td><td>$64.000</td><td>USD 35</td><td>$710</td></tr>
+      <tr><td>Matrícula y materiales</td><td>$87.000</td><td>USD 31</td><td>$610</td></tr>
+      <tr><td>Certificado</td><td>$40.000</td><td>USD 27</td><td>$550</td></tr>
+      <tr class="section-row"><td>Precio total sin descuento</td><td>$383.000</td><td>USD 198</td><td>$4.000</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Promo 3 · Pago total del curso</h3>
+  <div class="info-block">El descuento <strong>no se aplica sobre el certificado</strong>.</div>
+  <table class="price-table">
+    <thead><tr><th>Descuento</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
+    <tbody>
+      <tr><td>30%</td><td>$281.000</td><td>USD 148</td><td>$2.970</td></tr>
+      <tr><td>25%</td><td>$299.000</td><td>USD 156</td><td>$3.140</td></tr>
+      <tr><td>20%</td><td>$316.000</td><td>USD 165</td><td>$3.320</td></tr>
+      <tr><td>15%</td><td>$333.000</td><td>USD 173</td><td>$3.490</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PRECIOS INGLÉS -->
+<div class="section" id="precios-ingles">
+  <div class="section-header">
+    <div class="section-tag">Tabla de precios</div>
+    <h1 class="section-title">Inglés</h1>
+    <p class="section-desc">Precios para cursos de Inglés (3 meses · 2 hs semanales). Certificación oficial IKARUGA.</p>
+  </div>
+
+  <h3>Desglose base</h3>
+  <table class="price-table">
+    <thead><tr><th>Concepto</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
+    <tbody>
+      <tr><td>Cuota mensual</td><td>$64.000</td><td>USD 35</td><td>$710</td></tr>
+      <tr><td>Matrícula y materiales</td><td>$87.000</td><td>USD 31</td><td>$610</td></tr>
+      <tr class="section-row"><td>Precio total sin descuento</td><td>$343.000</td><td>USD 171</td><td>$3.450</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Promo 3 · Pago total del curso</h3>
+  <div class="info-block">El descuento <strong>no se aplica sobre el certificado</strong>. El inglés no incluye costo de certificado por separado.</div>
+  <table class="price-table">
+    <thead><tr><th>Descuento</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
+    <tbody>
+      <tr><td>30%</td><td>$241.000</td><td>USD 120</td><td>$2.420</td></tr>
+      <tr><td>25%</td><td>$259.000</td><td>USD 129</td><td>$2.590</td></tr>
+      <tr><td>20%</td><td>$276.000</td><td>USD 137</td><td>$2.770</td></tr>
+      <tr><td>15%</td><td>$293.000</td><td>USD 146</td><td>$2.940</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PROMO FULL AGOSTO -->
+<div class="section" id="promo-full">
+  <div class="section-header">
+    <div class="section-tag">Recuperación · Agosto 2026</div>
+    <h1 class="section-title">⚡ Recuperación Promo Full</h1>
+    <p class="section-desc">Mensajes listos para recuperar leads por país, idioma y nivel. Seleccioná el país y el idioma para ver el mensaje correspondiente.</p>
+  </div>
+
+  <div class="info-block">
+    <strong>Cómo usar:</strong> Elegí el país del lead → seleccioná el idioma → copiá el mensaje del nivel correspondiente y envialo por WhatsApp.
+  </div>
+
+  <!-- Filtros -->
+  <div style="display:flex; gap:12px; margin-bottom:24px; flex-wrap:wrap; align-items:flex-end;">
+    <div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">País</div>
+      <select id="pf-pais" onchange="filterPromoFull()" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--ink);cursor:pointer;">
+        <option value="">— Seleccioná un país —</option>
+        <option value="ARG">🇦🇷 Argentina</option>
+        <option value="MEX">🇲🇽 México</option>
+        <option value="BOL">🇧🇴 Bolivia</option>
+        <option value="PRY">🇵🇾 Paraguay</option>
+        <option value="CHL">🇨🇱 Chile</option>
+        <option value="COL">🇨🇴 Colombia</option>
+        <option value="PER">🇵🇪 Perú</option>
+        <option value="ECU">🇪🇨 Ecuador</option>
+        <option value="PAN">🇵🇦 Panamá</option>
+        <option value="HND">🇭🇳 Honduras</option>
+        <option value="SLV">🇸🇻 El Salvador</option>
+        <option value="CRI">🇨🇷 Costa Rica</option>
+      </select>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Idioma</div>
+      <select id="pf-idioma" onchange="updateDescuentoSelector(); filterPromoFull();" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--ink);cursor:pointer;">
+        <option value="">— Seleccioná un idioma —</option>
+        <option value="japones">🇯🇵 Japonés</option>
+        <option value="coreano">🇰🇷 Coreano</option>
+        <option value="chino">🇨🇳 Chino</option>
+        <option value="tailandes">🇹🇭 Tailandés</option>
+        <option value="ingles">🇬🇧 Inglés</option>
+        <option value="aleman">🇩🇪 Alemán</option>
+        <option value="italiano">🇮🇹 Italiano</option>
+      </select>
+    </div>
+    <div id="pf-descuento-wrap" style="display:none;">
+      <div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Descuento</div>
+      <select id="pf-descuento" onchange="filterPromoFull()" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--ink);cursor:pointer;"></select>
+    </div>
+  </div>
+
+  <div id="pf-placeholder" style="padding:32px;text-align:center;color:var(--ink3);font-size:14px;background:#fff;border:1px dashed var(--border);border-radius:12px;">
+    Seleccioná un país y un idioma para ver los mensajes disponibles.
+  </div>
+
+  <div id="pf-results" style="display:none;"></div>
+</div>
+
+</div><!-- end .main -->
+
+<script>
+
+// ================================================================
+// CONFIGURACIÓN MAESTRA — IKARUGA AGOSTO 2026
+// ================================================================
+
+// 1. CERTIFICACIÓN por idioma
+// 2. INMERSIÓN CULTURAL: solo asiáticos + alemán
+// 3. PREPARACIÓN PARA EXAMEN: solo Japonés 1/2, Coreano 1/2, Chino 1/2
+// 4. FINANCIACIÓN: 4 cuotas para asiáticos/alemán · 3 cuotas para inglés e italiano
+// ================================================================
+
+const idiomaConfig = {
+  japones:   {
+    cert: "Doble Certificación (IKARUGA + UAI 🎓)",
+    inmersion: true,
+    preparacion: (n) => ["Japonés 1","Japonés 2"].includes(n),
+    examStr: "Preparación para el JLPT (Examen Oficial de Japonés),"
+  },
+  coreano:   {
+    cert: "Doble Certificación (IKARUGA + UAI 🎓)",
+    inmersion: true,
+    preparacion: (n) => ["Coreano 1","Coreano 2"].includes(n),
+    examStr: "Preparación para el TOPIK (Examen Oficial de Coreano),"
+  },
+  chino:     {
+    cert: "Doble Certificación (IKARUGA + UAI 🎓)",
+    inmersion: true,
+    preparacion: (n) => ["Chino 1","Chino 2"].includes(n),
+    examStr: "Preparación para el HSK (Examen Oficial de Chino Mandarín),"
+  },
+  tailandes: {
+    cert: "Doble Certificación (IKARUGA + UAI 🎓)",
+    inmersion: true,
+    preparacion: () => false
+  },
+  aleman:    {
+    cert: "Doble Certificación (IKARUGA + UAI 🎓)",
+    inmersion: true,
+    preparacion: () => false
+  },
+  ingles:    {
+    cert: "Certificación Oficial de competencias IKARUGA",
+    inmersion: false,
+    preparacion: () => false
+  },
+  italiano:  {
+    cert: "Doble Certificación (IKARUGA + UAI 🎓)",
+    inmersion: false,
+    preparacion: () => false
+  }
+};
+
+// ---- Horarios base en hora Argentina ----
+// Horarios confirmados desde Planificador_de_cursos_IKARUGA.xlsx — Agosto 2026
+const horariosARG = {
+  japones: {
+    "Japonés 1": [
+      "Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12)",
+      "Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12)",
+      "Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12)"
+    ],
+    "Japonés 2": [
+      "Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12)",
+      "Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12)",
+      "Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12)"
+    ],
+    "Japonés 3": [
+      "Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12)",
+      "Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12)"
+    ],
+    "Japonés 4": [
+      "Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12)"
+    ]
+  },
+  coreano: {
+    "Coreano 1": ["Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12)"],
+    "Coreano 2": ["Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12)"]
+  },
+  chino: {
+    "Chino 1": ["Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12)"],
+    "Chino 2": ["Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12)"]
+  },
+  tailandes: {
+    "Tailandés 1": ["Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 14/11)"],
+    "Tailandés 2": ["Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12)"],
+    "Tailandés 3": ["Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12)"]
+  },
+  ingles: {
+    "Inglés A1": ["Jueves de 20:00 a 22:00 hs. (Inicia 20/08 · Finaliza 12/11)"],
+    "Inglés A2": ["Miércoles de 20:00 a 22:00 hs. (Inicia 19/08 · Finaliza 11/11)"]
+  },
+  aleman: {
+    "Alemán A1": ["Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12)"],
+    "Alemán A2": ["Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12)"]
+  },
+  italiano: {
+    "Italiano A1": ["Lunes de 20:00 a 22:00 hs. (Inicia 24/08 · Finaliza 09/11)"],
+    "Italiano A2": ["Sábados de 17:00 a 19:00 hs. (Inicia 22/08 · Finaliza 14/11)"]
+  }
+};
+
+// ---- Diferencias horarias vs Argentina ----
+const tzDiff = {ARG:0, MEX:-3, BOL:-1, PRY:0, CHL:0, COL:-2, PER:-2, ECU:-2, PAN:-2, HND:-2, SLV:-2, CRI:-2};
+
+function convertHorarios(nivHorarios, diff) {
+  if (diff === 0) return nivHorarios;
+  return nivHorarios.map(h => {
+    return h.replace(/(\d{2}):(\d{2}) a (\d{2}):(\d{2})/g, (_, h1, m1, h2, m2) => {
+      let nh1 = (parseInt(h1) + diff + 24) % 24;
+      let nh2 = (parseInt(h2) + diff + 24) % 24;
+      return `${String(nh1).padStart(2,'0')}:${m1} a ${String(nh2).padStart(2,'0')}:${m2}`;
+    });
+  });
+}
+
+// ---- PRECIOS por idioma y país ----
+// Financiación: 4 cuotas para asiáticos+alemán · 3 cuotas para inglés e italiano
+// ── TABLA COMPLETA DE DESCUENTOS POR IDIOMA Y PAÍS ──────────────────────────
+// Fuentes: Cursos Agosto 2026_ (5m 3hs) · Curso Agosto 4 MESES 2026 (4m 3hs)
+//          Cursos 2 hs Ing Marzo 2026_ (4m 2hs) · Cursos 2hs con certif UAI FR,I (4m 2hs)
+const tablaDescuentos = {
+  // ── Japonés / Coreano / Chino / Alemán — 5 módulos · 3hs
+  // Fuente: "Cursos Agosto 2026_"  Reg: ARG $1.022.000 / USD 501 / MXN $9.860
+  japones_coreano_chino_aleman: {
+    meses: 5, hs: "3 hs",
+    cuotas: 4,
+    ARG: { reg:"1.022.000", d45:"582.000", d40:"631.000", d35:"680.000", d30:"729.000", d25:"778.000", d20:"827.000", d15:"876.000" },
+    MEX: { reg:"9.860",     d45:"5.690",   d40:"6.160",   d35:"6.620",   d30:"7.090",   d25:"7.550",   d20:"8.020",   d15:"8.480"   },
+    USD: { reg:"501",       d45:"290",     d40:"314",     d35:"337",     d30:"361",     d25:"385",     d20:"408",     d15:"432"     }
+  },
+  // ── Tailandés — 4 módulos · 3hs
+  // Fuente: "Curso Agosto 4 MESES 2026"  Reg: ARG $874.000 / USD 423 / MXN $8.320
+  tailandes: {
+    meses: 4, hs: "3 hs",
+    cuotas: 4,
+    ARG: { reg:"874.000", d45:"500.000", d40:"542.000", d35:"584.000", d30:"625.000", d25:"667.000", d20:"709.000", d15:"750.000" },
+    MEX: { reg:"8.320",   d45:"4.840",   d40:"5.230",   d35:"5.620",   d30:"6.010",   d25:"6.400",   d20:"6.780",   d15:"7.170"   },
+    USD: { reg:"423",     d45:"247",     d40:"267",     d35:"286",     d30:"306",     d25:"326",     d20:"345",     d15:"365"     }
+  },
+  // ── Inglés A1/A2 — 4 módulos · 2hs · SIN cert UAI
+  // Fuente: "Cursos 2 hs Ing Marzo 2026_"  Reg: ARG $365.000 / USD 175 / MXN $3.450
+  ingles: {
+    meses: 4, hs: "2 hs",
+    cuotas: 3,
+    ARG: { reg:"365.000", d30:"256.000", d25:"274.000", d20:"293.000", d15:"311.000" },
+    MEX: { reg:"3.450",   d30:"2.420",   d25:"2.590",   d20:"2.770",   d15:"2.940"   },
+    USD: { reg:"175",     d30:"123",     d25:"132",     d20:"140",     d15:"149"     }
+  },
+  // ── Italiano A1/A2 — 4 módulos · 2hs · CON cert UAI
+  // Fuente: "Cursos 2hs con certif UAI FR, I"  Reg: ARG $407.000 / USD 205 / MXN $4.020
+  italiano: {
+    meses: 4, hs: "2 hs",
+    cuotas: 3,
+    ARG: { reg:"407.000", d30:"298.000", d25:"317.000", d20:"335.000", d15:"353.000" },
+    MEX: { reg:"4.020",   d30:"2.990",   d25:"3.160",   d20:"3.340",   d15:"3.510"   },
+    USD: { reg:"205",     d30:"153",     d25:"162",     d20:"171",     d15:"179"     }
+  }
+};
+
+function getTablaKey(idioma) {
+  if (["japones","coreano","chino","aleman"].includes(idioma)) return "japones_coreano_chino_aleman";
+  return idioma;
+}
+
+function getPaisKey(pais) {
+  if (pais === 'ARG') return 'ARG';
+  if (pais === 'MEX') return 'MEX';
+  return 'USD';
+}
+
+function getSimbolo(pais) {
+  return (pais === 'ARG' || pais === 'MEX') ? "$" : "USD ";
+}
+
+function getDescuentosDisponibles(idioma) {
+  const key = getTablaKey(idioma);
+  const t = tablaDescuentos[key];
+  const row = t.ARG;
+  const all = [
+    {pct:"45%", key:"d45"}, {pct:"40%", key:"d40"}, {pct:"35%", key:"d35"},
+    {pct:"30%", key:"d30"}, {pct:"25%", key:"d25"}, {pct:"20%", key:"d20"},
+    {pct:"15%", key:"d15"}
+  ];
+  return all.filter(o => row[o.key] != null);
+}
+
+function getPrecio(idioma, pais, descKey) {
+  const tKey = getTablaKey(idioma);
+  const pKey = getPaisKey(pais);
+  const t = tablaDescuentos[tKey];
+  const row = t[pKey];
+  const simbolo = getSimbolo(pais);
+  const opts = getDescuentosDisponibles(idioma);
+  const dk = descKey || (opts.find(o => o.key === 'd35') || opts[0])?.key || 'd35';
+  const pct = opts.find(o => o.key === dk)?.pct || dk.replace('d','') + '%';
+  const cuotaNum = t.cuotas;
+  const precioHoy = row[dk] || row.d30;
+  return { precio_reg: row.reg, descuento: pct, precio_hoy: precioHoy, cuotas: cuotaNum, simbolo, meses: t.meses, hs: t.hs };
+}
+
+// ---- TEXTO DE INCLUSIONES según parámetros correctos ----
+function buildIncluyeStr(idioma, nivel) {
+  const cfg = idiomaConfig[idioma];
+  if (cfg.preparacion(nivel)) {
+    // Preparación para examen + inmersión + método
+    return `${cfg.examStr} clases de Inmersión Cultural y el respaldo de nuestro método propio.`;
+  } else if (cfg.inmersion) {
+    // Solo inmersión + método (sin prep. examen)
+    return "Clases de Inmersión Cultural y el respaldo de nuestro método propio.";
+  } else {
+    // Solo método (inglés e italiano: sin inmersión ni prep. examen)
+    return "El respaldo de nuestro método propio.";
+  }
+}
+
+// ---- CONSTRUCCIÓN DEL MENSAJE COMPLETO ----
+function buildMsg(pais, idioma, nivel, horarios, cierre_tipo, descKey) {
+  const cfg = idiomaConfig[idioma];
+  const p = getPrecio(idioma, pais, descKey);
+  const horStr = horarios.map(h => `• ${h}`).join('\n');
+  const incluyeStr = buildIncluyeStr(idioma, nivel);
+  const hs = ["japones","coreano","chino","aleman","tailandes"].includes(idioma) ? "3 hs semanales" : "2 hs semanales";
+  const durStr = `${p.meses} meses · ${hs} en vivo`;
+  // Compute cuota from precio_hoy string
+  const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+  const finStr = `${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  const cierreTexto = cierre_tipo === 'cupos'
+    ? 'Como los cupos de agosto ya se están reservando... ¿Te aseguro tu lugar para este nuevo ciclo o preferís que revisemos si queda alguna vacante para iniciar de inmediato? 👇'
+    : (idioma === 'japones'
+        ? 'Tengo solo un par de lugares con esta promo.\n\n👉 ¿Te reservo tu cupo o tenés alguna pregunta con respecto al curso? 👇'
+        : 'Tengo solo un par de lugares con esta promo.\n\n👉 ¿Te reservo tu cupo o preferís ver el temario primero? 👇');
+
+  return `¡Hola! 👋 Soy ${nombreActual}, ${getTitulo(nombreActual)} de IKARUGA. ⛩️
+
+Te contacto por tu interés en *${nivel}*. En AGOSTO abrimos nuevas comisiones con ${cfg.cert} y me encantaría que te sumes.
+
+✨ *Incluye:* ${incluyeStr}
+
+📅 *Horarios Disponibles (${paisNombres[pais]}):*
+${horStr}
+
+⏱️ *Duración:* ${durStr}
+💳 *PREVENTA ${p.descuento} OFF* ⚡
+❌ Valor Regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (Nivel completo).
+🛡️ *Financiación:* ${finStr}
+
+${cierreTexto}`;
+}
+
+// ---- NIVELES Y TIPO DE CIERRE ----
+const nivelesPorIdioma = {
+  japones:   [{nivel:"Japonés 1",cierre:"cupos"},{nivel:"Japonés 2",cierre:"cupos"},{nivel:"Japonés 3",cierre:"promo"},{nivel:"Japonés 4",cierre:"promo"}],
+  coreano:   [{nivel:"Coreano 1",cierre:"cupos"},{nivel:"Coreano 2",cierre:"promo"}],
+  chino:     [{nivel:"Chino 1",cierre:"cupos"},{nivel:"Chino 2",cierre:"promo"}],
+  tailandes: [{nivel:"Tailandés 1",cierre:"promo"},{nivel:"Tailandés 2",cierre:"promo"},{nivel:"Tailandés 3",cierre:"promo"}],
+  ingles:    [{nivel:"Inglés A1",cierre:"promo"},{nivel:"Inglés A2",cierre:"promo"}],
+  aleman:    [{nivel:"Alemán A1",cierre:"promo"},{nivel:"Alemán A2",cierre:"promo"}],
+  italiano:  [{nivel:"Italiano A1",cierre:"promo"},{nivel:"Italiano A2",cierre:"promo"}]
+};
+
+const paisNombres = {ARG:"Argentina",MEX:"México",BOL:"Bolivia",PRY:"Paraguay",CHL:"Chile",COL:"Colombia",PER:"Perú",ECU:"Ecuador",PAN:"Panamá",HND:"Honduras",SLV:"El Salvador",CRI:"Costa Rica"};
+const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",aleman:"Alemán",italiano:"Italiano"};
+
+function updateDescuentoSelector() {
+  const idioma = document.getElementById('pf-idioma').value;
+  const wrap = document.getElementById('pf-descuento-wrap');
+  const sel = document.getElementById('pf-descuento');
+  if (!idioma) { wrap.style.display = 'none'; return; }
+  const opts = getDescuentosDisponibles(idioma);
+  sel.innerHTML = opts.map((o, i) => {
+    const label = i === 0 ? `${o.pct} 🔥 (máximo)` : o.pct;
+    return `<option value="${o.key}">${label}</option>`;
+  }).join('');
+  // default to 35% if available, else first
+  const def = opts.find(o => o.key === 'd35') || opts[0];
+  sel.value = def.key;
+  wrap.style.display = 'block';
+}
+
+function filterPromoFull() {
+  const pais = document.getElementById('pf-pais').value;
+  const idioma = document.getElementById('pf-idioma').value;
+  const descKey = document.getElementById('pf-descuento')?.value || null;
+  const placeholder = document.getElementById('pf-placeholder');
+  const results = document.getElementById('pf-results');
+
+  if (!pais || !idioma) {
+    placeholder.style.display = 'block';
+    results.style.display = 'none';
+    return;
+  }
+
+  const niveles = nivelesPorIdioma[idioma];
+  const diff = tzDiff[pais];
+  const p = getPrecio(idioma, pais, descKey);
+
+  placeholder.style.display = 'none';
+  results.style.display = 'block';
+
+  const descLabel = p.descuento;
+  let html = `<div style="margin-bottom:16px;padding:12px 16px;background:var(--teal-light);border-radius:10px;font-size:13px;color:var(--teal);">
+    <strong>${paisNombres[pais]} · ${idiomaNombres[idioma]}</strong> — ${niveles.length} nivel(es) disponibles · <strong>${descLabel} OFF</strong> · ${p.cuotas} cuotas
+  </div>`;
+
+  niveles.forEach((n, i) => {
+    const horariosBase = horariosARG[idioma][n.nivel] || [];
+    const horariosLocal = convertHorarios(horariosBase, diff);
+    const msg = buildMsg(pais, idioma, n.nivel, horariosLocal, n.cierre, descKey);
+    const msgId = `pf-msg-${pais}-${idioma}-${i}`;
+    html += `<div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title"><span class="level-pill">${n.nivel}</span></div>
+        <button class="copy-btn" onclick="copyMsgText('${msgId}',this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="${msgId}">${msg}</div>
+    </div>`;
+  });
+
+  results.innerHTML = html;
+}
+
+function copyMsgText(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.innerText).then(() => {
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+
+
+// ---- NOMBRE DEL CLOSER ----
+let nombreActual = 'Isabel';
+
+function updateNombre(nombre) {
+  nombreActual = nombre;
+  // Update all static message bodies
+  document.querySelectorAll('.msg-body').forEach(el => {
+    el.textContent = el.textContent; // trigger re-render via dataset
+  });
+  // Re-render static messages from source
+  renderStaticMessages(nombre);
+}
+
+const mensajesOriginales = {};
+
+function initMessages() {
+  document.querySelectorAll('.msg-body[id]').forEach(el => {
+    mensajesOriginales[el.id] = el.innerText;
+  });
+}
+
+const nombresFemeninos = ['Isabel'];
+
+function getTitulo(nombre) {
+  return nombresFemeninos.includes(nombre)
+    ? 'tu asesora académica'
+    : 'tu asesor académico';
+}
+
+function renderStaticMessages(nombre) {
+  const titulo = getTitulo(nombre);
+  document.querySelectorAll('.msg-body[id]').forEach(el => {
+    if (mensajesOriginales[el.id]) {
+      el.innerText = mensajesOriginales[el.id]
+        .replace(/\{NOMBRE\}/g, nombre)
+        .replace(/\{TITULO\}/g, titulo);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initMessages();
+  renderStaticMessages(nombreActual);
+});
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showTab(groupId, tabId, btn) {
+  const group = document.getElementById(groupId);
+  const container = btn.closest('.section') || document.body;
+  container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  container.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+function copyMsg(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
