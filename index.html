@@ -999,7 +999,7 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
     <thead><tr><th>País</th><th>Diferencia con ARG</th><th>Sáb 16:00 ARG</th><th>Dom 14:00 ARG</th><th>Lun/Mié 21:00 ARG</th><th>Jue/Mié 20:00 ARG</th></tr></thead>
     <tbody>
       <tr><td>🇦🇷 Argentina</td><td>—</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
-      <tr><td>🇲🇽 México</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇲🇽 México</td><td>−3 hs</td><td>13:00</td><td>11:00</td><td>18:00</td><td>17:00</td></tr>
       <tr><td>🇧🇴 Bolivia</td><td>−1 h</td><td>15:00</td><td>13:00</td><td>20:00</td><td>19:00</td></tr>
       <tr><td>🇵🇾 Paraguay</td><td>= ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
       <tr><td>🇨🇱 Chile</td><td>= ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
@@ -1287,7 +1287,7 @@ const horariosARG = {
 };
 
 // ---- Diferencias horarias vs Argentina ----
-const tzDiff = {ARG:0, MEX:-2, BOL:-1, PRY:0, CHL:0, COL:-2, PER:-2, ECU:-2, PAN:-2, HND:-2, SLV:-2, CRI:-2};
+const tzDiff = {ARG:0, MEX:-3, BOL:-1, PRY:0, CHL:0, COL:-2, PER:-2, ECU:-2, PAN:-2, HND:-2, SLV:-2, CRI:-2};
 
 function convertHorarios(nivHorarios, diff) {
   if (diff === 0) return nivHorarios;
