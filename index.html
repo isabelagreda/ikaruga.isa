@@ -1418,9 +1418,10 @@ function buildMsg(pais, idioma, nivel, horarios, cierre_tipo, descKey) {
         ? 'Tengo solo un par de lugares con esta promo.\n\n👉 ¿Te reservo tu cupo o tenés alguna pregunta con respecto al curso? 👇'
         : 'Tengo solo un par de lugares con esta promo.\n\n👉 ¿Te reservo tu cupo o preferís ver el temario primero? 👇');
 
+  const mesInicio = idioma === 'tailandes' ? 'JULIO' : 'AGOSTO';
   return `¡Hola! 👋 Soy ${nombreActual}, ${getTitulo(nombreActual)} de IKARUGA. ⛩️
 
-Te contacto por tu interés en *${nivel}*. En AGOSTO abrimos nuevas comisiones con ${cfg.cert} y me encantaría que te sumes.
+Te contacto por tu interés en *${nivel}*. En ${mesInicio} abrimos nuevas comisiones con ${cfg.cert} y me encantaría que te sumes.
 
 ✨ *Incluye:* ${incluyeStr}
 
