@@ -511,6 +511,13 @@
         <span class="dot"></span> Inglés
       </button>
     </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Equipo</div>
+      <button class="nav-link" onclick="showSection('reglamento')">
+        <span class="dot"></span> 🏆 Puntos y Comisiones
+      </button>
+    </div>
+
   </nav>
 </div>
 
@@ -1180,6 +1187,112 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
   </div>
 
   <div id="pf-results" style="display:none;"></div>
+</div>
+
+
+<!-- REGLAMENTO -->
+<div class="section" id="reglamento">
+  <div class="section-header">
+    <div class="section-tag">Equipo · 2026</div>
+    <h1 class="section-title">🏆 Puntos y Comisiones</h1>
+    <p class="section-desc">Reglamento oficial de premios mensuales, diarios y sistema de comisiones para el equipo de closers.</p>
+  </div>
+
+  <!-- PREMIO DIARIO -->
+  <h3>⚡ Premio Diario</h3>
+  <div class="msg-card" style="margin-bottom:24px;">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Condiciones de entrega</div>
+      <span class="badge badge-gold">Leer antes de operar</span>
+    </div>
+    <div style="padding:20px; font-size:14px; line-height:1.8; color:var(--ink2);">
+      <ul class="checklist">
+        <li>La entrega de premios comienza a partir del horario anunciado según hora Argentina y finaliza a las 00:00 hs. Argentina del nuevo día, o bien si la empresa cancela la entrega mediante previo aviso.</li>
+        <li>El horario oficial para cobrar el premio será el que aparezca en el <strong>comprobante de pago</strong>. Si el cliente pagó antes de la hora en que se anunció el premio, no se tomará como válido.</li>
+        <li>Para situaciones con diferencias de uso horario, se deberá traducir el cierre de la venta a uso horario Argentina.</li>
+        <li>La entrega o no del premio para situaciones extraordinarias queda a <strong>decisión de la empresa</strong>.</li>
+        <li>Adjuntar <strong>captura de pantalla</strong> del chat donde se vea la hora a la que se recibió el comprobante. Puede enviarse a Vicedirección, Dirección o <strong>Isabel Agreda</strong>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PREMIO MENSUAL -->
+  <h3>📅 Premio Mensual — Sistema de Puntos</h3>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:14px; margin-bottom:28px;">
+
+    <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden;">
+      <div style="background:#cd7f32; padding:12px 18px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:22px;">🥉</span>
+        <span style="font-size:16px; font-weight:600; color:#fff;">100 puntos</span>
+      </div>
+      <ul style="padding:14px 18px 16px; list-style:none; font-size:13px; color:var(--ink2); line-height:1.9;">
+        <li>✓ Cursos grupales nivel 1 · 3hs <em>(30% o más de descuento · transferencia)</em></li>
+        <li>✓ Pagos con tarjeta de crédito a más del 30% de descuento</li>
+        <li>✓ Becas</li>
+      </ul>
+    </div>
+
+    <div style="background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden;">
+      <div style="background:#a8a9ad; padding:12px 18px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:22px;">🥈</span>
+        <span style="font-size:16px; font-weight:600; color:#fff;">150 puntos</span>
+      </div>
+      <ul style="padding:14px 18px 16px; list-style:none; font-size:13px; color:var(--ink2); line-height:1.9;">
+        <li>✓ Cursos grupales nivel 1 · 3hs <em>(hasta 25% · transferencia)</em></li>
+        <li>✓ Cualquier reselling de lista exo para cursos de nivel 2 o superior (sin importar descuento)</li>
+        <li>✓ Pagos con tarjeta de crédito con hasta el 25% de descuento</li>
+        <li>✓ Italiano e inglés al 25% o más</li>
+      </ul>
+    </div>
+
+    <div style="background:#fff; border:2px solid #c9a84c; border-radius:12px; overflow:hidden;">
+      <div style="background:#c9a84c; padding:12px 18px; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:22px;">🥇</span>
+        <span style="font-size:16px; font-weight:600; color:#fff;">200 puntos</span>
+      </div>
+      <ul style="padding:14px 18px 16px; list-style:none; font-size:13px; color:var(--ink2); line-height:1.9;">
+        <li>✓ Clases particulares</li>
+        <li>✓ Italiano e inglés hasta el 20% de descuento</li>
+        <li>✓ Ventas grupales <strong>sin ningún tipo de descuento</strong></li>
+        <li>✓ Pagos totales por transferencia <em>(no tarjeta de crédito)</em></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COMISIONES -->
+  <h3>💰 Sistema de Comisiones 2026</h3>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; margin-bottom:24px;">
+
+    <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:18px 20px;">
+      <div style="font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--ink3); margin-bottom:12px;">📌 Cursos de 3 hs</div>
+      <ul style="list-style:none; font-size:13px; color:var(--ink2); line-height:2;">
+        <li style="padding:6px 0; border-bottom:1px solid var(--paper3);"><span style="background:var(--accent-light);color:var(--accent);font-weight:600;padding:2px 8px;border-radius:20px;font-size:12px;">15%</span> &nbsp; Japonés nivel 1 — siempre, sin importar el descuento</li>
+        <li style="padding:6px 0; border-bottom:1px solid var(--paper3);"><span style="background:var(--green-light);color:var(--green);font-weight:600;padding:2px 8px;border-radius:20px;font-size:12px;">20%</span> &nbsp; Cursos de inicio en abril <em>(excepto japonés nivel 1)</em> con hasta 25% de descuento</li>
+        <li style="padding:6px 0;"><span style="background:var(--green-light);color:var(--green);font-weight:600;padding:2px 8px;border-radius:20px;font-size:12px;">20%</span> &nbsp; Nivel 2 o superior — sin importar el descuento</li>
+      </ul>
+    </div>
+
+    <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:18px 20px;">
+      <div style="font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--ink3); margin-bottom:12px;">📌 Cursos de 2 hs · Italiano e Inglés</div>
+      <ul style="list-style:none; font-size:13px; color:var(--ink2); line-height:2;">
+        <li style="padding:6px 0; border-bottom:1px solid var(--paper3);"><span style="background:var(--accent-light);color:var(--accent);font-weight:600;padding:2px 8px;border-radius:20px;font-size:12px;">10%</span> &nbsp; Si se ofrece <strong>25% o más</strong> de descuento</li>
+        <li style="padding:6px 0;"><span style="background:var(--green-light);color:var(--green);font-weight:600;padding:2px 8px;border-radius:20px;font-size:12px;">15%</span> &nbsp; Si se ofrece <strong>15% o 20%</strong> de descuento</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--gold-light); border:1px solid #d4b84a; border-radius:12px; padding:18px 20px;">
+      <div style="font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">💳 Tarjeta de Crédito</div>
+      <p style="font-size:13px; color:var(--ink2); line-height:1.7;">Todas las ventas realizadas mediante <strong>tarjeta de crédito</strong> otorgan una comisión fija del:</p>
+      <div style="margin-top:12px; text-align:center; font-size:32px; font-weight:600; color:var(--gold);">15%</div>
+      <p style="font-size:12px; color:var(--ink3); text-align:center; margin-top:4px;">Independientemente del descuento aplicado</p>
+    </div>
+
+  </div>
+
 </div>
 
 </div><!-- end .main -->
