@@ -513,6 +513,9 @@
     </div>
     <div class="nav-group">
       <div class="nav-group-label">Equipo</div>
+      <button class="nav-link" onclick="showSection('manual')">
+        <span class="dot"></span> 📋 Manual de Operaciones
+      </button>
       <button class="nav-link" onclick="showSection('reglamento')">
         <span class="dot"></span> 🏆 Puntos y Comisiones
       </button>
@@ -689,13 +692,12 @@ Te contacto porque se abrieron los cupos de agosto con la Doble Certificación (
   </div>
 
   <ul class="checklist" style="margin-bottom:28px;">
-    <li>Mensaje de cierre cálido + resumen verbal de lo que acordaron</li>
-    <li>Descripción breve del curso (qué incluye, duración, método)</li>
-    <li>PDF del idioma y nivel correspondiente</li>
-    <li>Imagen de la certificación (IKARUGA + UAI según idioma)</li>
-    <li>Horario y fecha de inicio de la comisión elegida</li>
-    <li>Precio regular del programa</li>
-    <li>Precio con el descuento ofrecido en esa llamada</li>
+    <li><strong>1.</strong> Descripción breve del curso — qué incluye, duración y método</li>
+    <li><strong>2.</strong> PDF del idioma y nivel correspondiente</li>
+    <li><strong>3.</strong> Imagen de la certificación (IKARUGA + UAI según idioma)</li>
+    <li><strong>4.</strong> Horario y fecha de inicio de la comisión elegida</li>
+    <li><strong>5.</strong> Precio regular del programa</li>
+    <li><strong>6.</strong> Precio con el descuento ofrecido en esa llamada</li>
   </ul>
 
   <div class="divider"></div>
@@ -712,7 +714,7 @@ Te contacto porque se abrieron los cupos de agosto con la Doble Certificación (
 
   <div class="tab-content active" id="tab-jp">
     <div class="post-call-grid">
-      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 módulos · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Duración</h4><p>5 módulos · 3 hs semanales en vivo</p></div>
       <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
       <div class="post-call-item"><h4>Método</h4><p>Inmersión cultural real. Kana, kanji, conversación y cultura japonesa desde el inicio.</p></div>
       <div class="post-call-item"><h4>Niveles disponibles</h4><p>Japonés 1 · Japonés 2 · Japonés 3 · Japonés 4</p></div>
@@ -721,24 +723,27 @@ Te contacto porque se abrieron los cupos de agosto con la Doble Certificación (
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Japonés</div><button class="copy-btn" onclick="copyMsg('pc-jp',this)">Copiar</button></div>
       <div class="msg-body" id="pc-jp">¡Fue un placer hablar con vos! 🌸
 
-Te comparto el resumen de lo que charlamos:
+A continuación te comparto la información del curso que acordamos:
 
-📘 Curso: Japonés [NIVEL]
-📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
-🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
-⏱️ Duración: 4/5 módulos · 3 horas semanales en vivo
-🎓 Certificación: IKARUGA + UAI
-💰 Valor regular: $[PRECIO REGULAR]
-⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+📘 *Descripción del curso:* Japonés [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural real. Kana, kanji, conversación y cultura japonesa desde el inicio.
 
-En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
-      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+📄 *PDF del programa:* [Adjuntar PDF del nivel correspondiente]
+
+🎓 *Certificación:* [Adjuntar imagen de la certificación]
+
+📅 *Horario y fecha de inicio:*
+[DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+Inicia: [FECHA INICIO] · Finaliza: [FECHA CIERRE]
+
+💰 *Valor regular del programa:* $[PRECIO REGULAR]
+⚡ *Tu inversión hoy:* $[PRECIO CON DESCUENTO]</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] y adjuntá el PDF e imagen de certificación antes de enviar.</div>
     </div>
   </div>
 
   <div class="tab-content" id="tab-kr">
     <div class="post-call-grid">
-      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 módulos · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Duración</h4><p>5 módulos · 3 hs semanales en vivo</p></div>
       <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
       <div class="post-call-item"><h4>Método</h4><p>Inmersión cultural. Hangul, fonética, vocabulario y cultura coreana desde el primer día.</p></div>
       <div class="post-call-item"><h4>Niveles disponibles</h4><p>Coreano 1 · Coreano 2</p></div>
@@ -747,24 +752,27 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Coreano</div><button class="copy-btn" onclick="copyMsg('pc-kr',this)">Copiar</button></div>
       <div class="msg-body" id="pc-kr">¡Fue un placer hablar con vos! 🌸
 
-Te comparto el resumen de lo que charlamos:
+A continuación te comparto la información del curso que acordamos:
 
-📘 Curso: Coreano [NIVEL]
-📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
-🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
-⏱️ Duración: 4/5 módulos · 3 horas semanales en vivo
-🎓 Certificación: IKARUGA + UAI
-💰 Valor regular: $[PRECIO REGULAR]
-⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+📘 *Descripción del curso:* Coreano [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural. Hangul, fonética, vocabulario y cultura coreana desde el primer día.
 
-En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
-      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+📄 *PDF del programa:* [Adjuntar PDF del nivel correspondiente]
+
+🎓 *Certificación:* [Adjuntar imagen de la certificación]
+
+📅 *Horario y fecha de inicio:*
+[DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+Inicia: [FECHA INICIO] · Finaliza: [FECHA CIERRE]
+
+💰 *Valor regular del programa:* $[PRECIO REGULAR]
+⚡ *Tu inversión hoy:* $[PRECIO CON DESCUENTO]</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] y adjuntá el PDF e imagen de certificación antes de enviar.</div>
     </div>
   </div>
 
   <div class="tab-content" id="tab-zh">
     <div class="post-call-grid">
-      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 módulos · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Duración</h4><p>5 módulos · 3 hs semanales en vivo</p></div>
       <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
       <div class="post-call-item"><h4>Método</h4><p>Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.</p></div>
       <div class="post-call-item"><h4>Niveles disponibles</h4><p>Chino 1 · Chino 2</p></div>
@@ -773,24 +781,27 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Chino</div><button class="copy-btn" onclick="copyMsg('pc-zh',this)">Copiar</button></div>
       <div class="msg-body" id="pc-zh">¡Fue un placer hablar con vos! 🌸
 
-Te comparto el resumen de lo que charlamos:
+A continuación te comparto la información del curso que acordamos:
 
-📘 Curso: Chino Mandarín [NIVEL]
-📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
-🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
-⏱️ Duración: 4/5 módulos · 3 horas semanales en vivo
-🎓 Certificación: IKARUGA + UAI
-💰 Valor regular: $[PRECIO REGULAR]
-⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+📘 *Descripción del curso:* Chino Mandarín [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.
 
-En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
-      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+📄 *PDF del programa:* [Adjuntar PDF del nivel correspondiente]
+
+🎓 *Certificación:* [Adjuntar imagen de la certificación]
+
+📅 *Horario y fecha de inicio:*
+[DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+Inicia: [FECHA INICIO] · Finaliza: [FECHA CIERRE]
+
+💰 *Valor regular del programa:* $[PRECIO REGULAR]
+⚡ *Tu inversión hoy:* $[PRECIO CON DESCUENTO]</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] y adjuntá el PDF e imagen de certificación antes de enviar.</div>
     </div>
   </div>
 
   <div class="tab-content" id="tab-th">
     <div class="post-call-grid">
-      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 módulos · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Duración</h4><p>4–5 módulos · 3 hs semanales en vivo</p></div>
       <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
       <div class="post-call-item"><h4>Método</h4><p>Script tailandés, fonética tonal, vocabulario esencial y cultura de Tailandia.</p></div>
       <div class="post-call-item"><h4>Niveles disponibles</h4><p>Tailandés 1 · Tailandés 2 · Tailandés 3</p></div>
@@ -799,25 +810,28 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Tailandés</div><button class="copy-btn" onclick="copyMsg('pc-th',this)">Copiar</button></div>
       <div class="msg-body" id="pc-th">¡Fue un placer hablar con vos! 🌸
 
-Te comparto el resumen de lo que charlamos:
+A continuación te comparto la información del curso que acordamos:
 
-📘 Curso: Tailandés [NIVEL]
-📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
-🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
-⏱️ Duración: 4/5 módulos · 3 horas semanales en vivo
-🎓 Certificación: IKARUGA + UAI
-💰 Valor regular: $[PRECIO REGULAR]
-⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+📘 *Descripción del curso:* Tailandés [NIVEL] — 4–5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Script tailandés, fonética tonal, vocabulario esencial y cultura de Tailandia.
 
-En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
-      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+📄 *PDF del programa:* [Adjuntar PDF del nivel correspondiente]
+
+🎓 *Certificación:* [Adjuntar imagen de la certificación]
+
+📅 *Horario y fecha de inicio:*
+[DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+Inicia: [FECHA INICIO] · Finaliza: [FECHA CIERRE]
+
+💰 *Valor regular del programa:* $[PRECIO REGULAR]
+⚡ *Tu inversión hoy:* $[PRECIO CON DESCUENTO]</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] y adjuntá el PDF e imagen de certificación antes de enviar.</div>
     </div>
   </div>
 
   <div class="tab-content" id="tab-en">
     <div class="post-call-grid">
-      <div class="post-call-item"><h4>Duración del curso</h4><p>4 módulos · 2 horas semanales (clases en vivo)</p></div>
-      <div class="post-call-item"><h4>Certificación</h4><p>Certificación oficial IKARUGA 🎓</p></div>
+      <div class="post-call-item"><h4>Duración</h4><p>4 módulos · 2 hs semanales en vivo</p></div>
+      <div class="post-call-item"><h4>Certificación</h4><p>Certificación oficial IKARUGA 🎓 (sin UAI)</p></div>
       <div class="post-call-item"><h4>Método</h4><p>Enfoque comunicativo con método propio IKARUGA. Gramática, conversación y comprensión.</p></div>
       <div class="post-call-item"><h4>Niveles disponibles</h4><p>Inglés A1 · Inglés A2</p></div>
     </div>
@@ -825,24 +839,27 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Inglés</div><button class="copy-btn" onclick="copyMsg('pc-en',this)">Copiar</button></div>
       <div class="msg-body" id="pc-en">¡Fue un placer hablar con vos! 🌸
 
-Te comparto el resumen de lo que charlamos:
+A continuación te comparto la información del curso que acordamos:
 
-📘 Curso: Inglés [NIVEL]
-📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
-🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
-⏱️ Duración: 4 módulos · 2 horas semanales en vivo
-🎓 Certificación: Oficial IKARUGA
-💰 Valor regular: $[PRECIO REGULAR]
-⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+📘 *Descripción del curso:* Inglés [NIVEL] — 4 módulos · 2 hs semanales en vivo · Certificación oficial IKARUGA 🎓 (sin UAI) · Enfoque comunicativo con método propio IKARUGA. Gramática, conversación y comprensión.
 
-En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
-      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+📄 *PDF del programa:* [Adjuntar PDF del nivel correspondiente]
+
+🎓 *Certificación:* [Adjuntar imagen de la certificación]
+
+📅 *Horario y fecha de inicio:*
+[DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+Inicia: [FECHA INICIO] · Finaliza: [FECHA CIERRE]
+
+💰 *Valor regular del programa:* $[PRECIO REGULAR]
+⚡ *Tu inversión hoy:* $[PRECIO CON DESCUENTO]</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] y adjuntá el PDF e imagen de certificación antes de enviar.</div>
     </div>
   </div>
 
   <div class="tab-content" id="tab-de">
     <div class="post-call-grid">
-      <div class="post-call-item"><h4>Duración del curso</h4><p>4 a 5 módulos · 3 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Duración</h4><p>5 módulos · 3 hs semanales en vivo</p></div>
       <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
       <div class="post-call-item"><h4>Método</h4><p>Gramática estructurada, fonética alemana y contexto cultural europeo desde el inicio.</p></div>
       <div class="post-call-item"><h4>Niveles disponibles</h4><p>Alemán A1 · Alemán A2</p></div>
@@ -851,24 +868,27 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Alemán</div><button class="copy-btn" onclick="copyMsg('pc-de',this)">Copiar</button></div>
       <div class="msg-body" id="pc-de">¡Fue un placer hablar con vos! 🌸
 
-Te comparto el resumen de lo que charlamos:
+A continuación te comparto la información del curso que acordamos:
 
-📘 Curso: Alemán [NIVEL]
-📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
-🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
-⏱️ Duración: 4/5 módulos · 3 horas semanales en vivo
-🎓 Certificación: IKARUGA + UAI
-💰 Valor regular: $[PRECIO REGULAR]
-⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+📘 *Descripción del curso:* Alemán [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Gramática estructurada, fonética alemana y contexto cultural europeo desde el inicio.
 
-En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
-      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+📄 *PDF del programa:* [Adjuntar PDF del nivel correspondiente]
+
+🎓 *Certificación:* [Adjuntar imagen de la certificación]
+
+📅 *Horario y fecha de inicio:*
+[DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+Inicia: [FECHA INICIO] · Finaliza: [FECHA CIERRE]
+
+💰 *Valor regular del programa:* $[PRECIO REGULAR]
+⚡ *Tu inversión hoy:* $[PRECIO CON DESCUENTO]</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] y adjuntá el PDF e imagen de certificación antes de enviar.</div>
     </div>
   </div>
 
   <div class="tab-content" id="tab-it">
     <div class="post-call-grid">
-      <div class="post-call-item"><h4>Duración del curso</h4><p>4 módulos · 2 horas semanales (clases en vivo)</p></div>
+      <div class="post-call-item"><h4>Duración</h4><p>4 módulos · 2 hs semanales en vivo</p></div>
       <div class="post-call-item"><h4>Certificación</h4><p>Doble: IKARUGA + UAI 🎓</p></div>
       <div class="post-call-item"><h4>Método</h4><p>Método propio IKARUGA. Conversación, gramática y cultura italiana.</p></div>
       <div class="post-call-item"><h4>Niveles disponibles</h4><p>Italiano A1 · Italiano A2</p></div>
@@ -877,55 +897,22 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Italiano</div><button class="copy-btn" onclick="copyMsg('pc-it',this)">Copiar</button></div>
       <div class="msg-body" id="pc-it">¡Fue un placer hablar con vos! 🌸
 
-Te comparto el resumen de lo que charlamos:
+A continuación te comparto la información del curso que acordamos:
 
-📘 Curso: Italiano [NIVEL]
-📅 Inicio: [FECHA] · Finaliza: [FECHA CIERRE]
-🕐 Horario: [DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
-⏱️ Duración: 4 módulos · 2 horas semanales en vivo
-🎓 Certificación: IKARUGA + UAI
-💰 Valor regular: $[PRECIO REGULAR]
-⚡ Tu inversión hoy: $[PRECIO CON DESCUENTO]
+📘 *Descripción del curso:* Italiano [NIVEL] — 4 módulos · 2 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Método propio IKARUGA. Conversación, gramática y cultura italiana.
 
-En los próximos mensajes te mando el PDF con el programa completo y la imagen de tu certificación. 👇</div>
-      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] antes de enviar.</div>
+📄 *PDF del programa:* [Adjuntar PDF del nivel correspondiente]
+
+🎓 *Certificación:* [Adjuntar imagen de la certificación]
+
+📅 *Horario y fecha de inicio:*
+[DÍA] de [HORA INICIO] a [HORA FIN] hs (hora Argentina)
+Inicia: [FECHA INICIO] · Finaliza: [FECHA CIERRE]
+
+💰 *Valor regular del programa:* $[PRECIO REGULAR]
+⚡ *Tu inversión hoy:* $[PRECIO CON DESCUENTO]</div>
+      <div class="msg-note">⚠️ Completá los campos en [MAYÚSCULAS] y adjuntá el PDF e imagen de certificación antes de enviar.</div>
     </div>
-  </div>
-</div>
-
-<!-- HORARIOS -->
-<div class="section" id="horarios">
-  <div class="section-header">
-    <div class="section-tag">Agosto 2026</div>
-    <h1 class="section-title">Horarios por idioma y nivel</h1>
-    <p class="section-desc">Todas las comisiones disponibles. Horarios en hora Argentina (GMT-3).</p>
-  </div>
-
-  <div class="tabs" id="hor-tabs">
-    <button class="tab-btn active" onclick="showTab('hor-tabs','hor-jp',this)">🇯🇵 Japonés</button>
-    <button class="tab-btn" onclick="showTab('hor-tabs','hor-kr',this)">🇰🇷 Coreano</button>
-    <button class="tab-btn" onclick="showTab('hor-tabs','hor-zh',this)">🇨🇳 Chino</button>
-    <button class="tab-btn" onclick="showTab('hor-tabs','hor-th',this)">🇹🇭 Tailandés</button>
-    <button class="tab-btn" onclick="showTab('hor-tabs','hor-en',this)">🇬🇧 Inglés</button>
-    <button class="tab-btn" onclick="showTab('hor-tabs','hor-de',this)">🇩🇪 Alemán</button>
-    <button class="tab-btn" onclick="showTab('hor-tabs','hor-it',this)">🇮🇹 Italiano</button>
-  </div>
-
-  <div class="tab-content active" id="hor-jp">
-    <table class="schedule-table">
-      <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
-      <tbody>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 3</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 3</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 4</span></td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-      </tbody>
-    </table>
   </div>
 
   <div class="tab-content" id="hor-kr">
@@ -1358,6 +1345,164 @@ En los próximos mensajes te mando el PDF con el programa completo y la imagen d
       </tr>
     </tbody>
   </table>
+
+</div>
+
+
+<!-- MANUAL DE OPERACIONES -->
+<div class="section" id="manual">
+  <div class="section-header">
+    <div class="section-tag">Equipo · 2026</div>
+    <h1 class="section-title">📋 La Ruta de Conversión IKARUGA</h1>
+    <p class="section-desc">Manual de Operaciones oficial del equipo de closers. Leelo, internalizalo y aplicalo todos los días.</p>
+  </div>
+
+  <!-- MINDSET -->
+  <div style="background:var(--ink);color:#fff;border-radius:14px;padding:22px 26px;margin-bottom:28px;">
+    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8c97a;font-weight:600;margin-bottom:8px;">I · Mindset del Closer</div>
+    <h2 style="font-size:20px;font-weight:600;color:#fff;margin-bottom:14px;">"Vendemos Transformación"</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+      <div style="background:rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:600;color:#e8c97a;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">La Premisa</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6;">No vendemos clases. Vendemos una <strong style="color:#fff;">versión 2.0 del estudiante</strong>.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:600;color:#e8c97a;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">El Diferencial</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6;">Respaldo institucional UAI, metodología propia y enfoque en resultados.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:600;color:#e8c97a;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Regla de Oro</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6;">Todo dato es una oportunidad. <strong style="color:#fff;">Respuesta en menos de 2 horas.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUTA DEL LEAD -->
+  <h3>II · El Proceso Operativo: La Ruta del Lead</h3>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:16px;">Cada contacto sigue un ciclo de 4 etapas que <strong>no debe romperse</strong>.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:28px;">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;border-top:3px solid #e8c97a;">
+      <div style="font-size:22px;margin-bottom:6px;">1️⃣</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;">Contacto Inicial</div>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;">Velocidad y personalización. Siempre cerrar con pregunta o acción concreta.</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;border-top:3px solid #e8c97a;">
+      <div style="font-size:22px;margin-bottom:6px;">2️⃣</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;">Calificación e Interés</div>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;">Detectar el punto de dolor: ¿Viaje, trabajo, crecimiento personal?</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;border-top:3px solid #e8c97a;">
+      <div style="font-size:22px;margin-bottom:6px;">3️⃣</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;">Oferta y Seguimiento</div>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;">Aportar valor, no presión. Uso inteligente de visuales y audios breves.</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;border-top:3px solid #e8c97a;">
+      <div style="font-size:22px;margin-bottom:6px;">4️⃣</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;">Cierre y Fidelización</div>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;">Seguridad absoluta. No llevamos al cierre si no detectamos compromiso real.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CHECKLIST DIARIO -->
+  <h3>III · Checklist Diario del Closer IKARUGA</h3>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:24px;">
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="background:#1a4a6b;padding:12px 18px;">
+        <div style="font-size:15px;font-weight:600;color:#fff;">Apertura y Cosecha</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);margin-top:2px;">Visibilidad, orden y preparación</div>
+      </div>
+      <ul style="padding:14px 18px;list-style:none;font-size:13px;color:var(--ink2);line-height:2;">
+        <li>☐ &nbsp;Estado de WhatsApp activo (Tarea #1)</li>
+        <li>☐ &nbsp;Respuesta a mensajes pendientes</li>
+        <li>☐ &nbsp;Seguimiento 24 / 48 hs</li>
+        <li>☐ &nbsp;Recepción y clasificación de datos (14:00 hs)</li>
+        <li style="background:var(--red-light);padding:6px 10px;border-radius:6px;color:var(--red);font-weight:500;">☐ &nbsp;Actualizar estado de cada dato al datista</li>
+      </ul>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="background:#2d6a4f;padding:12px 18px;">
+        <div style="font-size:15px;font-weight:600;color:#fff;">Prospección y Conversión</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);margin-top:2px;">Conversión intensa y avance en el embudo</div>
+      </div>
+      <ul style="padding:14px 18px;list-style:none;font-size:13px;color:var(--ink2);line-height:2;">
+        <li>☐ &nbsp;Activación de nuevos leads</li>
+        <li>☐ &nbsp;Prospección activa</li>
+        <li>☐ &nbsp;Agenda de llamadas (5 min por llamada)</li>
+        <li style="background:var(--red-light);padding:6px 10px;border-radius:6px;color:var(--red);font-weight:500;">☐ &nbsp;Registrar resultado de cada llamada y actualizar estado del dato</li>
+      </ul>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="background:#7c3f2a;padding:12px 18px;">
+        <div style="font-size:15px;font-weight:600;color:#fff;">Cierre de Jornada</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);margin-top:2px;">Captura de inscripciones y orden administrativo</div>
+      </div>
+      <ul style="padding:14px 18px;list-style:none;font-size:13px;color:var(--ink2);line-height:2;">
+        <li>☐ &nbsp;Orden y clasificación final</li>
+        <li>☐ &nbsp;Planificación del día siguiente</li>
+        <li style="background:var(--red-light);padding:6px 10px;border-radius:6px;color:var(--red);font-weight:500;">☐ &nbsp;Pasar info actualizada al datista antes de las 21:00 hs sin excepción</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ALERTA DATISTA -->
+  <div style="background:var(--red-light);border:1.5px solid var(--red);border-radius:12px;padding:18px 22px;margin-bottom:28px;">
+    <div style="font-size:13px;font-weight:700;color:var(--red);margin-bottom:8px;">🚨 Regla crítica — El datista necesita saber</div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.8;">Mantener <strong>actualizado el estado de cada dato</strong> que se brinda día a día es obligatorio. Si el equipo no clasifica bien y no pasa la info a tiempo, <strong>rompemos la cadena de valor</strong>. El datista es nuestro aliado — sin su trabajo no hay leads, sin nuestro reporte no hay seguimiento efectivo.</p>
+    <ul style="list-style:none;font-size:13px;color:var(--ink2);line-height:2;margin-top:10px;">
+      <li>✓ Indicar si el dato fue contactado, no respondió, está en seguimiento o cerró</li>
+      <li>✓ Informar el idioma y nivel de interés detectado</li>
+      <li>✓ Señalar si se pactó llamada, se envió info o se descartó el dato</li>
+      <li>✓ No dejar datos "en el aire" sin estado al cierre de la jornada</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- HERRAMIENTAS -->
+  <h3>IV · Herramientas de Poder</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:28px;">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;">
+      <div style="font-size:20px;margin-bottom:6px;">⛩️</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;">ikaruga.isa</div>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;">Nuestra fuente de verdad. Centraliza todas las plantillas de mensajes. <strong>Uso obligatorio.</strong></p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;">
+      <div style="font-size:20px;margin-bottom:6px;">📤</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;">Wara Sender</div>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;">Gestión de comunicación masiva sin perder el toque personal.</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;">
+      <div style="font-size:20px;margin-bottom:6px;">🤖</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;">IA de Datos</div>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;">Herramientas para organizar y gestionar la base de prospectos de forma eficiente.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MENSAJES CLAVE -->
+  <h3>V · Mensajes Clave para el Equipo</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+    <div style="background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;">
+      <div style="font-size:12px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Sobre la Frugalidad</div>
+      <p style="font-size:13px;color:var(--ink2);line-height:1.6;">Maximizar la rentabilidad de cada dato que ya tenemos. Agotemos la recontactación de nuestra propia base antes de pedir datos nuevos.</p>
+    </div>
+    <div style="background:var(--teal-light);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:14px 18px;">
+      <div style="font-size:12px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Sobre el Seguimiento</div>
+      <p style="font-size:13px;color:var(--ink2);line-height:1.6;">Es nuestra mayor arma. Si el cliente no responde, es una oportunidad de aportar valor — no una puerta cerrada.</p>
+    </div>
+    <div style="background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 18px;">
+      <div style="font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Sobre el Orden</div>
+      <p style="font-size:13px;color:var(--ink2);line-height:1.6;">El datista es nuestro aliado. Si el equipo no clasifica bien y no pasa la info a tiempo, rompemos la cadena de valor.</p>
+    </div>
+  </div>
 
 </div>
 
