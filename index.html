@@ -1035,6 +1035,169 @@ A continuación te comparto la información del curso que acordamos:
 📘 *Descripción del curso:* Coreano [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural. Hangul, fonética, vocabulario y cultura coreana desde el primer día.</div>
       <div class="msg-note">✅ Primer mensaje breve: enviá solo la descripción del curso. PDF, certificación, horario y precio van en mensajes separados.</div>
     </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Beneficios y respaldo · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-beneficios',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-kr-beneficios">✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
+✍️ Preparación TOPIK: 5 clases adicionales enfocadas 100% en el examen oficial TOPIK I (parte 1).
+🏯 Inmersión Total: 3 clases culturales extra.
+
+🏆 *CERTIFICACIÓN Y RESPALDO*
+• Doble Aval: Recibe tu certificado institucional IKARUGA con el respaldo oficial de la Universidad Abierta Interamericana (UAI).
+• Trayectoria: Programa supervisado por el Mag. Jorge Frías, con enfoque en rigor académico.
+• Calidad: Nuestro método trasciende el libro tradicional, integrando historia, política y práctica conversacional real.</div>
+      <div class="msg-note">✅ Enviá este bloque separado del primer mensaje para que el lead lo lea con calma.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · PDF del programa · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-pdf',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-kr-pdf">Te comparto también el PDF del programa de Coreano I para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso. 🇰🇷
+
+📄 Programa Coreano I: coreano-i-programa.pdf</div>
+      <div class="msg-note">✅ Adjuntá el PDF al enviar este mensaje. También podés abrirlo desde aquí: <a href="coreano-i-programa.pdf" target="_blank" rel="noopener">coreano-i-programa.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Muestra certificado UAI</div><button class="copy-btn" onclick="copyMsg('pc-kr-certificado',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-kr-certificado">Te comparto una muestra de nuestro certificado avalado por la UAI para que puedas ver el respaldo académico que recibís al finalizar el programa. 🎓
+
+📄 Muestra certificado UAI: certificado-uai-muestra.pdf</div>
+      <div class="msg-note">✅ Adjuntá el certificado de muestra al enviar este mensaje. Archivo disponible: <a href="certificado-uai-muestra.pdf" target="_blank" rel="noopener">certificado-uai-muestra.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Horarios por país · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-horario',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-kr-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país del lead</label>
+        <select id="pc-kr-pais" onchange="syncKr1Pais(this.value)" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México (CDMX)</option>
+          <option value="CHL">Chile continental</option>
+          <option value="BOL">Bolivia</option>
+          <option value="PRY">Paraguay</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="ECU">Ecuador</option>
+          <option value="PAN">Panamá</option>
+          <option value="HND">Honduras</option>
+          <option value="SLV">El Salvador</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-kr-horario"></div>
+      <div class="msg-note">✅ El horario se calcula desde Argentina según el país seleccionado.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Precio y financiación · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-precio',this)">Copiar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
+        <div>
+          <label for="pc-kr-precio-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+          <select id="pc-kr-precio-pais" onchange="syncKr1Pais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="ARG">Argentina · ARS</option>
+            <option value="MEX">México · MXN</option>
+            <option value="CHL">Chile · USD</option>
+            <option value="BOL">Bolivia · USD</option>
+            <option value="PRY">Paraguay · USD</option>
+            <option value="COL">Colombia · USD</option>
+            <option value="PER">Perú · USD</option>
+            <option value="ECU">Ecuador · USD</option>
+            <option value="PAN">Panamá · USD</option>
+            <option value="HND">Honduras · USD</option>
+            <option value="SLV">El Salvador · USD</option>
+          </select>
+        </div>
+        <div>
+          <label for="pc-kr-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
+          <select id="pc-kr-descuento" onchange="updateKr1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="d35">35%</option>
+            <option value="d45">45%</option>
+            <option value="d40">40%</option>
+            <option value="d30">30%</option>
+            <option value="d25">25%</option>
+            <option value="d20">20%</option>
+            <option value="d15">15%</option>
+          </select>
+        </div>
+      </div>
+      <div class="msg-body" id="pc-kr-precio"></div>
+      <div class="msg-note">✅ Estructura corta para enviar precio sin mezclarlo con el programa.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 7 · Datos para inscripción · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-datos',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-kr-datos">Para continuar con tu inscripción indícame:
+• Nombre completo.
+• Correo electrónico que utilizarás en el campus académico.</div>
+      <div class="msg-note">✅ Pedí solo estos datos para no sobrecargar el mensaje.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 8 · Datos de pago · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-pago',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-kr-pago-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país / medio de pago</label>
+        <select id="pc-kr-pago-pais" onchange="updateKr1Pago()" style="width:100%;max-width:360px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México</option>
+          <option value="ECU">Ecuador</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="HND">Honduras</option>
+          <option value="PAN">Panamá</option>
+          <option value="SLV">El Salvador</option>
+          <option value="PRY">Paraguay</option>
+          <option value="BOL">Bolivia</option>
+          <option value="CHL">Chile</option>
+          <option value="PAYPAL">PayPal / Internacional</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-kr-pago"></div>
+      <div class="msg-note">✅ Los datos cambian según país. Revisá los casos que dicen “confirmar” antes de enviarlos.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 9 · Link de inscripción · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-inscripcion',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-kr-inscripcion">Te comparto el link para seguir con tu inscripción:
+
+https://www.japonesporjorgefrias.com.ar/inscripciones/
+
+Completá el formulario con tus datos y, cuando lo hayas enviado, avisame por acá así puedo darle seguimiento a tu alta. 😊
+
+Si te surge alguna duda mientras lo completás, estoy para ayudarte.</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya tiene claro curso, horario, valor y forma de pago.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 10 · Bienvenida oficial · Coreano 1</div><button class="copy-btn" onclick="copyMsg('pc-kr-bienvenida',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-kr-bienvenida">👋 *¡Te damos la bienvenida oficial a IKARUGA!* 🎉
+
+Estamos muy felices de que te sumes a nuestra comunidad. Para empezar con el pie derecho, te dejo la información importante:
+
+📌 *Alta administrativa*
+Leé este documento para formalizar tu proceso:
+https://www.japonesporjorgefrias.com.ar/wp-content/uploads/2025/03/INFO-ALTA-ADMINISTRARTIVA-CLIENTES.pdf
+
+📞 *Soporte administrativo / dudas técnicas*
++54 9 3417 50-0284
+
+🛡️ *Nuestro respaldo*
+Nos avalan años de trayectoria, la dirección del Traductor Matriculado Jorge Frías y más de 550 reseñas positivas.
+
+🌐 Web: https://www.ikaruga.com.ar
+⭐ Google: https://maps.app.goo.gl/JXtd62n6t8sVLpsSA
+💬 Facebook reseñas: https://www.facebook.com/ikaruga.idiomas/reviews
+📄 Aval legal / marca registrada:
+https://ikaruga.com.ar/wp-content/uploads/2023/06/Registro-marca-ikaruga-servicios-vigente-310533.pdf
+
+📱 *Comunidad IKARUGA*
+Instagram: https://www.instagram.com/ikaruga.idiomas/
+Facebook: https://www.facebook.com/ikaruga.idiomas
+LinkedIn: https://www.linkedin.com/company/ikaruga-idiomas/
+
+Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
+
+¡Bienvenido/a a la comunidad IKARUGA! 🇰🇷</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya completó el formulario o cuando confirmaste el alta.</div>
+    </div>
   </div>
 
   <div class="tab-content" id="tab-zh">
@@ -1053,6 +1216,169 @@ A continuación te comparto la información del curso que acordamos:
 
 📘 *Descripción del curso:* Chino Mandarín [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.</div>
       <div class="msg-note">✅ Primer mensaje breve: enviá solo la descripción del curso. PDF, certificación, horario y precio van en mensajes separados.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Beneficios y respaldo · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-beneficios',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-zh-beneficios">✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
+🐉 Preparación HSK: 5 clases adicionales enfocadas 100% en el examen oficial (niveles 1).
+🏮 Inmersión Total: 3 clases culturales extra y acceso ilimitado a nuestra comunidad global.
+
+🏆 *CERTIFICACIÓN Y RESPALDO*
+• Doble Aval: Recibe tu certificado institucional IKARUGA con el respaldo oficial de la Universidad Abierta Interamericana (UAI).
+• Trayectoria: Programa diseñado y supervisado por el Mag. Jorge Frías, con enfoque en rigor académico.
+• Calidad: Nuestro método trasciende el libro tradicional, integrando historia, cultura y práctica conversacional real.</div>
+      <div class="msg-note">✅ Enviá este bloque separado del primer mensaje para que el lead lo lea con calma.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · PDF del programa · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-pdf',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-zh-pdf">Te comparto también el PDF del programa de Chino I para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso. 🇨🇳
+
+📄 Programa Chino I: chino-i-programa.pdf</div>
+      <div class="msg-note">✅ Adjuntá el PDF al enviar este mensaje. También podés abrirlo desde aquí: <a href="chino-i-programa.pdf" target="_blank" rel="noopener">chino-i-programa.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Muestra certificado UAI</div><button class="copy-btn" onclick="copyMsg('pc-zh-certificado',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-zh-certificado">Te comparto una muestra de nuestro certificado avalado por la UAI para que puedas ver el respaldo académico que recibís al finalizar el programa. 🎓
+
+📄 Muestra certificado UAI: certificado-uai-muestra.pdf</div>
+      <div class="msg-note">✅ Adjuntá el certificado de muestra al enviar este mensaje. Archivo disponible: <a href="certificado-uai-muestra.pdf" target="_blank" rel="noopener">certificado-uai-muestra.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Horarios por país · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-horario',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-zh-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país del lead</label>
+        <select id="pc-zh-pais" onchange="syncZh1Pais(this.value)" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México (CDMX)</option>
+          <option value="CHL">Chile continental</option>
+          <option value="BOL">Bolivia</option>
+          <option value="PRY">Paraguay</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="ECU">Ecuador</option>
+          <option value="PAN">Panamá</option>
+          <option value="HND">Honduras</option>
+          <option value="SLV">El Salvador</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-zh-horario"></div>
+      <div class="msg-note">✅ El horario se calcula desde Argentina según el país seleccionado.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Precio y financiación · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-precio',this)">Copiar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
+        <div>
+          <label for="pc-zh-precio-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+          <select id="pc-zh-precio-pais" onchange="syncZh1Pais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="ARG">Argentina · ARS</option>
+            <option value="MEX">México · MXN</option>
+            <option value="CHL">Chile · USD</option>
+            <option value="BOL">Bolivia · USD</option>
+            <option value="PRY">Paraguay · USD</option>
+            <option value="COL">Colombia · USD</option>
+            <option value="PER">Perú · USD</option>
+            <option value="ECU">Ecuador · USD</option>
+            <option value="PAN">Panamá · USD</option>
+            <option value="HND">Honduras · USD</option>
+            <option value="SLV">El Salvador · USD</option>
+          </select>
+        </div>
+        <div>
+          <label for="pc-zh-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
+          <select id="pc-zh-descuento" onchange="updateZh1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="d35">35%</option>
+            <option value="d45">45%</option>
+            <option value="d40">40%</option>
+            <option value="d30">30%</option>
+            <option value="d25">25%</option>
+            <option value="d20">20%</option>
+            <option value="d15">15%</option>
+          </select>
+        </div>
+      </div>
+      <div class="msg-body" id="pc-zh-precio"></div>
+      <div class="msg-note">✅ Estructura corta para enviar precio sin mezclarlo con el programa.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 7 · Datos para inscripción · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-datos',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-zh-datos">Para continuar con tu inscripción indícame:
+• Nombre completo.
+• Correo electrónico que utilizarás en el campus académico.</div>
+      <div class="msg-note">✅ Pedí solo estos datos para no sobrecargar el mensaje.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 8 · Datos de pago · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-pago',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-zh-pago-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país / medio de pago</label>
+        <select id="pc-zh-pago-pais" onchange="updateZh1Pago()" style="width:100%;max-width:360px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México</option>
+          <option value="ECU">Ecuador</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="HND">Honduras</option>
+          <option value="PAN">Panamá</option>
+          <option value="SLV">El Salvador</option>
+          <option value="PRY">Paraguay</option>
+          <option value="BOL">Bolivia</option>
+          <option value="CHL">Chile</option>
+          <option value="PAYPAL">PayPal / Internacional</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-zh-pago"></div>
+      <div class="msg-note">✅ Los datos cambian según país. Revisá los casos que dicen “confirmar” antes de enviarlos.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 9 · Link de inscripción · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-inscripcion',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-zh-inscripcion">Te comparto el link para seguir con tu inscripción:
+
+https://www.japonesporjorgefrias.com.ar/inscripciones/
+
+Completá el formulario con tus datos y, cuando lo hayas enviado, avisame por acá así puedo darle seguimiento a tu alta. 😊
+
+Si te surge alguna duda mientras lo completás, estoy para ayudarte.</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya tiene claro curso, horario, valor y forma de pago.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 10 · Bienvenida oficial · Chino 1</div><button class="copy-btn" onclick="copyMsg('pc-zh-bienvenida',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-zh-bienvenida">👋 *¡Te damos la bienvenida oficial a IKARUGA!* 🎉
+
+Estamos muy felices de que te sumes a nuestra comunidad. Para empezar con el pie derecho, te dejo la información importante:
+
+📌 *Alta administrativa*
+Leé este documento para formalizar tu proceso:
+https://www.japonesporjorgefrias.com.ar/wp-content/uploads/2025/03/INFO-ALTA-ADMINISTRARTIVA-CLIENTES.pdf
+
+📞 *Soporte administrativo / dudas técnicas*
++54 9 3417 50-0284
+
+🛡️ *Nuestro respaldo*
+Nos avalan años de trayectoria, la dirección del Traductor Matriculado Jorge Frías y más de 550 reseñas positivas.
+
+🌐 Web: https://www.ikaruga.com.ar
+⭐ Google: https://maps.app.goo.gl/JXtd62n6t8sVLpsSA
+💬 Facebook reseñas: https://www.facebook.com/ikaruga.idiomas/reviews
+📄 Aval legal / marca registrada:
+https://ikaruga.com.ar/wp-content/uploads/2023/06/Registro-marca-ikaruga-servicios-vigente-310533.pdf
+
+📱 *Comunidad IKARUGA*
+Instagram: https://www.instagram.com/ikaruga.idiomas/
+Facebook: https://www.facebook.com/ikaruga.idiomas
+LinkedIn: https://www.linkedin.com/company/ikaruga-idiomas/
+
+Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
+
+¡Bienvenido/a a la comunidad IKARUGA! 🇨🇳</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya completó el formulario o cuando confirmaste el alta.</div>
     </div>
   </div>
 
@@ -2013,7 +2339,7 @@ const horariosARG = {
 };
 
 // ---- Diferencias horarias vs Argentina ----
-const tzDiff = {ARG:0, MEX:-3, BOL:-1, PRY:0, CHL:-1, COL:-2, PER:-2, ECU:-2, PAN:-2, HND:-2, SLV:-2, CRI:-2};
+const tzDiff = {ARG:0, MEX:-3, BOL:-1, PRY:-1, CHL:-1, COL:-2, PER:-2, ECU:-2, PAN:-2, HND:-3, SLV:-3, CRI:-3};
 
 function convertHorarios(nivHorarios, diff) {
   if (diff === 0) return nivHorarios;
@@ -2304,6 +2630,12 @@ document.addEventListener('DOMContentLoaded', () => {
   updateJp1HorarioPais();
   updateJp1Precio();
   updateJp1Pago();
+  updateKr1HorarioPais();
+  updateKr1Precio();
+  updateKr1Pago();
+  updateZh1HorarioPais();
+  updateZh1Precio();
+  updateZh1Pago();
 });
 
 
@@ -2525,6 +2857,52 @@ En IKARUGA combinamos la excelencia académica con una metodología diseñada pa
     return '📘 *Descripción del curso:* Japonés [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural real. Kana, kanji, conversación y cultura japonesa desde el inicio.';
   }
 
+  if (msgId === 'pc-kr' && nivel === 'Coreano 1') {
+    return `🇰🇷 *CURSO DE COREANO I: NIVEL INICIAL*
+Programa de formación integral con aval universitario
+
+En IKARUGA combinamos la excelencia académica con una metodología diseñada para que realmente te comuniques.
+
+📅 *MODALIDAD Y DURACIÓN*
+• Duración: 5 módulos.
+• Clases: 3 horas semanales en vivo (Zoom privado).
+• Flexibilidad: Acceso 24/7 a nuestro Campus Virtual con lecciones, materiales y grabaciones de todas las clases.
+
+📚 *¿QUÉ APRENDERÁS?*
+• Alfabeto: Dominio preciso del sistema de escritura Hangul (vocales, consonantes y reglas fonéticas).
+• Gramática: Uso de partículas esenciales, estructuras de negación y verbos de existencia (이다/있다).
+• Comunicación: Presentaciones, nacionalidades, profesiones, manejo de la edad y saludos.
+• Vida Diaria: Vocabulario para compras, gastronomía y expresiones cotidianas.
+• Entorno: Ubicación de lugares y dominio del sistema de numeración coreano.`;
+  }
+
+  if (msgId === 'pc-kr') {
+    return '📘 *Descripción del curso:* Coreano [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural. Hangul, fonética, vocabulario y cultura coreana desde el primer día.';
+  }
+
+  if (msgId === 'pc-zh' && nivel === 'Chino 1') {
+    return `🇨🇳 *CURSO DE CHINO MANDARÍN I: NIVEL INICIAL*
+Programa de formación integral con aval universitario
+
+En IKARUGA combinamos la excelencia académica con una metodología diseñada para que realmente te comuniques.
+
+📅 *MODALIDAD Y DURACIÓN*
+• Duración: 5 módulos.
+• Clases: 3 horas semanales en vivo (Zoom privado).
+• Flexibilidad: Acceso 24/7 a nuestro Campus Virtual con lecciones, materiales exclusivos y grabaciones de todas las clases.
+
+📚 *¿QUÉ APRENDERÁS?*
+• Escritura y Fonética: Dominio del sistema Pinyin (pronunciación y los 4 tonos) y estructura de caracteres básicos.
+• Comunicación: Saludos, presentaciones personales, nacionalidades y diálogos de supervivencia.
+• Números y Tiempo: Contar del 1 al 100, fechas, días de la semana y descripción de rutinas.
+• Vida Cotidiana: Vocabulario de familia, uso correcto de clasificadores y transacciones comerciales (precios y regateo).
+• Inmersión Cultural: Historia del Horóscopo Chino, evolución de la moneda nacional y costumbres ancestrales.`;
+  }
+
+  if (msgId === 'pc-zh') {
+    return '📘 *Descripción del curso:* Chino Mandarín [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.';
+  }
+
   return null;
 }
 
@@ -2720,6 +3098,122 @@ function updateJp1Pago() {
   const target = document.getElementById('pc-jp-pago');
   if (!target) return;
   const label = document.getElementById('pc-jp-pago-pais')?.selectedOptions?.[0]?.textContent || 'medio de pago';
+  const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
+
+  target.innerText = `Te comparto los datos para que realices el pago de tu primera cuota:
+
+${datos}
+
+Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscripción.`;
+}
+
+function updateKr1HorarioPais() {
+  const pais = document.getElementById('pc-kr-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-kr-horario');
+  if (!target) return;
+
+  const horariosBase = horariosARG.coreano["Coreano 1"] || [];
+  const diff = tzDiff[pais] ?? 0;
+  const horariosLocal = convertHorarios(horariosBase, diff);
+  const paisLabel = paisNombres[pais] || 'Argentina';
+  const horaRef = pais === 'ARG' ? 'hora Argentina' : `hora ${paisLabel}`;
+  const lineas = horariosLocal.map(h => `• ${h}`).join('\n');
+
+  target.innerText = `Perfecto, te comparto el horario disponible para *Coreano 1* en ${paisLabel}. 🇰🇷
+
+📅 *Horario disponible (${horaRef}):*
+${lineas}
+
+Decime si este horario te queda bien y revisamos la disponibilidad de cupo.`;
+}
+
+function syncKr1Pais(pais) {
+  const horarioPais = document.getElementById('pc-kr-pais');
+  const precioPais = document.getElementById('pc-kr-precio-pais');
+  if (horarioPais && horarioPais.value !== pais) horarioPais.value = pais;
+  if (precioPais && precioPais.value !== pais) precioPais.value = pais;
+  updateKr1HorarioPais();
+  updateKr1Precio();
+}
+
+function updateKr1Precio() {
+  const pais = document.getElementById('pc-kr-precio-pais')?.value || document.getElementById('pc-kr-pais')?.value || 'ARG';
+  const descKey = document.getElementById('pc-kr-descuento')?.value || 'd35';
+  const target = document.getElementById('pc-kr-precio');
+  if (!target) return;
+
+  const p = getPrecio('coreano', pais, descKey, 'Coreano 1');
+  const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+
+  target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+❌ Valor Regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
+🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+}
+
+function updateKr1Pago() {
+  const pais = document.getElementById('pc-kr-pago-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-kr-pago');
+  if (!target) return;
+  const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
+
+  target.innerText = `Te comparto los datos para que realices el pago de tu primera cuota:
+
+${datos}
+
+Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscripción.`;
+}
+
+function updateZh1HorarioPais() {
+  const pais = document.getElementById('pc-zh-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-zh-horario');
+  if (!target) return;
+
+  const horariosBase = horariosARG.chino["Chino 1"] || [];
+  const diff = tzDiff[pais] ?? 0;
+  const horariosLocal = convertHorarios(horariosBase, diff);
+  const paisLabel = paisNombres[pais] || 'Argentina';
+  const horaRef = pais === 'ARG' ? 'hora Argentina' : `hora ${paisLabel}`;
+  const lineas = horariosLocal.map(h => `• ${h}`).join('\n');
+
+  target.innerText = `Perfecto, te comparto el horario disponible para *Chino 1* en ${paisLabel}. 🇨🇳
+
+📅 *Horario disponible (${horaRef}):*
+${lineas}
+
+Decime si este horario te queda bien y revisamos la disponibilidad de cupo.`;
+}
+
+function syncZh1Pais(pais) {
+  const horarioPais = document.getElementById('pc-zh-pais');
+  const precioPais = document.getElementById('pc-zh-precio-pais');
+  if (horarioPais && horarioPais.value !== pais) horarioPais.value = pais;
+  if (precioPais && precioPais.value !== pais) precioPais.value = pais;
+  updateZh1HorarioPais();
+  updateZh1Precio();
+}
+
+function updateZh1Precio() {
+  const pais = document.getElementById('pc-zh-precio-pais')?.value || document.getElementById('pc-zh-pais')?.value || 'ARG';
+  const descKey = document.getElementById('pc-zh-descuento')?.value || 'd35';
+  const target = document.getElementById('pc-zh-precio');
+  if (!target) return;
+
+  const p = getPrecio('chino', pais, descKey, 'Chino 1');
+  const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+
+  target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+❌ Valor Regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
+🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+}
+
+function updateZh1Pago() {
+  const pais = document.getElementById('pc-zh-pago-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-zh-pago');
+  if (!target) return;
   const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
 
   target.innerText = `Te comparto los datos para que realices el pago de tu primera cuota:
