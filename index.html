@@ -1439,6 +1439,171 @@ A continuación te comparto la información del curso que acordamos:
 📘 *Descripción del curso:* Tailandés [NIVEL] — 4–5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Script tailandés, fonética tonal, vocabulario esencial y cultura de Tailandia.</div>
       <div class="msg-note">✅ Primer mensaje breve: enviá solo la descripción del curso. PDF, certificación, horario y precio van en mensajes separados.</div>
     </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Beneficios y respaldo · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-beneficios',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-th-beneficios">✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
+🏯 Inmersión Total: 3 clases culturales extra para comprender el idioma desde su contexto real.
+🗣️ Conversación Guiada: 5 clases de conversación para practicar saludos, frases cotidianas y situaciones reales.
+
+🏆 *CERTIFICACIÓN Y RESPALDO*
+• Doble Aval: Certificado Institucional de IKARUGA + Certificado Oficial con validez universitaria de la UAI (Universidad Abierta Interamericana).
+• Evaluación: Examen final.
+• Exclusividad: Programa único diseñado para hispanohablantes bajo la supervisión del Mag. Jorge Frías.
+
+Importante: en Tailandés no se ofrece preparación para examen oficial. El diferencial está en la inmersión cultural y la práctica conversacional.</div>
+      <div class="msg-note">✅ Enviá este bloque separado del primer mensaje. Aclara el diferencial real de Tailandés: cultura + conversación.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · PDF del programa · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-pdf',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-th-pdf">Te comparto también el PDF del programa de Tailandés I para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso. 🇹🇭
+
+📄 Programa Tailandés I: tailandes-i-programa.pdf</div>
+      <div class="msg-note">✅ Adjuntá el PDF al enviar este mensaje. También podés abrirlo desde aquí: <a href="tailandes-i-programa.pdf" target="_blank" rel="noopener">tailandes-i-programa.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Muestra certificado UAI</div><button class="copy-btn" onclick="copyMsg('pc-th-certificado',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-th-certificado">Te comparto una muestra de nuestro certificado avalado por la UAI para que puedas ver el respaldo académico que recibís al finalizar el programa. 🎓
+
+📄 Muestra certificado UAI: certificado-uai-muestra.pdf</div>
+      <div class="msg-note">✅ Adjuntá el certificado de muestra al enviar este mensaje. Archivo disponible: <a href="certificado-uai-muestra.pdf" target="_blank" rel="noopener">certificado-uai-muestra.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Horarios por país · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-horario',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-th-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país del lead</label>
+        <select id="pc-th-pais" onchange="syncTh1Pais(this.value)" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México (CDMX)</option>
+          <option value="CHL">Chile continental</option>
+          <option value="BOL">Bolivia</option>
+          <option value="PRY">Paraguay</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="ECU">Ecuador</option>
+          <option value="PAN">Panamá</option>
+          <option value="HND">Honduras</option>
+          <option value="SLV">El Salvador</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-th-horario"></div>
+      <div class="msg-note">✅ El horario se calcula desde Argentina según el país seleccionado.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Precio y financiación · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-precio',this)">Copiar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
+        <div>
+          <label for="pc-th-precio-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+          <select id="pc-th-precio-pais" onchange="syncTh1Pais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="ARG">Argentina · ARS</option>
+            <option value="MEX">México · MXN</option>
+            <option value="CHL">Chile · USD</option>
+            <option value="BOL">Bolivia · USD</option>
+            <option value="PRY">Paraguay · USD</option>
+            <option value="COL">Colombia · USD</option>
+            <option value="PER">Perú · USD</option>
+            <option value="ECU">Ecuador · USD</option>
+            <option value="PAN">Panamá · USD</option>
+            <option value="HND">Honduras · USD</option>
+            <option value="SLV">El Salvador · USD</option>
+          </select>
+        </div>
+        <div>
+          <label for="pc-th-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
+          <select id="pc-th-descuento" onchange="updateTh1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="d35">35%</option>
+            <option value="d45">45%</option>
+            <option value="d40">40%</option>
+            <option value="d30">30%</option>
+            <option value="d25">25%</option>
+            <option value="d20">20%</option>
+            <option value="d15">15%</option>
+          </select>
+        </div>
+      </div>
+      <div class="msg-body" id="pc-th-precio"></div>
+      <div class="msg-note">✅ Tailandés 1 usa la tabla de 4 módulos.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 7 · Datos para inscripción · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-datos',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-th-datos">Para continuar con tu inscripción indícame:
+• Nombre completo.
+• Correo electrónico que utilizarás en el campus académico.</div>
+      <div class="msg-note">✅ Pedí solo estos datos para no sobrecargar el mensaje.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 8 · Datos de pago · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-pago',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-th-pago-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país / medio de pago</label>
+        <select id="pc-th-pago-pais" onchange="updateTh1Pago()" style="width:100%;max-width:360px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México</option>
+          <option value="ECU">Ecuador</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="HND">Honduras</option>
+          <option value="PAN">Panamá</option>
+          <option value="SLV">El Salvador</option>
+          <option value="PRY">Paraguay</option>
+          <option value="BOL">Bolivia</option>
+          <option value="CHL">Chile</option>
+          <option value="PAYPAL">PayPal / Internacional</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-th-pago"></div>
+      <div class="msg-note">✅ Los datos cambian según país. Revisá los casos que dicen “confirmar” antes de enviarlos.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 9 · Link de inscripción · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-inscripcion',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-th-inscripcion">Te comparto el link para seguir con tu inscripción:
+
+https://www.japonesporjorgefrias.com.ar/inscripciones/
+
+Completá el formulario con tus datos y, cuando lo hayas enviado, avisame por acá así puedo darle seguimiento a tu alta. 😊
+
+Si te surge alguna duda mientras lo completás, estoy para ayudarte.</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya tiene claro curso, horario, valor y forma de pago.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 10 · Bienvenida oficial · Tailandés 1</div><button class="copy-btn" onclick="copyMsg('pc-th-bienvenida',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-th-bienvenida">👋 *¡Te damos la bienvenida oficial a IKARUGA!* 🎉
+
+Estamos muy felices de que te sumes a nuestra comunidad. Para empezar con el pie derecho, te dejo la información importante:
+
+📌 *Alta administrativa*
+Leé este documento para formalizar tu proceso:
+https://www.japonesporjorgefrias.com.ar/wp-content/uploads/2025/03/INFO-ALTA-ADMINISTRARTIVA-CLIENTES.pdf
+
+📞 *Soporte administrativo / dudas técnicas*
++54 9 3417 50-0284
+
+🛡️ *Nuestro respaldo*
+Nos avalan años de trayectoria, la dirección del Traductor Matriculado Jorge Frías y más de 550 reseñas positivas.
+
+🌐 Web: https://www.ikaruga.com.ar
+⭐ Google: https://maps.app.goo.gl/JXtd62n6t8sVLpsSA
+💬 Facebook reseñas: https://www.facebook.com/ikaruga.idiomas/reviews
+📄 Aval legal / marca registrada:
+https://ikaruga.com.ar/wp-content/uploads/2023/06/Registro-marca-ikaruga-servicios-vigente-310533.pdf
+
+📱 *Comunidad IKARUGA*
+Instagram: https://www.instagram.com/ikaruga.idiomas/
+Facebook: https://www.facebook.com/ikaruga.idiomas
+LinkedIn: https://www.linkedin.com/company/ikaruga-idiomas/
+
+Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
+
+¡Bienvenido/a a la comunidad IKARUGA! 🇹🇭</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya completó el formulario o cuando confirmaste el alta.</div>
+    </div>
   </div>
 
   <div class="tab-content" id="tab-en">
@@ -1457,6 +1622,164 @@ A continuación te comparto la información del curso que acordamos:
 
 📘 *Descripción del curso:* Inglés [NIVEL] — 4 módulos · 2 hs semanales en vivo · Certificación oficial IKARUGA 🎓 (sin UAI) · Enfoque comunicativo con método propio IKARUGA. Gramática, conversación y comprensión.</div>
       <div class="msg-note">✅ Primer mensaje breve: enviá solo la descripción del curso. PDF, certificación, horario y precio van en mensajes separados.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Certificación y respaldo · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-respaldo',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-en-respaldo">🏆 *CERTIFICACIÓN Y RESPALDO*
+• Certificación: Certificado Institucional IKARUGA.
+• Calidad: Programa supervisado por el Mag. Jorge Frías.
+• Evaluación: Incluye examen final.
+
+Importante: Inglés A1 no cuenta con certificación UAI ni beneficios adicionales de clases culturales o preparación a examen. Su diferencial está en el enfoque práctico, comunicativo y progresivo desde nivel inicial.</div>
+      <div class="msg-note">✅ En Inglés A1 no usar mensaje de beneficios extra. Enviar este bloque de respaldo.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · PDF del programa · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-pdf',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-en-pdf">Te comparto también el PDF del programa de Inglés A1 para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso. 🇬🇧
+
+📄 Programa Inglés A1: ingles-a1-programa.pdf</div>
+      <div class="msg-note">✅ Adjuntá el PDF al enviar este mensaje. También podés abrirlo desde aquí: <a href="ingles-a1-programa.pdf" target="_blank" rel="noopener">ingles-a1-programa.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Certificado IKARUGA</div><button class="copy-btn" onclick="copyMsg('pc-en-certificado',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-en-certificado">En Inglés A1 la certificación es institucional de IKARUGA. 🎓
+
+Al finalizar el programa y aprobar la evaluación correspondiente, recibís tu certificado institucional IKARUGA.</div>
+      <div class="msg-note">✅ No adjuntar certificado UAI para Inglés A1.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Horarios por país · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-horario',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-en-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país del lead</label>
+        <select id="pc-en-pais" onchange="syncEnA1Pais(this.value)" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México (CDMX)</option>
+          <option value="CHL">Chile continental</option>
+          <option value="BOL">Bolivia</option>
+          <option value="PRY">Paraguay</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="ECU">Ecuador</option>
+          <option value="PAN">Panamá</option>
+          <option value="HND">Honduras</option>
+          <option value="SLV">El Salvador</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-en-horario"></div>
+      <div class="msg-note">✅ El horario se calcula desde Argentina según el país seleccionado.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Precio y financiación · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-precio',this)">Copiar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
+        <div>
+          <label for="pc-en-precio-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+          <select id="pc-en-precio-pais" onchange="syncEnA1Pais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="ARG">Argentina · ARS</option>
+            <option value="MEX">México · MXN</option>
+            <option value="CHL">Chile · USD</option>
+            <option value="BOL">Bolivia · USD</option>
+            <option value="PRY">Paraguay · USD</option>
+            <option value="COL">Colombia · USD</option>
+            <option value="PER">Perú · USD</option>
+            <option value="ECU">Ecuador · USD</option>
+            <option value="PAN">Panamá · USD</option>
+            <option value="HND">Honduras · USD</option>
+            <option value="SLV">El Salvador · USD</option>
+          </select>
+        </div>
+        <div>
+          <label for="pc-en-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
+          <select id="pc-en-descuento" onchange="updateEnA1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="d30">30%</option>
+            <option value="d25">25%</option>
+            <option value="d20">20%</option>
+            <option value="d15">15%</option>
+          </select>
+        </div>
+      </div>
+      <div class="msg-body" id="pc-en-precio"></div>
+      <div class="msg-note">✅ Inglés usa tabla de 4 módulos · 2 horas semanales · 3 cuotas.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 7 · Datos para inscripción · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-datos',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-en-datos">Para continuar con tu inscripción indícame:
+• Nombre completo.
+• Correo electrónico que utilizarás en el campus académico.</div>
+      <div class="msg-note">✅ Pedí solo estos datos para no sobrecargar el mensaje.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 8 · Datos de pago · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-pago',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-en-pago-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país / medio de pago</label>
+        <select id="pc-en-pago-pais" onchange="updateEnA1Pago()" style="width:100%;max-width:360px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México</option>
+          <option value="ECU">Ecuador</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="HND">Honduras</option>
+          <option value="PAN">Panamá</option>
+          <option value="SLV">El Salvador</option>
+          <option value="PRY">Paraguay</option>
+          <option value="BOL">Bolivia</option>
+          <option value="CHL">Chile</option>
+          <option value="PAYPAL">PayPal / Internacional</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-en-pago"></div>
+      <div class="msg-note">✅ Los datos cambian según país. Revisá los casos que dicen “confirmar” antes de enviarlos.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 9 · Link de inscripción · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-inscripcion',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-en-inscripcion">Te comparto el link para seguir con tu inscripción:
+
+https://www.japonesporjorgefrias.com.ar/inscripciones/
+
+Completá el formulario con tus datos y, cuando lo hayas enviado, avisame por acá así puedo darle seguimiento a tu alta. 😊
+
+Si te surge alguna duda mientras lo completás, estoy para ayudarte.</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya tiene claro curso, horario, valor y forma de pago.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 10 · Bienvenida oficial · Inglés A1</div><button class="copy-btn" onclick="copyMsg('pc-en-bienvenida',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-en-bienvenida">👋 *¡Te damos la bienvenida oficial a IKARUGA!* 🎉
+
+Estamos muy felices de que te sumes a nuestra comunidad. Para empezar con el pie derecho, te dejo la información importante:
+
+📌 *Alta administrativa*
+Leé este documento para formalizar tu proceso:
+https://www.japonesporjorgefrias.com.ar/wp-content/uploads/2025/03/INFO-ALTA-ADMINISTRARTIVA-CLIENTES.pdf
+
+📞 *Soporte administrativo / dudas técnicas*
++54 9 3417 50-0284
+
+🛡️ *Nuestro respaldo*
+Nos avalan años de trayectoria, la dirección del Traductor Matriculado Jorge Frías y más de 550 reseñas positivas.
+
+🌐 Web: https://www.ikaruga.com.ar
+⭐ Google: https://maps.app.goo.gl/JXtd62n6t8sVLpsSA
+💬 Facebook reseñas: https://www.facebook.com/ikaruga.idiomas/reviews
+📄 Aval legal / marca registrada:
+https://ikaruga.com.ar/wp-content/uploads/2023/06/Registro-marca-ikaruga-servicios-vigente-310533.pdf
+
+📱 *Comunidad IKARUGA*
+Instagram: https://www.instagram.com/ikaruga.idiomas/
+Facebook: https://www.facebook.com/ikaruga.idiomas
+LinkedIn: https://www.linkedin.com/company/ikaruga-idiomas/
+
+Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
+
+¡Bienvenido/a a la comunidad IKARUGA! 🇬🇧</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya completó el formulario o cuando confirmaste el alta.</div>
     </div>
   </div>
 
@@ -2675,6 +2998,12 @@ document.addEventListener('DOMContentLoaded', () => {
   updateZh1HorarioPais();
   updateZh1Precio();
   updateZh1Pago();
+  updateTh1HorarioPais();
+  updateTh1Precio();
+  updateTh1Pago();
+  updateEnA1HorarioPais();
+  updateEnA1Precio();
+  updateEnA1Pago();
 });
 
 
@@ -2940,6 +3269,50 @@ En IKARUGA combinamos la excelencia académica con una metodología diseñada pa
 
   if (msgId === 'pc-zh') {
     return '📘 *Descripción del curso:* Chino Mandarín [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.';
+  }
+
+  if (msgId === 'pc-th' && nivel === 'Tailandés 1') {
+    return `🇹🇭 *CURSO DE TAILANDÉS I: NIVEL INICIAL*
+Programa de formación integral con aval universitario
+
+En IKARUGA combinamos la excelencia académica con una metodología diseñada para que realmente te comuniques.
+
+📅 *MODALIDAD Y DURACIÓN*
+• Duración: 4 módulos.
+• Clases: 3 horas semanales en vivo (Zoom privado).
+• Flexibilidad: Acceso 24/7 a nuestro Campus Virtual con lecciones, videos, materiales exclusivos y grabaciones de todas las clases.
+
+📚 *¿QUÉ APRENDERÁS?*
+• Escritura y Fonética: Introducción al alfabeto tailandés, caligrafía y dominio del sistema de tonos.
+• Comunicación: Saludos, presentaciones, agradecimientos y frases de cortesía (Krap/Kaa).
+• Vocabulario Real: Números, colores, días de la semana y vocabulario de supervivencia para compras, aeropuertos y restaurantes.
+• Gramática: Estructura de oraciones básicas y partículas esenciales del idioma.
+• Cultura: Historia de los reinos Sukhothai y Ayutthaya, el cuento de Ramakien y tradiciones de Tailandia.`;
+  }
+
+  if (msgId === 'pc-th') {
+    return '📘 *Descripción del curso:* Tailandés [NIVEL] — 4–5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Script tailandés, fonética tonal, vocabulario esencial y cultura de Tailandia.';
+  }
+
+  if (msgId === 'pc-en' && nivel === 'Inglés A1') {
+    return `🇬🇧 *CURSO DE INGLÉS A1*
+Programa de formación inicial con certificación institucional IKARUGA
+
+📅 *MODALIDAD Y DURACIÓN*
+• Duración: 4 meses.
+• Clases: 2 horas semanales en vivo.
+• Plataforma: Acceso 24/7 a Campus Virtual con lecciones y videos.
+
+📚 *¿QUÉ APRENDERÁS?*
+• Comunicación: Saludos, despedidas y presentaciones.
+• Información Personal: Intercambio de datos como dirección, teléfono y correo.
+• Rutina: Descripción de actividades diarias y manejo de la hora.
+• Descripciones: Vocabulario de familia, ropa, colores y partes de la casa.
+• Entorno: Meses del año, estaciones y estados del clima.`;
+  }
+
+  if (msgId === 'pc-en') {
+    return '📘 *Descripción del curso:* Inglés [NIVEL] — 4 módulos · 2 hs semanales en vivo · Certificación oficial IKARUGA 🎓 (sin UAI) · Enfoque comunicativo con método propio IKARUGA. Gramática, conversación y comprensión.';
   }
 
   return null;
@@ -3252,6 +3625,122 @@ function updateZh1Precio() {
 function updateZh1Pago() {
   const pais = document.getElementById('pc-zh-pago-pais')?.value || 'ARG';
   const target = document.getElementById('pc-zh-pago');
+  if (!target) return;
+  const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
+
+  target.innerText = `Te comparto los datos para que realices el pago de tu primera cuota:
+
+${datos}
+
+Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscripción.`;
+}
+
+function updateTh1HorarioPais() {
+  const pais = document.getElementById('pc-th-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-th-horario');
+  if (!target) return;
+
+  const horariosBase = horariosARG.tailandes["Tailandés 1"] || [];
+  const diff = tzDiff[pais] ?? 0;
+  const horariosLocal = convertHorarios(horariosBase, diff);
+  const paisLabel = paisNombres[pais] || 'Argentina';
+  const horaRef = pais === 'ARG' ? 'hora Argentina' : `hora ${paisLabel}`;
+  const lineas = horariosLocal.map(h => `• ${h}`).join('\n');
+
+  target.innerText = `Perfecto, te comparto el horario disponible para *Tailandés 1* en ${paisLabel}. 🇹🇭
+
+📅 *Horario disponible (${horaRef}):*
+${lineas}
+
+Decime si este horario te queda bien y revisamos la disponibilidad de cupo.`;
+}
+
+function syncTh1Pais(pais) {
+  const horarioPais = document.getElementById('pc-th-pais');
+  const precioPais = document.getElementById('pc-th-precio-pais');
+  if (horarioPais && horarioPais.value !== pais) horarioPais.value = pais;
+  if (precioPais && precioPais.value !== pais) precioPais.value = pais;
+  updateTh1HorarioPais();
+  updateTh1Precio();
+}
+
+function updateTh1Precio() {
+  const pais = document.getElementById('pc-th-precio-pais')?.value || document.getElementById('pc-th-pais')?.value || 'ARG';
+  const descKey = document.getElementById('pc-th-descuento')?.value || 'd35';
+  const target = document.getElementById('pc-th-precio');
+  if (!target) return;
+
+  const p = getPrecio('tailandes', pais, descKey, 'Tailandés 1');
+  const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+
+  target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+❌ Valor Regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
+🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+}
+
+function updateTh1Pago() {
+  const pais = document.getElementById('pc-th-pago-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-th-pago');
+  if (!target) return;
+  const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
+
+  target.innerText = `Te comparto los datos para que realices el pago de tu primera cuota:
+
+${datos}
+
+Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscripción.`;
+}
+
+function updateEnA1HorarioPais() {
+  const pais = document.getElementById('pc-en-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-en-horario');
+  if (!target) return;
+
+  const horariosBase = horariosARG.ingles["Inglés A1"] || [];
+  const diff = tzDiff[pais] ?? 0;
+  const horariosLocal = convertHorarios(horariosBase, diff);
+  const paisLabel = paisNombres[pais] || 'Argentina';
+  const horaRef = pais === 'ARG' ? 'hora Argentina' : `hora ${paisLabel}`;
+  const lineas = horariosLocal.map(h => `• ${h}`).join('\n');
+
+  target.innerText = `Perfecto, te comparto el horario disponible para *Inglés A1* en ${paisLabel}. 🇬🇧
+
+📅 *Horario disponible (${horaRef}):*
+${lineas}
+
+Decime si este horario te queda bien y revisamos la disponibilidad de cupo.`;
+}
+
+function syncEnA1Pais(pais) {
+  const horarioPais = document.getElementById('pc-en-pais');
+  const precioPais = document.getElementById('pc-en-precio-pais');
+  if (horarioPais && horarioPais.value !== pais) horarioPais.value = pais;
+  if (precioPais && precioPais.value !== pais) precioPais.value = pais;
+  updateEnA1HorarioPais();
+  updateEnA1Precio();
+}
+
+function updateEnA1Precio() {
+  const pais = document.getElementById('pc-en-precio-pais')?.value || document.getElementById('pc-en-pais')?.value || 'ARG';
+  const descKey = document.getElementById('pc-en-descuento')?.value || 'd30';
+  const target = document.getElementById('pc-en-precio');
+  if (!target) return;
+
+  const p = getPrecio('ingles', pais, descKey, 'Inglés A1');
+  const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+
+  target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+❌ Valor Regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
+🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+}
+
+function updateEnA1Pago() {
+  const pais = document.getElementById('pc-en-pago-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-en-pago');
   if (!target) return;
   const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
 
