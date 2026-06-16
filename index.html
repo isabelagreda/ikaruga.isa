@@ -588,6 +588,9 @@
       <button class="nav-link active" onclick="showSection('saludo')">
         <span class="dot"></span> Saludo inicial
       </button>
+      <button class="nav-link" onclick="showSection('promo-mundial')">
+        <span class="dot"></span> Promo Mundial
+      </button>
       <button class="nav-link" onclick="showSection('seguimiento')">
         <span class="dot"></span> Seguimiento 48hs / 7 días
       </button>
@@ -694,6 +697,82 @@ Revisamos tu nivel, objetivo, disponibilidad y qué certificación te conviene, 
     <div style="padding:10px 20px; border-top:1px solid var(--border); display:flex; justify-content:flex-end;">
       <button class="copy-btn" onclick="copyMsg('msg-inicial-valor', this)">Copiar mensaje</button>
     </div>
+  </div>
+</div>
+
+<!-- PROMO MUNDIAL -->
+<div class="section" id="promo-mundial">
+  <div class="section-header">
+    <div class="section-tag">Primer contacto</div>
+    <h1 class="section-title">Promo Mundial</h1>
+    <p class="section-desc">Saludo para leads que entran por la promo mundialista. El objetivo es llevarlos a una orientación breve antes de enviar valores.</p>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Saludo inicial · Promo mundialista <span class="badge badge-gold">Orientar antes de precio</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-promo-mundial', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-promo-mundial">¡Golazo! ⚽👋 Soy Isabel, tu asesora académica de IKARUGA. ⛩️
+
+Recibí tu mensaje por la promo mundialista de idiomas con certificación IKARUGA + UAI 🎓
+
+Antes de enviarte valores, prefiero hacerte una orientación breve para conocer tu nivel, tu objetivo y el idioma que te interesa aprender. Así puedo recomendarte el grupo correcto y contarte cómo aplicar el descuento de la promo.
+
+¿Te queda mejor que te llame hoy por la tarde o mañana por la mañana? 📞</div>
+    <div class="msg-note">✅ Usalo cuando el lead llega por campaña mundialista y todavía no hubo llamada.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Cotización rápida · Promo Mundial <span class="badge badge-red">25% / 35%</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-promo-mundial-cotizacion', this)">Copiar</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);background:var(--paper2);">
+      <div>
+        <label for="promo-mundial-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+        <select id="promo-mundial-pais" onchange="updatePromoMundialCotizacion()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina · ARS</option>
+          <option value="MEX">México · MXN</option>
+          <option value="CHL">Chile · USD</option>
+          <option value="BOL">Bolivia · USD</option>
+          <option value="PRY">Paraguay · USD</option>
+          <option value="COL">Colombia · USD</option>
+          <option value="PER">Perú · USD</option>
+          <option value="ECU">Ecuador · USD</option>
+          <option value="PAN">Panamá · USD</option>
+          <option value="HND">Honduras · USD</option>
+          <option value="SLV">El Salvador · USD</option>
+        </select>
+      </div>
+      <div>
+        <label for="promo-mundial-curso" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Curso / nivel</label>
+        <select id="promo-mundial-curso" onchange="updatePromoMundialCotizacion()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="japones|Japonés 1">Japonés 1</option>
+          <option value="japones|Japonés 2">Japonés 2</option>
+          <option value="japones|Japonés 3">Japonés 3</option>
+          <option value="japones|Japonés 4">Japonés 4</option>
+          <option value="coreano|Coreano 1">Coreano 1</option>
+          <option value="coreano|Coreano 2">Coreano 2</option>
+          <option value="chino|Chino 1">Chino 1</option>
+          <option value="chino|Chino 2">Chino 2</option>
+          <option value="tailandes|Tailandés 1">Tailandés 1</option>
+          <option value="tailandes|Tailandés 2">Tailandés 2</option>
+          <option value="tailandes|Tailandés 3">Tailandés 3</option>
+          <option value="aleman|Alemán A1">Alemán A1</option>
+          <option value="aleman|Alemán A2">Alemán A2</option>
+        </select>
+      </div>
+      <div>
+        <label for="promo-mundial-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Descuento promo</label>
+        <select id="promo-mundial-descuento" onchange="updatePromoMundialCotizacion()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="d25">25% OFF</option>
+          <option value="d35">35% OFF</option>
+        </select>
+      </div>
+    </div>
+    <div class="msg-body" id="msg-promo-mundial-cotizacion"></div>
+    <div class="msg-note">✅ Cotiza con 25% o 35% según país. Argentina y México usan moneda local; el resto queda en USD.</div>
   </div>
 </div>
 
@@ -3196,6 +3275,64 @@ function getPrecio(idioma, pais, descKey, nivel) {
   return { precio_reg: row.reg, descuento: pct, precio_hoy: precioHoy, cuotas: cuotaNum, simbolo, meses: t.meses, hs: t.hs };
 }
 
+function parseMoneyValue(value) {
+  return parseFloat(String(value || '0').replace(/\./g,'').replace(',','.')) || 0;
+}
+
+function formatMoneyValue(num, pais) {
+  if (pais === 'ARG') return Math.round(num / 1000) * 1000;
+  if (pais === 'MEX') return Math.round(num / 10) * 10;
+  return Math.round(num);
+}
+
+function formatMoneyText(num, pais) {
+  return formatMoneyValue(num, pais).toLocaleString('es-AR');
+}
+
+function getPromoMundialPrecio(idioma, nivel, pais, descKey) {
+  const tKey = getTablaKey(idioma, nivel);
+  const pKey = getPaisKey(pais);
+  const t = tablaDescuentos[tKey];
+  const row = t[pKey];
+  const simbolo = getSimbolo(pais);
+  const pctNum = descKey === 'd35' ? 35 : 25;
+  const precioRegNum = parseMoneyValue(row.reg);
+  const precioHoy = row[descKey] || formatMoneyText(precioRegNum * (1 - pctNum / 100), pais);
+  const precioNum = parseMoneyValue(precioHoy);
+  const cuotaCalc = precioNum > 0 ? formatMoneyText(precioNum / t.cuotas, pais) : '—';
+
+  return {
+    precio_reg: row.reg,
+    precio_hoy: precioHoy,
+    descuento: `${pctNum}%`,
+    cuotas: t.cuotas,
+    simbolo,
+    meses: t.meses,
+    hs: t.hs,
+    cuotaCalc
+  };
+}
+
+function updatePromoMundialCotizacion() {
+  const target = document.getElementById('msg-promo-mundial-cotizacion');
+  if (!target) return;
+
+  const pais = document.getElementById('promo-mundial-pais')?.value || 'ARG';
+  const [idioma, nivel] = (document.getElementById('promo-mundial-curso')?.value || 'japones|Japonés 1').split('|');
+  const descKey = document.getElementById('promo-mundial-descuento')?.value || 'd25';
+  const p = getPromoMundialPrecio(idioma, nivel, pais, descKey);
+  const paisLabel = paisNombres[pais] || 'Internacional';
+
+  target.innerText = `Te comparto la cotización de la *Promo Mundial* para *${nivel}* en ${paisLabel}: ⚽
+
+💳 *PROMO MUNDIAL ${p.descuento} OFF*
+❌ Valor regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión con promo: ${p.simbolo}${p.precio_hoy}* (curso completo)
+🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${p.cuotaCalc}* vía transferencia.
+
+La promo se aplica por tiempo limitado y queda sujeta a disponibilidad de cupo en la comisión elegida.`;
+}
+
 // ---- TEXTO DE INCLUSIONES según parámetros correctos ----
 function buildIncluyeStr(idioma, nivel) {
   const cfg = idiomaConfig[idioma];
@@ -3378,6 +3515,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMessages();
   renderStaticMessages(nombreActual);
   initTestimonials();
+  updatePromoMundialCotizacion();
   updateJp1HorarioPais();
   updateJp1Precio();
   updateJp1Pago();
