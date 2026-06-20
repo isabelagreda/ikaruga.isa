@@ -592,6 +592,9 @@
       <button class="nav-link" onclick="showSection('promo-mundial')">
         <span class="dot"></span> Promo Mundial
       </button>
+      <button class="nav-link" onclick="showSection('masterclass-coreano')">
+        <span class="dot"></span> Masterclass de Coreano
+      </button>
       <button class="nav-link" onclick="showSection('seguimiento')">
         <span class="dot"></span> Seguimiento 48hs / 7 días
       </button>
@@ -774,6 +777,58 @@ Antes de enviarte valores, prefiero hacerte una orientación breve para conocer 
     </div>
     <div class="msg-body" id="msg-promo-mundial-cotizacion"></div>
     <div class="msg-note">✅ Cotiza con 25% o 35% según país. Argentina y México usan moneda local; el resto queda en USD.</div>
+  </div>
+</div>
+
+<!-- MASTERCLASS DE COREANO -->
+<div class="section" id="masterclass-coreano">
+  <div class="section-header">
+    <div class="section-tag">Campaña especial</div>
+    <h1 class="section-title">Masterclass de Coreano</h1>
+    <p class="section-desc">Cotización fija con 40% OFF, financiación en 4 cuotas y horarios disponibles según país.</p>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Cotización · Masterclass Coreano <span class="badge badge-gold">40% OFF</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-masterclass-coreano', this)">Copiar</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);background:var(--paper2);">
+      <div>
+        <label for="masterclass-coreano-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+        <select id="masterclass-coreano-pais" onchange="updateMasterclassCoreano()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina · ARS</option>
+          <option value="MEX">México CDMX · MXN</option>
+          <option value="CHL">Chile continental · USD</option>
+          <option value="BOL">Bolivia · USD</option>
+          <option value="PRY">Paraguay · USD</option>
+          <option value="COL">Colombia · USD</option>
+          <option value="PER">Perú · USD</option>
+          <option value="ECU">Ecuador · USD</option>
+          <option value="PAN">Panamá · USD</option>
+          <option value="HND">Honduras · USD</option>
+          <option value="SLV">El Salvador · USD</option>
+        </select>
+      </div>
+      <div>
+        <label for="masterclass-coreano-nivel" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Nivel</label>
+        <select id="masterclass-coreano-nivel" onchange="updateMasterclassCoreano()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="Coreano 1">Coreano 1</option>
+          <option value="Coreano 2">Coreano 2</option>
+        </select>
+      </div>
+    </div>
+    <div class="msg-body" id="msg-masterclass-coreano"></div>
+    <div class="msg-note">✅ Esta solapa usa únicamente 40% OFF y 4 cuotas. Los horarios se convierten según el país seleccionado.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Todos los horarios · Coreano <span class="badge badge-green">Según país</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-masterclass-coreano-horarios', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-masterclass-coreano-horarios"></div>
+    <div class="msg-note">✅ Incluye Coreano 1 comisión D, Coreano 1 comisión E y Coreano 2 comisión D.</div>
   </div>
 </div>
 
@@ -2294,7 +2349,8 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
     <table class="schedule-table">
       <thead><tr><th>Nivel</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
       <tbody>
-        <tr><td><span class="level-pill">Coreano 1</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Coreano 1 · D</span></td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Coreano 1 · E</span></td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
         <tr><td><span class="level-pill">Coreano 2</span></td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td></tr>
       </tbody>
     </table>
@@ -3143,7 +3199,10 @@ const horariosARG = {
     ]
   },
   coreano: {
-    "Coreano 1": ["Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12)"],
+    "Coreano 1": [
+      "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12)",
+      "Comisión E · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12)"
+    ],
     "Coreano 2": ["Comisión D · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12)"]
   },
   chino: {
@@ -3334,6 +3393,51 @@ function updatePromoMundialCotizacion() {
 La promo se aplica por tiempo limitado y queda sujeta a disponibilidad de cupo en la comisión elegida.`;
 }
 
+function updateMasterclassCoreano() {
+  const msgTarget = document.getElementById('msg-masterclass-coreano');
+  const horariosTarget = document.getElementById('msg-masterclass-coreano-horarios');
+  if (!msgTarget && !horariosTarget) return;
+
+  const pais = document.getElementById('masterclass-coreano-pais')?.value || 'ARG';
+  const nivel = document.getElementById('masterclass-coreano-nivel')?.value || 'Coreano 1';
+  const paisLabel = paisNombres[pais] || 'Internacional';
+  const p = getPrecio('coreano', pais, 'd40', nivel);
+  const precioNum = parseMoneyValue(p.precio_hoy);
+  const cuotaCalc = precioNum > 0 ? formatMoneyText(precioNum / p.cuotas, pais) : '—';
+  const diff = tzDiff[pais] ?? 0;
+  const horaRef = pais === 'ARG' ? 'hora Argentina' : `hora de ${paisLabel}`;
+  const horariosNivel = convertHorarios(horariosARG.coreano[nivel] || [], diff);
+  const horariosTodos = [
+    ...convertHorarios(horariosARG.coreano['Coreano 1'] || [], diff).map(h => `• Coreano 1: ${h}`),
+    ...convertHorarios(horariosARG.coreano['Coreano 2'] || [], diff).map(h => `• Coreano 2: ${h}`)
+  ];
+  const lineasNivel = horariosNivel.length ? horariosNivel.map(h => `• ${h}`).join('\n') : '• Consultar disponibilidad.';
+  const lineasTodos = horariosTodos.length ? horariosTodos.join('\n') : '• Consultar disponibilidad.';
+
+  if (msgTarget) {
+    msgTarget.innerText = `Te comparto la opción disponible para la *Masterclass de Coreano* en ${paisLabel}: 🇰🇷
+
+💳 *MASTERCLASS DE COREANO · 40% OFF*
+❌ Valor regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión con descuento: ${p.simbolo}${p.precio_hoy}* (programa completo)
+🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.
+
+📅 *Horarios disponibles para ${nivel} (${horaRef}):*
+${lineasNivel}
+
+La promo queda sujeta a disponibilidad de cupo en la comisión elegida.`;
+  }
+
+  if (horariosTarget) {
+    horariosTarget.innerText = `Estos son todos los horarios disponibles de Coreano en ${paisLabel}: 🇰🇷
+
+📅 *Horarios (${horaRef}):*
+${lineasTodos}
+
+Decime cuál de estas opciones te queda mejor y revisamos la disponibilidad de cupo.`;
+  }
+}
+
 // ---- TEXTO DE INCLUSIONES según parámetros correctos ----
 function buildIncluyeStr(idioma, nivel) {
   const cfg = idiomaConfig[idioma];
@@ -3517,6 +3621,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderStaticMessages(nombreActual);
   initTestimonials();
   updatePromoMundialCotizacion();
+  updateMasterclassCoreano();
   updateJp1HorarioPais();
   updateJp1Precio();
   updateJp1Pago();
