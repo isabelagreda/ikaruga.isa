@@ -3628,6 +3628,7 @@ function updateNombre(nombre) {
   });
   // Re-render static messages from source
   renderStaticMessages(nombre);
+  if (typeof initializePostCallDefaults === 'function') initializePostCallDefaults();
 }
 
 const mensajesOriginales = {};
@@ -3663,6 +3664,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
   updatePromoMundialCotizacion();
   updateMasterclassCoreano();
+  initializePostCallDefaults();
   updateJp1HorarioPais();
   updateJp1Precio();
   updateJp1Pago();
@@ -3880,10 +3882,6 @@ Programa de formación integral con aval universitario
 
 En IKARUGA combinamos la excelencia académica con una metodología diseñada para que realmente te comuniques.
 
-Este nivel está pensado para que entres en contacto con un idioma único, tonal y culturalmente riquísimo, aprendiendo a comunicarte desde situaciones reales.
-
-Este nivel está pensado para que el Hangul deje de parecer un sistema imposible y empieces a leer, pronunciar y comunicarte desde las primeras clases.
-
 Este nivel está pensado para que empieces desde cero con una base sólida y sientas que el japonés deja de ser algo lejano para convertirse en algo que podés leer, entender y empezar a usar.
 
 📅 *MODALIDAD Y DURACIÓN*
@@ -3918,11 +3916,11 @@ En este nivel consolidamos la base inicial y avanzamos hacia una comunicación m
 • Flexibilidad: Acceso 24/7 al Campus Virtual con lecciones, materiales y grabaciones de las clases.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Leer textos breves con más soltura, reforzando kana e incorporando nuevos kanji.
-• Construir frases más completas con estructuras verbales, partículas, adjetivos y conectores.
-• Hablar sobre gustos, rutinas, necesidades y experiencias cotidianas con mayor seguridad.
-• Comprender diálogos simples de uso real, con más vocabulario y contexto cultural.
-• Usar expresiones de cortesía y referencias culturales japonesas de forma más natural.`,
+• Pasar del japonés inicial a un uso más natural e informal del idioma.
+• Trabajar estructuras como naru, soto/uchi y los verbos ageru, kureru y morau.
+• Construir oraciones subordinadas y textos simples para gustos, pasatiempos, turismo y trabajo.
+• Leer y traducir ejemplos de manga, videojuegos y textos breves con mayor autonomía.
+• Ampliar lectura, escritura y comprensión auditiva, incorporando más kanji y cultura japonesa.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🎎 Inmersión Total: 3 clases culturales.
 
@@ -3944,11 +3942,11 @@ Este nivel te ayuda a pasar de frases aisladas a conversaciones más completas, 
 • Campus Virtual: Materiales, grabaciones y recursos de práctica.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Expresar intención, planes, comparación, secuencias, obligación y posibilidad.
-• Mantener conversaciones más extensas sobre experiencias, objetivos y preferencias.
-• Leer textos breves con más kanji y vocabulario contextual.
-• Entrenar el oído con diálogos más naturales y menos pausados.
-• Usar el idioma con más precisión gracias al contexto social y cultural japonés.`,
+• Usar la forma TE para invitaciones y nuevas funciones comunicativas.
+• Diferenciar verbos transitivos e intransitivos y aplicar comparativos y superlativos.
+• Expresar suposiciones, conjeturas, condicionales y construcciones con koto y mono.
+• Leer y producir textos informativos breves, incorporando más kanji y vocabulario contextual.
+• Comprender diálogos y explicaciones con mayor presencia del japonés en clase.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🎎 Inmersión Total: 3 clases culturales.
 
@@ -3970,11 +3968,11 @@ Este nivel está pensado para que ganes fluidez y puedas conectar ideas con más
 • Campus Virtual: Recursos, materiales y grabaciones disponibles 24/7.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Narrar, explicar, comparar y conectar ideas con estructuras más sólidas.
-• Expresar opiniones, experiencias, necesidades y planes con mayor fluidez.
-• Leer y escribir con más kanji, vocabulario y comprensión de textos breves.
-• Comprender diálogos y situaciones de mayor naturalidad.
-• Profundizar en costumbres, sociedad japonesa y uso real del idioma.`,
+• Trabajar contenidos orientados al nivel intermedio cotidiano del JLPT N3.
+• Incorporar estructuras gramaticales más avanzadas a partir de mini textos y kaiwa.
+• Entrenar dokkai con lecturas cortas, medianas y largas, noticias y textos de actualidad.
+• Mejorar comprensión auditiva y lectura con materiales variados y preguntas de análisis.
+• Consolidar herramientas para desenvolverte, estudiar o proyectar trabajo vinculado a Japón.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🎎 Inmersión Total: 3 clases culturales.
 
@@ -4030,11 +4028,11 @@ Este nivel te permite dejar de depender de frases sueltas y empezar a construir 
 • Campus Virtual: Acceso a materiales, lecciones y grabaciones.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Leer Hangul con más fluidez y reconocer reglas fonéticas con mayor seguridad.
-• Construir frases con partículas, tiempo, negación, ubicación y acciones cotidianas.
-• Conversar sobre rutinas, gustos, planes, compras, comidas y experiencias simples.
-• Comprender diálogos de uso real a través de lectura y escucha guiada.
-• Usar expresiones y hábitos sociales propios del contexto cultural coreano.`,
+• Indicar ubicaciones y direcciones con vocabulario como arriba, debajo, delante, detrás, dentro y fuera.
+• Expresar intención o propósito con estructuras como “ir/venir para hacer algo”.
+• Usar cortesía, prohibición, presente/pasado continuo y capacidad o imposibilidad de realizar acciones.
+• Leer y escribir Hangul con más fluidez, aplicándolo a oraciones y situaciones reales.
+• Comprender mejor costumbres, historia y diferencias culturales de la península coreana.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🏯 Inmersión Total: 3 clases culturales.
 
@@ -4092,11 +4090,11 @@ Este nivel te ayuda a avanzar del mandarín inicial hacia conversaciones más co
 • Campus Virtual: Lecciones, materiales y grabaciones disponibles.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Mejorar pronunciación, tonos, lectura oral y ritmo del mandarín.
-• Incorporar más caracteres, trazos y vocabulario de uso frecuente.
-• Describir rutinas, lugares, preferencias, acciones y cantidades.
-• Sostener diálogos más completos sobre compras, horarios, familia, comidas y situaciones reales.
-• Usar expresiones y referencias culturales chinas aplicadas al idioma.`,
+• Incorporar alrededor de 300 palabras nuevas y caracteres correspondientes al nivel 2.
+• Profundizar estructuras HSK2: verbos auxiliares, adverbios de grado, aproximación y modalidad.
+• Formular preguntas más variadas con estructuras como 是不是, 多 y pronombres interrogativos.
+• Usar partículas y estructuras como 的, 的时候, 因为…所以, complementos de resultado e imperativos.
+• Conversar con más improvisación sobre situaciones diarias, cultura y pensamiento chino.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🏮 Inmersión Total: 3 clases de inmersión cultural.
 
@@ -4152,11 +4150,11 @@ Este nivel te ayuda a pasar de frases básicas a un uso más práctico del taila
 • Campus Virtual: Lecciones, videos, materiales y grabaciones.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Leer, escribir y pronunciar con más seguridad dentro del sistema tonal tailandés.
-• Desenvolverte con frases más completas en compras, traslados, restaurantes y situaciones cotidianas.
-• Usar vocabulario real de viajes, direcciones, comida, números, horarios y vida diaria.
-• Formular preguntas, expresar necesidades y ampliar tus oraciones.
-• Comprender costumbres, tradiciones y contexto social tailandés.`,
+• Profundizar clases de consonantes, marcas de tono, abreviaturas y pronunciación tonal.
+• Manejar números grandes, preguntas y vocabulario cotidiano para desenvolverte con más precisión.
+• Usar signos de puntuación, comparativos y prefijos gramaticales en oraciones simples.
+• Practicar comprensión escrita, auditiva y oral con roles sintácticos aplicados.
+• Conocer regiones, lugares famosos, festividades, música, gastronomía e historia tailandesa.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🏯 Inmersión Total: 3 clases culturales.
 🗣️ Conversación Guiada: 5 clases de conversación.
@@ -4179,11 +4177,11 @@ Este nivel está pensado para que ganes más confianza oral y puedas conectar id
 • Campus Virtual: Materiales, videos y grabaciones disponibles.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Ganar mayor seguridad en tonos, escritura, lectura y fluidez oral.
-• Conversar sobre experiencias, necesidades, viajes y situaciones cotidianas con más detalle.
-• Ampliar vocabulario para interacción social, cultura, comida, transporte y situaciones reales.
-• Expresarte con más precisión y conectar ideas con estructuras más sólidas.
-• Profundizar en tradiciones, historia y vida social tailandesa.`,
+• Consolidar gramática de nivel 3 con familia, días de la semana, meses y partículas clave.
+• Usar demostrativos y adverbios como “esto/eso/aquello” en conversación.
+• Expresar aficiones, apodos, superlativos y matices con partículas como มา, อยู่ y ได้.
+• Sostener conversaciones más detalladas con mejor lectura, escucha y respuesta oral.
+• Profundizar en festividades, música, historia y costumbres de Tailandia.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🏯 Inmersión Total: 3 clases culturales.
 🗣️ Conversación Guiada: 5 clases de conversación.
@@ -4237,11 +4235,11 @@ Este nivel te ayuda a pasar del inglés básico a una comunicación más complet
 • Campus Virtual: Acceso a lecciones, videos y materiales.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Mantener conversaciones más completas sobre rutina, gustos, planes, experiencias y viajes.
-• Usar mejor los tiempos verbales, preguntas, respuestas y estructuras frecuentes.
-• Ampliar vocabulario de vida cotidiana, trabajo, viajes, actividades y preferencias.
-• Comprender mejor audios y textos vinculados a situaciones reales.
-• Hablar y escribir frases conectadas con más confianza.`,
+• Afianzar el nivel básico y avanzar hacia una comunicación con más autonomía.
+• Comprender conversaciones, instrucciones y textos claros sobre temas personales o de interés general.
+• Participar en conversaciones con más coherencia, usando estrategias como reformular o parafrasear.
+• Escribir notas, cartas, e-mails y mensajes simples con mejor organización y cohesión.
+• Trabajar comprensión de audios, textos, series o lecturas breves para dar feedback en inglés.`,
         benefits: `🏆 *CERTIFICACIÓN Y RESPALDO*
 • Certificación: Certificado Institucional IKARUGA.
 • Calidad: Programa supervisado por el Mag. Jorge Frías.
@@ -4295,11 +4293,11 @@ Este nivel te permite ordenar mejor tus ideas en alemán y ganar recursos para h
 • Campus Virtual: Lecciones, videos y materiales complementarios.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Conversar sobre rutinas, experiencias, planes, viajes y situaciones cotidianas.
-• Usar con más claridad casos, verbos modales, verbos separables y tiempos frecuentes.
-• Ampliar vocabulario de familia, trabajo, ciudad, compras, actividades y necesidades.
-• Comprender diálogos y textos simples con más confianza.
-• Expresarte mejor de forma oral y escrita, conectando ideas con más orden.`,
+• Hablar sobre comida, cocina, preferencias y situaciones en restaurantes o con amigos.
+• Contar experiencias escolares y comprender diferencias del sistema educativo alemán.
+• Expresar ventajas, desventajas y opiniones sobre temas digitales, películas o libros.
+• Usar verbos modales en pasado, dativo/acusativo, comparativos, superlativos y oraciones con dass/wenn.
+• Escribir textos breves sobre recetas, experiencias, deseos, objetivos y temas cotidianos.`,
         benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
 🏛️ Inmersión Total: 3 clases culturales.
 
@@ -4351,11 +4349,11 @@ Este nivel te ayuda a pasar de lo básico a una comunicación más natural, con 
 • Campus Virtual: Teoría explicada en lecciones, fotos, videos y materiales.
 
 📚 *¿QUÉ VAS A LOGRAR?*
-• Conversar con más soltura sobre rutina, gustos, experiencias, planes y situaciones cotidianas.
-• Usar mejor verbos, artículos, pronombres, preposiciones y estructuras frecuentes.
-• Ampliar vocabulario de familia, casa, comida, ciudad, viajes, compras y actividades.
-• Describir personas, lugares, ambientes y hábitos con mayor precisión.
-• Incorporar expresiones y usos reales del italiano en contexto.`,
+• Comunicarte con más seguridad en situaciones cotidianas y expresar opiniones simples.
+• Reforzar sustantivos, género, número, artículos definidos e indefinidos.
+• Usar plural de sustantivos, adjetivos, pronombres posesivos y concordancia.
+• Conjugar verbos regulares e irregulares frecuentes en presente en frases afirmativas, negativas e interrogativas.
+• Ampliar vocabulario de saludos, familia, comida, bebida, tiempo libre, ciudad y actividades.`,
         benefits: `🏆 *CERTIFICACIÓN Y RESPALDO*
 • Doble Aval: Certificado Institucional IKARUGA + Certificado Oficial con validez universitaria (UAI).
 • Calidad: Programa diseñado y supervisado por el Mag. Jorge Frías.
@@ -4409,6 +4407,18 @@ function updatePostCallLevelDetails(msgId, nivel) {
       note.innerHTML = `✅ Adjuntá el PDF al enviar este mensaje. También podés abrirlo desde aquí: <a href="${data.pdf}" target="_blank" rel="noopener">${data.pdf}</a>`;
     }
   }
+}
+
+function initializePostCallDefaults() {
+  Object.entries(selectedPostCallLevels).forEach(([msgId, nivel]) => {
+    const el = document.getElementById(msgId);
+    const desc = getPostCallDescription(msgId, nivel);
+    if (!el || !desc) return;
+
+    const start = el.innerText.search(/(?:📘 \*Descripción del curso:\*|(?:🇯🇵|🇰🇷|🇨🇳|🇹🇭|🇬🇧|🇩🇪|🇮🇹)\s+\*CURSO DE )/u);
+    el.innerText = start >= 0 ? el.innerText.slice(0, start) + desc : desc;
+    updatePostCallLevelDetails(msgId, nivel);
+  });
 }
 
 function updatePostCallSchedule(msgId) {
