@@ -1218,6 +1218,7 @@ A continuación te comparto la información del curso que acordamos:
           <option value="todos">Todos los meses con cupo</option>
           <option value="julio">Julio</option>
           <option value="agosto">Agosto</option>
+          <option value="septiembre">Septiembre</option>
         </select>
         </div>
       </div>
@@ -2549,7 +2550,8 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
       <tbody>
         <tr><td><span class="level-pill">Tailandés 1</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>S</td><td>Lunes</td><td>21:00 – 00:00</td><td>20/07</td><td>12/10</td></tr>
+        <tr><td><span class="level-pill">Japonés 1 · Grupo Cristian</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
+        <tr><td><span class="level-pill">Japonés 1 · Grupo Agustín</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
       </tbody>
     </table>
   </div>
@@ -2558,9 +2560,6 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
     <table class="schedule-table">
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
       <tbody>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>O</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>L</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>N</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>E</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>F</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
@@ -2590,7 +2589,8 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
     <table class="schedule-table">
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
       <tbody>
-        <tr><td><span class="level-pill">Inglés A1</span></td><td>D</td><td>Sábado</td><td>16:00 – 18:00</td><td>Consultar</td><td>Consultar</td></tr>
+        <tr><td><span class="level-pill">Inglés A1</span></td><td>D</td><td>Sábado</td><td>16:00 – 18:00</td><td>19/09</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>T</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>13/12</td></tr>
       </tbody>
     </table>
   </div>
@@ -3338,10 +3338,9 @@ const idiomaConfig = {
 const horariosARG = {
   japones: {
     "Japonés 1": [
-      "Comisión S · Lunes de 21:00 a 00:00 hs. (Inicia 20/07 · Finaliza 12/10 · Julio 4 módulos)",
-      "Comisión N · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
-      "Comisión O · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos)",
-      "Comisión L · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)"
+      "Comisión R · Grupo Cristian · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
+      "Comisión R · Grupo Agustín · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
+      "Comisión T · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 13/12 · Septiembre 4 módulos)"
     ],
     "Japonés 2": [
       "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
@@ -3379,7 +3378,7 @@ const horariosARG = {
     "Inglés A1": [
       "Comisión C · Grupo 1 · Jueves de 20:00 a 22:00 hs. (Inicia 20/08 · Finaliza 12/11 · Agosto 4 módulos)",
       "Comisión C · Grupo 2 · Jueves de 20:00 a 22:00 hs. (Inicia 20/08 · Finaliza 12/11 · Agosto 4 módulos)",
-      "Comisión D · Sábados de 16:00 a 18:00 hs. (Septiembre 4 módulos · fechas a confirmar)"
+      "Comisión D · Sábados de 16:00 a 18:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)"
     ],
     "Inglés A2": ["Comisión A · Miércoles de 20:00 a 22:00 hs. (Inicia 19/08 · Finaliza 11/11 · Agosto 4 módulos)"]
   },
@@ -3667,14 +3666,14 @@ function getMesesDisponibles(idioma, nivel) {
 }
 
 function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
-  if (idioma === 'japones' && nivel === 'Japonés 1' && mes === 'julio') {
+  if (idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'septiembre' || mes === 'todos')) {
     return getPrecioJulio4Modulos(pais, descKey);
   }
   return getPrecio(idioma, pais, descKey, nivel);
 }
 
 function getCotizadorMaxCuotas(idioma, nivel, mes) {
-  if ((idioma === 'japones' && nivel === 'Japonés 1' && mes === 'julio') || (idioma === 'tailandes' && nivel === 'Tailandés 1')) return 3;
+  if ((idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'septiembre' || mes === 'todos')) || (idioma === 'tailandes' && nivel === 'Tailandés 1')) return 3;
   const key = getTablaKey(idioma, nivel);
   return tablaDescuentos[key]?.cuotas || 4;
 }
@@ -4867,12 +4866,16 @@ function updateJp1Precio() {
   const p = getPrecio('japones', pais, descKey, nivel);
   const pJulio = getPrecioJulio4Modulos(pais, descKey);
   const mes = document.getElementById('pc-jp-mes')?.value || 'todos';
-  const mostrarJulio = nivel === 'Japonés 1' && (mes === 'todos' || mes === 'julio');
-  const mostrarAgosto = mes !== 'julio';
-  const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', mes === 'julio' ? 3 : 4, mes === 'julio' ? 3 : 4);
+  const esJp1 = nivel === 'Japonés 1';
+  const mostrarJulio = esJp1 && (mes === 'todos' || mes === 'julio');
+  const mostrarSeptiembre = esJp1 && (mes === 'todos' || mes === 'septiembre');
+  const mostrarAgosto = !esJp1 && (mes === 'todos' || mes === 'agosto');
+  const maxCuotas = esJp1 ? 3 : 4;
+  const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas);
   const cuotasAgosto = Math.min(cuotasSeleccionadas, 4);
   const cuotasJulio = Math.min(cuotasSeleccionadas, 3);
-  const agostoTexto = mostrarAgosto ? `*${nivel === 'Japonés 1' ? 'Comisiones de agosto · 5 módulos' : `${nivel} · 5 módulos`}*
+  const cuotasSeptiembre = Math.min(cuotasSeleccionadas, 3);
+  const agostoTexto = mostrarAgosto ? `*${nivel} · agosto · 5 módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 ${buildFinanciacionLine(p, cuotasAgosto)}` : '';
@@ -4880,10 +4883,14 @@ ${buildFinanciacionLine(p, cuotasAgosto)}` : '';
 ❌ Valor Regular: ${pJulio.simbolo}${pJulio.precio_reg}
 ✅ *Inversión HOY: ${pJulio.simbolo}${pJulio.precio_hoy}* (todo el curso completo).
 ${buildFinanciacionLine(pJulio, cuotasJulio)}` : '';
+  const septiembreTexto = mostrarSeptiembre ? `${(mostrarAgosto || mostrarJulio) ? '\n\n' : ''}*Comisión de septiembre · 4 módulos*
+❌ Valor Regular: ${pJulio.simbolo}${pJulio.precio_reg}
+✅ *Inversión HOY: ${pJulio.simbolo}${pJulio.precio_hoy}* (todo el curso completo).
+${buildFinanciacionLine(pJulio, cuotasSeptiembre)}` : '';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
 
-${agostoTexto}${julioTexto || (mostrarAgosto ? '' : 'Consultar cotización disponible para el mes seleccionado.')}`;
+${agostoTexto}${julioTexto}${septiembreTexto || ((mostrarAgosto || mostrarJulio) ? '' : 'Consultar cotización disponible para el mes seleccionado.')}`;
 }
 
 const pagosPorPais = {
