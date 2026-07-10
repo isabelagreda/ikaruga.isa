@@ -606,6 +606,9 @@
       <button class="nav-link" onclick="showSection('recontacto')">
         <span class="dot"></span> Recontacto de lead
       </button>
+      <button class="nav-link" onclick="showSection('exo')">
+        <span class="dot"></span> EXO · Siguiente nivel
+      </button>
       <button class="nav-link" onclick="showSection('promo-full')">
         <span class="dot"></span> ⚡ Promo Full Agosto
       </button>
@@ -963,6 +966,110 @@ Como trabajamos con cupos por grupo y orientación previa, si todavía querés r
 
 En caso de que prefieras avanzar más adelante, dejamos tu consulta en pausa sin problema. 😊</div>
     <div class="msg-note">✅ Usar cuando ya pasaron varios días sin respuesta y querés cerrar el seguimiento sin bajar autoridad.</div>
+  </div>
+</div>
+
+<!-- EXO -->
+<div class="section" id="exo">
+  <div class="section-header">
+    <div class="section-tag">Alumnos actuales / recompra</div>
+    <h1 class="section-title">EXO · Siguiente nivel</h1>
+    <p class="section-desc">Para alumnos que ya compraron o finalizaron un curso. Adaptá el mensaje para invitarlos a continuar con el siguiente nivel.</p>
+  </div>
+
+  <div class="info-block">Usalo con alumnos que ya conocen IKARUGA. El tono debe ser cercano, de continuidad y cuidado académico, no como lead frío.</div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Generador de mensaje EXO <span class="badge badge-green">Adaptable</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-exo-generado', this)">Copiar</button>
+    </div>
+    <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;">
+      <div>
+        <label for="exo-alumno" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Nombre del alumno</label>
+        <input id="exo-alumno" type="text" value="[Nombre]" oninput="updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+      </div>
+      <div>
+        <label for="exo-idioma" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Idioma</label>
+        <select id="exo-idioma" onchange="updateExoLevels(); updateExoHorarios(); updateExoMessage();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="Japonés">Japonés</option>
+          <option value="Coreano">Coreano</option>
+          <option value="Chino Mandarín">Chino Mandarín</option>
+          <option value="Tailandés">Tailandés</option>
+          <option value="Alemán">Alemán</option>
+          <option value="Inglés">Inglés</option>
+          <option value="Italiano">Italiano</option>
+        </select>
+      </div>
+      <div>
+        <label for="exo-nivel-actual" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Nivel cursado</label>
+        <select id="exo-nivel-actual" onchange="updateExoSuggestedNext(); updateExoDiscounts(); updateExoHorarios(); updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;"></select>
+      </div>
+      <div>
+        <label for="exo-nivel-siguiente" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Siguiente nivel</label>
+        <select id="exo-nivel-siguiente" onchange="updateExoDiscounts(); updateExoHorarios(); updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;"></select>
+      </div>
+      <div>
+        <label for="exo-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+        <select id="exo-pais" onchange="updateExoHorarios(); updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina · ARS</option>
+          <option value="MEX">México CDMX · MXN</option>
+          <option value="CHL">Chile continental · USD</option>
+          <option value="BOL">Bolivia · USD</option>
+          <option value="PRY">Paraguay · USD</option>
+          <option value="COL">Colombia · USD</option>
+          <option value="PER">Perú · USD</option>
+          <option value="ECU">Ecuador · USD</option>
+          <option value="PAN">Panamá · USD</option>
+          <option value="HND">Honduras · USD</option>
+          <option value="SLV">El Salvador · USD</option>
+          <option value="CRI">Costa Rica · USD</option>
+        </select>
+      </div>
+      <div>
+        <label for="exo-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Descuento</label>
+        <select id="exo-descuento" onchange="updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;"></select>
+      </div>
+      <div>
+        <label for="exo-cuotas" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Cuotas</label>
+        <select id="exo-cuotas" onchange="updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="1">1 cuota</option>
+          <option value="2">2 cuotas</option>
+          <option value="3">3 cuotas</option>
+          <option value="4" selected>4 cuotas</option>
+        </select>
+      </div>
+      <div>
+        <label for="exo-horario" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Horario a enviar</label>
+        <select id="exo-horario" onchange="updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;"></select>
+      </div>
+      <div>
+        <label for="exo-tono" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Tipo de mensaje</label>
+        <select id="exo-tono" onchange="updateExoMessage()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="continuidad">Continuidad académica</option>
+          <option value="cupos">Cupos / prioridad alumno</option>
+          <option value="calido">Cálido y cercano</option>
+        </select>
+      </div>
+    </div>
+    <div class="msg-body" id="msg-exo-generado"></div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Mensaje corto de respaldo</div>
+      <button class="copy-btn" onclick="copyMsg('msg-exo-redes', this)">Copiar</button>
+    </div>
+    <div class="msg-body" id="msg-exo-redes">También te invito a seguir conociendo nuestra comunidad y las experiencias de otros estudiantes:
+
+Instagram:
+https://www.instagram.com/ikaruga.idiomas/
+
+Reseñas en Facebook:
+https://www.facebook.com/ikaruga.idiomas/reviews
+
+Opiniones en Google:
+https://maps.app.goo.gl/JXtd62n6t8sVLpsSA</div>
   </div>
 </div>
 
@@ -3873,6 +3980,8 @@ document.addEventListener('DOMContentLoaded', () => {
   updateItA1HorarioPais();
   updateItA1Precio();
   updateItA1Pago();
+  updateExoLevels();
+  updateExoMessage();
 });
 
 
@@ -4063,6 +4172,168 @@ function copyMsg(id, btn) {
     btn.classList.add('copied');
     setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
   });
+}
+
+const exoLevels = {
+  "Japonés": ["Japonés 1", "Japonés 2", "Japonés 3", "Japonés 4"],
+  "Coreano": ["Coreano 1", "Coreano 2"],
+  "Chino Mandarín": ["Chino 1", "Chino 2"],
+  "Tailandés": ["Tailandés 1", "Tailandés 2", "Tailandés 3"],
+  "Alemán": ["Alemán A1", "Alemán A2"],
+  "Inglés": ["Inglés A1", "Inglés A2"],
+  "Italiano": ["Italiano A1", "Italiano A2"]
+};
+
+const exoIdiomaMap = {
+  "Japonés": "japones",
+  "Coreano": "coreano",
+  "Chino Mandarín": "chino",
+  "Tailandés": "tailandes",
+  "Alemán": "aleman",
+  "Inglés": "ingles",
+  "Italiano": "italiano"
+};
+
+function updateExoLevels() {
+  const idioma = document.getElementById('exo-idioma')?.value || 'Japonés';
+  const actual = document.getElementById('exo-nivel-actual');
+  const siguiente = document.getElementById('exo-nivel-siguiente');
+  if (!actual || !siguiente) return;
+  const niveles = exoLevels[idioma] || exoLevels["Japonés"];
+  actual.innerHTML = niveles.map(n => `<option value="${n}">${n}</option>`).join('');
+  siguiente.innerHTML = niveles.map(n => `<option value="${n}">${n}</option>`).join('');
+  updateExoSuggestedNext();
+  updateExoDiscounts();
+  updateExoHorarios();
+}
+
+function updateExoSuggestedNext() {
+  const idioma = document.getElementById('exo-idioma')?.value || 'Japonés';
+  const actual = document.getElementById('exo-nivel-actual');
+  const siguiente = document.getElementById('exo-nivel-siguiente');
+  const niveles = exoLevels[idioma] || exoLevels["Japonés"];
+  if (!actual || !siguiente || !niveles.length) return;
+  const idx = niveles.indexOf(actual.value);
+  const nextIndex = idx >= 0 && idx < niveles.length - 1 ? idx + 1 : idx;
+  if (niveles[nextIndex]) siguiente.value = niveles[nextIndex];
+}
+
+function getExoIdiomaId() {
+  const idioma = document.getElementById('exo-idioma')?.value || 'Japonés';
+  return exoIdiomaMap[idioma] || 'japones';
+}
+
+function getExoPrecioMes(idiomaId, nivel) {
+  const horarios = horariosARG[idiomaId]?.[nivel] || [];
+  if (horarios.some(h => /septiembre/i.test(h))) return 'septiembre';
+  if (horarios.some(h => /julio/i.test(h))) return 'julio';
+  if (horarios.some(h => /agosto/i.test(h))) return 'agosto';
+  return 'todos';
+}
+
+function updateExoDiscounts() {
+  const idiomaId = getExoIdiomaId();
+  const nivel = document.getElementById('exo-nivel-siguiente')?.value || 'Japonés 2';
+  const desc = document.getElementById('exo-descuento');
+  if (!desc) return;
+  const opts = getDescuentosDisponibles(idiomaId, nivel);
+  const defaultKey = opts.some(o => o.key === 'd35') ? 'd35' : (opts.some(o => o.key === 'd30') ? 'd30' : opts[0]?.key);
+  desc.innerHTML = opts.map(o => `<option value="${o.key}" ${o.key === defaultKey ? 'selected' : ''}>${o.pct} OFF</option>`).join('');
+}
+
+function getExoHorariosBase() {
+  const idiomaId = getExoIdiomaId();
+  const nivel = document.getElementById('exo-nivel-siguiente')?.value || 'Japonés 2';
+  return (horariosARG[idiomaId]?.[nivel] || []).filter(horarioTieneCupo);
+}
+
+function updateExoHorarios() {
+  const select = document.getElementById('exo-horario');
+  if (!select) return;
+  const pais = document.getElementById('exo-pais')?.value || 'ARG';
+  const horariosLocal = convertHorarios(getExoHorariosBase(), tzDiff[pais] ?? 0);
+  if (!horariosLocal.length) {
+    select.innerHTML = '<option value="todos">Consultar próxima comisión disponible</option>';
+    return;
+  }
+  const opciones = horariosLocal.map((h, i) => `<option value="${i}">${h.replace(/"/g, '&quot;')}</option>`).join('');
+  select.innerHTML = `<option value="todos">Todos los horarios con cupo</option>${opciones}`;
+}
+
+function buildExoHorarioTexto(idiomaId, nivel, pais) {
+  const horariosBase = (horariosARG[idiomaId]?.[nivel] || []).filter(horarioTieneCupo);
+  if (!horariosBase.length) return '• Consultar próxima comisión disponible.';
+  const horariosLocal = convertHorarios(horariosBase, tzDiff[pais] ?? 0);
+  const horarioElegido = document.getElementById('exo-horario')?.value || 'todos';
+  if (horarioElegido !== 'todos' && horariosLocal[Number(horarioElegido)]) {
+    return `• ${horariosLocal[Number(horarioElegido)]}`;
+  }
+  return horariosLocal.map(h => `• ${h}`).join('\n');
+}
+
+function updateExoMessage() {
+  const target = document.getElementById('msg-exo-generado');
+  if (!target) return;
+  const alumno = document.getElementById('exo-alumno')?.value || '[Nombre]';
+  const idioma = document.getElementById('exo-idioma')?.value || 'Japonés';
+  const idiomaId = getExoIdiomaId();
+  const nivelActual = document.getElementById('exo-nivel-actual')?.value || `${idioma} 1`;
+  const nivelSiguiente = document.getElementById('exo-nivel-siguiente')?.value || `${idioma} 2`;
+  const pais = document.getElementById('exo-pais')?.value || 'ARG';
+  const descKey = document.getElementById('exo-descuento')?.value || 'd35';
+  const tono = document.getElementById('exo-tono')?.value || 'continuidad';
+  const mesPrecio = getExoPrecioMes(idiomaId, nivelSiguiente);
+  const precio = getCotizadorPrecio(idiomaId, nivelSiguiente, pais, descKey, mesPrecio);
+  const maxCuotas = getCotizadorMaxCuotas(idiomaId, nivelSiguiente, mesPrecio);
+  const cuotas = setCuotasMax('exo-cuotas', maxCuotas, maxCuotas);
+  const horariosTexto = buildExoHorarioTexto(idiomaId, nivelSiguiente, pais);
+  const paisLabel = paisNombres[pais] || 'tu país';
+  const duracion = `${precio.meses} módulos · ${precio.hs} semanales en vivo`;
+  const precioBloque = `📅 *Horarios disponibles (${paisLabel}):*
+${horariosTexto}
+
+⏱️ *Duración:* ${duracion}
+💳 *Propuesta EXO ${precio.descuento} OFF*
+❌ Valor regular: ${precio.simbolo}${precio.precio_reg}
+✅ *Inversión para continuar: ${precio.simbolo}${precio.precio_hoy}* (nivel completo).
+${buildFinanciacionLine(precio, cuotas)}`;
+
+  const intro = `¡Hola ${alumno}! 👋 Soy {NOMBRE} de IKARUGA. ⛩️`;
+  const cierre = `Si querés continuar, puedo ayudarte a reservar tu lugar en la comisión que mejor te quede.`;
+
+  const mensajes = {
+    continuidad: `${intro}
+
+Te escribo porque ya venís haciendo tu recorrido con nosotros en *${nivelActual}* y quería invitarte a continuar con el siguiente paso: *${nivelSiguiente}*.
+
+La idea es que no pierdas continuidad, sigas avanzando con una base ordenada y aproveches todo lo que ya construiste en ${idioma}.
+
+${precioBloque}
+
+${cierre}`,
+    cupos: `${intro}
+
+Te escribo porque estamos organizando los próximos grupos de *${nivelSiguiente}* y queríamos avisarte primero por ser parte de la comunidad IKARUGA.
+
+Este es un buen momento para reservar tu continuidad antes de que se completen los cupos disponibles.
+
+${precioBloque}
+
+${cierre}`,
+    calido: `${intro}
+
+Espero que estés muy bien 😊
+
+Quería escribirte personalmente para invitarte a seguir tu camino en ${idioma} con *${nivelSiguiente}*.
+
+Ya diste un paso importante con *${nivelActual}*, y continuar ahora te ayuda a sostener ritmo, práctica y confianza con el idioma.
+
+${precioBloque}
+
+${cierre}`
+  };
+
+  target.innerText = mensajes[tono] || mensajes.continuidad;
 }
 
 const postCallLevelDetails = {
