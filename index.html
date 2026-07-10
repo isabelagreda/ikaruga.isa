@@ -3922,6 +3922,7 @@ function updateNombre(nombre) {
   // Re-render static messages from source
   renderStaticMessages(nombre);
   if (typeof initializePostCallDefaults === 'function') initializePostCallDefaults();
+  if (typeof updateExoMessage === 'function') updateExoMessage();
 }
 
 const mensajesOriginales = {};
@@ -4298,7 +4299,7 @@ ${horariosTexto}
 ✅ *Inversión para continuar: ${precio.simbolo}${precio.precio_hoy}* (nivel completo).
 ${buildFinanciacionLine(precio, cuotas)}`;
 
-  const intro = `¡Hola ${alumno}! 👋 Soy {NOMBRE} de IKARUGA. ⛩️`;
+  const intro = `¡Hola ${alumno}! 👋 Soy ${nombreActual}, ${getTitulo(nombreActual)} de IKARUGA. ⛩️`;
   const cierre = `Si querés continuar, puedo ayudarte a reservar tu lugar en la comisión que mejor te quede.`;
 
   const mensajes = {
