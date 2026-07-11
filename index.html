@@ -1940,7 +1940,7 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
         </div>
       </div>
       <div class="msg-body" id="pc-th-precio"></div>
-      <div class="msg-note">✅ Tailandés 1 usa la tabla de 4 módulos.</div>
+      <div class="msg-note">✅ Tailandés 1 usa tabla de 4 módulos. Tailandés 2 y 3 usan tabla de 5 módulos.</div>
     </div>
 
     <div class="msg-card">
@@ -2308,7 +2308,7 @@ A continuación te comparto la información del curso que acordamos:
         </div>
       </div>
       <div class="msg-body" id="pc-de-precio"></div>
-      <div class="msg-note">✅ Alemán A1 usa tabla de 5 módulos · 3 horas semanales · 4 cuotas.</div>
+      <div class="msg-note">✅ Alemán usa tabla de 5 módulos · 3 horas semanales · 4 cuotas.</div>
     </div>
 
     <div class="msg-card">
@@ -2667,6 +2667,7 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
         <tr><td><span class="level-pill">Japonés 2</span></td><td>E</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>F</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
         <tr><td><span class="level-pill">Japonés 3</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 3</span></td><td>D</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
         <tr><td><span class="level-pill">Japonés 4</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
         <tr><td><span class="level-pill">Coreano 1 · Grupo 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
         <tr><td><span class="level-pill">Coreano 1 · Grupo 2</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
@@ -3451,7 +3452,8 @@ const horariosARG = {
       "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)"
     ],
     "Japonés 3": [
-      "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)"
+      "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
+      "Comisión D · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)"
     ],
     "Japonés 4": [
       "Comisión A · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos)"
@@ -3958,6 +3960,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
   updateCotizadorNiveles();
   hideCursosCompletos();
+  normalizePostCallCardTitles();
   updatePromoMundialCotizacion();
   initializePostCallDefaults();
   updateJp1HorarioPais();
@@ -4154,6 +4157,12 @@ function hideCursosCompletos() {
     if (/(cupos?\s+completos?|completo|curso\s+cerrado|cerrado)/i.test(txt)) {
       el.style.display = 'none';
     }
+  });
+}
+
+function normalizePostCallCardTitles() {
+  document.querySelectorAll('.msg-card-title').forEach(el => {
+    el.textContent = el.textContent.replace(/ · (Coreano 1|Chino 1|Tailandés 1|Inglés A1|Alemán A1|Italiano A1)$/u, '');
   });
 }
 
@@ -4862,6 +4871,20 @@ function filtrarHorariosPorMes(horarios, mes) {
   return conCupo.filter(h => h.toLowerCase().includes(mes.toLowerCase()));
 }
 
+function updatePostCallMesOptions(msgId, nivel) {
+  const cfg = postCallScheduleConfig[msgId];
+  if (!cfg?.mesId) return;
+  const select = document.getElementById(cfg.mesId);
+  if (!select) return;
+  const meses = getMesesDisponibles(cfg.idioma, nivel);
+  const opciones = meses.length > 1
+    ? [{ value: 'todos', label: 'Todos los meses con cupo' }, ...meses]
+    : meses;
+  const current = select.value;
+  select.innerHTML = opciones.map(m => `<option value="${m.value}">${m.label}</option>`).join('');
+  select.value = opciones.some(m => m.value === current) ? current : (opciones[0]?.value || 'todos');
+}
+
 function updatePostCallLevelDetails(msgId, nivel) {
   const group = postCallLevelDetails[msgId];
   const data = group?.levels?.[nivel];
@@ -4896,6 +4919,7 @@ function initializePostCallDefaults() {
     const start = el.innerText.search(/(?:📘 \*Descripción del curso:\*|(?:🇯🇵|🇰🇷|🇨🇳|🇹🇭|🇬🇧|🇩🇪|🇮🇹)\s+\*CURSO DE )/u);
     el.innerText = start >= 0 ? el.innerText.slice(0, start) + desc : desc;
     updatePostCallLevelDetails(msgId, nivel);
+    updatePostCallMesOptions(msgId, nivel);
   });
 }
 
@@ -4939,8 +4963,15 @@ function setNivel(msgId, nivel, btn) {
     el.innerText = start >= 0 ? el.innerText.slice(0, start) + desc : desc;
   }
   updatePostCallLevelDetails(msgId, nivel);
+  updatePostCallMesOptions(msgId, nivel);
   updatePostCallSchedule(msgId);
   if (msgId === 'pc-jp') updateJp1Precio();
+  if (msgId === 'pc-kr') updateKr1Precio();
+  if (msgId === 'pc-zh') updateZh1Precio();
+  if (msgId === 'pc-th') updateTh1Precio();
+  if (msgId === 'pc-en') updateEnA1Precio();
+  if (msgId === 'pc-de') updateDeA1Precio();
+  if (msgId === 'pc-it') updateItA1Precio();
   // Replace any existing nivel already set, or the placeholder
   el.innerText = el.innerText.replace(/\[NIVEL\]|Japonés \d|Coreano \d|Chino \d|Tailandés \d|Alemán A\d|Inglés A\d|Italiano A\d/g, nivel);
   // Mark button as selected
@@ -5336,11 +5367,13 @@ function updateKr1Precio() {
   const target = document.getElementById('pc-kr-precio');
   if (!target) return;
 
-  const p = getPrecio('coreano', pais, descKey, 'Coreano 1');
+  const nivel = selectedPostCallLevels['pc-kr'] || 'Coreano 1';
+  const p = getPrecio('coreano', pais, descKey, nivel);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+*${nivel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
@@ -5378,11 +5411,13 @@ function updateZh1Precio() {
   const target = document.getElementById('pc-zh-precio');
   if (!target) return;
 
-  const p = getPrecio('chino', pais, descKey, 'Chino 1');
+  const nivel = selectedPostCallLevels['pc-zh'] || 'Chino 1';
+  const p = getPrecio('chino', pais, descKey, nivel);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+*${nivel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
@@ -5420,10 +5455,15 @@ function updateTh1Precio() {
   const target = document.getElementById('pc-th-precio');
   if (!target) return;
 
-  const p = getPrecio('tailandes', pais, descKey, 'Tailandés 1');
-  const cuotas = setCuotasMax('pc-th-cuotas', 3, 3);
+  const nivel = selectedPostCallLevels['pc-th'] || 'Tailandés 1';
+  const esTail1 = nivel === 'Tailandés 1';
+  const p = getPrecio('tailandes', pais, descKey, nivel);
+  const maxCuotas = esTail1 ? 3 : 4;
+  const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas, maxCuotas);
+  const moduloLabel = esTail1 ? '4 módulos' : '5 módulos';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+*${nivel} · ${moduloLabel}*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 ${buildFinanciacionLine(p, cuotas)}`;
@@ -5461,11 +5501,13 @@ function updateEnA1Precio() {
   const target = document.getElementById('pc-en-precio');
   if (!target) return;
 
-  const p = getPrecio('ingles', pais, descKey, 'Inglés A1');
+  const nivel = selectedPostCallLevels['pc-en'] || 'Inglés A1';
+  const p = getPrecio('ingles', pais, descKey, nivel);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+*${nivel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
@@ -5503,11 +5545,13 @@ function updateDeA1Precio() {
   const target = document.getElementById('pc-de-precio');
   if (!target) return;
 
-  const p = getPrecio('aleman', pais, descKey, 'Alemán A1');
+  const nivel = selectedPostCallLevels['pc-de'] || 'Alemán A1';
+  const p = getPrecio('aleman', pais, descKey, nivel);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+*${nivel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
@@ -5545,11 +5589,13 @@ function updateItA1Precio() {
   const target = document.getElementById('pc-it-precio');
   if (!target) return;
 
-  const p = getPrecio('italiano', pais, descKey, 'Italiano A1');
+  const nivel = selectedPostCallLevels['pc-it'] || 'Italiano A1';
+  const p = getPrecio('italiano', pais, descKey, nivel);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+*${nivel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
