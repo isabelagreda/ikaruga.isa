@@ -625,7 +625,7 @@
     <div class="nav-group">
       <div class="nav-group-label">Horarios 2026</div>
       <button class="nav-link" onclick="showSection('horarios')">
-        <span class="dot"></span> Julio / Agosto / Septiembre
+        <span class="dot"></span> Julio / Agosto / Septiembre / Octubre
       </button>
       <button class="nav-link" onclick="showSection('zonas')">
         <span class="dot"></span> Horarios por país
@@ -1256,6 +1256,9 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
         <button class="level-sel-btn" onclick="setNivel('pc-jp','Japonés 4',this)">🇯🇵 Japonés 4</button>
       </div>
     </div>
+    <div class="info-block">
+      <strong>Antes de copiar:</strong> seleccioná el nivel y el mes/campaña. El Mensaje 1, horarios y precio se ajustan a esos parámetros para evitar ofrecer 5 módulos cuando la comisión es de 4.
+    </div>
     <div class="msg-card">
       <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Japonés</div><button class="copy-btn" onclick="copyMsg('pc-jp',this)">Copiar</button></div>
       <div class="msg-body" id="pc-jp">¡Fue un placer hablar con vos! 🌸
@@ -1317,7 +1320,7 @@ A continuación te comparto la información del curso que acordamos:
         </div>
         <div style="flex:1;min-width:190px;">
         <label for="pc-jp-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
-        <select id="pc-jp-mes" onchange="updateJp1HorarioPais(); updateJp1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+        <select id="pc-jp-mes" onchange="refreshPostCallDescription('pc-jp'); updateJp1HorarioPais(); updateJp1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
           <option value="julio">Julio</option>
           <option value="agosto">Agosto</option>
@@ -1516,6 +1519,12 @@ A continuación te comparto la información del curso que acordamos:
           <option value="HND">Honduras</option>
           <option value="SLV">El Salvador</option>
         </select>
+        <label for="pc-kr-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin:12px 0 7px;">Mes / campaña</label>
+        <select id="pc-kr-mes" onchange="refreshPostCallDescription('pc-kr'); updateKr1HorarioPais(); updateKr1Precio();" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="todos">Todos los meses con cupo</option>
+          <option value="agosto">Agosto</option>
+          <option value="octubre">Octubre</option>
+        </select>
       </div>
       <div class="msg-body" id="pc-kr-horario"></div>
       <div class="msg-note">✅ El horario se calcula desde Argentina según el país seleccionado.</div>
@@ -1697,6 +1706,12 @@ A continuación te comparto la información del curso que acordamos:
           <option value="PAN">Panamá</option>
           <option value="HND">Honduras</option>
           <option value="SLV">El Salvador</option>
+        </select>
+        <label for="pc-zh-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin:12px 0 7px;">Mes / campaña</label>
+        <select id="pc-zh-mes" onchange="refreshPostCallDescription('pc-zh'); updateZh1HorarioPais(); updateZh1Precio();" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="todos">Todos los meses con cupo</option>
+          <option value="agosto">Agosto</option>
+          <option value="octubre">Octubre</option>
         </select>
       </div>
       <div class="msg-body" id="pc-zh-horario"></div>
@@ -1887,7 +1902,7 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
         </div>
         <div style="flex:1;min-width:190px;">
         <label for="pc-th-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
-        <select id="pc-th-mes" onchange="updateTh1HorarioPais();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+        <select id="pc-th-mes" onchange="refreshPostCallDescription('pc-th'); updateTh1HorarioPais(); updateTh1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
           <option value="julio">Julio</option>
           <option value="agosto">Agosto</option>
@@ -2085,7 +2100,7 @@ Al finalizar el programa y aprobar la evaluación correspondiente, recibís tu c
         </div>
         <div style="flex:1;min-width:190px;">
         <label for="pc-en-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
-        <select id="pc-en-mes" onchange="updateEnA1HorarioPais();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+        <select id="pc-en-mes" onchange="refreshPostCallDescription('pc-en'); updateEnA1HorarioPais(); updateEnA1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
           <option value="agosto">Agosto</option>
           <option value="septiembre">Septiembre</option>
@@ -2639,13 +2654,14 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
   <div class="section-header">
     <div class="section-tag">Planificador 2026</div>
     <h1 class="section-title">Horarios por mes</h1>
-    <p class="section-desc">Horarios base en Argentina. Separado como el planificador: julio, agosto y septiembre. Los cursos completos/cerrados no se muestran.</p>
+    <p class="section-desc">Horarios base en Argentina. Separado como el planificador: julio, agosto, septiembre y octubre. Los cursos completos/cerrados no se muestran.</p>
   </div>
 
   <div class="tabs" id="horarios-tabs">
     <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-julio',this)">Julio 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-agosto',this)">Agosto 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-septiembre',this)">Septiembre 2026</button>
+    <button class="tab-btn" onclick="showTab('horarios-tabs','hor-octubre',this)">Octubre 2026</button>
   </div>
 
   <div class="tab-content active" id="hor-julio">
@@ -2653,8 +2669,8 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
       <tbody>
         <tr><td><span class="level-pill">Tailandés 1</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
-        <tr><td><span class="level-pill">Japonés 1 · Grupo Cristian</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
-        <tr><td><span class="level-pill">Japonés 1 · Grupo Agustín</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
+        <tr><td><span class="level-pill">Japonés 1 · Grupo 1</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
+        <tr><td><span class="level-pill">Japonés 1 · Grupo 2</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
       </tbody>
     </table>
   </div>
@@ -2695,6 +2711,22 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
       <tbody>
         <tr><td><span class="level-pill">Inglés A1</span></td><td>D</td><td>Sábado</td><td>16:00 – 18:00</td><td>19/09</td><td>12/12</td></tr>
         <tr><td><span class="level-pill">Japonés 1</span></td><td>T</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>13/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>U</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/09</td><td>14/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>G</td><td>Sábados</td><td>14:00 – 17:00</td><td>21/09</td><td>14/12</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>H</td><td>Jueves</td><td>21:00 – 00:00</td><td>17/09</td><td>10/12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-octubre">
+    <table class="schedule-table">
+      <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Inglés A1</span></td><td>E</td><td>Sábados</td><td>17:00 – 19:00</td><td>24/10</td><td>09/01</td></tr>
+        <tr><td><span class="level-pill">Coreano 1</span></td><td>F</td><td>Domingos</td><td>14:00 – 17:00</td><td>18/10</td><td>10/01</td></tr>
+        <tr><td><span class="level-pill">Tailandés 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>24/10</td><td>09/01</td></tr>
+        <tr><td><span class="level-pill">Chino 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>24/10</td><td>09/01</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>V</td><td>Miércoles</td><td>21:00 – 00:00</td><td>21/10</td><td>13/01</td></tr>
       </tbody>
     </table>
   </div>
@@ -3438,18 +3470,22 @@ const idiomaConfig = {
 };
 
 // ---- Horarios base en hora Argentina ----
-// Horarios confirmados desde Planificador de cursos IKARUGA — Julio/Agosto/Septiembre 2026
+// Horarios confirmados desde Planificador de cursos IKARUGA — Julio/Agosto/Septiembre/Octubre 2026
 const horariosARG = {
   japones: {
     "Japonés 1": [
-      "Comisión R · Grupo Cristian · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
-      "Comisión R · Grupo Agustín · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
-      "Comisión T · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 13/12 · Septiembre 4 módulos)"
+      "Comisión R · Grupo 1 · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
+      "Comisión R · Grupo 2 · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
+      "Comisión T · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 13/12 · Septiembre 4 módulos)",
+      "Comisión U · Lunes de 21:00 a 00:00 hs. (Inicia 21/09 · Finaliza 14/12 · Septiembre 4 módulos)",
+      "Comisión V · Miércoles de 21:00 a 00:00 hs. (Inicia 21/10 · Finaliza 13/01 · Octubre 4 módulos)"
     ],
     "Japonés 2": [
       "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
       "Comisión E · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos)",
-      "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)"
+      "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)",
+      "Comisión G · Sábados de 14:00 a 17:00 hs. (Inicia 21/09 · Finaliza 14/12 · Septiembre 4 módulos)",
+      "Comisión H · Jueves de 21:00 a 00:00 hs. (Inicia 17/09 · Finaliza 10/12 · Septiembre 4 módulos)"
     ],
     "Japonés 3": [
       "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
@@ -3463,19 +3499,24 @@ const horariosARG = {
     "Coreano 1": [
       "Comisión D · Grupo 1 · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
       "Comisión D · Grupo 2 · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
-      "Comisión E · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)"
+      "Comisión E · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)",
+      "Comisión F · Domingos de 14:00 a 17:00 hs. (Inicia 18/10 · Finaliza 10/01 · Octubre 4 módulos)"
     ],
     "Coreano 2": ["Comisión D · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12 · Agosto 5 módulos)"]
   },
   chino: {
     "Chino 1": [
       "Comisión C · Grupo 1 · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12 · Agosto 5 módulos)",
-      "Comisión C · Grupo 2 · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12 · Agosto 5 módulos)"
+      "Comisión C · Grupo 2 · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12 · Agosto 5 módulos)",
+      "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)"
     ],
     "Chino 2": ["Comisión D · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)"]
   },
   tailandes: {
-    "Tailandés 1": ["Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)"],
+    "Tailandés 1": [
+      "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
+      "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)"
+    ],
     "Tailandés 2": ["Comisión B · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)"],
     "Tailandés 3": ["Comisión A · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos)"]
   },
@@ -3483,7 +3524,8 @@ const horariosARG = {
     "Inglés A1": [
       "Comisión C · Grupo 1 · Jueves de 20:00 a 22:00 hs. (Inicia 20/08 · Finaliza 12/11 · Agosto 4 módulos)",
       "Comisión C · Grupo 2 · Jueves de 20:00 a 22:00 hs. (Inicia 20/08 · Finaliza 12/11 · Agosto 4 módulos)",
-      "Comisión D · Sábados de 16:00 a 18:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)"
+      "Comisión D · Sábados de 16:00 a 18:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)",
+      "Comisión E · Sábados de 17:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)"
     ],
     "Inglés A2": ["Comisión A · Miércoles de 20:00 a 22:00 hs. (Inicia 19/08 · Finaliza 11/11 · Agosto 4 módulos)"]
   },
@@ -3767,18 +3809,36 @@ function getMesesDisponibles(idioma, nivel) {
   if (horarios.some(h => /julio/i.test(h))) meses.push({ value: 'julio', label: 'Julio' });
   if (horarios.some(h => /agosto/i.test(h))) meses.push({ value: 'agosto', label: 'Agosto' });
   if (horarios.some(h => /septiembre/i.test(h))) meses.push({ value: 'septiembre', label: 'Septiembre' });
+  if (horarios.some(h => /octubre/i.test(h))) meses.push({ value: 'octubre', label: 'Octubre' });
   return meses.length ? meses : [{ value: 'todos', label: 'Consultar mes' }];
 }
 
 function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
-  if (idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'septiembre' || mes === 'todos')) {
+  const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
+  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'todos');
+  const esOctubre4 = mes === 'octubre' && (
+    (idioma === 'japones' && nivel === 'Japonés 1') ||
+    (idioma === 'coreano' && nivel === 'Coreano 1') ||
+    (idioma === 'chino' && nivel === 'Chino 1') ||
+    (idioma === 'tailandes' && nivel === 'Tailandés 1')
+  );
+  if (esJpSeptiembre4 || esJp1Julio4 || esOctubre4) {
     return getPrecioJulio4Modulos(pais, descKey);
   }
   return getPrecio(idioma, pais, descKey, nivel);
 }
 
 function getCotizadorMaxCuotas(idioma, nivel, mes) {
-  if ((idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'septiembre' || mes === 'todos')) || (idioma === 'tailandes' && nivel === 'Tailandés 1')) return 3;
+  if (mes === 'septiembre' || mes === 'octubre') return 4;
+  const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
+  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'todos');
+  const esOctubre4 = mes === 'octubre' && (
+    (idioma === 'japones' && nivel === 'Japonés 1') ||
+    (idioma === 'coreano' && nivel === 'Coreano 1') ||
+    (idioma === 'chino' && nivel === 'Chino 1') ||
+    (idioma === 'tailandes' && nivel === 'Tailandés 1')
+  );
+  if (esJpSeptiembre4 || esJp1Julio4 || esOctubre4 || (idioma === 'tailandes' && nivel === 'Tailandés 1')) return 3;
   const key = getTablaKey(idioma, nivel);
   return tablaDescuentos[key]?.cuotas || 4;
 }
@@ -4236,6 +4296,7 @@ function getExoIdiomaId() {
 function getExoPrecioMes(idiomaId, nivel) {
   const horarios = horariosARG[idiomaId]?.[nivel] || [];
   if (horarios.some(h => /septiembre/i.test(h))) return 'septiembre';
+  if (horarios.some(h => /octubre/i.test(h))) return 'octubre';
   if (horarios.some(h => /julio/i.test(h))) return 'julio';
   if (horarios.some(h => /agosto/i.test(h))) return 'agosto';
   return 'todos';
@@ -4853,8 +4914,8 @@ const selectedPostCallLevels = {
 
 const postCallScheduleConfig = {
   'pc-jp': { idioma: 'japones', paisId: 'pc-jp-pais', mesId: 'pc-jp-mes', horarioId: 'pc-jp-horario', emoji: '🇯🇵' },
-  'pc-kr': { idioma: 'coreano', paisId: 'pc-kr-pais', horarioId: 'pc-kr-horario', emoji: '🇰🇷' },
-  'pc-zh': { idioma: 'chino', paisId: 'pc-zh-pais', horarioId: 'pc-zh-horario', emoji: '🇨🇳' },
+  'pc-kr': { idioma: 'coreano', paisId: 'pc-kr-pais', mesId: 'pc-kr-mes', horarioId: 'pc-kr-horario', emoji: '🇰🇷' },
+  'pc-zh': { idioma: 'chino', paisId: 'pc-zh-pais', mesId: 'pc-zh-mes', horarioId: 'pc-zh-horario', emoji: '🇨🇳' },
   'pc-th': { idioma: 'tailandes', paisId: 'pc-th-pais', mesId: 'pc-th-mes', horarioId: 'pc-th-horario', emoji: '🇹🇭' },
   'pc-en': { idioma: 'ingles', paisId: 'pc-en-pais', mesId: 'pc-en-mes', horarioId: 'pc-en-horario', emoji: '🇬🇧' },
   'pc-de': { idioma: 'aleman', paisId: 'pc-de-pais', horarioId: 'pc-de-horario', emoji: '🇩🇪' },
@@ -4885,6 +4946,42 @@ function updatePostCallMesOptions(msgId, nivel) {
   select.value = opciones.some(m => m.value === current) ? current : (opciones[0]?.value || 'todos');
 }
 
+function getPostCallMes(msgId) {
+  const cfg = postCallScheduleConfig[msgId];
+  return cfg?.mesId ? (document.getElementById(cfg.mesId)?.value || 'todos') : 'todos';
+}
+
+function getPostCallDuracionLabel(msgId, nivel) {
+  const cfg = postCallScheduleConfig[msgId];
+  const mes = getPostCallMes(msgId);
+  const horarios = filtrarHorariosPorMes(horariosARG[cfg?.idioma]?.[nivel] || [], mes);
+  const has4 = horarios.some(h => /4\s*módulos/i.test(h));
+  const has5 = horarios.some(h => /5\s*módulos/i.test(h));
+
+  if (has4 && has5) return 'según la comisión seleccionada (4 o 5 módulos)';
+  if (has4) return '4 módulos';
+  if (has5) return '5 módulos';
+  return null;
+}
+
+function applyPostCallParams(text, msgId, nivel) {
+  const duracion = getPostCallDuracionLabel(msgId, nivel);
+  if (!duracion) return text;
+
+  return text
+    .replace(/• Duración:\s*[^.\n]+[.]/u, `• Duración: ${duracion}.`)
+    .replace(/—\s*(?:4–5|4|5)\s*módulos/u, `— ${duracion}`);
+}
+
+function refreshPostCallDescription(msgId) {
+  const el = document.getElementById(msgId);
+  const nivel = selectedPostCallLevels[msgId];
+  const desc = getPostCallDescription(msgId, nivel);
+  if (!el || !desc) return;
+  const start = el.innerText.search(/(?:📘 \*Descripción del curso:\*|(?:🇯🇵|🇰🇷|🇨🇳|🇹🇭|🇬🇧|🇩🇪|🇮🇹)\s+\*CURSO DE )/u);
+  el.innerText = start >= 0 ? el.innerText.slice(0, start) + desc : desc;
+}
+
 function updatePostCallLevelDetails(msgId, nivel) {
   const group = postCallLevelDetails[msgId];
   const data = group?.levels?.[nivel];
@@ -4912,14 +5009,9 @@ function updatePostCallLevelDetails(msgId, nivel) {
 
 function initializePostCallDefaults() {
   Object.entries(selectedPostCallLevels).forEach(([msgId, nivel]) => {
-    const el = document.getElementById(msgId);
-    const desc = getPostCallDescription(msgId, nivel);
-    if (!el || !desc) return;
-
-    const start = el.innerText.search(/(?:📘 \*Descripción del curso:\*|(?:🇯🇵|🇰🇷|🇨🇳|🇹🇭|🇬🇧|🇩🇪|🇮🇹)\s+\*CURSO DE )/u);
-    el.innerText = start >= 0 ? el.innerText.slice(0, start) + desc : desc;
     updatePostCallLevelDetails(msgId, nivel);
     updatePostCallMesOptions(msgId, nivel);
+    refreshPostCallDescription(msgId);
   });
 }
 
@@ -4957,13 +5049,9 @@ function setNivel(msgId, nivel, btn) {
   const el = document.getElementById(msgId);
   if (!el) return;
   selectedPostCallLevels[msgId] = nivel;
-  const desc = getPostCallDescription(msgId, nivel);
-  if (desc) {
-    const start = el.innerText.search(/(?:📘 \*Descripción del curso:\*|(?:🇯🇵|🇰🇷|🇨🇳|🇹🇭|🇬🇧|🇩🇪|🇮🇹)\s+\*CURSO DE )/u);
-    el.innerText = start >= 0 ? el.innerText.slice(0, start) + desc : desc;
-  }
   updatePostCallLevelDetails(msgId, nivel);
   updatePostCallMesOptions(msgId, nivel);
+  refreshPostCallDescription(msgId);
   updatePostCallSchedule(msgId);
   if (msgId === 'pc-jp') updateJp1Precio();
   if (msgId === 'pc-kr') updateKr1Precio();
@@ -4982,10 +5070,10 @@ function setNivel(msgId, nivel, btn) {
 
 function getPostCallDescription(msgId, nivel) {
   const data = postCallLevelDetails[msgId]?.levels?.[nivel];
-  if (data?.desc) return data.desc;
+  if (data?.desc) return applyPostCallParams(data.desc, msgId, nivel);
 
   if (msgId === 'pc-jp' && nivel === 'Japonés 1') {
-    return `🇯🇵 *CURSO DE JAPONÉS I: NIVEL INICIAL*
+    return applyPostCallParams(`🇯🇵 *CURSO DE JAPONÉS I: NIVEL INICIAL*
 Programa de formación integral con aval universitario
 
 En IKARUGA combinamos la excelencia académica con una metodología diseñada para que realmente te comuniques.
@@ -5000,15 +5088,15 @@ En IKARUGA combinamos la excelencia académica con una metodología diseñada pa
 • Escritura: Dominio total de Hiragana, Katakana y primeros Kanji.
 • Gramática: Uso de partículas esenciales (Wa, No, Mo, O), estructuras de verbos de existencia (aru/iru) y manejo de adjetivos (tipo I y tipo Na).
 • Comunicación: Capacidad para realizar presentaciones personales, saludos y manejo de la vida cotidiana.
-• Inmersión Cultural: Historia (Shogunato, Meiji), costumbres, manga, anime y tradiciones.`;
+• Inmersión Cultural: Historia (Shogunato, Meiji), costumbres, manga, anime y tradiciones.`, msgId, nivel);
   }
 
   if (msgId === 'pc-jp') {
-    return '📘 *Descripción del curso:* Japonés [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural real. Kana, kanji, conversación y cultura japonesa desde el inicio.';
+    return applyPostCallParams('📘 *Descripción del curso:* Japonés [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural real. Kana, kanji, conversación y cultura japonesa desde el inicio.', msgId, nivel);
   }
 
   if (msgId === 'pc-kr' && nivel === 'Coreano 1') {
-    return `🇰🇷 *CURSO DE COREANO I: NIVEL INICIAL*
+    return applyPostCallParams(`🇰🇷 *CURSO DE COREANO I: NIVEL INICIAL*
 Programa de formación integral con aval universitario
 
 En IKARUGA combinamos la excelencia académica con una metodología diseñada para que realmente te comuniques.
@@ -5023,15 +5111,15 @@ En IKARUGA combinamos la excelencia académica con una metodología diseñada pa
 • Gramática: Uso de partículas esenciales, estructuras de negación y verbos de existencia (이다/있다).
 • Comunicación: Presentaciones, nacionalidades, profesiones, manejo de la edad y saludos.
 • Vida Diaria: Vocabulario para compras, gastronomía y expresiones cotidianas.
-• Entorno: Ubicación de lugares y dominio del sistema de numeración coreano.`;
+• Entorno: Ubicación de lugares y dominio del sistema de numeración coreano.`, msgId, nivel);
   }
 
   if (msgId === 'pc-kr') {
-    return '📘 *Descripción del curso:* Coreano [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural. Hangul, fonética, vocabulario y cultura coreana desde el primer día.';
+    return applyPostCallParams('📘 *Descripción del curso:* Coreano [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural. Hangul, fonética, vocabulario y cultura coreana desde el primer día.', msgId, nivel);
   }
 
   if (msgId === 'pc-zh' && nivel === 'Chino 1') {
-    return `🇨🇳 *CURSO DE CHINO MANDARÍN I: NIVEL INICIAL*
+    return applyPostCallParams(`🇨🇳 *CURSO DE CHINO MANDARÍN I: NIVEL INICIAL*
 Programa de formación integral con aval universitario
 
 En IKARUGA combinamos la excelencia académica con una metodología diseñada para que realmente te comuniques.
@@ -5046,11 +5134,11 @@ En IKARUGA combinamos la excelencia académica con una metodología diseñada pa
 • Comunicación: Saludos, presentaciones personales, nacionalidades y diálogos de supervivencia.
 • Números y Tiempo: Contar del 1 al 100, fechas, días de la semana y descripción de rutinas.
 • Vida Cotidiana: Vocabulario de familia, uso correcto de clasificadores y transacciones comerciales (precios y regateo).
-• Inmersión Cultural: Historia del Horóscopo Chino, evolución de la moneda nacional y costumbres ancestrales.`;
+• Inmersión Cultural: Historia del Horóscopo Chino, evolución de la moneda nacional y costumbres ancestrales.`, msgId, nivel);
   }
 
   if (msgId === 'pc-zh') {
-    return '📘 *Descripción del curso:* Chino Mandarín [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.';
+    return applyPostCallParams('📘 *Descripción del curso:* Chino Mandarín [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Mandarín estándar. Pinyin, caracteres básicos, tono y contexto cultural desde el inicio.', msgId, nivel);
   }
 
   if (msgId === 'pc-th' && nivel === 'Tailandés 1') {
@@ -5073,7 +5161,7 @@ En IKARUGA combinamos la excelencia académica con una metodología diseñada pa
   }
 
   if (msgId === 'pc-th') {
-    return '📘 *Descripción del curso:* Tailandés [NIVEL] — 4–5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Script tailandés, fonética tonal, vocabulario esencial y cultura de Tailandia.';
+    return applyPostCallParams('📘 *Descripción del curso:* Tailandés [NIVEL] — 4–5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Script tailandés, fonética tonal, vocabulario esencial y cultura de Tailandia.', msgId, nivel);
   }
 
   if (msgId === 'pc-en' && nivel === 'Inglés A1') {
@@ -5094,7 +5182,7 @@ Programa de formación inicial con certificación institucional IKARUGA
   }
 
   if (msgId === 'pc-en') {
-    return '📘 *Descripción del curso:* Inglés [NIVEL] — 4 módulos · 2 hs semanales en vivo · Certificación oficial IKARUGA 🎓 · Enfoque comunicativo con método propio IKARUGA. Gramática, conversación y comprensión.';
+    return applyPostCallParams('📘 *Descripción del curso:* Inglés [NIVEL] — 4 módulos · 2 hs semanales en vivo · Certificación oficial IKARUGA 🎓 · Enfoque comunicativo con método propio IKARUGA. Gramática, conversación y comprensión.', msgId, nivel);
   }
 
   if (msgId === 'pc-de' && nivel === 'Alemán A1') {
@@ -5115,7 +5203,7 @@ Programa de formación integral con aval universitario
   }
 
   if (msgId === 'pc-de') {
-    return '📘 *Descripción del curso:* Alemán [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Gramática estructurada, fonética alemana y contexto cultural europeo desde el inicio.';
+    return applyPostCallParams('📘 *Descripción del curso:* Alemán [NIVEL] — 5 módulos · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Gramática estructurada, fonética alemana y contexto cultural europeo desde el inicio.', msgId, nivel);
   }
 
   if (msgId === 'pc-it' && nivel === 'Italiano A1') {
@@ -5136,7 +5224,7 @@ Programa de formación integral con aval universitario
   }
 
   if (msgId === 'pc-it') {
-    return '📘 *Descripción del curso:* Italiano [NIVEL] — 4 módulos · 2 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Método propio IKARUGA. Conversación, gramática y cultura italiana.';
+    return applyPostCallParams('📘 *Descripción del curso:* Italiano [NIVEL] — 4 módulos · 2 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Método propio IKARUGA. Conversación, gramática y cultura italiana.', msgId, nivel);
   }
 
   return null;
@@ -5166,14 +5254,18 @@ function updateJp1Precio() {
   const pJulio = getPrecioJulio4Modulos(pais, descKey);
   const mes = document.getElementById('pc-jp-mes')?.value || 'todos';
   const esJp1 = nivel === 'Japonés 1';
+  const tieneSeptiembre4 = ["Japonés 1", "Japonés 2"].includes(nivel);
+  const tieneOctubre4 = nivel === 'Japonés 1';
   const mostrarJulio = esJp1 && (mes === 'todos' || mes === 'julio');
-  const mostrarSeptiembre = esJp1 && (mes === 'todos' || mes === 'septiembre');
-  const mostrarAgosto = !esJp1 && (mes === 'todos' || mes === 'agosto');
-  const maxCuotas = esJp1 ? 3 : 4;
+  const mostrarSeptiembre = tieneSeptiembre4 && (mes === 'todos' || mes === 'septiembre');
+  const mostrarOctubre = tieneOctubre4 && (mes === 'todos' || mes === 'octubre');
+  const mostrarAgosto = (!esJp1) && (mes === 'todos' || mes === 'agosto');
+  const maxCuotas = (mes === 'julio' && esJp1) ? 3 : 4;
   const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas);
   const cuotasAgosto = Math.min(cuotasSeleccionadas, 4);
   const cuotasJulio = Math.min(cuotasSeleccionadas, 3);
-  const cuotasSeptiembre = Math.min(cuotasSeleccionadas, 3);
+  const cuotasSeptiembre = Math.min(cuotasSeleccionadas, 4);
+  const cuotasOctubre = Math.min(cuotasSeleccionadas, 4);
   const agostoTexto = mostrarAgosto ? `*${nivel} · agosto · 5 módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
@@ -5182,14 +5274,18 @@ ${buildFinanciacionLine(p, cuotasAgosto)}` : '';
 ❌ Valor Regular: ${pJulio.simbolo}${pJulio.precio_reg}
 ✅ *Inversión HOY: ${pJulio.simbolo}${pJulio.precio_hoy}* (todo el curso completo).
 ${buildFinanciacionLine(pJulio, cuotasJulio)}` : '';
-  const septiembreTexto = mostrarSeptiembre ? `${(mostrarAgosto || mostrarJulio) ? '\n\n' : ''}*Comisión de septiembre · 4 módulos*
+  const septiembreTexto = mostrarSeptiembre ? `${(mostrarAgosto || mostrarJulio) ? '\n\n' : ''}*${nivel} · septiembre · 4 módulos*
 ❌ Valor Regular: ${pJulio.simbolo}${pJulio.precio_reg}
 ✅ *Inversión HOY: ${pJulio.simbolo}${pJulio.precio_hoy}* (todo el curso completo).
 ${buildFinanciacionLine(pJulio, cuotasSeptiembre)}` : '';
+  const octubreTexto = mostrarOctubre ? `${(mostrarAgosto || mostrarJulio || mostrarSeptiembre) ? '\n\n' : ''}*${nivel} · octubre · 4 módulos*
+❌ Valor Regular: ${pJulio.simbolo}${pJulio.precio_reg}
+✅ *Inversión HOY: ${pJulio.simbolo}${pJulio.precio_hoy}* (todo el curso completo).
+${buildFinanciacionLine(pJulio, cuotasOctubre)}` : '';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
 
-${agostoTexto}${julioTexto}${septiembreTexto || ((mostrarAgosto || mostrarJulio) ? '' : 'Consultar cotización disponible para el mes seleccionado.')}`;
+${agostoTexto}${julioTexto}${septiembreTexto}${octubreTexto || ((mostrarAgosto || mostrarJulio || mostrarSeptiembre) ? '' : 'Consultar cotización disponible para el mes seleccionado.')}`;
 }
 
 const pagosPorPais = {
@@ -5368,15 +5464,18 @@ function updateKr1Precio() {
   if (!target) return;
 
   const nivel = selectedPostCallLevels['pc-kr'] || 'Coreano 1';
-  const p = getPrecio('coreano', pais, descKey, nivel);
+  const mes = document.getElementById('pc-kr-mes')?.value || 'todos';
+  const p = getCotizadorPrecio('coreano', nivel, pais, descKey, mes);
+  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
-  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
+  const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
-*${nivel} · ${p.meses} módulos*
+*${nivel} · ${mesLabel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
-🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
 }
 
 function updateKr1Pago() {
@@ -5412,15 +5511,18 @@ function updateZh1Precio() {
   if (!target) return;
 
   const nivel = selectedPostCallLevels['pc-zh'] || 'Chino 1';
-  const p = getPrecio('chino', pais, descKey, nivel);
+  const mes = document.getElementById('pc-zh-mes')?.value || 'todos';
+  const p = getCotizadorPrecio('chino', nivel, pais, descKey, mes);
+  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
-  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
+  const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
-*${nivel} · ${p.meses} módulos*
+*${nivel} · ${mesLabel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
-🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
 }
 
 function updateZh1Pago() {
@@ -5456,9 +5558,10 @@ function updateTh1Precio() {
   if (!target) return;
 
   const nivel = selectedPostCallLevels['pc-th'] || 'Tailandés 1';
+  const mes = document.getElementById('pc-th-mes')?.value || 'todos';
   const esTail1 = nivel === 'Tailandés 1';
   const p = getPrecio('tailandes', pais, descKey, nivel);
-  const maxCuotas = esTail1 ? 3 : 4;
+  const maxCuotas = esTail1 && mes === 'julio' ? 3 : 4;
   const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas, maxCuotas);
   const moduloLabel = esTail1 ? '4 módulos' : '5 módulos';
 
@@ -5503,14 +5606,16 @@ function updateEnA1Precio() {
 
   const nivel = selectedPostCallLevels['pc-en'] || 'Inglés A1';
   const p = getPrecio('ingles', pais, descKey, nivel);
+  const mes = document.getElementById('pc-en-mes')?.value || 'todos';
+  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
-  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
 *${nivel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
-🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
 }
 
 function updateEnA1Pago() {
