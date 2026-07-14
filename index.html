@@ -609,9 +609,6 @@
       <button class="nav-link" onclick="showSection('exo')">
         <span class="dot"></span> EXO · Siguiente nivel
       </button>
-      <button class="nav-link" onclick="showSection('promo-full')">
-        <span class="dot"></span> ⚡ Promo Full Agosto
-      </button>
     </div>
     <div class="nav-group">
       <div class="nav-group-label">Post-llamada</div>
@@ -1235,6 +1232,76 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
 
   <div class="divider"></div>
 
+  <div class="msg-card" style="margin-bottom:22px;">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Parámetros antes de copiar</div>
+      <span style="font-size:12px;color:var(--ink3);">Elegí una vez y copiá los mensajes listos</span>
+    </div>
+    <div style="padding:16px 18px;background:var(--paper2);display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;align-items:end;">
+      <div>
+        <label for="postcall-param-idioma" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Idioma</label>
+        <select id="postcall-param-idioma" onchange="changePostCallTopIdioma()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="pc-jp">🇯🇵 Japonés</option>
+          <option value="pc-kr">🇰🇷 Coreano</option>
+          <option value="pc-zh">🇨🇳 Chino</option>
+          <option value="pc-th">🇹🇭 Tailandés</option>
+          <option value="pc-en">🇬🇧 Inglés</option>
+          <option value="pc-de">🇩🇪 Alemán</option>
+          <option value="pc-it">🇮🇹 Italiano</option>
+        </select>
+      </div>
+      <div>
+        <label for="postcall-param-nivel" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Nivel</label>
+        <select id="postcall-param-nivel" onchange="applyPostCallTopParams()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;"></select>
+      </div>
+      <div>
+        <label for="postcall-param-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
+        <select id="postcall-param-mes" onchange="applyPostCallTopParams()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;"></select>
+      </div>
+      <div>
+        <label for="postcall-param-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País</label>
+        <select id="postcall-param-pais" onchange="applyPostCallTopParams()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">🇦🇷 Argentina</option>
+          <option value="MEX">🇲🇽 México (CDMX)</option>
+          <option value="BOL">🇧🇴 Bolivia</option>
+          <option value="PRY">🇵🇾 Paraguay</option>
+          <option value="CHL">🇨🇱 Chile continental</option>
+          <option value="COL">🇨🇴 Colombia</option>
+          <option value="PER">🇵🇪 Perú</option>
+          <option value="ECU">🇪🇨 Ecuador</option>
+          <option value="PAN">🇵🇦 Panamá</option>
+          <option value="HND">🇭🇳 Honduras</option>
+          <option value="SLV">🇸🇻 El Salvador</option>
+          <option value="USA">🇺🇸 USA Este</option>
+          <option value="ESP">🇪🇸 España</option>
+          <option value="CRI">🇨🇷 Costa Rica</option>
+        </select>
+      </div>
+      <div>
+        <label for="postcall-param-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Descuento</label>
+        <select id="postcall-param-descuento" onchange="applyPostCallTopParams()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="d45">45% OFF</option>
+          <option value="d40">40% OFF</option>
+          <option value="d35" selected>35% OFF</option>
+          <option value="d30">30% OFF</option>
+          <option value="d25">25% OFF</option>
+          <option value="d20">20% OFF</option>
+          <option value="d15">15% OFF</option>
+        </select>
+      </div>
+      <div>
+        <label for="postcall-param-cuotas" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Cuotas</label>
+        <select id="postcall-param-cuotas" onchange="applyPostCallTopParams()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="1">1 pago</option>
+          <option value="2">2 cuotas</option>
+          <option value="3">3 cuotas</option>
+          <option value="4" selected>4 cuotas</option>
+        </select>
+      </div>
+    </div>
+    <div class="msg-note">✅ Estos parámetros actualizan descripción, horario y precio. Después solo copiá cada mensaje en orden.</div>
+  </div>
+
   <div class="tabs" id="lang-tabs">
     <button class="tab-btn active" onclick="showTab('lang-tabs','tab-jp',this)">🇯🇵 Japonés</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-kr',this)">🇰🇷 Coreano</button>
@@ -1375,7 +1442,7 @@ A continuación te comparto la información del curso que acordamos:
         </div>
       </div>
       <div class="msg-body" id="pc-jp-precio"></div>
-      <div class="msg-note">✅ Enviá este bloque después de confirmar interés y horario. Usa la misma tabla de Promo Full Agosto.</div>
+      <div class="msg-note">✅ Enviá este bloque después de confirmar interés y horario. Usa los valores actualizados según idioma, mes, país, descuento y cuotas.</div>
     </div>
 
     <div class="msg-card">
@@ -2856,65 +2923,6 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
   <p style="font-size:12px;color:var(--ink3);margin-top:8px;">* El inglés no incluye costo de certificado por separado.</p>
 </div>
 
-<!-- PROMO FULL AGOSTO -->
-<div class="section" id="promo-full">
-  <div class="section-header">
-    <div class="section-tag">Recuperación · Agosto 2026</div>
-    <h1 class="section-title">⚡ Recuperación Promo Full</h1>
-    <p class="section-desc">Mensajes listos para recuperar leads por país, idioma y nivel. Seleccioná el país y el idioma para ver el mensaje correspondiente.</p>
-  </div>
-
-  <div class="info-block">
-    <strong>Cómo usar:</strong> Elegí el país del lead → seleccioná el idioma → copiá el mensaje del nivel correspondiente y envialo por WhatsApp.
-  </div>
-
-  <!-- Filtros -->
-  <div style="display:flex; gap:12px; margin-bottom:24px; flex-wrap:wrap; align-items:flex-end;">
-    <div>
-      <div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">País</div>
-      <select id="pf-pais" onchange="filterPromoFull()" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--ink);cursor:pointer;">
-        <option value="">— Seleccioná un país —</option>
-        <option value="ARG">🇦🇷 Argentina</option>
-        <option value="MEX">🇲🇽 México (CDMX)</option>
-        <option value="BOL">🇧🇴 Bolivia</option>
-        <option value="PRY">🇵🇾 Paraguay</option>
-        <option value="CHL">🇨🇱 Chile</option>
-        <option value="COL">🇨🇴 Colombia</option>
-        <option value="PER">🇵🇪 Perú</option>
-        <option value="ECU">🇪🇨 Ecuador</option>
-        <option value="PAN">🇵🇦 Panamá</option>
-        <option value="HND">🇭🇳 Honduras</option>
-        <option value="SLV">🇸🇻 El Salvador</option>
-        <option value="CRI">🇨🇷 Costa Rica</option>
-      </select>
-    </div>
-    <div>
-      <div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Idioma</div>
-      <select id="pf-idioma" onchange="updateDescuentoSelector(); filterPromoFull();" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--ink);cursor:pointer;">
-        <option value="">— Seleccioná un idioma —</option>
-        <option value="japones">🇯🇵 Japonés</option>
-        <option value="coreano">🇰🇷 Coreano</option>
-        <option value="chino">🇨🇳 Chino</option>
-        <option value="tailandes">🇹🇭 Tailandés</option>
-        <option value="ingles">🇬🇧 Inglés</option>
-        <option value="aleman">🇩🇪 Alemán</option>
-        <option value="italiano">🇮🇹 Italiano</option>
-      </select>
-    </div>
-    <div id="pf-descuento-wrap" style="display:none;">
-      <div style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Descuento</div>
-      <select id="pf-descuento" onchange="filterPromoFull()" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:#fff;color:var(--ink);cursor:pointer;"></select>
-    </div>
-  </div>
-
-  <div id="pf-placeholder" style="padding:32px;text-align:center;color:var(--ink3);font-size:14px;background:#fff;border:1px dashed var(--border);border-radius:12px;">
-    Seleccioná un país y un idioma para ver los mensajes disponibles.
-  </div>
-
-  <div id="pf-results" style="display:none;"></div>
-</div>
-
-
 <!-- REGLAMENTO -->
 <div class="section" id="reglamento">
   <div class="section-header">
@@ -4034,6 +4042,7 @@ document.addEventListener('DOMContentLoaded', () => {
   normalizePostCallCardTitles();
   updatePromoMundialCotizacion();
   initializePostCallDefaults();
+  initializePostCallTopControls();
   updateJp1HorarioPais();
   updateJp1Precio();
   updateJp1Pago();
@@ -4244,6 +4253,9 @@ function showTab(groupId, tabId, btn) {
   container.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById(tabId).classList.add('active');
+  if (groupId === 'lang-tabs' && typeof syncPostCallTopControlsFromTab === 'function') {
+    syncPostCallTopControlsFromTab(tabId);
+  }
 }
 
 function copyMsg(id, btn) {
@@ -4923,6 +4935,9 @@ const selectedPostCallLevels = {
   'pc-it': 'Italiano A1'
 };
 
+const selectedPostCallMes = {};
+const selectedPostCallCuotas = {};
+
 const postCallScheduleConfig = {
   'pc-jp': { idioma: 'japones', paisId: 'pc-jp-pais', mesId: 'pc-jp-mes', horarioId: 'pc-jp-horario', emoji: '🇯🇵' },
   'pc-kr': { idioma: 'coreano', paisId: 'pc-kr-pais', mesId: 'pc-kr-mes', horarioId: 'pc-kr-horario', emoji: '🇰🇷' },
@@ -4953,6 +4968,171 @@ const postCallPriceSelectors = {
   'pc-it': { paisId: 'pc-it-precio-pais', descId: 'pc-it-descuento' }
 };
 
+let syncingPostCallTopControls = false;
+
+function getPostCallMsgIdFromTab(tabId) {
+  return Object.entries(postCallTabIds).find(([, id]) => id === tabId)?.[0] || null;
+}
+
+function getPostCallTopMsgId() {
+  return document.getElementById('postcall-param-idioma')?.value || 'pc-jp';
+}
+
+function setSelectValueIfExists(id, value) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if ([...el.options].some(opt => opt.value === value)) el.value = value;
+}
+
+function fillPostCallSelect(select, options, currentValue) {
+  if (!select) return;
+  select.innerHTML = options.map(opt => `<option value="${opt.value}">${opt.label}</option>`).join('');
+  select.value = options.some(opt => opt.value === currentValue)
+    ? currentValue
+    : (options[0]?.value || '');
+}
+
+function getPostCallLevelOptions(msgId) {
+  const cfg = postCallScheduleConfig[msgId];
+  const levels = Object.keys(postCallLevelDetails[msgId]?.levels || horariosARG[cfg?.idioma] || {});
+  return levels.map(level => ({ value: level, label: level }));
+}
+
+function getPostCallMesOptionsFor(msgId, nivel) {
+  const cfg = postCallScheduleConfig[msgId];
+  const meses = getMesesDisponibles(cfg?.idioma, nivel);
+  return meses.length > 1
+    ? [{ value: 'todos', label: 'Todos los meses con cupo' }, ...meses]
+    : meses;
+}
+
+function getPostCallCurrentCountry(msgId) {
+  const cfg = postCallScheduleConfig[msgId] || {};
+  const priceCfg = postCallPriceSelectors[msgId] || {};
+  return document.getElementById(cfg.paisId)?.value
+    || document.getElementById(priceCfg.paisId)?.value
+    || 'ARG';
+}
+
+function getPostCallCurrentDiscount(msgId) {
+  const priceCfg = postCallPriceSelectors[msgId] || {};
+  return document.getElementById(priceCfg.descId)?.value || 'd35';
+}
+
+function getPostCallCurrentCuotas(msgId) {
+  const priceCfg = postCallPriceSelectors[msgId] || {};
+  return document.getElementById(priceCfg.cuotasId)?.value || selectedPostCallCuotas[msgId] || '4';
+}
+
+function updatePostCallPriceByMsgId(msgId) {
+  if (msgId === 'pc-jp') updateJp1Precio();
+  if (msgId === 'pc-kr') updateKr1Precio();
+  if (msgId === 'pc-zh') updateZh1Precio();
+  if (msgId === 'pc-th') updateTh1Precio();
+  if (msgId === 'pc-en') updateEnA1Precio();
+  if (msgId === 'pc-de') updateDeA1Precio();
+  if (msgId === 'pc-it') updateItA1Precio();
+}
+
+function updatePostCallPaymentByMsgId(msgId) {
+  if (msgId === 'pc-jp') updateJp1Pago();
+  if (msgId === 'pc-kr') updateKr1Pago();
+  if (msgId === 'pc-zh') updateZh1Pago();
+  if (msgId === 'pc-th') updateTh1Pago();
+  if (msgId === 'pc-en') updateEnA1Pago();
+  if (msgId === 'pc-de') updateDeA1Pago();
+  if (msgId === 'pc-it') updateItA1Pago();
+}
+
+function syncPostCallTopControlsFromMsgId(msgId) {
+  const idiomaSelect = document.getElementById('postcall-param-idioma');
+  const nivelSelect = document.getElementById('postcall-param-nivel');
+  const mesSelect = document.getElementById('postcall-param-mes');
+  const paisSelect = document.getElementById('postcall-param-pais');
+  const descSelect = document.getElementById('postcall-param-descuento');
+  const cuotasSelect = document.getElementById('postcall-param-cuotas');
+  if (!idiomaSelect || !nivelSelect || !mesSelect) return;
+
+  syncingPostCallTopControls = true;
+  const nivel = selectedPostCallLevels[msgId] || getPostCallLevelOptions(msgId)[0]?.value || '';
+  const mes = getPostCallMes(msgId);
+  idiomaSelect.value = msgId;
+  fillPostCallSelect(nivelSelect, getPostCallLevelOptions(msgId), nivel);
+  fillPostCallSelect(mesSelect, getPostCallMesOptionsFor(msgId, nivel), mes);
+  if (paisSelect) paisSelect.value = getPostCallCurrentCountry(msgId);
+  if (descSelect) descSelect.value = getPostCallCurrentDiscount(msgId);
+  if (cuotasSelect) {
+    const cfg = postCallScheduleConfig[msgId] || {};
+    const maxCuotas = getCotizadorMaxCuotas(cfg.idioma, nivel, mesSelect.value || mes) || 4;
+    const currentCuotas = Math.min(parseInt(getPostCallCurrentCuotas(msgId), 10) || maxCuotas, maxCuotas);
+    const cuotasOptions = Array.from({ length: maxCuotas }, (_, i) => {
+      const value = String(i + 1);
+      return { value, label: value === '1' ? '1 pago' : `${value} cuotas` };
+    });
+    fillPostCallSelect(cuotasSelect, cuotasOptions, String(currentCuotas));
+  }
+  syncingPostCallTopControls = false;
+}
+
+function syncPostCallTopControlsFromTab(tabId) {
+  const msgId = getPostCallMsgIdFromTab(tabId);
+  if (postCallScheduleConfig[msgId]) syncPostCallTopControlsFromMsgId(msgId);
+}
+
+function initializePostCallTopControls() {
+  syncPostCallTopControlsFromMsgId(getPostCallTopMsgId());
+}
+
+function changePostCallTopIdioma() {
+  if (syncingPostCallTopControls) return;
+  const msgId = getPostCallTopMsgId();
+  const tabId = postCallTabIds[msgId];
+  const tabBtn = [...document.querySelectorAll('#lang-tabs .tab-btn')]
+    .find(btn => (btn.getAttribute('onclick') || '').includes(`'${tabId}'`));
+  if (tabBtn) showTab('lang-tabs', tabId, tabBtn);
+  syncPostCallTopControlsFromMsgId(msgId);
+}
+
+function applyPostCallTopParams() {
+  if (syncingPostCallTopControls) return;
+  const msgId = getPostCallTopMsgId();
+  const tabId = postCallTabIds[msgId];
+  const nivel = document.getElementById('postcall-param-nivel')?.value || selectedPostCallLevels[msgId];
+  const mes = document.getElementById('postcall-param-mes')?.value || 'todos';
+  const pais = document.getElementById('postcall-param-pais')?.value || 'ARG';
+  const descuento = document.getElementById('postcall-param-descuento')?.value || 'd35';
+  const cuotas = document.getElementById('postcall-param-cuotas')?.value || '4';
+  const cfg = postCallScheduleConfig[msgId] || {};
+  const priceCfg = postCallPriceSelectors[msgId] || {};
+  const levelBtn = [...document.querySelectorAll(`#${tabId} .level-sel-btn`)]
+    .find(btn => btn.textContent.includes(nivel));
+
+  syncingPostCallTopControls = true;
+  setNivel(msgId, nivel, levelBtn || null);
+  selectedPostCallMes[msgId] = mes;
+  selectedPostCallCuotas[msgId] = cuotas;
+  setSelectValueIfExists(cfg.mesId, mes);
+  setSelectValueIfExists(cfg.paisId, pais);
+  setSelectValueIfExists(priceCfg.paisId, pais);
+  setSelectValueIfExists(`${msgId}-pago-pais`, pais);
+  setSelectValueIfExists(priceCfg.descId, descuento);
+  setSelectValueIfExists(priceCfg.cuotasId, cuotas);
+  syncingPostCallTopControls = false;
+
+  refreshPostCallDescription(msgId);
+  updatePostCallSchedule(msgId);
+  updatePostCallPriceByMsgId(msgId);
+  updatePostCallPaymentByMsgId(msgId);
+  syncPostCallTopControlsFromMsgId(msgId);
+}
+
+function getPostCallSelectedCuotas(msgId, fallback) {
+  const raw = selectedPostCallCuotas[msgId] || document.getElementById('postcall-param-cuotas')?.value;
+  const value = parseInt(raw, 10);
+  if (!Number.isFinite(value)) return fallback;
+  return Math.min(Math.max(value, 1), fallback);
+}
+
 function horarioTieneCupo(horario) {
   return !/(cupos?\s+completos?|completo|curso\s+cerrado|cerrado)/i.test(horario);
 }
@@ -4979,7 +5159,9 @@ function updatePostCallMesOptions(msgId, nivel) {
 
 function getPostCallMes(msgId) {
   const cfg = postCallScheduleConfig[msgId];
-  return cfg?.mesId ? (document.getElementById(cfg.mesId)?.value || 'todos') : 'todos';
+  return cfg?.mesId
+    ? (document.getElementById(cfg.mesId)?.value || selectedPostCallMes[msgId] || 'todos')
+    : (selectedPostCallMes[msgId] || 'todos');
 }
 
 function getPostCallDuracionLabel(msgId, nivel) {
@@ -5014,7 +5196,7 @@ function getPostCallPrecioConfig(msgId) {
   const p = getCotizadorPrecio(cfg?.idioma, nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas(cfg?.idioma, nivel, mes);
   const cuotasSelect = priceCfg.cuotasId ? document.getElementById(priceCfg.cuotasId) : null;
-  const cuotas = cuotasSelect ? Math.min(parseInt(cuotasSelect.value, 10) || maxCuotas, maxCuotas) : maxCuotas;
+  const cuotas = cuotasSelect ? Math.min(parseInt(cuotasSelect.value, 10) || maxCuotas, maxCuotas) : getPostCallSelectedCuotas(msgId, maxCuotas);
   return { p, cuotas, pais, descKey, nivel, mes };
 }
 
@@ -5161,9 +5343,12 @@ function setNivel(msgId, nivel, btn) {
   // Replace any existing nivel already set, or the placeholder
   el.innerText = el.innerText.replace(/\[NIVEL\]|Japonés \d|Coreano \d|Chino \d|Tailandés \d|Alemán A\d|Inglés A\d|Italiano A\d/g, nivel);
   // Mark button as selected
-  const group = btn.parentElement;
-  group.querySelectorAll('.level-sel-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
+  if (btn) {
+    const group = btn.parentElement;
+    group.querySelectorAll('.level-sel-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+  if (!syncingPostCallTopControls) syncPostCallTopControlsFromMsgId(msgId);
 }
 
 function getPostCallDescription(msgId, nivel) {
@@ -5565,7 +5750,8 @@ function updateKr1Precio() {
   const nivel = selectedPostCallLevels['pc-kr'] || 'Coreano 1';
   const mes = document.getElementById('pc-kr-mes')?.value || 'todos';
   const p = getCotizadorPrecio('coreano', nivel, pais, descKey, mes);
-  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const maxCuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const cuotas = getPostCallSelectedCuotas('pc-kr', maxCuotas);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
@@ -5613,7 +5799,8 @@ function updateZh1Precio() {
   const nivel = selectedPostCallLevels['pc-zh'] || 'Chino 1';
   const mes = document.getElementById('pc-zh-mes')?.value || 'todos';
   const p = getCotizadorPrecio('chino', nivel, pais, descKey, mes);
-  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const maxCuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const cuotas = getPostCallSelectedCuotas('pc-zh', maxCuotas);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
@@ -5709,7 +5896,8 @@ function updateEnA1Precio() {
   const nivel = selectedPostCallLevels['pc-en'] || 'Inglés A1';
   const p = getPrecio('ingles', pais, descKey, nivel);
   const mes = document.getElementById('pc-en-mes')?.value || 'todos';
-  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const maxCuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const cuotas = getPostCallSelectedCuotas('pc-en', maxCuotas);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
 
@@ -5756,7 +5944,8 @@ function updateDeA1Precio() {
   const nivel = selectedPostCallLevels['pc-de'] || 'Alemán A1';
   const mes = document.getElementById('pc-de-mes')?.value || 'todos';
   const p = getCotizadorPrecio('aleman', nivel, pais, descKey, mes);
-  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const maxCuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
+  const cuotas = getPostCallSelectedCuotas('pc-de', maxCuotas);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
@@ -5803,14 +5992,15 @@ function updateItA1Precio() {
 
   const nivel = selectedPostCallLevels['pc-it'] || 'Italiano A1';
   const p = getPrecio('italiano', pais, descKey, nivel);
+  const cuotas = getPostCallSelectedCuotas('pc-it', p.cuotas);
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
-  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
 *${nivel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
-🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
   updatePostCallSafetyPanel('pc-it');
 }
 
