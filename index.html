@@ -2285,6 +2285,12 @@ A continuación te comparto la información del curso que acordamos:
           <option value="HND">Honduras</option>
           <option value="SLV">El Salvador</option>
         </select>
+        <label for="pc-de-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin:12px 0 7px;">Mes / campaña</label>
+        <select id="pc-de-mes" onchange="refreshPostCallDescription('pc-de'); updateDeA1HorarioPais(); updateDeA1Precio();" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="todos">Todos los meses con cupo</option>
+          <option value="agosto">Agosto</option>
+          <option value="septiembre">Septiembre</option>
+        </select>
       </div>
       <div class="msg-body" id="pc-de-horario"></div>
       <div class="msg-note">✅ El horario se calcula desde Argentina según el país seleccionado.</div>
@@ -2714,6 +2720,7 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
         <tr><td><span class="level-pill">Japonés 1</span></td><td>U</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/09</td><td>14/12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>G</td><td>Sábados</td><td>14:00 – 17:00</td><td>21/09</td><td>14/12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>H</td><td>Jueves</td><td>21:00 – 00:00</td><td>17/09</td><td>10/12</td></tr>
+        <tr><td><span class="level-pill">Alemán A1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>23/09</td><td>09/12</td></tr>
       </tbody>
     </table>
   </div>
@@ -3530,7 +3537,10 @@ const horariosARG = {
     "Inglés A2": ["Comisión A · Miércoles de 20:00 a 22:00 hs. (Inicia 19/08 · Finaliza 11/11 · Agosto 4 módulos)"]
   },
   aleman: {
-    "Alemán A1": ["Comisión B · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)"],
+    "Alemán A1": [
+      "Comisión B · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
+      "Comisión C · Miércoles de 21:00 a 00:00 hs. (Inicia 23/09 · Finaliza 09/12 · Septiembre 4 módulos)"
+    ],
     "Alemán A2": ["Comisión B · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos)"]
   },
   italiano: {
@@ -3815,6 +3825,7 @@ function getMesesDisponibles(idioma, nivel) {
 
 function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
   const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
+  const esAlemanSeptiembre4 = idioma === 'aleman' && nivel === 'Alemán A1' && mes === 'septiembre';
   const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'todos');
   const esOctubre4 = mes === 'octubre' && (
     (idioma === 'japones' && nivel === 'Japonés 1') ||
@@ -3822,7 +3833,7 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
     (idioma === 'chino' && nivel === 'Chino 1') ||
     (idioma === 'tailandes' && nivel === 'Tailandés 1')
   );
-  if (esJpSeptiembre4 || esJp1Julio4 || esOctubre4) {
+  if (esJpSeptiembre4 || esAlemanSeptiembre4 || esJp1Julio4 || esOctubre4) {
     return getPrecioJulio4Modulos(pais, descKey);
   }
   return getPrecio(idioma, pais, descKey, nivel);
@@ -4918,8 +4929,28 @@ const postCallScheduleConfig = {
   'pc-zh': { idioma: 'chino', paisId: 'pc-zh-pais', mesId: 'pc-zh-mes', horarioId: 'pc-zh-horario', emoji: '🇨🇳' },
   'pc-th': { idioma: 'tailandes', paisId: 'pc-th-pais', mesId: 'pc-th-mes', horarioId: 'pc-th-horario', emoji: '🇹🇭' },
   'pc-en': { idioma: 'ingles', paisId: 'pc-en-pais', mesId: 'pc-en-mes', horarioId: 'pc-en-horario', emoji: '🇬🇧' },
-  'pc-de': { idioma: 'aleman', paisId: 'pc-de-pais', horarioId: 'pc-de-horario', emoji: '🇩🇪' },
+  'pc-de': { idioma: 'aleman', paisId: 'pc-de-pais', mesId: 'pc-de-mes', horarioId: 'pc-de-horario', emoji: '🇩🇪' },
   'pc-it': { idioma: 'italiano', paisId: 'pc-it-pais', horarioId: 'pc-it-horario', emoji: '🇮🇹' }
+};
+
+const postCallTabIds = {
+  'pc-jp': 'tab-jp',
+  'pc-kr': 'tab-kr',
+  'pc-zh': 'tab-zh',
+  'pc-th': 'tab-th',
+  'pc-en': 'tab-en',
+  'pc-de': 'tab-de',
+  'pc-it': 'tab-it'
+};
+
+const postCallPriceSelectors = {
+  'pc-jp': { paisId: 'pc-jp-precio-pais', descId: 'pc-jp-descuento', cuotasId: 'pc-jp-cuotas' },
+  'pc-kr': { paisId: 'pc-kr-precio-pais', descId: 'pc-kr-descuento' },
+  'pc-zh': { paisId: 'pc-zh-precio-pais', descId: 'pc-zh-descuento' },
+  'pc-th': { paisId: 'pc-th-precio-pais', descId: 'pc-th-descuento', cuotasId: 'pc-th-cuotas' },
+  'pc-en': { paisId: 'pc-en-precio-pais', descId: 'pc-en-descuento' },
+  'pc-de': { paisId: 'pc-de-precio-pais', descId: 'pc-de-descuento' },
+  'pc-it': { paisId: 'pc-it-precio-pais', descId: 'pc-it-descuento' }
 };
 
 function horarioTieneCupo(horario) {
@@ -4973,6 +5004,71 @@ function applyPostCallParams(text, msgId, nivel) {
     .replace(/—\s*(?:4–5|4|5)\s*módulos/u, `— ${duracion}`);
 }
 
+function getPostCallPrecioConfig(msgId) {
+  const cfg = postCallScheduleConfig[msgId];
+  const priceCfg = postCallPriceSelectors[msgId] || {};
+  const nivel = selectedPostCallLevels[msgId] || Object.keys(horariosARG[cfg?.idioma] || {})[0];
+  const pais = document.getElementById(priceCfg.paisId)?.value || document.getElementById(cfg?.paisId)?.value || 'ARG';
+  const descKey = document.getElementById(priceCfg.descId)?.value || 'd35';
+  const mes = getPostCallMes(msgId);
+  const p = getCotizadorPrecio(cfg?.idioma, nivel, pais, descKey, mes);
+  const maxCuotas = getCotizadorMaxCuotas(cfg?.idioma, nivel, mes);
+  const cuotasSelect = priceCfg.cuotasId ? document.getElementById(priceCfg.cuotasId) : null;
+  const cuotas = cuotasSelect ? Math.min(parseInt(cuotasSelect.value, 10) || maxCuotas, maxCuotas) : maxCuotas;
+  return { p, cuotas, pais, descKey, nivel, mes };
+}
+
+function ensurePostCallSafetyPanel(msgId) {
+  const existing = document.getElementById(`${msgId}-safe-summary`);
+  if (existing) return existing;
+
+  const tab = document.getElementById(postCallTabIds[msgId]);
+  const firstCard = document.getElementById(msgId)?.closest('.msg-card');
+  if (!tab || !firstCard) return null;
+
+  const panel = document.createElement('div');
+  panel.id = `${msgId}-safe-summary`;
+  panel.className = 'info-block';
+  panel.style.marginBottom = '14px';
+  firstCard.parentNode.insertBefore(panel, firstCard);
+  return panel;
+}
+
+function updatePostCallSafetyPanel(msgId) {
+  const cfg = postCallScheduleConfig[msgId];
+  if (!cfg) return;
+  const panel = ensurePostCallSafetyPanel(msgId);
+  if (!panel) return;
+
+  const nivel = selectedPostCallLevels[msgId] || Object.keys(horariosARG[cfg.idioma] || {})[0];
+  const mes = getPostCallMes(msgId);
+  const pais = document.getElementById(cfg.paisId)?.value || 'ARG';
+  const paisLabel = paisNombres[pais] || 'Argentina';
+  const duracion = getPostCallDuracionLabel(msgId, nivel) || 'consultar';
+  const horariosBase = filtrarHorariosPorMes(horariosARG[cfg.idioma]?.[nivel] || [], mes);
+  const horariosLocal = convertHorarios(horariosBase, tzDiff[pais] ?? 0);
+  const precio = getPostCallPrecioConfig(msgId);
+  const modalidadAlerta = duracion.includes('según')
+    ? 'Elegí un mes específico antes de copiar para evitar mezclar comisiones de 4 y 5 módulos.'
+    : `Esta selección corresponde a ${duracion}.`;
+  const panelBg = duracion.includes('según') ? '#fff4d6' : '#eefbf6';
+  const panelBorder = duracion.includes('según') ? '#e0b94f' : '#66b88d';
+  const horarioResumen = horariosLocal.length
+    ? horariosLocal.map(h => `• ${h}`).join('<br>')
+    : 'Sin horario con cupo para esos parámetros.';
+  const cuotaTexto = precio.cuotas <= 1
+    ? `${precio.p.simbolo}${precio.p.precio_hoy} en pago total`
+    : `${precio.cuotas} cuotas de ${precio.p.simbolo}${Math.round(parsePrecioNumero(precio.p.precio_hoy) / precio.cuotas).toLocaleString('es-AR')}`;
+
+  panel.style.background = panelBg;
+  panel.style.borderColor = panelBorder;
+  panel.innerHTML = `<strong>Resumen seguro antes de copiar</strong><br>
+Curso: <strong>${nivel}</strong> · Mes: <strong>${mes === 'todos' ? 'Todos los meses con cupo' : mes.charAt(0).toUpperCase() + mes.slice(1)}</strong> · País: <strong>${paisLabel}</strong><br>
+Modalidad: <strong>${duracion}</strong> · Descuento: <strong>${precio.p.descuento} OFF</strong> · Financiación: <strong>${cuotaTexto}</strong><br>
+<span style="display:block;margin-top:6px;"><strong>Alerta:</strong> ${modalidadAlerta}</span>
+<span style="display:block;margin-top:6px;"><strong>Horario convertido:</strong><br>${horarioResumen}</span>`;
+}
+
 function refreshPostCallDescription(msgId) {
   const el = document.getElementById(msgId);
   const nivel = selectedPostCallLevels[msgId];
@@ -4980,6 +5076,7 @@ function refreshPostCallDescription(msgId) {
   if (!el || !desc) return;
   const start = el.innerText.search(/(?:📘 \*Descripción del curso:\*|(?:🇯🇵|🇰🇷|🇨🇳|🇹🇭|🇬🇧|🇩🇪|🇮🇹)\s+\*CURSO DE )/u);
   el.innerText = start >= 0 ? el.innerText.slice(0, start) + desc : desc;
+  updatePostCallSafetyPanel(msgId);
 }
 
 function updatePostCallLevelDetails(msgId, nivel) {
@@ -5043,6 +5140,7 @@ function updatePostCallSchedule(msgId) {
 ${lineas}
 
 ${plural ? 'Decime cuál de estas opciones te queda mejor' : 'Decime si este horario te queda bien'} y revisamos la disponibilidad de cupo.`;
+  updatePostCallSafetyPanel(msgId);
 }
 
 function setNivel(msgId, nivel, btn) {
@@ -5286,6 +5384,7 @@ ${buildFinanciacionLine(pJulio, cuotasOctubre)}` : '';
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
 
 ${agostoTexto}${julioTexto}${septiembreTexto}${octubreTexto || ((mostrarAgosto || mostrarJulio || mostrarSeptiembre) ? '' : 'Consultar cotización disponible para el mes seleccionado.')}`;
+  updatePostCallSafetyPanel('pc-jp');
 }
 
 const pagosPorPais = {
@@ -5476,6 +5575,7 @@ function updateKr1Precio() {
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  updatePostCallSafetyPanel('pc-kr');
 }
 
 function updateKr1Pago() {
@@ -5523,6 +5623,7 @@ function updateZh1Precio() {
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  updatePostCallSafetyPanel('pc-zh');
 }
 
 function updateZh1Pago() {
@@ -5570,6 +5671,7 @@ function updateTh1Precio() {
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 ${buildFinanciacionLine(p, cuotas)}`;
+  updatePostCallSafetyPanel('pc-th');
 }
 
 function updateTh1Pago() {
@@ -5616,6 +5718,7 @@ function updateEnA1Precio() {
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  updatePostCallSafetyPanel('pc-en');
 }
 
 function updateEnA1Pago() {
@@ -5651,15 +5754,19 @@ function updateDeA1Precio() {
   if (!target) return;
 
   const nivel = selectedPostCallLevels['pc-de'] || 'Alemán A1';
-  const p = getPrecio('aleman', pais, descKey, nivel);
+  const mes = document.getElementById('pc-de-mes')?.value || 'todos';
+  const p = getCotizadorPrecio('aleman', nivel, pais, descKey, mes);
+  const cuotas = (mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas;
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
-  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
+  const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
-*${nivel} · ${p.meses} módulos*
+*${nivel} · ${mesLabel} · ${p.meses} módulos*
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
-🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  updatePostCallSafetyPanel('pc-de');
 }
 
 function updateDeA1Pago() {
@@ -5704,6 +5811,7 @@ function updateItA1Precio() {
 ❌ Valor Regular: ${p.simbolo}${p.precio_reg}
 ✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
 🛡️ *Financiación:* ${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  updatePostCallSafetyPanel('pc-it');
 }
 
 function updateItA1Pago() {
