@@ -1248,6 +1248,7 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
           <option value="pc-en">🇬🇧 Inglés</option>
           <option value="pc-de">🇩🇪 Alemán</option>
           <option value="pc-it">🇮🇹 Italiano</option>
+          <option value="pc-ru">🇷🇺 Ruso</option>
         </select>
       </div>
       <div>
@@ -1310,6 +1311,7 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-en',this)">🇬🇧 Inglés</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-de',this)">🇩🇪 Alemán</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-it',this)">🇮🇹 Italiano</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-ru',this)">🇷🇺 Ruso</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-intro-jp',this)">🎌 Introductorio Japón</button>
   </div>
 
@@ -2651,6 +2653,211 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
     </div>
   </div>
 
+  <div class="tab-content" id="tab-ru">
+    <div style="margin-bottom:14px;">
+      <p style="font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Seleccioná el nivel para pre-completar el mensaje:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <button class="level-sel-btn" onclick="setNivel('pc-ru','Ruso 1',this)">🇷🇺 Ruso 1</button>
+      </div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Ruso</div><button class="copy-btn" onclick="copyMsg('pc-ru',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-ru">¡Fue un placer hablar con vos! 🌸
+
+A continuación te comparto la información del curso que acordamos:
+
+🇷🇺 *CURSO DE RUSO I: NIVEL INICIAL*
+Programa de formación integral con aval universitario
+
+Este nivel está pensado para que empieces desde cero con una base real: lectura del alfabeto cirílico, pronunciación, primeras estructuras gramaticales y vocabulario para presentarte, hablar de tu entorno y acercarte a la cultura rusa.
+
+📅 *MODALIDAD Y DURACIÓN*
+• Duración: 4 módulos.
+• Clases: 3 horas semanales en vivo.
+• Plataforma: Acceso a materiales y recursos de apoyo para acompañar cada unidad.
+
+📚 *¿QUÉ APRENDERÁS?*
+• Fonética y escritura: alfabeto cirílico, reglas de lectura, pronunciación de vocales, consonantes duras/blandas y terminaciones.
+• Gramática base: pronombres personales y posesivos, género de sustantivos, plural, casos acusativo y prepositivo, verbos de 1ra y 2da conjugación, verbo tener, vivir, querer y escribir.
+• Comunicación: saludos, despedidas, presentación personal, profesiones, familia, preguntas básicas y conversaciones iniciales.
+• Vida cotidiana: tiempo y clima, rutina diaria, actividades, deportes, feriados, compras, diálogos en tiendas, países, idiomas, días de la semana y meses.
+• Cultura rusa: dinastía Romanov, literatura rusa, costumbres, comida rusa y el tren transiberiano.</div>
+      <div class="msg-note">✅ Primer mensaje: enviá solo descripción del curso. PDF, certificación, horario y precio van separados.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Beneficios y respaldo · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-respaldo',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-ru-respaldo">✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
+🎎 Inmersión cultural: recorrido por historia, literatura, costumbres y cultura rusa dentro del programa.
+🗣️ Enfoque comunicativo: lectura, pronunciación y conversación desde situaciones reales.
+
+🏆 *CERTIFICACIÓN Y RESPALDO*
+• Doble Aval: Certificado Institucional IKARUGA + Certificado Oficial con validez universitaria (UAI).
+• Calidad: Programa supervisado por la Dirección Académica con enfoque en comunicación efectiva y rigor gramatical.
+• Evaluación: Incluye requisitos de aprobación y seguimiento de contenidos por unidad.</div>
+      <div class="msg-note">✅ Enviá este bloque separado para reforzar valor sin mezclarlo con precio.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · PDF del programa · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-pdf',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-ru-pdf">Te comparto también el PDF del programa de Ruso I para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso. 🇷🇺
+
+📄 Programa Ruso I: ruso-i-programa.pdf</div>
+      <div class="msg-note">✅ Adjuntá el PDF al enviar este mensaje. También podés abrirlo desde aquí: <a href="ruso-i-programa.pdf" target="_blank" rel="noopener">ruso-i-programa.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Muestra certificado UAI</div><button class="copy-btn" onclick="copyMsg('pc-ru-certificado',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-ru-certificado">Te comparto una muestra de nuestro certificado avalado por la UAI para que puedas ver el respaldo académico que recibís al finalizar el programa. 🎓
+
+📄 Muestra certificado UAI: certificado-uai-muestra.pdf</div>
+      <div class="msg-note">✅ Adjuntá el certificado de muestra al enviar este mensaje. Archivo disponible: <a href="certificado-uai-muestra.pdf" target="_blank" rel="noopener">certificado-uai-muestra.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Horarios por país · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-horario',this)">Copiar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
+        <div>
+          <label for="pc-ru-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país del lead</label>
+          <select id="pc-ru-pais" onchange="syncRu1Pais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="ARG">Argentina</option>
+            <option value="MEX">México (CDMX)</option>
+            <option value="CHL">Chile continental</option>
+            <option value="BOL">Bolivia</option>
+            <option value="PRY">Paraguay</option>
+            <option value="COL">Colombia</option>
+            <option value="PER">Perú</option>
+            <option value="ECU">Ecuador</option>
+            <option value="PAN">Panamá</option>
+            <option value="HND">Honduras</option>
+            <option value="SLV">El Salvador</option>
+          </select>
+        </div>
+        <div>
+          <label for="pc-ru-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
+          <select id="pc-ru-mes" onchange="refreshPostCallDescription('pc-ru'); updateRu1HorarioPais(); updateRu1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="septiembre">Septiembre</option>
+          </select>
+        </div>
+      </div>
+      <div class="msg-body" id="pc-ru-horario"></div>
+      <div class="msg-note">✅ El horario se calcula desde Argentina según el país seleccionado.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Precio y financiación · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-precio',this)">Copiar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
+        <div>
+          <label for="pc-ru-precio-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+          <select id="pc-ru-precio-pais" onchange="syncRu1Pais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="ARG">Argentina · ARS</option>
+            <option value="MEX">México · MXN</option>
+            <option value="CHL">Chile · USD</option>
+            <option value="BOL">Bolivia · USD</option>
+            <option value="PRY">Paraguay · USD</option>
+            <option value="COL">Colombia · USD</option>
+            <option value="PER">Perú · USD</option>
+            <option value="ECU">Ecuador · USD</option>
+            <option value="PAN">Panamá · USD</option>
+            <option value="HND">Honduras · USD</option>
+            <option value="SLV">El Salvador · USD</option>
+          </select>
+        </div>
+        <div>
+          <label for="pc-ru-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
+          <select id="pc-ru-descuento" onchange="updateRu1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+            <option value="d45">45% OFF</option>
+            <option value="d40">40% OFF</option>
+            <option value="d35" selected>35% OFF</option>
+            <option value="d30">30% OFF</option>
+            <option value="d25">25% OFF</option>
+            <option value="d20">20% OFF</option>
+            <option value="d15">15% OFF</option>
+          </select>
+        </div>
+      </div>
+      <div class="msg-body" id="pc-ru-precio"></div>
+      <div class="msg-note">✅ Ruso 1 usa modalidad de 4 módulos · 3 horas semanales para septiembre.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 7 · Datos para inscripción · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-datos',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-ru-datos">Para continuar con tu inscripción indícame:
+• Nombre completo.
+• Correo electrónico que utilizarás en el campus académico.</div>
+      <div class="msg-note">✅ Pedí solo estos datos para no sobrecargar el mensaje.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 8 · Datos de pago · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-pago',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;">
+        <label for="pc-ru-pago-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Seleccioná el país / medio de pago</label>
+        <select id="pc-ru-pago-pais" onchange="updateRu1Pago()" style="width:100%;max-width:360px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;">
+          <option value="ARG">Argentina</option>
+          <option value="MEX">México</option>
+          <option value="ECU">Ecuador</option>
+          <option value="COL">Colombia</option>
+          <option value="PER">Perú</option>
+          <option value="HND">Honduras</option>
+          <option value="PAN">Panamá</option>
+          <option value="SLV">El Salvador</option>
+          <option value="PRY">Paraguay</option>
+          <option value="BOL">Bolivia</option>
+          <option value="CHL">Chile</option>
+          <option value="PAYPAL">PayPal / Internacional</option>
+        </select>
+      </div>
+      <div class="msg-body" id="pc-ru-pago"></div>
+      <div class="msg-note">✅ Los datos cambian según país. Revisá los casos que dicen “confirmar” antes de enviarlos.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 9 · Link de inscripción · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-inscripcion',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-ru-inscripcion">Te comparto el link para seguir con tu inscripción:
+
+https://www.japonesporjorgefrias.com.ar/inscripciones/
+
+Completá el formulario con tus datos y, cuando lo hayas enviado, avisame por acá así puedo darle seguimiento a tu alta. 😊
+
+Si te surge alguna duda mientras lo completás, estoy para ayudarte.</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya tiene claro curso, horario, valor y forma de pago.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 10 · Bienvenida oficial · Ruso 1</div><button class="copy-btn" onclick="copyMsg('pc-ru-bienvenida',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-ru-bienvenida">👋 *¡Te damos la bienvenida oficial a IKARUGA!* 🎉
+
+Estamos muy felices de que te sumes a nuestra comunidad. Para empezar con el pie derecho, te dejo la información importante:
+
+📌 *Alta administrativa*
+Leé este documento para formalizar tu proceso:
+https://www.japonesporjorgefrias.com.ar/wp-content/uploads/2025/03/INFO-ALTA-ADMINISTRARTIVA-CLIENTES.pdf
+
+📞 *Soporte administrativo / dudas técnicas*
++54 9 3417 50-0284
+
+🛡️ *Nuestro respaldo*
+Nos avalan años de trayectoria, la dirección del Traductor Matriculado Jorge Frías y más de 550 reseñas positivas.
+
+🌐 Web: https://www.ikaruga.com.ar
+⭐ Google: https://maps.app.goo.gl/JXtd62n6t8sVLpsSA
+💬 Facebook reseñas: https://www.facebook.com/ikaruga.idiomas/reviews
+📄 Aval legal / marca registrada:
+https://ikaruga.com.ar/wp-content/uploads/2023/06/Registro-marca-ikaruga-servicios-vigente-310533.pdf
+
+📱 *Comunidad IKARUGA*
+Instagram: https://www.instagram.com/ikaruga.idiomas/
+Facebook: https://www.facebook.com/ikaruga.idiomas
+LinkedIn: https://www.linkedin.com/company/ikaruga-idiomas/
+
+Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
+
+¡Bienvenido/a a la comunidad IKARUGA! 🇷🇺</div>
+      <div class="msg-note">✅ Enviá este mensaje cuando el lead ya completó el formulario o cuando confirmaste el alta.</div>
+    </div>
+  </div>
+
   <div class="tab-content" id="tab-intro-jp">
     <div class="info-block">
       <strong>Curso introductorio grabado:</strong> usalo para leads que quieren empezar rápido, viajar, destrabarse o probar IKARUGA antes de entrar a un nivel grupal.
@@ -2788,6 +2995,7 @@ Con esos datos te guío con el siguiente paso y dejamos reservado el valor espec
         <tr><td><span class="level-pill">Japonés 2</span></td><td>G</td><td>Sábados</td><td>14:00 – 17:00</td><td>21/09</td><td>14/12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>H</td><td>Jueves</td><td>21:00 – 00:00</td><td>17/09</td><td>10/12</td></tr>
         <tr><td><span class="level-pill">Alemán A1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>23/09</td><td>09/12</td></tr>
+        <tr><td><span class="level-pill">Ruso 1</span></td><td>A</td><td>Sábados</td><td>16:00 – 19:00</td><td>21/09</td><td>14/12</td></tr>
       </tbody>
     </table>
   </div>
@@ -3481,6 +3689,11 @@ const idiomaConfig = {
     cert: "Doble Certificación (IKARUGA + UAI 🎓)",
     inmersion: false,
     preparacion: () => false
+  },
+  ruso:  {
+    cert: "Doble Certificación (IKARUGA + UAI 🎓)",
+    inmersion: true,
+    preparacion: () => false
   }
 };
 
@@ -3554,6 +3767,9 @@ const horariosARG = {
   italiano: {
     "Italiano A1": ["Comisión B · Lunes de 20:00 a 22:00 hs. (Inicia 24/08 · Finaliza 16/11 · Agosto 4 módulos)"],
     "Italiano A2": ["Comisión A · Sábados de 17:00 a 19:00 hs. (Inicia 22/08 · Finaliza 14/11 · Agosto 4 módulos)"]
+  },
+  ruso: {
+    "Ruso 1": ["Comisión A · Sábados de 16:00 a 19:00 hs. (Inicia 21/09 · Finaliza 14/12 · Septiembre 4 módulos)"]
   }
 };
 
@@ -3624,6 +3840,7 @@ const tablaDescuentos = {
 
 function getTablaKey(idioma, nivel) {
   if (["japones","coreano","chino","aleman"].includes(idioma)) return "japones_coreano_chino_aleman";
+  if (idioma === "ruso") return "tailandes1";
   if (idioma === "tailandes") return (nivel === "Tailandés 1") ? "tailandes1" : "tailandes2";
   return idioma;
 }
@@ -3815,11 +4032,12 @@ const nivelesPorIdioma = {
   tailandes: [{nivel:"Tailandés 1",cierre:"promo"},{nivel:"Tailandés 2",cierre:"promo"},{nivel:"Tailandés 3",cierre:"promo"}],
   ingles:    [{nivel:"Inglés A1",cierre:"promo"},{nivel:"Inglés A2",cierre:"promo"}],
   aleman:    [{nivel:"Alemán A1",cierre:"promo"},{nivel:"Alemán A2",cierre:"promo"}],
-  italiano:  [{nivel:"Italiano A1",cierre:"promo"},{nivel:"Italiano A2",cierre:"promo"}]
+  italiano:  [{nivel:"Italiano A1",cierre:"promo"},{nivel:"Italiano A2",cierre:"promo"}],
+  ruso:      [{nivel:"Ruso 1",cierre:"promo"}]
 };
 
 const paisNombres = {ARG:"Argentina",MEX:"México (CDMX)",BOL:"Bolivia",PRY:"Paraguay",CHL:"Chile continental",COL:"Colombia",PER:"Perú",ECU:"Ecuador",PAN:"Panamá",HND:"Honduras",SLV:"El Salvador",CRI:"Costa Rica"};
-const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",aleman:"Alemán",italiano:"Italiano"};
+const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",aleman:"Alemán",italiano:"Italiano",ruso:"Ruso"};
 
 function getMesesDisponibles(idioma, nivel) {
   const horarios = (horariosARG[idioma]?.[nivel] || []).filter(horarioTieneCupo);
@@ -4064,6 +4282,9 @@ document.addEventListener('DOMContentLoaded', () => {
   updateItA1HorarioPais();
   updateItA1Precio();
   updateItA1Pago();
+  updateRu1HorarioPais();
+  updateRu1Precio();
+  updateRu1Pago();
   updateExoLevels();
   updateExoMessage();
 });
@@ -4922,6 +5143,40 @@ Este nivel te ayuda a pasar de lo básico a una comunicación más natural, con 
 • Enfoque: Continuidad práctica y comunicativa para afianzar el nivel A2.`
       }
     }
+  },
+  'pc-ru': {
+    benefitId: 'pc-ru-respaldo',
+    pdfId: 'pc-ru-pdf',
+    defaultPdfIntro: 'Te comparto también el PDF del programa para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso. 🇷🇺',
+    levels: {
+      'Ruso 1': {
+        pdf: 'ruso-i-programa.pdf',
+        desc: `🇷🇺 *CURSO DE RUSO I: NIVEL INICIAL*
+Programa de formación integral con aval universitario
+
+Este nivel está pensado para que empieces desde cero con una base real: lectura del alfabeto cirílico, pronunciación, primeras estructuras gramaticales y vocabulario para presentarte, hablar de tu entorno y acercarte a la cultura rusa.
+
+📅 *MODALIDAD Y DURACIÓN*
+• Duración: 4 módulos.
+• Clases: 3 horas semanales en vivo.
+• Plataforma: Acceso a materiales y recursos de apoyo para acompañar cada unidad.
+
+📚 *¿QUÉ VAS A LOGRAR?*
+• Leer y pronunciar el alfabeto cirílico, vocales, consonantes duras/blandas y terminaciones.
+• Usar pronombres personales y posesivos, género de sustantivos, plural y casos acusativo/prepositivo.
+• Conjugar verbos iniciales como vivir, tener, querer y escribir en situaciones simples.
+• Saludar, despedirte, presentarte, hablar de profesiones, familia, rutina, clima, compras y actividades.
+• Acercarte a la cultura rusa: dinastía Romanov, literatura rusa, costumbres, comida rusa y tren transiberiano.`,
+        benefits: `✨ *BENEFICIOS EXCLUSIVOS IKARUGA*
+🎎 Inmersión cultural: historia, literatura, costumbres y cultura rusa integradas al programa.
+🗣️ Enfoque comunicativo: lectura, pronunciación y conversación desde situaciones reales.
+
+🏆 *CERTIFICACIÓN Y RESPALDO*
+• Doble Aval: Certificado Institucional IKARUGA + Certificado Oficial con validez universitaria (UAI).
+• Calidad: Programa supervisado por la Dirección Académica con enfoque en comunicación efectiva y rigor gramatical.
+• Evaluación: Incluye requisitos de aprobación y seguimiento de contenidos por unidad.`
+      }
+    }
   }
 };
 
@@ -4932,7 +5187,8 @@ const selectedPostCallLevels = {
   'pc-th': 'Tailandés 1',
   'pc-en': 'Inglés A1',
   'pc-de': 'Alemán A1',
-  'pc-it': 'Italiano A1'
+  'pc-it': 'Italiano A1',
+  'pc-ru': 'Ruso 1'
 };
 
 const selectedPostCallMes = {};
@@ -4945,7 +5201,8 @@ const postCallScheduleConfig = {
   'pc-th': { idioma: 'tailandes', paisId: 'pc-th-pais', mesId: 'pc-th-mes', horarioId: 'pc-th-horario', emoji: '🇹🇭' },
   'pc-en': { idioma: 'ingles', paisId: 'pc-en-pais', mesId: 'pc-en-mes', horarioId: 'pc-en-horario', emoji: '🇬🇧' },
   'pc-de': { idioma: 'aleman', paisId: 'pc-de-pais', mesId: 'pc-de-mes', horarioId: 'pc-de-horario', emoji: '🇩🇪' },
-  'pc-it': { idioma: 'italiano', paisId: 'pc-it-pais', horarioId: 'pc-it-horario', emoji: '🇮🇹' }
+  'pc-it': { idioma: 'italiano', paisId: 'pc-it-pais', horarioId: 'pc-it-horario', emoji: '🇮🇹' },
+  'pc-ru': { idioma: 'ruso', paisId: 'pc-ru-pais', mesId: 'pc-ru-mes', horarioId: 'pc-ru-horario', emoji: '🇷🇺' }
 };
 
 const postCallTabIds = {
@@ -4955,7 +5212,8 @@ const postCallTabIds = {
   'pc-th': 'tab-th',
   'pc-en': 'tab-en',
   'pc-de': 'tab-de',
-  'pc-it': 'tab-it'
+  'pc-it': 'tab-it',
+  'pc-ru': 'tab-ru'
 };
 
 const postCallPriceSelectors = {
@@ -4965,7 +5223,8 @@ const postCallPriceSelectors = {
   'pc-th': { paisId: 'pc-th-precio-pais', descId: 'pc-th-descuento', cuotasId: 'pc-th-cuotas' },
   'pc-en': { paisId: 'pc-en-precio-pais', descId: 'pc-en-descuento' },
   'pc-de': { paisId: 'pc-de-precio-pais', descId: 'pc-de-descuento' },
-  'pc-it': { paisId: 'pc-it-precio-pais', descId: 'pc-it-descuento' }
+  'pc-it': { paisId: 'pc-it-precio-pais', descId: 'pc-it-descuento' },
+  'pc-ru': { paisId: 'pc-ru-precio-pais', descId: 'pc-ru-descuento' }
 };
 
 let syncingPostCallTopControls = false;
@@ -5032,6 +5291,7 @@ function updatePostCallPriceByMsgId(msgId) {
   if (msgId === 'pc-en') updateEnA1Precio();
   if (msgId === 'pc-de') updateDeA1Precio();
   if (msgId === 'pc-it') updateItA1Precio();
+  if (msgId === 'pc-ru') updateRu1Precio();
 }
 
 function updatePostCallPaymentByMsgId(msgId) {
@@ -5042,6 +5302,7 @@ function updatePostCallPaymentByMsgId(msgId) {
   if (msgId === 'pc-en') updateEnA1Pago();
   if (msgId === 'pc-de') updateDeA1Pago();
   if (msgId === 'pc-it') updateItA1Pago();
+  if (msgId === 'pc-ru') updateRu1Pago();
 }
 
 function syncPostCallTopControlsFromMsgId(msgId) {
@@ -5340,8 +5601,9 @@ function setNivel(msgId, nivel, btn) {
   if (msgId === 'pc-en') updateEnA1Precio();
   if (msgId === 'pc-de') updateDeA1Precio();
   if (msgId === 'pc-it') updateItA1Precio();
+  if (msgId === 'pc-ru') updateRu1Precio();
   // Replace any existing nivel already set, or the placeholder
-  el.innerText = el.innerText.replace(/\[NIVEL\]|Japonés \d|Coreano \d|Chino \d|Tailandés \d|Alemán A\d|Inglés A\d|Italiano A\d/g, nivel);
+  el.innerText = el.innerText.replace(/\[NIVEL\]|Japonés \d|Coreano \d|Chino \d|Tailandés \d|Alemán A\d|Inglés A\d|Italiano A\d|Ruso \d/g, nivel);
   // Mark button as selected
   if (btn) {
     const group = btn.parentElement;
@@ -6007,6 +6269,57 @@ function updateItA1Precio() {
 function updateItA1Pago() {
   const pais = document.getElementById('pc-it-pago-pais')?.value || 'ARG';
   const target = document.getElementById('pc-it-pago');
+  if (!target) return;
+  const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
+
+  target.innerText = `Te comparto los datos para que realices el pago de tu primera cuota:
+
+${datos}
+
+Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscripción.`;
+}
+
+function updateRu1HorarioPais() {
+  updatePostCallSchedule('pc-ru');
+}
+
+function syncRu1Pais(pais) {
+  const horarioPais = document.getElementById('pc-ru-pais');
+  const precioPais = document.getElementById('pc-ru-precio-pais');
+  const pagoPais = document.getElementById('pc-ru-pago-pais');
+  if (horarioPais && horarioPais.value !== pais) horarioPais.value = pais;
+  if (precioPais && precioPais.value !== pais) precioPais.value = pais;
+  if (pagoPais && pagoPais.value !== pais && [...pagoPais.options].some(opt => opt.value === pais)) pagoPais.value = pais;
+  updateRu1HorarioPais();
+  updateRu1Precio();
+  updateRu1Pago();
+}
+
+function updateRu1Precio() {
+  const pais = document.getElementById('pc-ru-precio-pais')?.value || document.getElementById('pc-ru-pais')?.value || 'ARG';
+  const descKey = document.getElementById('pc-ru-descuento')?.value || 'd35';
+  const target = document.getElementById('pc-ru-precio');
+  if (!target) return;
+
+  const nivel = selectedPostCallLevels['pc-ru'] || 'Ruso 1';
+  const mes = document.getElementById('pc-ru-mes')?.value || 'septiembre';
+  const p = getCotizadorPrecio('ruso', nivel, pais, descKey, mes);
+  const cuotas = getPostCallSelectedCuotas('pc-ru', 4);
+  const precioNum = parsePrecioNumero(p.precio_hoy);
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
+
+  target.innerText = `💳 *PREVENTA ${p.descuento} OFF* ⚡
+
+*${nivel} · septiembre · 4 módulos*
+❌ Valor Regular: ${p.simbolo}${p.precio_reg}
+✅ *Inversión HOY: ${p.simbolo}${p.precio_hoy}* (todo el curso completo).
+🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  updatePostCallSafetyPanel('pc-ru');
+}
+
+function updateRu1Pago() {
+  const pais = document.getElementById('pc-ru-pago-pais')?.value || 'ARG';
+  const target = document.getElementById('pc-ru-pago');
   if (!target) return;
   const datos = pagosPorPais[pais] || pagosPorPais.PAYPAL;
 
