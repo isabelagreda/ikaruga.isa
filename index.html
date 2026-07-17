@@ -487,6 +487,38 @@
     color: var(--gold);
   }
 
+  .internal-rule-alert {
+    background: #fff1f0;
+    border: 2px solid var(--red);
+    border-left: 8px solid var(--red);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 22px;
+    color: var(--ink);
+    box-shadow: 0 8px 22px rgba(192,57,43,0.14);
+  }
+
+  .internal-rule-alert-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .internal-rule-alert ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .internal-rule-alert strong { color: var(--red); }
+
   /* POST-CALL SECTION */
   .post-call-grid {
     display: grid;
@@ -617,6 +649,9 @@
       </button>
       <button class="nav-link" onclick="showSection('postcall')">
         <span class="dot"></span> Qué enviar tras la llamada
+      </button>
+      <button class="nav-link" onclick="showSection('pregrabados')">
+        <span class="dot"></span> Pregrabados
       </button>
     </div>
     <div class="nav-group">
@@ -1312,7 +1347,6 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-de',this)">🇩🇪 Alemán</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-it',this)">🇮🇹 Italiano</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-ru',this)">🇷🇺 Ruso</button>
-    <button class="tab-btn" onclick="showTab('lang-tabs','tab-intro-jp',this)">🎌 Introductorio Japón</button>
   </div>
 
   <div class="tab-content active" id="tab-jp">
@@ -2858,9 +2892,37 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
     </div>
   </div>
 
-  <div class="tab-content" id="tab-intro-jp">
+  </div>
+
+<!-- PREGRABADOS -->
+<div class="section" id="pregrabados">
+  <div class="section-header">
+    <div class="section-tag">Cursos pregrabados</div>
+    <h1 class="section-title">Pregrabados</h1>
+    <p class="section-desc">Mensajes para cursos grabados. Usalos cuando el lead necesita empezar a su ritmo, sin depender de una comisión en vivo.</p>
+  </div>
+
+  <div class="tabs" id="pregrabados-tabs">
+    <button class="tab-btn active" onclick="showTab('pregrabados-tabs','pregrabado-jp',this)">🎌 Introductorio Japón</button>
+    <button class="tab-btn" onclick="showTab('pregrabados-tabs','pregrabado-de',this)">🇩🇪 Alemán</button>
+    <button class="tab-btn" onclick="showTab('pregrabados-tabs','pregrabado-zh',this)">🇨🇳 Chino</button>
+    <button class="tab-btn" onclick="showTab('pregrabados-tabs','pregrabado-kr',this)">🇰🇷 Coreano</button>
+  </div>
+
+  <div class="tab-content active" id="pregrabado-jp">
     <div class="info-block">
       <strong>Curso introductorio grabado:</strong> usalo para leads que quieren empezar rápido, viajar, destrabarse o probar IKARUGA antes de entrar a un nivel grupal.
+    </div>
+
+    <div class="internal-rule-alert">
+      <div class="internal-rule-alert-title">⚠️ Regla interna obligatoria para asesores</div>
+      <ul>
+        <li>La venta contempla un mínimo de <strong>USD 60</strong> o su equivalente como pago del curso al instituto.</li>
+        <li>El restante queda como <strong>comisión para el vendedor</strong>.</li>
+        <li>Los cálculos están pensados dejando un mínimo aproximado de <strong>USD 20</strong> para el vendedor.</li>
+        <li>Se puede vender a un mejor precio si el asesor logra sostener más valor.</li>
+        <li>El precio con tarjeta es más alto porque ese servicio tiene costo operativo.</li>
+      </ul>
     </div>
 
     <div class="msg-card">
@@ -2904,14 +2966,21 @@ Esto te permite empezar ahora con una inversión más accesible y, si después q
 
 Para que puedas comenzar ahora, te mantengo la propuesta especial de:
 
-✅ *$135.000 finales*
-💳 En *3 cuotas fijas con tarjeta de crédito*.
+🇦🇷 *Argentina*
+💳 Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
+🏦 Pago único por transferencia: *$119.000*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
 
-También tenés una opción con mejor valor:
+🌎 *Internacional*
+💳 PayPal: *USD 80*
+🛡️ En 2 pagos: primera cuota mínima de *USD 60*
 
-✅ *Pago único por transferencia: $115.000*
+🇲🇽 *México*
+🏦 Transferencia: *$1.400 MXN*
+💳 Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
 
-Con cualquiera de las dos opciones ya accedés al programa completo, las 13 clases grabadas y los materiales de apoyo.</div>
+Con cualquiera de las opciones ya accedés al programa completo, las 13 clases grabadas y los materiales de apoyo.</div>
       <div class="msg-note">✅ Precio claro, separado del resumen para no saturar el primer mensaje.</div>
     </div>
 
@@ -2925,6 +2994,277 @@ Con cualquiera de las dos opciones ya accedés al programa completo, las 13 clas
 
 Con esos datos te guío con el siguiente paso y dejamos reservado el valor especial.</div>
       <div class="msg-note">✅ Cierre simple para pasar del interés a la inscripción.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('intro-jp-accesos',this)">Copiar</button></div>
+      <div class="msg-body" id="intro-jp-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
+
+1️⃣ *Acceso*
+*CURSO JAPONÉS TURÍSTICO*
+
+📁 *Carpeta primera parte*
+https://vimeo.com/reviews/a1c65fb1-a3d7-4321-8ee6-b9a546bd0e79/users/258030290/folders/29154833
+
+Contraseña: japoika2026PT1
+
+📁 *Carpeta segunda parte*
+https://vimeo.com/reviews/a591bb0b-c44b-4ec4-a0ad-22ca0a45352b/users/258030290/folders/29154838
+
+Contraseña: japoika2026PT2final</div>
+      <div class="msg-note">✅ Enviar este mensaje únicamente cuando el pago/alta ya esté confirmado.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="pregrabado-de">
+    <div class="info-block">
+      <strong>Pregrabado de Alemán:</strong> usalo para leads que quieren empezar a su ritmo, ganar base práctica y luego continuar con Alemán A1 en vivo.
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 1 · Resumen del programa</div><button class="copy-btn" onclick="copyMsg('pre-de-resumen',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-de-resumen">Tal como hablamos, te comparto el resumen del *Programa Pregrabado de Alemán*. 🇩🇪
+
+Es una opción flexible para que empieces hoy mismo a tu ritmo, con una base clara para comenzar a comprender y usar el idioma en situaciones reales.
+
+🎯 *Objetivo del programa*
+Que tengas un primer contacto ordenado con el alemán, su pronunciación, sus estructuras básicas y expresiones útiles para la vida cotidiana.
+
+Vas a trabajar saludos, presentaciones, vocabulario inicial, frases prácticas y recursos para empezar a sentir que el alemán deja de ser un idioma lejano y empieza a tener lógica para vos.</div>
+      <div class="msg-note">✅ Primer mensaje: presenta el valor del pregrabado sin hablar todavía de precio.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Qué incluye y modalidad</div><button class="copy-btn" onclick="copyMsg('pre-de-incluye',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-de-incluye">📚 *¿Qué incluye?*
+
+• *11 clases grabadas:* podés avanzar a tu ritmo y volver a ver cada explicación cuando lo necesites.
+• *Material de apoyo:* recursos para acompañar el aprendizaje y fijar vocabulario, pronunciación y estructuras básicas.
+• *Enfoque práctico:* contenidos pensados para empezar desde cero, sin presión de horarios y con una ruta clara.
+
+Es ideal si querés comenzar alemán de forma progresiva antes de sumarte a un curso grupal en vivo.</div>
+      <div class="msg-note">✅ Enviá este bloque separado para que el lead entienda qué está comprando.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · Beneficio de continuidad</div><button class="copy-btn" onclick="copyMsg('pre-de-beneficio',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-de-beneficio">🎓 *Beneficio exclusivo de continuidad*
+
+Al finalizar este pregrabado, desbloqueás un *40% de descuento exclusivo* para sumarte más adelante a nuestro curso grupal de *Alemán A1* con certificación IKARUGA + UAI.
+
+Esto te permite empezar ahora con una inversión más accesible y, si después querés continuar el recorrido completo, ya tenés un beneficio reservado para avanzar dentro de IKARUGA. 🚀</div>
+      <div class="msg-note">✅ Este mensaje conecta el pregrabado con el curso grupal.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Propuesta especial</div><button class="copy-btn" onclick="copyMsg('pre-de-precio',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-de-precio">Como te comenté, este programa pregrabado tiene un valor regular de *$187.000*.
+
+Para que puedas comenzar ahora, te mantengo la propuesta especial de:
+
+🇦🇷 *Argentina*
+💳 Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
+🏦 Pago único por transferencia: *$119.000*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
+
+🌎 *Internacional*
+💳 PayPal: *USD 80*
+🛡️ En 2 pagos: primera cuota mínima de *USD 60*
+
+🇲🇽 *México*
+🏦 Transferencia: *$1.400 MXN*
+💳 Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
+
+Con cualquiera de las opciones ya accedés al programa completo, las 11 clases grabadas y los materiales de apoyo.</div>
+      <div class="msg-note">✅ Mismos valores para todos los pregrabados.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-de-accesos',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-de-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
+
+1️⃣ *Acceso*
+*CURSO ALEMÁN PREGRABADO*
+
+📁 *Parte 1*
+https://vimeo.com/reviews/799f788f-75e4-4fbf-86eb-23c3bf49e0d1/users/258030290/folders/29757479
+
+Contraseña: Alemanikaruga26
+
+📁 *Parte 2*
+https://vimeo.com/reviews/915a37a2-8576-4329-8391-e5f7d65f8178/users/258030290/folders/29757489
+
+Contraseña: Alemanikaruga261122</div>
+      <div class="msg-note">✅ Enviar este mensaje únicamente cuando el pago/alta ya esté confirmado.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="pregrabado-zh">
+    <div class="info-block">
+      <strong>Pregrabado de Chino:</strong> usalo para leads que quieren empezar a su ritmo, entender la lógica inicial del mandarín y luego continuar con Chino 1 en vivo.
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 1 · Resumen del programa</div><button class="copy-btn" onclick="copyMsg('pre-zh-resumen',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-zh-resumen">Tal como hablamos, te comparto el resumen del *Programa Pregrabado de Chino Mandarín*. 🇨🇳
+
+Es una opción flexible para que empieces hoy mismo a tu ritmo, con una base práctica para dar tus primeros pasos en un idioma tonal y culturalmente riquísimo.
+
+🎯 *Objetivo del programa*
+Que tengas un primer contacto ordenado con el chino mandarín, su pronunciación, los tonos, el sistema Pinyin y expresiones básicas de uso real.
+
+Vas a trabajar saludos, presentaciones, números, vocabulario inicial y frases simples para empezar a comprender cómo funciona el idioma desde cero.</div>
+      <div class="msg-note">✅ Primer mensaje: presenta el valor del pregrabado sin hablar todavía de precio.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Qué incluye y modalidad</div><button class="copy-btn" onclick="copyMsg('pre-zh-incluye',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-zh-incluye">📚 *¿Qué incluye?*
+
+• *10 clases grabadas:* podés avanzar a tu ritmo y repetir las explicaciones de pronunciación y tonos todas las veces que necesites.
+• *Material de apoyo:* recursos para acompañar el aprendizaje de Pinyin, vocabulario inicial y estructuras básicas.
+• *Enfoque práctico:* contenidos pensados para empezar desde cero, sin presión de horarios y con una ruta clara.
+
+Es ideal si querés comenzar chino mandarín de forma progresiva antes de sumarte a un curso grupal en vivo.</div>
+      <div class="msg-note">✅ Enviá este bloque separado para que el lead entienda qué está comprando.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · Beneficio de continuidad</div><button class="copy-btn" onclick="copyMsg('pre-zh-beneficio',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-zh-beneficio">🎓 *Beneficio exclusivo de continuidad*
+
+Al finalizar este pregrabado, desbloqueás un *40% de descuento exclusivo* para sumarte más adelante a nuestro curso grupal de *Chino Mandarín 1* con certificación IKARUGA + UAI.
+
+Esto te permite empezar ahora con una inversión más accesible y, si después querés continuar el recorrido completo, ya tenés un beneficio reservado para avanzar dentro de IKARUGA. 🚀</div>
+      <div class="msg-note">✅ Este mensaje conecta el pregrabado con el curso grupal.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Propuesta especial</div><button class="copy-btn" onclick="copyMsg('pre-zh-precio',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-zh-precio">Como te comenté, este programa pregrabado tiene un valor regular de *$187.000*.
+
+Para que puedas comenzar ahora, te mantengo la propuesta especial de:
+
+🇦🇷 *Argentina*
+💳 Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
+🏦 Pago único por transferencia: *$119.000*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
+
+🌎 *Internacional*
+💳 PayPal: *USD 80*
+🛡️ En 2 pagos: primera cuota mínima de *USD 60*
+
+🇲🇽 *México*
+🏦 Transferencia: *$1.400 MXN*
+💳 Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
+
+Con cualquiera de las opciones ya accedés al programa completo, las 10 clases grabadas y los materiales de apoyo.</div>
+      <div class="msg-note">✅ Mismos valores para todos los pregrabados.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-zh-accesos',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-zh-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
+
+1️⃣ *Acceso*
+*CURSO CHINO PREGRABADO*
+
+📁 *Parte 1*
+https://vimeo.com/reviews/f4d2f72b-7377-4f15-8c1b-e038f405c771/users/258030290/folders/29757498
+
+Contraseña: ChinoenIkaruga2026
+
+📁 *Parte 2*
+https://vimeo.com/reviews/f439608b-bcc8-4954-b9a1-eb16bbbb8ce0/users/258030290/folders/29757506
+
+Contraseña: ChinoenIkarugaPT2</div>
+      <div class="msg-note">✅ Enviar este mensaje únicamente cuando el pago/alta ya esté confirmado.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="pregrabado-kr">
+    <div class="info-block">
+      <strong>Pregrabado de Coreano:</strong> usalo para leads que quieren empezar a su ritmo, familiarizarse con Hangul y luego continuar con Coreano 1 en vivo.
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 1 · Resumen del programa</div><button class="copy-btn" onclick="copyMsg('pre-kr-resumen',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-kr-resumen">Tal como hablamos, te comparto el resumen del *Programa Pregrabado de Coreano*. 🇰🇷
+
+Es una opción flexible para que empieces hoy mismo a tu ritmo, con una base práctica para entrar en contacto con el idioma y su sistema de escritura.
+
+🎯 *Objetivo del programa*
+Que el Hangul deje de parecer un sistema imposible y empieces a reconocer sonidos, leer sílabas, pronunciar mejor y usar expresiones básicas.
+
+Vas a trabajar saludos, presentaciones, vocabulario inicial, frases de uso cotidiano y una primera aproximación ordenada a la lógica del coreano.</div>
+      <div class="msg-note">✅ Primer mensaje: presenta el valor del pregrabado sin hablar todavía de precio.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Qué incluye y modalidad</div><button class="copy-btn" onclick="copyMsg('pre-kr-incluye',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-kr-incluye">📚 *¿Qué incluye?*
+
+• *7 clases grabadas:* podés avanzar a tu ritmo y volver a ver las explicaciones de Hangul, pronunciación y vocabulario cuando lo necesites.
+• *Material de apoyo:* recursos para acompañar el aprendizaje del alfabeto, sonidos y estructuras básicas.
+• *Enfoque práctico:* contenidos pensados para empezar desde cero, sin presión de horarios y con una ruta clara.
+
+Es ideal si querés comenzar coreano de forma progresiva antes de sumarte a un curso grupal en vivo.</div>
+      <div class="msg-note">✅ Enviá este bloque separado para que el lead entienda qué está comprando.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · Beneficio de continuidad</div><button class="copy-btn" onclick="copyMsg('pre-kr-beneficio',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-kr-beneficio">🎓 *Beneficio exclusivo de continuidad*
+
+Al finalizar este pregrabado, desbloqueás un *40% de descuento exclusivo* para sumarte más adelante a nuestro curso grupal de *Coreano 1* con certificación IKARUGA + UAI.
+
+Esto te permite empezar ahora con una inversión más accesible y, si después querés continuar el recorrido completo, ya tenés un beneficio reservado para avanzar dentro de IKARUGA. 🚀</div>
+      <div class="msg-note">✅ Este mensaje conecta el pregrabado con el curso grupal.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Propuesta especial</div><button class="copy-btn" onclick="copyMsg('pre-kr-precio',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-kr-precio">Como te comenté, este programa pregrabado tiene un valor regular de *$187.000*.
+
+Para que puedas comenzar ahora, te mantengo la propuesta especial de:
+
+🇦🇷 *Argentina*
+💳 Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
+🏦 Pago único por transferencia: *$119.000*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
+
+🌎 *Internacional*
+💳 PayPal: *USD 80*
+🛡️ En 2 pagos: primera cuota mínima de *USD 60*
+
+🇲🇽 *México*
+🏦 Transferencia: *$1.400 MXN*
+💳 Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
+🛡️ En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
+
+Con cualquiera de las opciones ya accedés al programa completo, las 7 clases grabadas y los materiales de apoyo.</div>
+      <div class="msg-note">✅ Mismos valores para todos los pregrabados.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-kr-accesos',this)">Copiar</button></div>
+      <div class="msg-body" id="pre-kr-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
+
+1️⃣ *Acceso*
+*CURSO COREANO PREGRABADO*
+
+📁 *Parte 1*
+https://vimeo.com/reviews/00035cce-7a0a-4f54-995b-18714c07db29/users/258030290/folders/29935691
+
+Contraseña: CoreanoporIkaruga2026
+
+📁 *Parte 2*
+https://vimeo.com/reviews/03e96060-0ada-43e3-bf59-81ef35777891/users/258030290/folders/29935696
+
+Contraseña: CoreanoporIkaruga2026PT2FL</div>
+      <div class="msg-note">✅ Enviar este mensaje únicamente cuando el pago/alta ya esté confirmado.</div>
     </div>
   </div>
 </div>
