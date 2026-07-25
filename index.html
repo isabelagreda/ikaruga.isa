@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -655,6 +655,9 @@
       <button class="nav-link" onclick="showSection('cotizador-agil')">
         <span class="dot"></span> Cotizador ágil
       </button>
+      <button class="nav-link" onclick="showSection('videojuegos')">
+        <span class="dot"></span> Curso videojuegos
+      </button>
       <button class="nav-link" onclick="showSection('postcall')">
         <span class="dot"></span> Qué enviar tras la llamada
       </button>
@@ -1174,6 +1177,227 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
     </div>
     <div class="msg-body" id="cotizador-agil-resultado"></div>
     <div class="msg-note">✅ Si una comisión está marcada como completo/cerrado, no aparece en el resultado.</div>
+  </div>
+</div>
+
+<!-- CURSO VIDEOJUEGOS -->
+<div class="section" id="videojuegos">
+  <div class="section-header">
+    <div class="section-tag">Curso especial</div>
+    <h1 class="section-title">Curso videojuegos</h1>
+    <p class="section-desc">Mensajes para leads interesados en Diseño y Programación de Videojuegos 3D con Unity 6.</p>
+  </div>
+
+  <div class="info-block">
+    <strong>Datos confirmados:</strong> curso de 4 módulos / 48 horas reloj, Unity 6 + C#, proyecto final ejecutable en PC y certificado institucional IKARUGA. Comisión A: domingos de 14:00 a 17:00 hs. Inicia 20/09 y finaliza 13/12.
+  </div>
+
+  <div class="tabs" id="videojuegos-tabs">
+    <button class="tab-btn active" onclick="showTab('videojuegos-tabs','vg-primer-contacto',this)">Primer saludo</button>
+    <button class="tab-btn" onclick="showTab('videojuegos-tabs','vg-seguimiento',this)">Seguimiento 48hs</button>
+    <button class="tab-btn" onclick="showTab('videojuegos-tabs','vg-post-llamada',this)">Post llamada</button>
+  </div>
+
+  <div class="tab-content active" id="vg-primer-contacto">
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Primer contacto · Videojuegos <span class="badge badge-green">Llevar a llamada</span></div>
+        <button class="copy-btn" onclick="copyMsg('vg-saludo-1', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-saludo-1">¡Hola! 👋 Soy {NOMBRE}, {TITULO} de IKARUGA. ⛩️
+
+Recibí tu consulta por el *curso de Diseño y Programación de Videojuegos 3D con Unity 6*.
+
+Es una formación práctica de 4 meses para iniciar en Unity 6, C# y el desarrollo de un proyecto jugable en PC.
+
+Para orientarte bien, me gustaría conocer tu punto de partida, si ya tenés experiencia y qué tipo de juego o proyecto te interesa crear.
+
+¿Te queda mejor que te llame hoy por la tarde o mañana por la mañana? 📞</div>
+      <div class="msg-note">✅ Usalo como primer mensaje cuando el lead consulta por videojuegos y todavía no respondió.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Primer contacto · Más directo <span class="badge badge-gold">WhatsApp ágil</span></div>
+        <button class="copy-btn" onclick="copyMsg('vg-saludo-2', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-saludo-2">¡Hola! 👋 Soy {NOMBRE} de IKARUGA. ⛩️
+
+Vi tu consulta por el *curso de videojuegos 3D con Unity 6*.
+
+Antes de enviarte la información completa, prefiero orientarte brevemente para saber si buscás empezar desde cero, aprender Unity/C# o avanzar hacia tu primer proyecto jugable.
+
+¿Preferís que lo veamos por llamada hoy o mañana? 📞</div>
+      <div class="msg-note">✅ Alternativa más corta para leads que suelen responder poco.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="vg-seguimiento">
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Seguimiento 48hs · Videojuegos</div>
+        <button class="copy-btn" onclick="copyMsg('vg-48hs-1', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-48hs-1">¡Hola! 👋 Soy {NOMBRE} de IKARUGA.
+
+Te escribo para retomar tu consulta por el *curso de videojuegos 3D con Unity 6*.
+
+La idea no es enviarte información genérica, sino orientarte según tu objetivo: empezar desde cero, entender la lógica de Unity/C# o crear tu primer proyecto ejecutable en PC.
+
+¿Querés que lo revisemos en una llamada breve? 📞</div>
+      <div class="msg-note">✅ Para leads que recibieron el primer saludo y no contestaron.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Seguimiento 48hs · Autoridad IKARUGA</div>
+        <button class="copy-btn" onclick="copyMsg('vg-48hs-2', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-48hs-2">¡Hola! 👋 Soy {NOMBRE} de IKARUGA. ⛩️
+
+Te retomo porque habías consultado por el *curso de videojuegos 3D con Unity 6*.
+
+En IKARUGA trabajamos con acompañamiento académico, proyecto final y certificación institucional, por eso me gustaría orientarte bien antes de que tomes una decisión.
+
+Si todavía te interesa, puedo contarte la propuesta y revisar si este curso coincide con lo que estás buscando.</div>
+      <div class="msg-note">✅ Útil cuando querés recordar respaldo sin sonar insistente.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="vg-post-llamada">
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Mensaje 1 · Resumen del curso</div>
+        <button class="copy-btn" onclick="copyMsg('vg-post-1', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-post-1">Tal como hablamos, te comparto el resumen del *curso de Diseño y Programación de Videojuegos 3D con Unity 6*.
+
+🎮 *DISEÑO Y PROGRAMACIÓN DE VIDEOJUEGOS 3D CON UNITY 6*
+Programa de formación práctica con certificado institucional IKARUGA.
+
+📅 *MODALIDAD Y DURACIÓN*
+• Duración: 4 módulos.
+• Carga horaria: 48 horas reloj.
+• Modalidad: formación teórico-práctica.
+• Herramientas: Unity 6 + lenguaje C#.
+
+📚 *¿QUÉ VAS A APRENDER?*
+• Usar Unity 6 como motor principal para crear videojuegos 3D.
+• Programar la lógica base del juego con C#.
+• Integrar assets profesionales: personajes, sonidos, modelos, efectos y recursos visuales.
+• Comprender conceptos clave como engine, FPS/TPS, GameManager, Raycasting, herencia e interfaz de usuario.
+• Desarrollar un proyecto final ejecutable en PC.
+• Ajustar la idea del juego a un alcance realista para poder terminarlo correctamente.
+
+La idea es que no solo veas teoría, sino que entiendas cómo se organiza un videojuego por dentro y puedas avanzar hacia un proyecto concreto.</div>
+      <div class="msg-note">✅ Contenido armado con la información encontrada del programa Unity 6.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Mensaje 2 · Certificación y respaldo</div>
+        <button class="copy-btn" onclick="copyMsg('vg-post-2', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-post-2">🏆 *CERTIFICACIÓN Y RESPALDO*
+• Certificación: al finalizar recibís certificado institucional IKARUGA.
+• Proyecto final: el curso apunta a que desarrolles una build ejecutable en PC.
+• Acompañamiento: propuesta pensada para que avances con una guía clara, ordenada y realista.
+• Enfoque práctico: trabajás lógica, integración de recursos y estructura de proyecto, no solo teoría.
+
+Además, al formar parte de IKARUGA, contás con una comunidad académica organizada y un equipo que te acompaña durante el proceso.</div>
+      <div class="msg-note">✅ Este mensaje ya está alineado con el dato confirmado: certificado IKARUGA.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header">
+      <div class="msg-card-title">Mensaje 3 · Requisitos, horario y valor</div>
+        <button class="copy-btn" onclick="copyMsg('vg-post-3', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-post-3">💻 *Requisitos técnicos*
+Para cursar correctamente necesitás:
+• Windows 10 o superior.
+• 15 GB libres como mínimo.
+• Instalar Unity 6 y Visual Studio.
+
+📅 *Horario disponible*
+Domingos de 14:00 a 17:00 hs (hora Argentina).
+Comisión A.
+Inicia: 20/09
+Finaliza: 13/12
+
+💰 *Valor del programa*
+Valor regular:
+• Argentina: $790.000 ARS
+• Internacional: USD 407
+• México: $8.030 MXN
+
+🎓 *Beca trayectoria / pago total*
+45% OFF:
+• Argentina: $434.000 ARS
+• Internacional: USD 223
+• México: $4.410 MXN
+
+40% OFF:
+• Argentina: $474.000 ARS
+• Internacional: USD 243
+• México: $4.810 MXN
+
+35% OFF:
+• Argentina: $510.000 ARS
+• Internacional: USD 264
+• México: $5.210 MXN
+
+30% OFF:
+• Argentina: $553.000 ARS
+• Internacional: USD 280
+• México: $5.620 MXN
+
+25% OFF:
+• Argentina: $590.000 ARS
+• Internacional: USD 298
+• México: $5.980 MXN
+
+20% OFF:
+• Argentina: $632.000 ARS
+• Internacional: USD 320
+• México: $6.420 MXN
+
+15% OFF:
+• Argentina: $669.000 ARS
+• Internacional: USD 340
+• México: $6.800 MXN
+
+Financiación / medio de pago: confirmar según país y promoción vigente.
+
+Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.</div>
+      <div class="msg-note">✅ Precios y horario cargados según la actualización enviada.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Mensaje 4 · Confirmación técnica</div>
+        <button class="copy-btn" onclick="copyMsg('vg-post-4', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-post-4">Antes de avanzar con la inscripción, confirmame por favor:
+• ¿Tenés computadora con Windows 10 o superior?
+• ¿Tenés al menos 15 GB libres para instalar Unity 6 y Visual Studio?
+• ¿Ya tenés alguna experiencia previa programando o sería tu primera vez?
+
+Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inconvenientes.</div>
+      <div class="msg-note">✅ Filtro técnico recomendado antes de cerrar la inscripción.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header">
+        <div class="msg-card-title">Mensaje 5 · Datos para inscripción</div>
+        <button class="copy-btn" onclick="copyMsg('vg-post-5', this)">Copiar</button>
+      </div>
+      <div class="msg-body" id="vg-post-5">Para continuar con tu inscripción indícame:
+• Nombre completo.
+• Correo electrónico que utilizarás para el acceso académico.
+• País desde donde realizarás el pago.</div>
+      <div class="msg-note">✅ Mensaje final para avanzar después de confirmar valor y horario.</div>
+    </div>
   </div>
 </div>
 
@@ -3224,37 +3448,37 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
     </table>
   </div>
 
-  <div class="tab-content" id="hor-agosto">
+    <div class="tab-content" id="hor-agosto">
     <table class="schedule-table">
-      <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
+      <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th><th>Alumnos</th></tr></thead>
       <tbody>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>E</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>F</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 3</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 3</span></td><td>D</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Japonés 4</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-        <tr><td><span class="level-pill">Coreano 1 · Grupo 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Coreano 1 · Grupo 2</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Coreano 1</span></td><td>E</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Coreano 2</span></td><td>D</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td></tr>
-        <tr><td><span class="level-pill">Tailandés 2</span></td><td>B</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Tailandés 3</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-        <tr><td><span class="level-pill">Inglés A1 · Grupo 1</span></td><td>C</td><td>Jueves</td><td>20:00 – 22:00</td><td>20/08</td><td>12/11</td></tr>
-        <tr><td><span class="level-pill">Inglés A1 · Grupo 2</span></td><td>C</td><td>Jueves</td><td>20:00 – 22:00</td><td>20/08</td><td>12/11</td></tr>
-        <tr><td><span class="level-pill">Inglés A2</span></td><td>A</td><td>Miércoles</td><td>20:00 – 22:00</td><td>19/08</td><td>11/11</td></tr>
-        <tr><td><span class="level-pill">Chino 1 · Grupo 1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td></tr>
-        <tr><td><span class="level-pill">Chino 1 · Grupo 2</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td></tr>
-        <tr><td><span class="level-pill">Chino 2</span></td><td>D</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td></tr>
-        <tr><td><span class="level-pill">Alemán A1</span></td><td>B</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td></tr>
-        <tr><td><span class="level-pill">Alemán A2</span></td><td>B</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td></tr>
-        <tr><td><span class="level-pill">Italiano A1</span></td><td>B</td><td>Lunes</td><td>20:00 – 22:00</td><td>24/08</td><td>16/11</td></tr>
-        <tr><td><span class="level-pill">Italiano A2</span></td><td>A</td><td>Sábados</td><td>17:00 – 19:00</td><td>22/08</td><td>14/11</td></tr>
+        <tr><td><span class="level-pill">Japonés 3</span></td><td>D</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>8</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>15</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>E</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>15</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>F</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>13</td></tr>
+        <tr><td><span class="level-pill">Japonés 3</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>11</td></tr>
+        <tr><td><span class="level-pill">Japonés 4</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>6</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>W</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>5</td></tr>
+        <tr><td><span class="level-pill">Coreano 1 · Grupo 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>20</td></tr>
+        <tr><td><span class="level-pill">Coreano 1 · Grupo 2</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>17</td></tr>
+        <tr><td><span class="level-pill">Coreano 1</span></td><td>E</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>10</td></tr>
+        <tr><td><span class="level-pill">Coreano 2</span></td><td>D</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>20</td></tr>
+        <tr><td><span class="level-pill">Tailandés 2</span></td><td>B</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>10</td></tr>
+        <tr><td><span class="level-pill">Inglés A1 · Grupo 1</span></td><td>C</td><td>Jueves</td><td>20:00 – 22:00</td><td>20/08</td><td>12/11</td><td>17</td></tr>
+        <tr><td><span class="level-pill">Inglés A1 · Grupo 2</span></td><td>C</td><td>Jueves</td><td>20:00 – 22:00</td><td>20/08</td><td>12/11</td><td>17</td></tr>
+        <tr><td><span class="level-pill">Inglés A2</span></td><td>A</td><td>Miércoles</td><td>20:00 – 22:00</td><td>19/08</td><td>11/11</td><td>17</td></tr>
+        <tr><td><span class="level-pill">Chino 1 · Grupo 1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>13</td></tr>
+        <tr><td><span class="level-pill">Chino 1 · Grupo 2</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>12</td></tr>
+        <tr><td><span class="level-pill">Chino 2</span></td><td>D</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>8</td></tr>
+        <tr><td><span class="level-pill">Tailandés 3</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>4</td></tr>
+        <tr><td><span class="level-pill">Alemán A1</span></td><td>B</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>20</td></tr>
+        <tr><td><span class="level-pill">Alemán A2</span></td><td>B</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>3</td></tr>
+        <tr><td><span class="level-pill">Italiano A2</span></td><td>A</td><td>Sábados</td><td>17:00 – 19:00</td><td>22/08</td><td>14/11</td><td>2</td></tr>
+        <tr><td><span class="level-pill">Italiano A1</span></td><td>B</td><td>Lunes</td><td>20:00 – 22:00</td><td>24/08</td><td>16/11</td><td>8</td></tr>
       </tbody>
     </table>
   </div>
-
-  <div class="tab-content" id="hor-septiembre">
+<div class="tab-content" id="hor-septiembre">
     <table class="schedule-table">
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
       <tbody>
@@ -3977,6 +4201,7 @@ const horariosARG = {
     "Japonés 1": [
       "Comisión R · Grupo 1 · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
       "Comisión R · Grupo 2 · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
+      "Comisión W · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12 · Agosto 5 módulos)",
       "Comisión T · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 13/12 · Septiembre 4 módulos)",
       "Comisión U · Lunes de 21:00 a 00:00 hs. (Inicia 21/09 · Finaliza 14/12 · Septiembre 4 módulos)",
       "Comisión V · Miércoles de 21:00 a 00:00 hs. (Inicia 21/10 · Finaliza 13/01 · Octubre 4 módulos)"
@@ -4282,7 +4507,7 @@ function getMesesDisponibles(idioma, nivel) {
 function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
   const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
   const esAlemanSeptiembre4 = idioma === 'aleman' && nivel === 'Alemán A1' && mes === 'septiembre';
-  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'todos');
+  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && mes === 'julio';
   const esOctubre4 = mes === 'octubre' && (
     (idioma === 'japones' && nivel === 'Japonés 1') ||
     (idioma === 'coreano' && nivel === 'Coreano 1') ||
@@ -4298,7 +4523,7 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
 function getCotizadorMaxCuotas(idioma, nivel, mes) {
   if (mes === 'septiembre' || mes === 'octubre') return 4;
   const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
-  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && (mes === 'julio' || mes === 'todos');
+  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && mes === 'julio';
   const esOctubre4 = mes === 'octubre' && (
     (idioma === 'japones' && nivel === 'Japonés 1') ||
     (idioma === 'coreano' && nivel === 'Coreano 1') ||
@@ -6029,7 +6254,7 @@ function updateJp1Precio() {
   const mostrarJulio = esJp1 && (mes === 'todos' || mes === 'julio');
   const mostrarSeptiembre = tieneSeptiembre4 && (mes === 'todos' || mes === 'septiembre');
   const mostrarOctubre = tieneOctubre4 && (mes === 'todos' || mes === 'octubre');
-  const mostrarAgosto = (!esJp1) && (mes === 'todos' || mes === 'agosto');
+  const mostrarAgosto = (mes === 'todos' || mes === 'agosto') && filtrarHorariosPorMes(horariosARG.japones?.[nivel] || [], 'agosto').length > 0;
   const maxCuotas = (mes === 'julio' && esJp1) ? 3 : 4;
   const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas);
   const cuotasAgosto = Math.min(cuotasSeleccionadas, 4);
