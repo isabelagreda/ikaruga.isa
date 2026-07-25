@@ -1313,63 +1313,47 @@ Además, al formar parte de IKARUGA, contás con una comunidad académica organi
       <div class="msg-card-title">Mensaje 3 · Requisitos, horario y valor</div>
         <button class="copy-btn" onclick="copyMsg('vg-post-3', this)">Copiar</button>
       </div>
-      <div class="msg-body" id="vg-post-3">💻 *Requisitos técnicos*
-Para cursar correctamente necesitás:
-• Windows 10 o superior.
-• 15 GB libres como mínimo.
-• Instalar Unity 6 y Visual Studio.
-
-📅 *Horario disponible*
-Domingos de 14:00 a 17:00 hs (hora Argentina).
-Comisión A.
-Inicia: 20/09
-Finaliza: 13/12
-
-💰 *Valor del programa*
-Valor regular:
-• Argentina: $790.000 ARS
-• Internacional: USD 407
-• México: $8.030 MXN
-
-🎓 *Beca trayectoria / pago total*
-45% OFF:
-• Argentina: $434.000 ARS
-• Internacional: USD 223
-• México: $4.410 MXN
-
-40% OFF:
-• Argentina: $474.000 ARS
-• Internacional: USD 243
-• México: $4.810 MXN
-
-35% OFF:
-• Argentina: $510.000 ARS
-• Internacional: USD 264
-• México: $5.210 MXN
-
-30% OFF:
-• Argentina: $553.000 ARS
-• Internacional: USD 280
-• México: $5.620 MXN
-
-25% OFF:
-• Argentina: $590.000 ARS
-• Internacional: USD 298
-• México: $5.980 MXN
-
-20% OFF:
-• Argentina: $632.000 ARS
-• Internacional: USD 320
-• México: $6.420 MXN
-
-15% OFF:
-• Argentina: $669.000 ARS
-• Internacional: USD 340
-• México: $6.800 MXN
-
-Financiación / medio de pago: confirmar según país y promoción vigente.
-
-Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);background:var(--paper2);">
+        <div>
+          <label for="vg-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
+          <select id="vg-pais" onchange="updateVideojuegosPrecio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+            <option value="ARG">Argentina · ARS</option>
+            <option value="MEX">México (CDMX) · MXN</option>
+            <option value="CHL">Chile continental · USD</option>
+            <option value="BOL">Bolivia · USD</option>
+            <option value="PRY">Paraguay · USD</option>
+            <option value="COL">Colombia · USD</option>
+            <option value="PER">Perú · USD</option>
+            <option value="ECU">Ecuador · USD</option>
+            <option value="PAN">Panamá · USD</option>
+            <option value="HND">Honduras · USD</option>
+            <option value="SLV">El Salvador · USD</option>
+            <option value="CRI">Costa Rica · USD</option>
+          </select>
+        </div>
+        <div>
+          <label for="vg-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Descuento</label>
+          <select id="vg-descuento" onchange="updateVideojuegosPrecio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+            <option value="d45">45% OFF</option>
+            <option value="d40">40% OFF</option>
+            <option value="d35" selected>35% OFF</option>
+            <option value="d30">30% OFF</option>
+            <option value="d25">25% OFF</option>
+            <option value="d20">20% OFF</option>
+            <option value="d15">15% OFF</option>
+          </select>
+        </div>
+        <div>
+          <label for="vg-cuotas" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Cuotas</label>
+          <select id="vg-cuotas" onchange="updateVideojuegosPrecio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+            <option value="1">1 pago</option>
+            <option value="2">2 cuotas</option>
+            <option value="3">3 cuotas</option>
+            <option value="4" selected>4 cuotas</option>
+          </select>
+        </div>
+      </div>
+      <div class="msg-body" id="vg-post-3"></div>
       <div class="msg-note">✅ Precios y horario cargados según la actualización enviada.</div>
     </div>
 
@@ -4405,8 +4389,11 @@ function getPrecio(idioma, pais, descKey, nivel) {
   const row = t[pKey];
   const simbolo = getSimbolo(pais);
   const opts = getDescuentosDisponibles(idioma, nivel);
-  const dk = descKey || (opts.find(o => o.key === 'd35') || opts[0])?.key || 'd35';
-  const pct = opts.find(o => o.key === dk)?.pct || dk.replace('d','') + '%';
+  const requestedOpt = opts.find(o => o.key === descKey);
+  const defaultOpt = opts.find(o => o.key === 'd35') || opts.find(o => o.key === 'd30') || opts[0];
+  const selectedOpt = requestedOpt || defaultOpt || { key: 'd30', pct: '30%' };
+  const dk = selectedOpt.key;
+  const pct = selectedOpt.pct;
   const cuotaNum = t.cuotas;
   const precioHoy = row[dk] || row.d30;
   return { precio_reg: row.reg, descuento: pct, precio_hoy: precioHoy, cuotas: cuotaNum, simbolo, meses: t.meses, hs: t.hs };
@@ -4706,10 +4693,57 @@ function renderStaticMessages(nombre) {
   });
 }
 
+const videojuegosPrecios = {
+  ARG: { simbolo: '$', label: 'Argentina', reg: '790.000', d45: '434.000', d40: '474.000', d35: '510.000', d30: '553.000', d25: '590.000', d20: '632.000', d15: '669.000' },
+  MEX: { simbolo: '$', label: 'México (CDMX)', reg: '8.030', d45: '4.410', d40: '4.810', d35: '5.210', d30: '5.620', d25: '5.980', d20: '6.420', d15: '6.800' },
+  USD: { simbolo: 'USD ', label: 'Internacional', reg: '407', d45: '223', d40: '243', d35: '264', d30: '280', d25: '298', d20: '320', d15: '340' }
+};
+
+const videojuegosDescuentos = { d45: '45%', d40: '40%', d35: '35%', d30: '30%', d25: '25%', d20: '20%', d15: '15%' };
+
+function updateVideojuegosPrecio() {
+  const target = document.getElementById('vg-post-3');
+  if (!target) return;
+
+  const pais = document.getElementById('vg-pais')?.value || 'ARG';
+  const descKey = document.getElementById('vg-descuento')?.value || 'd35';
+  const cuotas = parseInt(document.getElementById('vg-cuotas')?.value || '4', 10);
+  const precioKey = pais === 'ARG' || pais === 'MEX' ? pais : 'USD';
+  const pBase = videojuegosPrecios[precioKey] || videojuegosPrecios.USD;
+  const p = { ...pBase, label: paisNombres[pais] || pBase.label };
+  const precioHoy = p[descKey];
+  const precioNum = parsePrecioNumero(precioHoy);
+  const cuota = cuotas > 1 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : precioHoy;
+  const horarios = convertHorarios([
+    'Comisión A · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 13/12 · Septiembre 4 módulos)'
+  ], tzDiff[pais] ?? 0);
+  const horaRef = pais === 'ARG' ? 'hora Argentina' : `hora de ${p.label}`;
+  const financiacion = cuotas <= 1
+    ? `🛡️ *Financiación:* pago total de *${p.simbolo}${precioHoy}* vía transferencia.`
+    : `🛡️ *Financiación:* ${cuotas} cuotas fijas de *${p.simbolo}${cuota}* vía transferencia.`;
+
+  target.innerText = `💻 *Requisitos técnicos*
+Para cursar correctamente necesitás:
+• Windows 10 o superior.
+• 15 GB libres como mínimo.
+• Instalar Unity 6 y Visual Studio.
+
+📅 *Horario disponible (${horaRef})*
+• ${horarios[0]}
+
+💰 *Valor del programa en ${p.label}*
+❌ Valor regular: ${p.simbolo}${p.reg}
+✅ *Inversión con beca ${videojuegosDescuentos[descKey]} OFF: ${p.simbolo}${precioHoy}* (curso completo).
+${financiacion}
+
+Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initMessages();
   renderStaticMessages(nombreActual);
   initTestimonials();
+  updateVideojuegosPrecio();
   updateCotizadorNiveles();
   hideCursosCompletos();
   normalizePostCallCardTitles();
@@ -5771,7 +5805,13 @@ function syncPostCallTopControlsFromMsgId(msgId) {
   fillPostCallSelect(nivelSelect, getPostCallLevelOptions(msgId), nivel);
   fillPostCallSelect(mesSelect, getPostCallMesOptionsFor(msgId, nivel), mes);
   if (paisSelect) paisSelect.value = getPostCallCurrentCountry(msgId);
-  if (descSelect) descSelect.value = getPostCallCurrentDiscount(msgId);
+  if (descSelect) {
+    const cfg = postCallScheduleConfig[msgId] || {};
+    const opts = getDescuentosDisponibles(cfg.idioma, nivel).map(o => ({ value: o.key, label: `${o.pct} OFF` }));
+    const currentDiscount = getPostCallCurrentDiscount(msgId);
+    const defaultDiscount = opts.some(o => o.value === currentDiscount) ? currentDiscount : (opts.find(o => o.value === 'd30') || opts[0])?.value;
+    fillPostCallSelect(descSelect, opts, defaultDiscount);
+  }
   if (cuotasSelect) {
     const cfg = postCallScheduleConfig[msgId] || {};
     const maxCuotas = getCotizadorMaxCuotas(cfg.idioma, nivel, mesSelect.value || mes) || 4;
@@ -5811,9 +5851,15 @@ function applyPostCallTopParams() {
   const nivel = document.getElementById('postcall-param-nivel')?.value || selectedPostCallLevels[msgId];
   const mes = document.getElementById('postcall-param-mes')?.value || 'todos';
   const pais = document.getElementById('postcall-param-pais')?.value || 'ARG';
-  const descuento = document.getElementById('postcall-param-descuento')?.value || 'd35';
-  const cuotas = document.getElementById('postcall-param-cuotas')?.value || '4';
+  const descSelect = document.getElementById('postcall-param-descuento');
   const cfg = postCallScheduleConfig[msgId] || {};
+  const opts = getDescuentosDisponibles(cfg.idioma, nivel);
+  const descuentoActual = descSelect?.value || '';
+  const descuento = opts.some(o => o.key === descuentoActual) ? descuentoActual : (opts.find(o => o.key === 'd30') || opts[0])?.key || 'd30';
+  if (descSelect) {
+    fillPostCallSelect(descSelect, opts.map(o => ({ value: o.key, label: `${o.pct} OFF` })), descuento);
+  }
+  const cuotas = document.getElementById('postcall-param-cuotas')?.value || '4';
   const priceCfg = postCallPriceSelectors[msgId] || {};
   const levelBtn = [...document.querySelectorAll(`#${tabId} .level-sel-btn`)]
     .find(btn => btn.textContent.includes(nivel));
