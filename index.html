@@ -669,7 +669,7 @@
     <div class="nav-group">
       <div class="nav-group-label">Horarios 2026</div>
       <button class="nav-link" onclick="showSection('horarios')">
-        <span class="dot"></span> Julio / Agosto / Septiembre / Octubre
+        <span class="dot"></span> Julio / Agosto / Septiembre / Octubre / Diciembre
       </button>
       <button class="nav-link" onclick="showSection('zonas')">
         <span class="dot"></span> Horarios por país
@@ -4540,15 +4540,14 @@ function buildMsg(pais, idioma, nivel, horarios, cierre_tipo, descKey) {
   const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
   const finStr = `${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
   const cierreTexto = cierre_tipo === 'cupos'
-    ? 'Como los cupos de agosto ya se están reservando... ¿Te aseguro tu lugar para este nuevo ciclo o preferís que revisemos si queda alguna vacante para iniciar de inmediato? 👇'
+    ? 'Como los cupos ya se están reservando... ¿Te aseguro tu lugar para este nuevo ciclo o preferís que revisemos si queda alguna vacante para iniciar de inmediato? 👇'
     : (idioma === 'japones'
         ? 'Tengo solo un par de lugares con esta promo.\n\n👉 ¿Te reservo tu cupo o tenés alguna pregunta con respecto al curso? 👇'
         : 'Tengo solo un par de lugares con esta promo.\n\n👉 ¿Te reservo tu cupo o preferís ver el temario primero? 👇');
 
-  const mesInicio = (idioma === 'tailandes' && nivel === 'Tailandés 1') ? 'JULIO' : 'AGOSTO';
   return `¡Hola! 👋 Soy ${nombreActual}, ${getTitulo(nombreActual)} de IKARUGA. ⛩️
 
-Te contacto por tu interés en *${nivel}*. En ${mesInicio} abrimos nuevas comisiones con ${cfg.cert} y me encantaría que te sumes.
+Te contacto por tu interés en *${nivel}*. En este ciclo abrimos nuevas comisiones con ${cfg.cert} y me encantaría que te sumes.
 
 ✨ *Incluye:* ${incluyeStr}
 
