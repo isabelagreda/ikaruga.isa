@@ -669,7 +669,7 @@
     <div class="nav-group">
       <div class="nav-group-label">Horarios 2026</div>
       <button class="nav-link" onclick="showSection('horarios')">
-        <span class="dot"></span> Julio / Agosto / Septiembre / Octubre / Diciembre
+        <span class="dot"></span> Agosto / Septiembre / Octubre / Diciembre
       </button>
       <button class="nav-link" onclick="showSection('zonas')">
         <span class="dot"></span> Horarios por país
@@ -1567,7 +1567,6 @@ A continuación te comparto la información del curso que acordamos:
         <label for="pc-jp-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
         <select id="pc-jp-mes" onchange="refreshPostCallDescription('pc-jp'); updateJp1HorarioPais(); updateJp1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
-          <option value="julio">Julio</option>
           <option value="agosto">Agosto</option>
           <option value="septiembre">Septiembre</option>
         </select>
@@ -2149,7 +2148,6 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
         <label for="pc-th-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
         <select id="pc-th-mes" onchange="refreshPostCallDescription('pc-th'); updateTh1HorarioPais(); updateTh1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
-          <option value="julio">Julio</option>
           <option value="agosto">Agosto</option>
         </select>
         </div>
@@ -3424,50 +3422,39 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
   </div>
 
   <div class="tabs" id="horarios-tabs">
-    <button class="tab-btn" onclick="showTab('horarios-tabs','hor-julio',this)">Julio 2026</button>
     <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-agosto',this)">Agosto 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-septiembre',this)">Septiembre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-octubre',this)">Octubre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-diciembre',this)">Diciembre 2026</button>
   </div>
 
-  <div class="tab-content" id="hor-julio">
-    <table class="schedule-table">
-      <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th></tr></thead>
-      <tbody>
-        <tr><td><span class="level-pill">Tailandés 1</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
-        <tr><td><span class="level-pill">Japonés 1 · Grupo 1</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
-        <tr><td><span class="level-pill">Japonés 1 · Grupo 2</span></td><td>R</td><td>Sábados</td><td>16:00 – 19:00</td><td>18/07</td><td>10/10</td></tr>
-      </tbody>
-    </table>
-  </div>
   <div class="tab-content active" id="hor-agosto">
     <table class="schedule-table">
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th><th>Alumnos</th></tr></thead>
       <tbody>
         <tr><td><span class="level-pill">Japonés 3</span></td><td>D</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>12</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>20</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>E</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>16</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>E</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>17</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>F</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>20 (COMPLETO)</td></tr>
         <tr><td><span class="level-pill">Japonés 3</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>13</td></tr>
         <tr><td><span class="level-pill">Japonés 4</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>9</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>O</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>25 (COMPLETO)</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>O</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>24 (COMPLETO)</td></tr>
         <tr><td><span class="level-pill">Japonés 1</span></td><td>L</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>24 (COMPLETO)</td></tr>
         <tr><td><span class="level-pill">Japonés 1</span></td><td>N</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>23 (COMPLETO)</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>W</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>18</td></tr>
-        <tr><td><span class="level-pill">Coreano 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>21 (COMPLETO)</td></tr>
-        <tr><td><span class="level-pill">Coreano 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>20</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>W</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>19</td></tr>
+        <tr><td><span class="level-pill">Coreano 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 18:00</td><td>22/08</td><td>12/12</td><td>21 (COMPLETO)</td></tr>
+        <tr><td><span class="level-pill">Coreano 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 18:00</td><td>22/08</td><td>12/12</td><td>20 (COMPLETO)</td></tr>
         <tr><td><span class="level-pill">Coreano 1</span></td><td>E</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>14</td></tr>
         <tr><td><span class="level-pill">Coreano 2</span></td><td>D</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>27 (COMPLETO)</td></tr>
         <tr><td><span class="level-pill">Tailandés 2</span></td><td>B</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>13</td></tr>
         <tr><td><span class="level-pill">Inglés A1</span></td><td>C</td><td>Jueves</td><td>20:00 – 22:00</td><td>20/08</td><td>12/11</td><td>21 (COMPLETO)</td></tr>
         <tr><td><span class="level-pill">Inglés A1</span></td><td>C</td><td>Jueves</td><td>20:00 – 22:00</td><td>20/08</td><td>12/11</td><td>15</td></tr>
         <tr><td><span class="level-pill">Inglés A2</span></td><td>A</td><td>Miércoles</td><td>20:00 – 22:00</td><td>19/08</td><td>11/11</td><td>24 (COMPLETO)</td></tr>
-        <tr><td><span class="level-pill">Chino 1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>20 (COMPLETO)</td></tr>
+        <tr><td><span class="level-pill">Chino 1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>20</td></tr>
         <tr><td><span class="level-pill">Chino 1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>19/08</td><td>09/12</td><td>14</td></tr>
         <tr><td><span class="level-pill">Chino 2</span></td><td>D</td><td>Lunes</td><td>21:00 – 00:00</td><td>24/08</td><td>14/12</td><td>12</td></tr>
         <tr><td><span class="level-pill">Tailandés 3</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>4 (PASA A SEPTIEMBRE)</td></tr>
-        <tr><td><span class="level-pill">Alemán A1</span></td><td>B</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>22 (COMPLETO)</td></tr>
+        <tr><td><span class="level-pill">Alemán A1</span></td><td>B</td><td>Sábados</td><td>16:00 – 19:00</td><td>22/08</td><td>12/12</td><td>23 (COMPLETO)</td></tr>
         <tr><td><span class="level-pill">Alemán A2</span></td><td>B</td><td>Domingos</td><td>14:00 – 17:00</td><td>23/08</td><td>13/12</td><td>3 (PASA A SEPTIEMBRE)</td></tr>
         <tr><td><span class="level-pill">Italiano A2</span></td><td>A</td><td>Sábados</td><td>17:00 – 19:00</td><td>22/08</td><td>14/11</td><td>3 (PASA A SEPTIEMBRE)</td></tr>
         <tr><td><span class="level-pill">Italiano A1</span></td><td>B</td><td>Lunes</td><td>20:00 – 22:00</td><td>24/08</td><td>16/11</td><td>10</td></tr>
@@ -3478,18 +3465,18 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
     <table class="schedule-table">
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th><th>Alumnos</th></tr></thead>
       <tbody>
-        <tr><td><span class="level-pill">Inglés A1</span></td><td>D</td><td>Sábado</td><td>16:00 – 18:00</td><td>19/09</td><td>12/12</td><td>6</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>X</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/09</td><td>12/12</td><td>2</td></tr>
+        <tr><td><span class="level-pill">Inglés A1</span></td><td>D</td><td>Sábado</td><td>16:00 – 18:00</td><td>19/09</td><td>12/12</td><td>12</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>X</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/09</td><td>12/12</td><td>11</td></tr>
         <tr><td><span class="level-pill">Japonés 1</span></td><td>T</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>13/12</td><td>22 (COMPLETO)</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>U</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/09</td><td>14/12</td><td>10</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>G</td><td>Sábados</td><td>14:00 – 17:00</td><td>19/09</td><td>12/12</td><td>2</td></tr>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>H</td><td>Jueves</td><td>21:00 – 00:00</td><td>17/09</td><td>10/12</td><td>3</td></tr>
-        <tr><td><span class="level-pill">Alemán A1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>23/09</td><td>09/12</td><td>4</td></tr>
-        <tr><td><span class="level-pill">Ruso 1</span></td><td>A</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/09</td><td>12/12</td><td>8</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>U</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/09</td><td>14/12</td><td>13</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>G</td><td>Sábados</td><td>14:00 – 17:00</td><td>19/09</td><td>12/12</td><td>4</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>H</td><td>Jueves</td><td>21:00 – 00:00</td><td>17/09</td><td>10/12</td><td>7</td></tr>
+        <tr><td><span class="level-pill">Alemán A1</span></td><td>C</td><td>Miércoles</td><td>21:00 – 00:00</td><td>23/09</td><td>09/12</td><td>5</td></tr>
+        <tr><td><span class="level-pill">Ruso 1</span></td><td>A</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/09</td><td>12/12</td><td>9</td></tr>
         <tr><td><span class="level-pill">Tailandés 3</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>13/12</td><td>4</td></tr>
         <tr><td><span class="level-pill">Alemán A2</span></td><td>B</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>10/01</td><td>3</td></tr>
-        <tr><td><span class="level-pill">Italiano A2</span></td><td>A</td><td>Sábados</td><td>17:00 – 19:00</td><td>19/09</td><td>12/12</td><td>3</td></tr>
-        <tr><td><span class="level-pill">Diseño y programación</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>13/12</td><td>4</td></tr>
+        <tr><td><span class="level-pill">Italiano A2</span></td><td>A</td><td>Sábados</td><td>17:00 – 19:00</td><td>19/09</td><td>12/12</td><td>4</td></tr>
+        <tr><td><span class="level-pill">Diseño y programación</span></td><td>A</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>13/12</td><td>5</td></tr>
       </tbody>
     </table>
   </div>
@@ -3499,11 +3486,12 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th><th>Alumnos</th></tr></thead>
       <tbody>
         <tr><td><span class="level-pill">Inglés A1</span></td><td>E</td><td>Sábados</td><td>17:00 – 19:00</td><td>24/10</td><td>09/01</td><td>—</td></tr>
-        <tr><td><span class="level-pill">Coreano 1</span></td><td>F</td><td>Domingos</td><td>14:00 – 17:00</td><td>18/10</td><td>10/01</td><td>4</td></tr>
-        <tr><td><span class="level-pill">Tailandés 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>24/10</td><td>09/01</td><td>5</td></tr>
-        <tr><td><span class="level-pill">Chino 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>24/10</td><td>09/01</td><td>4</td></tr>
-        <tr><td><span class="level-pill">Japonés 1</span></td><td>V</td><td>Miércoles</td><td>21:00 – 00:00</td><td>21/10</td><td>13/01</td><td>1</td></tr>
+        <tr><td><span class="level-pill">Coreano 1</span></td><td>F</td><td>Domingos</td><td>14:00 – 17:00</td><td>18/10</td><td>10/01</td><td>6</td></tr>
+        <tr><td><span class="level-pill">Tailandés 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>24/10</td><td>09/01</td><td>7</td></tr>
+        <tr><td><span class="level-pill">Chino 1</span></td><td>D</td><td>Sábados</td><td>16:00 – 19:00</td><td>24/10</td><td>09/01</td><td>7</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>V</td><td>Miércoles</td><td>21:00 – 00:00</td><td>21/10</td><td>13/01</td><td>4</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>I</td><td>Sábados</td><td>16:00 – 19:00</td><td>24/10</td><td>09/01</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>L</td><td>Lunes</td><td>21:00 – 00:00</td><td>19/10</td><td>11/01</td><td>1</td></tr>
       </tbody>
     </table>
   </div>
@@ -3515,16 +3503,18 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
     <table class="schedule-table">
       <thead><tr><th>Curso</th><th>Comisión</th><th>Día</th><th>Horario (ARG)</th><th>Inicio</th><th>Cierre</th><th>Alumnos</th></tr></thead>
       <tbody>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>J</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>Y</td><td>Sábados</td><td>16:00 – 18:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>Z</td><td>Domingos</td><td>14:00 – 18:00</td><td>20/12</td><td>11/04</td><td>1</td></tr>
+        <tr><td><span class="level-pill">Japonés 2</span></td><td>J</td><td>Sábados</td><td>16:00 – 18:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Japonés 2</span></td><td>K</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/12</td><td>10/04</td><td>—</td></tr>
-        <tr><td><span class="level-pill">Japonés 3</span></td><td>E</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Japonés 3</span></td><td>E</td><td>Sábados</td><td>16:00 – 18:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Japonés 3</span></td><td>F</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/12</td><td>10/04</td><td>—</td></tr>
-        <tr><td><span class="level-pill">Japonés 4</span></td><td>B</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Japonés 4</span></td><td>B</td><td>Sábados</td><td>16:00 – 18:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Coreano 1</span></td><td>G</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/12</td><td>11/04</td><td>1</td></tr>
         <tr><td><span class="level-pill">Coreano 1</span></td><td>H</td><td>Miércoles</td><td>21:00 – 00:00</td><td>23/12</td><td>14/04</td><td>—</td></tr>
-        <tr><td><span class="level-pill">Coreano 2</span></td><td>E</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Coreano 2</span></td><td>E</td><td>Sábados</td><td>16:00 – 18:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Coreano 2</span></td><td>F</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/12</td><td>12/04</td><td>—</td></tr>
-        <tr><td><span class="level-pill">Chino 1</span></td><td>E</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Chino 1</span></td><td>E</td><td>Sábados</td><td>16:00 – 18:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Chino 1</span></td><td>F</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/12</td><td>12/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Chino 2</span></td><td>E</td><td>Miércoles</td><td>21:00 – 00:00</td><td>23/12</td><td>14/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Chino 3</span></td><td>A</td><td>Miércoles</td><td>21:00 – 00:00</td><td>23/12</td><td>14/04</td><td>—</td></tr>
@@ -3532,6 +3522,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
         <tr><td><span class="level-pill">Tailandés 2</span></td><td>C</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Tailandés 3</span></td><td>B</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/12</td><td>12/04</td><td>—</td></tr>
         <tr><td><span class="level-pill">Alemán A1</span></td><td>D</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/12</td><td>11/04</td><td>—</td></tr>
+        <tr><td><span class="level-pill">Alemán A2</span></td><td>C</td><td>Sábados</td><td>16:00 – 18:00</td><td>19/12</td><td>10/04</td><td>—</td></tr>
       </tbody>
     </table>
   </div>
@@ -4250,13 +4241,11 @@ const idiomaConfig = {
 };
 
 // ---- Horarios base en hora Argentina ----
-// Horarios confirmados desde Planificador de cursos IKARUGA — Julio/Agosto/Septiembre/Octubre/Diciembre 2026
+// Horarios confirmados desde Planificador de cursos IKARUGA — Agosto/Septiembre/Octubre/Diciembre 2026
 const horariosARG = {
   japones: {
     "Japonés 1": [
       "Comisión X · Sábados de 16:00 a 19:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)",
-      "Comisión R · Grupo 1 · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
-      "Comisión R · Grupo 2 · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
       "Comisión W · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12 · Agosto 5 módulos)",
       "Comisión O · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos · Cupo completo)",
       "Comisión L · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos · Cupo completo)",
@@ -4264,34 +4253,35 @@ const horariosARG = {
       "Comisión T · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 13/12 · Septiembre 4 módulos · Cupo completo)",
       "Comisión U · Lunes de 21:00 a 00:00 hs. (Inicia 21/09 · Finaliza 14/12 · Septiembre 4 módulos)",
       "Comisión V · Miércoles de 21:00 a 00:00 hs. (Inicia 21/10 · Finaliza 13/01 · Octubre 4 módulos)",
-      "Comisión J · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
-      "Comisión K · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 10/04 · Diciembre 5 módulos)"
+      "Comisión Y · Sábados de 16:00 a 18:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
+      "Comisión Z · Domingos de 14:00 a 18:00 hs. (Inicia 20/12 · Finaliza 11/04 · Diciembre 5 módulos)"
     ],
     "Japonés 2": [
       "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
       "Comisión E · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos)",
-      "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)",
+      "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos · Cupo completo)",
       "Comisión G · Sábados de 14:00 a 17:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)",
       "Comisión H · Jueves de 21:00 a 00:00 hs. (Inicia 17/09 · Finaliza 10/12 · Septiembre 4 módulos)",
       "Comisión I · Sábados de 16:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)",
-      "Comisión J · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
+      "Comisión L · Lunes de 21:00 a 00:00 hs. (Inicia 19/10 · Finaliza 11/01 · Octubre 4 módulos)",
+      "Comisión J · Sábados de 16:00 a 18:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
       "Comisión K · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 10/04 · Diciembre 5 módulos)"
     ],
     "Japonés 3": [
       "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
       "Comisión D · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)",
-      "Comisión E · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
+      "Comisión E · Sábados de 16:00 a 18:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
       "Comisión F · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 10/04 · Diciembre 5 módulos)"
     ],
     "Japonés 4": [
       "Comisión A · Domingos de 14:00 a 17:00 hs. (Inicia 23/08 · Finaliza 13/12 · Agosto 5 módulos)",
-      "Comisión B · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)"
+      "Comisión B · Sábados de 16:00 a 18:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)"
     ]
   },
   coreano: {
     "Coreano 1": [
-      "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos · Cupo completo)",
-      "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos)",
+      "Comisión D · Sábados de 16:00 a 18:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos · Cupo completo)",
+      "Comisión D · Sábados de 16:00 a 18:00 hs. (Inicia 22/08 · Finaliza 12/12 · Agosto 5 módulos · Cupo completo)",
       "Comisión E · Lunes de 21:00 a 00:00 hs. (Inicia 24/08 · Finaliza 14/12 · Agosto 5 módulos)",
       "Comisión F · Domingos de 14:00 a 17:00 hs. (Inicia 18/10 · Finaliza 10/01 · Octubre 4 módulos)",
       "Comisión G · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 11/04 · Diciembre 5 módulos)",
@@ -4299,7 +4289,7 @@ const horariosARG = {
     ],
     "Coreano 2": [
       "Comisión D · Miércoles de 21:00 a 00:00 hs. (Inicia 19/08 · Finaliza 09/12 · Agosto 5 módulos · Cupo completo)",
-      "Comisión E · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
+      "Comisión E · Sábados de 16:00 a 18:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)",
       "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 21/12 · Finaliza 12/04 · Diciembre 5 módulos)"
     ]
   },
@@ -4321,7 +4311,6 @@ const horariosARG = {
   },
   tailandes: {
     "Tailandés 1": [
-      "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 18/07 · Finaliza 10/10 · Julio 4 módulos)",
       "Comisión D · Sábados de 16:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)",
       "Comisión E · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)"
     ],
@@ -4349,7 +4338,10 @@ const horariosARG = {
       "Comisión C · Miércoles de 21:00 a 00:00 hs. (Inicia 23/09 · Finaliza 09/12 · Septiembre 4 módulos)",
       "Comisión D · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 11/04 · Diciembre 5 módulos)"
     ],
-    "Alemán A2": ["Comisión B · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 10/01 · Septiembre 5 módulos)"]
+    "Alemán A2": [
+      "Comisión B · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 10/01 · Septiembre 5 módulos)",
+      "Comisión C · Sábados de 16:00 a 18:00 hs. (Inicia 19/12 · Finaliza 10/04 · Diciembre 5 módulos)"
+    ]
   },
   italiano: {
     "Italiano A1": ["Comisión B · Lunes de 20:00 a 22:00 hs. (Inicia 24/08 · Finaliza 16/11 · Agosto 4 módulos)"],
@@ -4375,7 +4367,7 @@ function convertHorarios(nivHorarios, diff) {
 }
 
 // ---- PRECIOS por idioma y país ----
-// Financiación: 4 cuotas para asiáticos+alemán · 3 cuotas para inglés e italiano
+// Financiación: agosto permite 3 cuotas para idiomas generales y 2 para inglés/italiano.
 // ── TABLA COMPLETA DE DESCUENTOS POR IDIOMA Y PAÍS ──────────────────────────
 // Fuentes: Beca Trayectoria 2026 (5m 3hs y 4m 3hs) · Cursos 2 hs Ing Marzo 2026_ · Cursos 2hs con certif UAI FR,I
 const tablaDescuentos = {
@@ -4459,7 +4451,7 @@ function getTablaKey(idioma, nivel) {
   return idioma;
 }
 
-function getPrecioJulio4Modulos(pais, descKey) {
+function getPrecio4Modulos(pais, descKey) {
   return getPrecio('tailandes', pais, descKey, 'Tailandés 1');
 }
 
@@ -4635,7 +4627,6 @@ const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandar�
 function getMesesDisponibles(idioma, nivel) {
   const horarios = (horariosARG[idioma]?.[nivel] || []).filter(horarioTieneCupo);
   const meses = [];
-  if (horarios.some(h => /julio/i.test(h))) meses.push({ value: 'julio', label: 'Julio' });
   if (horarios.some(h => /agosto/i.test(h))) meses.push({ value: 'agosto', label: 'Agosto' });
   if (horarios.some(h => /septiembre/i.test(h))) meses.push({ value: 'septiembre', label: 'Septiembre' });
   if (horarios.some(h => /octubre/i.test(h))) meses.push({ value: 'octubre', label: 'Octubre' });
@@ -4646,31 +4637,35 @@ function getMesesDisponibles(idioma, nivel) {
 function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
   const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
   const esAlemanSeptiembre4 = idioma === 'aleman' && nivel === 'Alemán A1' && mes === 'septiembre';
-  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && mes === 'julio';
   const esOctubre4 = mes === 'octubre' && (
     (idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel)) ||
     (idioma === 'coreano' && nivel === 'Coreano 1') ||
     (idioma === 'chino' && nivel === 'Chino 1') ||
     (idioma === 'tailandes' && nivel === 'Tailandés 1')
   );
-  if (esJpSeptiembre4 || esAlemanSeptiembre4 || esJp1Julio4 || esOctubre4) {
-    return getPrecioJulio4Modulos(pais, descKey);
+  if (esJpSeptiembre4 || esAlemanSeptiembre4 || esOctubre4) {
+    return getPrecio4Modulos(pais, descKey);
   }
   return getPrecio(idioma, pais, descKey, nivel);
 }
 
 function getCotizadorMaxCuotas(idioma, nivel, mes) {
-  if (mes === 'agosto') return 3;
-  if (mes === 'septiembre' || mes === 'octubre') return 4;
+  if (mes === 'agosto') return ['ingles', 'italiano'].includes(idioma) ? 2 : 3;
+  if (mes === 'septiembre') {
+    const horariosSeptiembre = filtrarHorariosPorMes(horariosARG[idioma]?.[nivel] || [], 'septiembre');
+    return horariosSeptiembre.some(h => /4 módulos/i.test(h)) ? 3 : 4;
+  }
+  if (mes === 'octubre' || mes === 'diciembre') {
+    return ['ingles', 'italiano'].includes(idioma) ? 3 : 4;
+  }
   const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
-  const esJp1Julio4 = idioma === 'japones' && nivel === 'Japonés 1' && mes === 'julio';
   const esOctubre4 = mes === 'octubre' && (
     (idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel)) ||
     (idioma === 'coreano' && nivel === 'Coreano 1') ||
     (idioma === 'chino' && nivel === 'Chino 1') ||
     (idioma === 'tailandes' && nivel === 'Tailandés 1')
   );
-  if (esJpSeptiembre4 || esJp1Julio4 || esOctubre4 || (idioma === 'tailandes' && nivel === 'Tailandés 1')) return 3;
+  if (esJpSeptiembre4 || esOctubre4 || (idioma === 'tailandes' && nivel === 'Tailandés 1')) return 3;
   const key = getTablaKey(idioma, nivel);
   return tablaDescuentos[key]?.cuotas || 4;
 }
@@ -5202,7 +5197,6 @@ function getExoPrecioMes(idiomaId, nivel) {
   const horarios = horariosARG[idiomaId]?.[nivel] || [];
   if (horarios.some(h => /septiembre/i.test(h))) return 'septiembre';
   if (horarios.some(h => /octubre/i.test(h))) return 'octubre';
-  if (horarios.some(h => /julio/i.test(h))) return 'julio';
   if (horarios.some(h => /agosto/i.test(h))) return 'agosto';
   return 'todos';
 }
@@ -6295,7 +6289,6 @@ En IKARUGA combinamos la excelencia académica con una metodología diseñada pa
 
 📅 *MODALIDAD Y DURACIÓN*
 • Duración: 5 módulos.
-• Comisiones de julio: modalidad de 4 módulos.
 • Clases: 3 horas semanales en vivo (Zoom privado).
 • Flexibilidad: Acceso 24/7 a nuestro Campus Virtual con lecciones, materiales y grabaciones de todas las clases.
 
@@ -6466,27 +6459,24 @@ function updateJp1Precio() {
 
   const nivel = selectedPostCallLevels['pc-jp'] || 'Japonés 1';
   const p = getPrecio('japones', pais, descKey, nivel);
-  const pJulio = getPrecioJulio4Modulos(pais, descKey);
+  const p4Modulos = getPrecio4Modulos(pais, descKey);
   const mes = document.getElementById('pc-jp-mes')?.value || 'todos';
   const esJp1 = nivel === 'Japonés 1';
   const tieneSeptiembre4 = ["Japonés 1", "Japonés 2"].includes(nivel);
   const tieneOctubre4 = ["Japonés 1", "Japonés 2"].includes(nivel);
-  const mostrarJulio = esJp1 && (mes === 'todos' || mes === 'julio');
   const mostrarSeptiembre = tieneSeptiembre4 && (mes === 'todos' || mes === 'septiembre');
   const mostrarOctubre = tieneOctubre4 && (mes === 'todos' || mes === 'octubre');
   const mostrarAgosto = (mes === 'todos' || mes === 'agosto') && filtrarHorariosPorMes(horariosARG.japones?.[nivel] || [], 'agosto').length > 0;
-  const maxCuotas = mes === 'agosto' ? 3 : ((mes === 'julio' && esJp1) ? 3 : 4);
+  const maxCuotas = getCotizadorMaxCuotas('japones', nivel, mes);
   const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas);
   const cuotasAgosto = Math.min(cuotasSeleccionadas, 3);
-  const cuotasJulio = Math.min(cuotasSeleccionadas, 3);
-  const cuotasSeptiembre = Math.min(cuotasSeleccionadas, 4);
-  const cuotasOctubre = Math.min(cuotasSeleccionadas, 4);
+  const cuotasSeptiembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'septiembre'));
+  const cuotasOctubre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'octubre'));
   const agostoTexto = mostrarAgosto ? buildPrecioCopyBlock(p, cuotasAgosto, `*${nivel} · agosto · 5 módulos*`) : '';
-  const julioTexto = mostrarJulio ? `${mostrarAgosto ? '\n\n' : ''}${buildPrecioCopyBlock(pJulio, cuotasJulio, '*Comisiones de julio · 4 módulos*')}` : '';
-  const septiembreTexto = mostrarSeptiembre ? `${(mostrarAgosto || mostrarJulio) ? '\n\n' : ''}${buildPrecioCopyBlock(pJulio, cuotasSeptiembre, `*${nivel} · septiembre · 4 módulos*`)}` : '';
-  const octubreTexto = mostrarOctubre ? `${(mostrarAgosto || mostrarJulio || mostrarSeptiembre) ? '\n\n' : ''}${buildPrecioCopyBlock(pJulio, cuotasOctubre, `*${nivel} · octubre · 4 módulos*`)}` : '';
+  const septiembreTexto = mostrarSeptiembre ? `${mostrarAgosto ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasSeptiembre, `*${nivel} · septiembre · 4 módulos*`)}` : '';
+  const octubreTexto = mostrarOctubre ? `${(mostrarAgosto || mostrarSeptiembre) ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasOctubre, `*${nivel} · octubre · 4 módulos*`)}` : '';
 
-  target.innerText = `${agostoTexto}${julioTexto}${septiembreTexto}${octubreTexto || ((mostrarAgosto || mostrarJulio || mostrarSeptiembre) ? '' : 'Consultar cotización disponible para el mes seleccionado.')}`;
+  target.innerText = `${agostoTexto}${septiembreTexto}${octubreTexto || ((mostrarAgosto || mostrarSeptiembre) ? '' : 'Consultar cotización disponible para el mes seleccionado.')}`;
   updatePostCallSafetyPanel('pc-jp');
 }
 
@@ -6668,7 +6658,7 @@ function updateKr1Precio() {
   const nivel = selectedPostCallLevels['pc-kr'] || 'Coreano 1';
   const mes = document.getElementById('pc-kr-mes')?.value || 'todos';
   const p = getCotizadorPrecio('coreano', nivel, pais, descKey, mes);
-  const maxCuotas = mes === 'agosto' ? 3 : ((mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas);
+  const maxCuotas = getCotizadorMaxCuotas('coreano', nivel, mes);
   const cuotas = getPostCallSelectedCuotas('pc-kr', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
@@ -6711,7 +6701,7 @@ function updateZh1Precio() {
   const nivel = selectedPostCallLevels['pc-zh'] || 'Chino 1';
   const mes = document.getElementById('pc-zh-mes')?.value || 'todos';
   const p = getCotizadorPrecio('chino', nivel, pais, descKey, mes);
-  const maxCuotas = mes === 'agosto' ? 3 : ((mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas);
+  const maxCuotas = getCotizadorMaxCuotas('chino', nivel, mes);
   const cuotas = getPostCallSelectedCuotas('pc-zh', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
@@ -6755,7 +6745,7 @@ function updateTh1Precio() {
   const mes = document.getElementById('pc-th-mes')?.value || 'todos';
   const esTail1 = nivel === 'Tailandés 1';
   const p = getPrecio('tailandes', pais, descKey, nivel);
-  const maxCuotas = mes === 'agosto' ? 3 : (esTail1 && mes === 'julio' ? 3 : 4);
+  const maxCuotas = getCotizadorMaxCuotas('tailandes', nivel, mes);
   const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas, maxCuotas);
   const moduloLabel = esTail1 ? '4 módulos' : '5 módulos';
 
@@ -6798,7 +6788,7 @@ function updateEnA1Precio() {
   const nivel = selectedPostCallLevels['pc-en'] || 'Inglés A1';
   const p = getPrecio('ingles', pais, descKey, nivel);
   const mes = document.getElementById('pc-en-mes')?.value || 'todos';
-  const maxCuotas = mes === 'agosto' ? 3 : ((mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas);
+  const maxCuotas = getCotizadorMaxCuotas('ingles', nivel, mes);
   const cuotas = getPostCallSelectedCuotas('pc-en', maxCuotas);
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-en');
@@ -6839,7 +6829,7 @@ function updateDeA1Precio() {
   const nivel = selectedPostCallLevels['pc-de'] || 'Alemán A1';
   const mes = document.getElementById('pc-de-mes')?.value || 'todos';
   const p = getCotizadorPrecio('aleman', nivel, pais, descKey, mes);
-  const maxCuotas = mes === 'agosto' ? 3 : ((mes === 'septiembre' || mes === 'octubre') ? 4 : p.cuotas);
+  const maxCuotas = getCotizadorMaxCuotas('aleman', nivel, mes);
   const cuotas = getPostCallSelectedCuotas('pc-de', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
@@ -6882,7 +6872,7 @@ function updateItA1Precio() {
   const nivel = selectedPostCallLevels['pc-it'] || 'Italiano A1';
   const p = getPrecio('italiano', pais, descKey, nivel);
   const mes = document.getElementById('pc-it-mes')?.value || 'todos';
-  const cuotas = getPostCallSelectedCuotas('pc-it', mes === 'agosto' ? 3 : p.cuotas);
+  const cuotas = getPostCallSelectedCuotas('pc-it', getCotizadorMaxCuotas('italiano', nivel, mes));
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-it');
 }
@@ -6925,7 +6915,7 @@ function updateRu1Precio() {
   const nivel = selectedPostCallLevels['pc-ru'] || 'Ruso 1';
   const mes = document.getElementById('pc-ru-mes')?.value || 'septiembre';
   const p = getCotizadorPrecio('ruso', nivel, pais, descKey, mes);
-  const cuotas = getPostCallSelectedCuotas('pc-ru', mes === 'agosto' ? 3 : 4);
+  const cuotas = getPostCallSelectedCuotas('pc-ru', getCotizadorMaxCuotas('ruso', nivel, mes));
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · septiembre · 4 módulos*`);
   updatePostCallSafetyPanel('pc-ru');
 }
