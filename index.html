@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -530,6 +530,148 @@
 
   .internal-rule-alert strong { color: var(--red); }
 
+
+
+  /* NURTURING IMAGES */
+  .nurturing-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .nurturing-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink2);
+  }
+
+  .nurturing-accordion {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  }
+
+  .nurturing-accordion > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+    background: linear-gradient(90deg, #fff, var(--paper));
+  }
+
+  .nurturing-accordion > summary::-webkit-details-marker { display: none; }
+
+  .nurturing-count {
+    flex: 0 0 auto;
+    background: var(--red);
+    color: #fff;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .nurturing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 16px;
+    padding: 0 16px 18px;
+  }
+
+  .nurturing-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .nurturing-card img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    display: block;
+    background: #111;
+  }
+
+  .nurturing-card-body { padding: 12px; }
+
+  .nurturing-card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+
+  .nurturing-card-desc {
+    min-height: 38px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--ink3);
+    margin-bottom: 11px;
+  }
+
+  .nurturing-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .nurturing-actions a.copy-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nurturing-cert {
+    margin: -2px 16px 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .nurturing-cert strong { color: #fff; }
+  .nurturing-cert span { color: var(--gold); font-weight: 800; }
+
+  .nurturing-copy {
+    background: var(--paper);
+    border-radius: 8px;
+    padding: 9px 10px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--ink2);
+  }
+
+  .nurturing-copy strong {
+    display: block;
+    color: var(--red);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+
   /* POST-CALL SECTION */
   .post-call-grid {
     display: grid;
@@ -667,6 +809,12 @@
       </button>
     </div>
     <div class="nav-group">
+      <div class="nav-group-label">Nurturing</div>
+      <button class="nav-link" onclick="showSection('nurturing')">
+        <span class="dot"></span> Imágenes para WhatsApp
+      </button>
+    </div>
+    <div class="nav-group">
       <div class="nav-group-label">Horarios 2026</div>
       <button class="nav-link" onclick="showSection('horarios')">
         <span class="dot"></span> Agosto / Septiembre / Octubre / Diciembre
@@ -713,6 +861,1273 @@
 </div>
 
 <div class="main">
+
+<!-- NURTURING -->
+<div class="section" id="nurturing">
+  <div class="section-header">
+    <div class="section-tag">Nurturing</div>
+    <h1 class="section-title">Nurturing · imágenes para WhatsApp</h1>
+    <p class="section-desc">Biblioteca de historias por idioma para reactivar consultas, acompañar leads tibios y sostener interés sin hablar de precios, horarios ni módulos. Cada pieza está pensada para abrir conversación y enviar por WhatsApp o Instagram.</p>
+  </div>
+
+  <div class="nurturing-toolbar">
+    <div class="nurturing-pill">Formato historia 1080×1920</div>
+    <div class="nurturing-pill">Sin precios ni horarios</div>
+    <div class="nurturing-pill">CTA por idioma</div>
+    <div class="nurturing-pill">Actualizado con certificaciones</div>
+  </div>
+
+  <div class="info-block"><strong>Uso recomendado:</strong> enviá una imagen con un mensaje corto, no como folleto frío. Primero conectá con el motivo del alumno: trabajo, cultura, viaje, estudio, confianza o decisión. Después ofrecé horarios y disponibilidad.</div>
+  <details class="nurturing-accordion" open>
+    <summary>Japonés<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Doble certificación:</strong> <span>Certificado IKARUGA + certificación universitaria UAI</span> · Universidad Abierta Interamericana.<br><strong>Enfoque comercial:</strong> Ideal para quienes conectan con cultura japonesa, anime, manga, viajes, tecnología o un desafío personal distinto.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/01-japones-trabajo.png" alt="Japonés · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Japonés puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/01-japones-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/01-japones-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Japonés puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/02-japones-empezar.png" alt="Japonés · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Japonés. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/02-japones-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/02-japones-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Japonés. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/03-japones-constancia.png" alt="Japonés · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Japonés no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/03-japones-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/03-japones-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Japonés no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/04-japones-futuro.png" alt="Japonés · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Japonés está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/04-japones-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/04-japones-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Japonés está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/05-japones-confianza.png" alt="Japonés · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Japonés parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/05-japones-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/05-japones-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Japonés parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/06-japones-laboral.png" alt="Japonés · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/06-japones-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/06-japones-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/07-japones-cultura.png" alt="Japonés · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Japonés, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/07-japones-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/07-japones-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Japonés, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/08-japones-habito.png" alt="Japonés · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Japonés con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/08-japones-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/08-japones-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Japonés con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/09-japones-objetivo.png" alt="Japonés · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Japonés; desde ahí te orientamos mejor.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/09-japones-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/09-japones-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Japonés; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/japones/10-japones-decision.png" alt="Japonés · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Japonés te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "JAPONÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/japones/10-japones-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/japones/10-japones-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Japonés te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;JAPONÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="nurturing-accordion">
+    <summary>Coreano<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Doble certificación:</strong> <span>Certificado IKARUGA + certificación universitaria UAI</span> · Universidad Abierta Interamericana.<br><strong>Enfoque comercial:</strong> Muy fuerte para leads interesados en K-culture, música, series, gastronomía, turismo o comunicación con Corea.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/01-coreano-trabajo.png" alt="Coreano · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Coreano puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/01-coreano-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/01-coreano-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Coreano puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/02-coreano-empezar.png" alt="Coreano · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Coreano. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/02-coreano-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/02-coreano-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Coreano. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/03-coreano-constancia.png" alt="Coreano · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Coreano no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/03-coreano-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/03-coreano-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Coreano no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/04-coreano-futuro.png" alt="Coreano · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Coreano está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/04-coreano-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/04-coreano-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Coreano está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/05-coreano-confianza.png" alt="Coreano · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Coreano parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/05-coreano-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/05-coreano-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Coreano parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/06-coreano-laboral.png" alt="Coreano · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/06-coreano-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/06-coreano-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/07-coreano-cultura.png" alt="Coreano · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Coreano, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/07-coreano-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/07-coreano-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Coreano, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/08-coreano-habito.png" alt="Coreano · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Coreano con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/08-coreano-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/08-coreano-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Coreano con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/09-coreano-objetivo.png" alt="Coreano · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Coreano; desde ahí te orientamos mejor.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/09-coreano-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/09-coreano-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Coreano; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/coreano/10-coreano-decision.png" alt="Coreano · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Coreano te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "COREANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/coreano/10-coreano-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/coreano/10-coreano-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Coreano te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;COREANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="nurturing-accordion">
+    <summary>Chino Mandarín<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Doble certificación:</strong> <span>Certificado IKARUGA + certificación universitaria UAI</span> · Universidad Abierta Interamericana.<br><strong>Enfoque comercial:</strong> Buen enfoque para negocios, comercio internacional, cultura, viajes y perfiles que buscan un diferencial potente.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/01-chino-trabajo.png" alt="Chino Mandarín · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Chino Mandarín puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/01-chino-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/01-chino-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Chino Mandarín puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/02-chino-empezar.png" alt="Chino Mandarín · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Chino Mandarín. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/02-chino-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/02-chino-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Chino Mandarín. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/03-chino-constancia.png" alt="Chino Mandarín · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Chino Mandarín no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/03-chino-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/03-chino-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Chino Mandarín no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/04-chino-futuro.png" alt="Chino Mandarín · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Chino Mandarín está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/04-chino-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/04-chino-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Chino Mandarín está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/05-chino-confianza.png" alt="Chino Mandarín · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Chino Mandarín parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/05-chino-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/05-chino-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Chino Mandarín parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/06-chino-laboral.png" alt="Chino Mandarín · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/06-chino-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/06-chino-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/07-chino-cultura.png" alt="Chino Mandarín · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Chino Mandarín, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/07-chino-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/07-chino-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Chino Mandarín, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/08-chino-habito.png" alt="Chino Mandarín · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Chino Mandarín con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/08-chino-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/08-chino-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Chino Mandarín con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/09-chino-objetivo.png" alt="Chino Mandarín · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Chino Mandarín; desde ahí te orientamos mejor.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/09-chino-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/09-chino-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Chino Mandarín; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/chino/10-chino-decision.png" alt="Chino Mandarín · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Chino Mandarín te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "CHINO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/chino/10-chino-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/chino/10-chino-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Chino Mandarín te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;CHINO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="nurturing-accordion">
+    <summary>Tailandés<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Doble certificación:</strong> <span>Certificado IKARUGA + certificación universitaria UAI</span> · Universidad Abierta Interamericana.<br><strong>Enfoque comercial:</strong> Conecta muy bien con viajes, cultura tailandesa, hospitalidad, gastronomía y turismo en Asia.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/01-tailandes-trabajo.png" alt="Tailandés · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Tailandés puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/01-tailandes-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/01-tailandes-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Tailandés puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/02-tailandes-empezar.png" alt="Tailandés · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Tailandés. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/02-tailandes-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/02-tailandes-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Tailandés. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/03-tailandes-constancia.png" alt="Tailandés · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Tailandés no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/03-tailandes-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/03-tailandes-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Tailandés no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/04-tailandes-futuro.png" alt="Tailandés · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Tailandés está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/04-tailandes-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/04-tailandes-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Tailandés está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/05-tailandes-confianza.png" alt="Tailandés · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Tailandés parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/05-tailandes-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/05-tailandes-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Tailandés parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/06-tailandes-laboral.png" alt="Tailandés · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/06-tailandes-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/06-tailandes-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/07-tailandes-cultura.png" alt="Tailandés · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Tailandés, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/07-tailandes-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/07-tailandes-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Tailandés, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/08-tailandes-habito.png" alt="Tailandés · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Tailandés con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/08-tailandes-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/08-tailandes-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Tailandés con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/09-tailandes-objetivo.png" alt="Tailandés · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Tailandés; desde ahí te orientamos mejor.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/09-tailandes-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/09-tailandes-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Tailandés; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/tailandes/10-tailandes-decision.png" alt="Tailandés · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Tailandés te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "TAILANDÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/10-tailandes-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/tailandes/10-tailandes-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Tailandés te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;TAILANDÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="nurturing-accordion">
+    <summary>Alemán<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Doble certificación:</strong> <span>Certificado IKARUGA + certificación universitaria UAI</span> · Universidad Abierta Interamericana.<br><strong>Enfoque comercial:</strong> Potente para trabajo, estudio, becas, ingeniería, investigación, migración y oportunidades en Europa.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/01-aleman-trabajo.png" alt="Alemán · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Alemán puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/01-aleman-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/01-aleman-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Alemán puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/02-aleman-empezar.png" alt="Alemán · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Alemán. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/02-aleman-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/02-aleman-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Alemán. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/03-aleman-constancia.png" alt="Alemán · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Alemán no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/03-aleman-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/03-aleman-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Alemán no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/04-aleman-futuro.png" alt="Alemán · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Alemán está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/04-aleman-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/04-aleman-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Alemán está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/05-aleman-confianza.png" alt="Alemán · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Alemán parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/05-aleman-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/05-aleman-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Alemán parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/06-aleman-laboral.png" alt="Alemán · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/06-aleman-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/06-aleman-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/07-aleman-cultura.png" alt="Alemán · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Alemán, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/07-aleman-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/07-aleman-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Alemán, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/08-aleman-habito.png" alt="Alemán · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Alemán con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/08-aleman-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/08-aleman-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Alemán con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/09-aleman-objetivo.png" alt="Alemán · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Alemán; desde ahí te orientamos mejor.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/09-aleman-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/09-aleman-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Alemán; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/aleman/10-aleman-decision.png" alt="Alemán · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Alemán te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "ALEMÁN" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/aleman/10-aleman-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/aleman/10-aleman-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Alemán te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;ALEMÁN&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="nurturing-accordion">
+    <summary>Italiano<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Doble certificación:</strong> <span>Certificado IKARUGA + certificación universitaria UAI</span> · Universidad Abierta Interamericana.<br><strong>Enfoque comercial:</strong> Funciona para turismo, ciudadanía, familia, cultura, gastronomía, arte y conversación cotidiana desde cero.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/01-italiano-trabajo.png" alt="Italiano · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Italiano puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/01-italiano-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/01-italiano-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Italiano puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/02-italiano-empezar.png" alt="Italiano · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Italiano. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/02-italiano-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/02-italiano-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Italiano. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/03-italiano-constancia.png" alt="Italiano · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Italiano no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/03-italiano-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/03-italiano-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Italiano no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/04-italiano-futuro.png" alt="Italiano · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Italiano está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/04-italiano-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/04-italiano-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Italiano está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/05-italiano-confianza.png" alt="Italiano · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Italiano parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/05-italiano-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/05-italiano-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Italiano parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/06-italiano-laboral.png" alt="Italiano · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/06-italiano-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/06-italiano-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/07-italiano-cultura.png" alt="Italiano · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Italiano, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/07-italiano-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/07-italiano-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Italiano, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/08-italiano-habito.png" alt="Italiano · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Italiano con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/08-italiano-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/08-italiano-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Italiano con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/09-italiano-objetivo.png" alt="Italiano · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Italiano; desde ahí te orientamos mejor.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/09-italiano-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/09-italiano-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Italiano; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/italiano/10-italiano-decision.png" alt="Italiano · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Italiano te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "ITALIANO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/italiano/10-italiano-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/italiano/10-italiano-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Italiano te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;ITALIANO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="nurturing-accordion">
+    <summary>Ruso<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Doble certificación:</strong> <span>Certificado IKARUGA + certificación universitaria UAI</span> · Universidad Abierta Interamericana.<br><strong>Enfoque comercial:</strong> Interesante para cultura, literatura, geopolítica, viajes, trabajo y perfiles que buscan un idioma diferente.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/01-ruso-trabajo.png" alt="Ruso · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Ruso puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/01-ruso-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/01-ruso-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Ruso puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/02-ruso-empezar.png" alt="Ruso · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Ruso. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/02-ruso-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/02-ruso-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Ruso. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/03-ruso-constancia.png" alt="Ruso · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Ruso no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/03-ruso-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/03-ruso-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Ruso no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/04-ruso-futuro.png" alt="Ruso · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Ruso está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/04-ruso-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/04-ruso-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Ruso está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/05-ruso-confianza.png" alt="Ruso · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Ruso parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/05-ruso-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/05-ruso-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Ruso parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/06-ruso-laboral.png" alt="Ruso · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/06-ruso-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/06-ruso-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/07-ruso-cultura.png" alt="Ruso · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Ruso, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/07-ruso-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/07-ruso-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Ruso, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/08-ruso-habito.png" alt="Ruso · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Ruso con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/08-ruso-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/08-ruso-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Ruso con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/09-ruso-objetivo.png" alt="Ruso · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Ruso; desde ahí te orientamos mejor.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/09-ruso-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/09-ruso-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Ruso; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ruso/10-ruso-decision.png" alt="Ruso · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Ruso te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "RUSO" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ruso/10-ruso-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ruso/10-ruso-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Ruso te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;RUSO&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="nurturing-accordion">
+    <summary>Inglés<span class="nurturing-count">10 imágenes</span></summary>
+    <div class="nurturing-cert"><strong>Certificación:</strong> <span>Certificado IKARUGA</span>. Inglés no lleva certificación universitaria UAI.<br><strong>Enfoque comercial:</strong> Clave para trabajo, entrevistas, viajes, estudio, tecnología y comunicación internacional.</div>
+    <div class="nurturing-grid">
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/01-ingles-trabajo.png" alt="Inglés · Valor laboral" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">01. Valor laboral</div>
+          <div class="nurturing-card-desc">Para leads que preguntan por oportunidades, CV o crecimiento profesional.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Hoy aprender Inglés puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/01-ingles-trabajo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/01-ingles-trabajo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Hoy aprender Inglés puede sumar un diferencial real a tu perfil. Te paso una imagen breve para que veas por dónde empezar.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/02-ingles-empezar.png" alt="Inglés · Empezar desde cero" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">02. Empezar desde cero</div>
+          <div class="nurturing-card-desc">Para quien tiene ganas, pero todavía duda si está a tiempo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>No necesitás saber nada previo para empezar Inglés. La clave es arrancar con guía, grupo por nivel y constancia.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/02-ingles-empezar.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/02-ingles-empezar.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('No necesitás saber nada previo para empezar Inglés. La clave es arrancar con guía, grupo por nivel y constancia.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/03-ingles-constancia.png" alt="Inglés · Constancia" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">03. Constancia</div>
+          <div class="nurturing-card-desc">Para reforzar hábito, acompañamiento y avance sostenido.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Aprender Inglés no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/03-ingles-constancia.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/03-ingles-constancia.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Aprender Inglés no depende de estudiar todo el día, sino de sostener un recorrido claro semana a semana.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/04-ingles-futuro.png" alt="Inglés · Proyecto a futuro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">04. Proyecto a futuro</div>
+          <div class="nurturing-card-desc">Para conectar el idioma con viajes, estudios, migración o metas personales.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Inglés está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/04-ingles-futuro.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/04-ingles-futuro.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Inglés está conectado con un viaje, estudio, trabajo o proyecto personal, este puede ser un buen momento para empezar.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/05-ingles-confianza.png" alt="Inglés · Confianza" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">05. Confianza</div>
+          <div class="nurturing-card-desc">Para bajar miedo inicial y mostrar que se puede aprender paso a paso.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Es normal sentir que Inglés parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/05-ingles-confianza.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/05-ingles-confianza.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Es normal sentir que Inglés parece difícil al principio. Por eso trabajamos con acompañamiento y objetivos claros.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/06-ingles-laboral.png" alt="Inglés · Perfil profesional" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">06. Perfil profesional</div>
+          <div class="nurturing-card-desc">Para conversaciones orientadas a trabajo, entrevistas o diferencial competitivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/06-ingles-laboral.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/06-ingles-laboral.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Un segundo idioma puede ayudarte a abrir conversaciones laborales y mostrar un perfil más preparado.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/07-ingles-cultura.png" alt="Inglés · Cultura e interés" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">07. Cultura e interés</div>
+          <div class="nurturing-card-desc">Para personas motivadas por música, series, gastronomía, historia o comunidad.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si te atrae la cultura detrás de Inglés, aprender el idioma te permite vivirla con otra profundidad.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/07-ingles-cultura.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/07-ingles-cultura.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si te atrae la cultura detrás de Inglés, aprender el idioma te permite vivirla con otra profundidad.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/08-ingles-habito.png" alt="Inglés · Hábito semanal" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">08. Hábito semanal</div>
+          <div class="nurturing-card-desc">Para leads que necesitan imaginar una rutina posible.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Podés empezar Inglés con una rutina posible, sin hacerlo perfecto desde el primer día.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/08-ingles-habito.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/08-ingles-habito.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Podés empezar Inglés con una rutina posible, sin hacerlo perfecto desde el primer día.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/09-ingles-objetivo.png" alt="Inglés · Objetivo claro" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">09. Objetivo claro</div>
+          <div class="nurturing-card-desc">Para ordenar el deseo y empujar la decisión sin sonar agresivo.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Lo importante es definir para qué querés aprender Inglés; desde ahí te orientamos mejor.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/09-ingles-objetivo.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/09-ingles-objetivo.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Lo importante es definir para qué querés aprender Inglés; desde ahí te orientamos mejor.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+      <div class="nurturing-card">
+        <img src="nurturing-idiomas/ingles/10-ingles-decision.png" alt="Inglés · Decisión" loading="lazy">
+        <div class="nurturing-card-body">
+          <div class="nurturing-card-title">10. Decisión</div>
+          <div class="nurturing-card-desc">Para cierre suave: convertir interés en primer paso concreto.</div>
+          <div class="nurturing-copy"><strong>Mensaje sugerido</strong>Si Inglés te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.
+
+Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
+          <div class="nurturing-actions">
+            <a class="copy-btn" href="nurturing-idiomas/ingles/10-ingles-decision.png" target="_blank">Abrir</a>
+            <a class="copy-btn" href="nurturing-idiomas/ingles/10-ingles-decision.png" download>Descargar</a>
+            <button class="copy-btn" onclick="copyPlainText('Si Inglés te viene dando vueltas hace tiempo, escribirnos puede ser ese primer paso concreto.&#10;&#10;Si querés, escribime &quot;INGLÉS&quot; y te cuento cómo empezar.', this)">Copiar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</div>
+
 
 <!-- SALUDO INICIAL -->
 <div class="section active" id="saludo">
@@ -2198,7 +3613,7 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
         </div>
       </div>
       <div class="msg-body" id="pc-th-precio"></div>
-      <div class="msg-note">✅ Tailandés 1 usa tabla de 4 módulos. Tailandés 2 y 3 usan tabla de 5 módulos.</div>
+  <div class="msg-note">✅ Tailandés 1 se cotiza con 4 módulos en octubre y 5 módulos en diciembre. Tailandés 2 y 3 se cotizan con 5 módulos. Las cuotas se ajustan según el mes elegido.</div>
     </div>
 
     <div class="msg-card">
@@ -2384,7 +3799,7 @@ Al finalizar el programa y aprobar la evaluación correspondiente, recibís tu c
         </div>
       </div>
       <div class="msg-body" id="pc-en-precio"></div>
-      <div class="msg-note">✅ Inglés usa tabla de 4 módulos · 2 horas semanales · 3 cuotas.</div>
+      <div class="msg-note">✅ Inglés se cotiza con 4 módulos y 2 horas semanales. El máximo de cuotas se ajusta según el mes.</div>
     </div>
 
     <div class="msg-card">
@@ -2572,7 +3987,7 @@ A continuación te comparto la información del curso que acordamos:
         </div>
       </div>
       <div class="msg-body" id="pc-de-precio"></div>
-      <div class="msg-note">✅ Alemán usa tabla de 5 módulos · 3 horas semanales · 4 cuotas.</div>
+      <div class="msg-note">✅ Alemán se cotiza con 5 módulos y 3 horas semanales. El máximo de cuotas se ajusta según el mes y la comisión.</div>
     </div>
 
     <div class="msg-card">
@@ -2747,7 +4162,7 @@ A continuación te comparto la información del curso que acordamos:
         </div>
       </div>
       <div class="msg-body" id="pc-it-precio"></div>
-      <div class="msg-note">✅ Italiano usa tabla de 4 módulos · 2 horas semanales · 3 cuotas.</div>
+      <div class="msg-note">✅ Italiano se cotiza con 4 módulos y 2 horas semanales. El máximo de cuotas se ajusta según el mes.</div>
     </div>
 
     <div class="msg-card">
@@ -4191,7 +5606,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
 // 1. CERTIFICACIÓN por idioma
 // 2. INMERSIÓN CULTURAL: solo asiáticos + alemán
 // 3. PREPARACIÓN PARA EXAMEN: solo nivel 1 cuando aplica
-// 4. FINANCIACIÓN: 4 cuotas para asiáticos/alemán · 3 cuotas para inglés e italiano
+// 4. FINANCIACIÓN: el máximo de cuotas se determina por mes, idioma y módulos.
 // ================================================================
 
 const idiomaConfig = {
@@ -4367,7 +5782,7 @@ function convertHorarios(nivHorarios, diff) {
 }
 
 // ---- PRECIOS por idioma y país ----
-// Financiación: agosto permite 3 cuotas para idiomas generales y 2 para inglés/italiano.
+// Financiación: el máximo se ajusta por mes, idioma y cantidad de módulos.
 // ── TABLA COMPLETA DE DESCUENTOS POR IDIOMA Y PAÍS ──────────────────────────
 // Fuentes: Beca Trayectoria 2026 (5m 3hs y 4m 3hs) · Cursos 2 hs Ing Marzo 2026_ · Cursos 2hs con certif UAI FR,I
 const tablaDescuentos = {
@@ -4380,7 +5795,7 @@ const tablaDescuentos = {
     MEX: { reg:"10.660",    d45:"6.130",   d40:"6.630",   d35:"7.130",   d30:"7.640",   d25:"8.140",   d20:"8.640",   d15:"9.150"   },
     USD: { reg:"553",       d45:"320",     d40:"346",     d35:"372",     d30:"398",     d25:"424",     d20:"450",     d15:"477"     }
   },
-  // ── Tailandés 1 / Ruso 1 — 4 módulos · 3hs
+  // ── Tailandés 1 (4 módulos en octubre; 5 en diciembre) / Ruso 1 — 3hs
   tailandes1: {
     meses: 4, hs: "3 hs",
     cuotas: 3,
@@ -4646,6 +6061,9 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
   if (esJpSeptiembre4 || esAlemanSeptiembre4 || esOctubre4) {
     return getPrecio4Modulos(pais, descKey);
   }
+  if (idioma === 'tailandes' && nivel === 'Tailandés 1' && mes === 'diciembre') {
+    return getPrecio('tailandes', pais, descKey, 'Tailandés 2');
+  }
   return getPrecio(idioma, pais, descKey, nivel);
 }
 
@@ -4726,7 +6144,7 @@ function updateCotizadorAgil() {
 📅 *Horarios con cupo:*
 ${lineasHorarios}
 
-${buildPrecioCopyBlock(p, cuotas)}
+${buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos · ${p.hs} semanales*`)}
 
 Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.`;
 }
@@ -4789,6 +6207,17 @@ function filterPromoFull() {
   });
 
   results.innerHTML = html;
+}
+
+
+function copyPlainText(text, btn) {
+  text = String(text).replace(/&#10;/g, '\n').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+  navigator.clipboard.writeText(text).then(() => {
+    const old = btn.textContent;
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = old; btn.classList.remove('copied'); }, 2000);
+  });
 }
 
 function copyMsgText(id, btn) {
@@ -5912,9 +7341,7 @@ function getPostCallLevelOptions(msgId) {
 function getPostCallMesOptionsFor(msgId, nivel) {
   const cfg = postCallScheduleConfig[msgId];
   const meses = getMesesDisponibles(cfg?.idioma, nivel);
-  return meses.length > 1
-    ? [{ value: 'todos', label: 'Todos los meses con cupo' }, ...meses]
-    : meses;
+  return getSafePostCallMesOptions(cfg?.idioma, nivel, meses);
 }
 
 function getPostCallCurrentCountry(msgId) {
@@ -6074,9 +7501,7 @@ function updatePostCallMesOptions(msgId, nivel) {
   const select = document.getElementById(cfg.mesId);
   if (!select) return;
   const meses = getMesesDisponibles(cfg.idioma, nivel);
-  const opciones = meses.length > 1
-    ? [{ value: 'todos', label: 'Todos los meses con cupo' }, ...meses]
-    : meses;
+  const opciones = getSafePostCallMesOptions(cfg.idioma, nivel, meses);
   const current = select.value;
   select.innerHTML = opciones.map(m => `<option value="${m.value}">${m.label}</option>`).join('');
   select.value = opciones.some(m => m.value === current) ? current : (opciones[0]?.value || 'todos');
@@ -6100,6 +7525,20 @@ function getPostCallDuracionLabel(msgId, nivel) {
   if (has4) return '4 módulos';
   if (has5) return '5 módulos';
   return null;
+}
+
+function getSafePostCallMesOptions(idioma, nivel, meses) {
+  if (meses.length <= 1) return meses;
+  const modulosPorMes = meses.map(mes => {
+    const horarios = filtrarHorariosPorMes(horariosARG[idioma]?.[nivel] || [], mes.value);
+    if (horarios.some(h => /4\s*módulos/i.test(h))) return '4';
+    if (horarios.some(h => /5\s*módulos/i.test(h))) return '5';
+    return 'sin-dato';
+  });
+  const mezclaModulos = new Set(modulosPorMes).size > 1;
+  return mezclaModulos
+    ? meses
+    : [{ value: 'todos', label: 'Todos los meses con cupo' }, ...meses];
 }
 
 function applyPostCallParams(text, msgId, nivel) {
@@ -6743,11 +8182,10 @@ function updateTh1Precio() {
 
   const nivel = selectedPostCallLevels['pc-th'] || 'Tailandés 1';
   const mes = document.getElementById('pc-th-mes')?.value || 'todos';
-  const esTail1 = nivel === 'Tailandés 1';
-  const p = getPrecio('tailandes', pais, descKey, nivel);
+  const p = getCotizadorPrecio('tailandes', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('tailandes', nivel, mes);
   const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas, maxCuotas);
-  const moduloLabel = esTail1 ? '4 módulos' : '5 módulos';
+  const moduloLabel = `${p.meses} módulos`;
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${moduloLabel}*`);
   updatePostCallSafetyPanel('pc-th');
@@ -6935,4 +8373,5 @@ Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscr
 </script>
 </body>
 </html>
+
 
