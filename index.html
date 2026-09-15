@@ -221,6 +221,126 @@
   .badge-teal { background: var(--teal-light); color: var(--teal); }
   .badge-accent { background: var(--accent-light); color: var(--accent); }
 
+  .playbook-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .playbook-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(1,1,1,0.05);
+  }
+
+  .playbook-top {
+    padding: 18px;
+    background: radial-gradient(circle at 96% 0%, rgba(237,112,36,0.42), transparent 30%),
+      linear-gradient(135deg, #010101 0%, #1d1d1b 58%, #d11717 160%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .playbook-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fcfcfc;
+    color: var(--red);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28), inset 0 0 0 1px rgba(255,255,255,0.55);
+  }
+
+  .playbook-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .playbook-icon.whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: #fff;
+  }
+
+  .playbook-icon.instagram {
+    background: radial-gradient(circle at 30% 108%, #fdf497 0 18%, #fd5949 43%, #d6249f 65%, #285aeb 100%);
+    color: #fff;
+  }
+
+  .playbook-icon.referral {
+    background: linear-gradient(135deg, #fcfcfc 0%, #fff3eb 100%);
+    color: var(--red);
+  }
+
+  .playbook-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .playbook-subtitle {
+    font-size: 11px;
+    color: rgba(255,255,255,0.74);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  .playbook-body { padding: 16px 18px 18px; }
+
+  .playbook-steps {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .playbook-step {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    font-size: 12px;
+    color: var(--ink2);
+    line-height: 1.45;
+  }
+
+  .playbook-step span:first-child {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--red-light);
+    color: var(--red);
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .playbook-message {
+    background: var(--paper2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 13px;
+    white-space: pre-wrap;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .playbook-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
   .testimonial-tools {
     display: grid;
     grid-template-columns: minmax(220px, 1fr) auto;
@@ -823,11 +943,9 @@
       <option value="Ezequiel">Ezequiel</option>
       <option value="Tomás">Tomás</option>
       <option value="Luciano">Luciano</option>
-      <option value="Laura">Laura</option>
       <option value="Natalia">Natalia</option>
-      <option value="Mateo">Mateo</option>
       <option value="Matías">Matías</option>
-      <option value="Joaquín">Joaquín</option>
+      <option value="Valentino">Valentino</option>
     </select>
   </div>
   <nav>
@@ -836,8 +954,8 @@
       <button class="nav-link active" onclick="showSection('saludo')">
         <span class="dot"></span> Saludo inicial
       </button>
-      <button class="nav-link" onclick="showSection('seguimiento')">
-        <span class="dot"></span> Seguimiento 48hs / 7 días
+      <button class="nav-link" onclick="showSection('seguimiento-optimizado')">
+        <span class="dot"></span> Seguimiento optimizado
       </button>
     </div>
     <div class="nav-group">
@@ -2190,47 +2308,175 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
   <div class="section-header">
     <div class="section-tag">Primer contacto</div>
     <h1 class="section-title">Saludo inicial</h1>
-    <p class="section-desc">Dos opciones para el primer contacto con el lead. La idea es lograr que acepte una llamada breve antes de hablar de valores.</p>
+    <p class="section-desc">Objetivo del primer contacto: llevar a una llamada breve para diagnosticar necesidad. Si no puede hablar, avanzar por mensaje con preguntas útiles y una propuesta personalizada.</p>
+  </div>
+
+  <div class="info-block" style="margin-bottom:22px;">
+    <strong>Secuencia recomendada:</strong> primero ofrecer llamada de 5 minutos. Si el lead no puede o prefiere escribir, pedir idioma, nivel, país, disponibilidad y objetivo para enviar una opción acorde a su necesidad.
+  </div>
+
+  <div class="playbook-grid">
+    <div class="playbook-card">
+      <div class="playbook-top">
+        <div class="playbook-icon whatsapp" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12.03 3.2a8.73 8.73 0 0 0-7.45 13.28L3.8 20.8l4.42-1.16a8.72 8.72 0 1 0 3.81-16.44Z" fill="currentColor"/>
+            <path d="M9.1 7.55c-.2-.44-.42-.45-.62-.46h-.53c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.88 3.01 4.64 4.1 2.29.91 2.76.73 3.26.68.5-.04 1.61-.66 1.84-1.3.23-.64.23-1.18.16-1.3-.07-.11-.25-.18-.52-.32-.27-.13-1.61-.8-1.86-.89-.25-.09-.43-.13-.61.14-.18.27-.7.89-.86 1.07-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.18-1.34-.8-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.55.13-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.48-.84-2.04Z" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <div class="playbook-title">WhatsApp / Webmail</div>
+          <div class="playbook-subtitle">Para leads que ya pidieron información</div>
+        </div>
+      </div>
+      <div class="playbook-body">
+        <div class="playbook-steps">
+          <div class="playbook-step"><span>1</span><div>Usar cuando el lead llega por formulario, WhatsApp o Webmail/Web.</div></div>
+          <div class="playbook-step"><span>2</span><div>Primero buscar llamada breve para entender necesidad.</div></div>
+          <div class="playbook-step"><span>3</span><div>Si no puede hablar, pasar al mensaje de diagnóstico.</div></div>
+        </div>
+        <div class="playbook-message" id="msg-inicial">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+
+📩 Vi tu consulta por nuestros cursos de idiomas.
+
+🎯 Para orientarte bien y recomendarte una opción acorde a tu objetivo, lo ideal es hacer una llamada breve de 5 minutos.
+
+📞 ¿Puedes hablar ahora o prefieres que coordinemos un horario?</div>
+        <div class="playbook-actions">
+          <span class="badge badge-green">Primero llamada</span>
+          <button class="copy-btn" onclick="copyMsg('msg-inicial', this)">Copiar mensaje</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="playbook-card">
+      <div class="playbook-top">
+        <div class="playbook-icon instagram" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="5" y="5" width="14" height="14" rx="4" stroke="currentColor" stroke-width="2.2"/>
+            <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2.2"/>
+            <circle cx="16.35" cy="7.65" r="1.05" fill="currentColor"/>
+          </svg>
+        </div>
+        <div>
+          <div class="playbook-title">Instagram / Exterior</div>
+          <div class="playbook-subtitle">Para consultas más frías o de otro país</div>
+        </div>
+      </div>
+      <div class="playbook-body">
+        <div class="playbook-steps">
+          <div class="playbook-step"><span>1</span><div>Usar cuando falta país, moneda o nivel.</div></div>
+          <div class="playbook-step"><span>2</span><div>Ofrecer llamada para evitar mandar información incorrecta.</div></div>
+          <div class="playbook-step"><span>3</span><div>Si responde por mensaje, pedir país, nivel y objetivo.</div></div>
+        </div>
+        <div class="playbook-message" id="msg-inicial-valor">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+
+🌎 Gracias por escribirnos.
+
+🎯 Para pasarte una opción correcta según tu país, nivel y objetivo, lo mejor es verlo en una llamada breve.
+
+📞 ¿Puedes hablar 5 minutos hoy o prefieres que te haga unas preguntas por aquí?</div>
+        <div class="playbook-actions">
+          <span class="badge badge-gold">Llamada o mensaje</span>
+          <button class="copy-btn" onclick="copyMsg('msg-inicial-valor', this)">Copiar mensaje</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="playbook-card">
+      <div class="playbook-top">
+        <div class="playbook-icon referral" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3.4 14.38 8l5.1.74-3.69 3.6.87 5.08L12 15.02l-4.56 2.4.87-5.08-3.69-3.6L9.72 8 12 3.4Z" fill="currentColor"/>
+            <path d="M7.4 20.4c1.2-1.58 2.78-2.36 4.6-2.36s3.4.78 4.6 2.36" stroke="#010101" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="playbook-title">Referidos</div>
+          <div class="playbook-subtitle">Para aprovechar confianza previa</div>
+        </div>
+      </div>
+      <div class="playbook-body">
+        <div class="playbook-steps">
+          <div class="playbook-step"><span>1</span><div>Nombrar que viene recomendado sin hacerlo pesado.</div></div>
+          <div class="playbook-step"><span>2</span><div>Usar la confianza para proponer una llamada corta.</div></div>
+          <div class="playbook-step"><span>3</span><div>Si no puede, pedir objetivo y nivel por mensaje.</div></div>
+        </div>
+        <div class="playbook-message" id="msg-inicial-referido">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+
+⭐ Te escribo porque nos conectaron por recomendación.
+
+🎯 Para orientarte bien y no enviarte información genérica, me gustaría entender qué idioma te interesa, tu punto de partida y qué objetivo tienes.
+
+📞 Si puedes, lo vemos en una llamada breve de 5 minutos. Si prefieres mensaje, también puedo guiarte por aquí.</div>
+        <div class="playbook-actions">
+          <span class="badge badge-teal">Confianza</span>
+          <button class="copy-btn" onclick="copyMsg('msg-inicial-referido', this)">Copiar mensaje</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Si no puede hacer llamada</h3>
+  <div class="info-block">Usar este segundo mensaje cuando el lead responde “pásame información”, “no puedo hablar” o no quiere llamada. La clave es mostrar que la propuesta se arma según su caso.</div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Segundo mensaje · Diagnóstico por escrito <span class="badge badge-accent">Personalizar</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-diagnostico-escrito', this)">Copiar mensaje</button>
+    </div>
+    <div class="msg-body" id="msg-diagnostico-escrito">Perfecto, lo vemos por aquí.
+
+🎯 Para recomendarte algo acorde a lo que necesitas, empecemos por lo más importante:
+
+🌐 ¿Qué idioma quieres estudiar?
+📚 ¿Empiezas desde cero o ya tienes algún nivel?
+
+Con eso ya puedo orientarte mejor y después vemos horarios, país/moneda y la opción que más sentido tenga para tu objetivo.</div>
+    <div class="msg-note">No mandar precio suelto antes de estas preguntas si falta contexto. La propuesta tiene que sentirse hecha para esa persona.</div>
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">
-        <span class="dot" style="width:8px;height:8px;background:#2d6a4f;border-radius:50%;display:inline-block;"></span>
-        Opción 1 · Cálida y directa
-      </div>
-      <span class="badge badge-green">Recomendado</span>
+      <div class="msg-card-title">Continuación · Si responde idioma y nivel <span class="badge badge-teal">Ida y vuelta</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-diagnostico-continuacion', this)">Copiar mensaje</button>
     </div>
-    <div class="msg-body" id="msg-inicial">¡Hola! 👋 Soy {NOMBRE}, {TITULO} de IKARUGA. ⛩️
+    <div class="msg-body" id="msg-diagnostico-continuacion">Perfecto 🙌
 
-Recibí tu consulta por nuestros cursos de idiomas con certificación IKARUGA + UAI 🎓
+Con eso ya puedo orientarte mejor.
 
-Para orientarte bien y recomendarte el grupo más adecuado según tu nivel, objetivo y disponibilidad, me gustaría hacerte una llamada breve.
+🕒 Para ubicarte una opción realista: ¿qué días u horarios suelen servirte más para cursar?
 
-¿Te queda mejor que te llame hoy por la tarde o mañana por la mañana? 📞</div>
-    <div style="padding:10px 20px; border-top:1px solid var(--border); display:flex; justify-content:flex-end;">
-      <button class="copy-btn" onclick="copyMsg('msg-inicial', this)">Copiar mensaje</button>
-    </div>
+Si ya tienes algo de nivel, también puedes contarme brevemente qué viste o cuánto tiempo estudiaste, así no te recomiendo un grupo demasiado básico o avanzado.</div>
+    <div class="msg-note">Usar después de que el lead responde idioma + nivel. Mantiene conversación sin saturar con todas las preguntas juntas.</div>
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">
-        <span class="dot" style="width:8px;height:8px;background:#d4af37;border-radius:50%;display:inline-block;"></span>
-        Opción 2 · Valor y orientación
-      </div>
-      <span class="badge badge-gold">Más comercial</span>
+      <div class="msg-card-title">Continuación · Antes de cotizar <span class="badge badge-gold">País / moneda</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-diagnostico-pais', this)">Copiar mensaje</button>
     </div>
-    <div class="msg-body" id="msg-inicial-valor">¡Hola! 👋 Soy {NOMBRE}, asesora académica de IKARUGA. ⛩️
+    <div class="msg-body" id="msg-diagnostico-pais">Excelente, ya tengo una idea más clara.
 
-Vi que dejaste tus datos para recibir información sobre nuestros cursos de idiomas.
+🌎 ¿Desde qué país nos escribes?
 
-En IKARUGA trabajamos con distintos niveles, horarios y certificaciones, por eso antes de enviarte la información me gustaría orientarte brevemente y recomendarte la opción que mejor se ajuste a tu caso.
+Así te paso el horario en tu zona, la moneda correcta y los medios de pago disponibles.</div>
+    <div class="msg-note">Usar cuando ya hubo ida y vuelta. Suena más natural que preguntar país y pago en el primer mensaje.</div>
+  </div>
 
-¿Preferís que te llame hoy por la mañana o por la tarde? 📞</div>
-    <div style="padding:10px 20px; border-top:1px solid var(--border); display:flex; justify-content:flex-end;">
-      <button class="copy-btn" onclick="copyMsg('msg-inicial-valor', this)">Copiar mensaje</button>
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Cuando pregunta solo “precio” <span class="badge badge-gold">Sin sonar evasivo</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-precio-con-diagnostico', this)">Copiar mensaje</button>
     </div>
+    <div class="msg-body" id="msg-precio-con-diagnostico">Sí, te paso valores.
+
+🎯 Antes necesito ubicarte bien para no cotizar una opción que no te sirva: ¿qué idioma quieres estudiar, desde qué país pagarías y si buscas grupo o clases privadas?
+
+📞 Si prefieres, lo vemos en una llamada de 5 minutos y te dejo la opción exacta.</div>
+    <div class="msg-note">Este mensaje responde la intención de precio, pero sostiene diagnóstico y llamada.</div>
   </div>
 </div>
 
@@ -2342,70 +2588,326 @@ https://www.youtube.com/watch?v=xootuwhggPY</div>
 <div class="section" id="seguimiento">
   <div class="section-header">
     <div class="section-tag">Sin respuesta</div>
-    <h1 class="section-title">Seguimiento 48hs · 7 días</h1>
-    <p class="section-desc">Para leads que no respondieron al saludo inicial. Elegí la variante según el perfil del lead.</p>
+    <h1 class="section-title">Seguimiento optimizado</h1>
+    <p class="section-desc">Mensajes breves para no perder consultas y registrar datos útiles. Usar según interés del lead y etapa del seguimiento.</p>
   </div>
 
-  <h3>⏰ A las 48 horas</h3>
-  <div class="info-block">Usá estos mensajes cuando el lead recibió el saludo inicial y no respondió. La idea es reactivar con autoridad, recordar quiénes somos y volver a proponer la orientación.</div>
+  <h3>⏰ A las 24 y 48 horas</h3>
+  <div class="info-block">No insistir por insistir. Cada mensaje debe pedir un dato simple o proponer un siguiente paso claro.</div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Opción 1 · Autoridad + Instagram <span class="badge badge-teal">Generar confianza</span></div>
+      <div class="msg-card-title">24 hs · Suave <span class="badge badge-teal">Bajo / medio interés</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-48-1', this)">Copiar</button>
     </div>
-    <div class="msg-body" id="msg-48-1">¡Hola! 👋 Soy {NOMBRE} de IKARUGA. ⛩️
+    <div class="msg-body" id="msg-48-1">¡Hola! Te escribo para no dejar tu consulta sin respuesta.
 
-Te escribo para retomar tu consulta por nuestros cursos de idiomas.
+¿Seguís con interés en estudiar {IDIOMA}?
 
-IKARUGA es una institución con programas de formación, certificación IKARUGA + UAI en los cursos correspondientes y una comunidad de más de 200.000 personas.
-
-Te dejo nuestro Instagram para que puedas conocernos mejor:
-https://www.instagram.com/ikaruga.idiomas/
-
-Para orientarte bien según tu nivel, objetivo y disponibilidad, puedo llamarte brevemente.
-
-¿Te queda mejor hoy por la tarde o mañana por la mañana? 📞</div>
+Si quieres, te paso las opciones disponibles según tu país, nivel y horario.</div>
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Opción 2 · Versión corta <span class="badge badge-gold">Más elegante</span></div>
+      <div class="msg-card-title">48 hs · Ordenar decisión <span class="badge badge-gold">Medio interés</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-48-2', this)">Copiar</button>
     </div>
-    <div class="msg-body" id="msg-48-2">¡Hola! 👋 Soy {NOMBRE} de IKARUGA. ⛩️
+    <div class="msg-body" id="msg-48-2">¡Hola! Retomo tu consulta por {IDIOMA}.
 
-Retomo tu consulta por nuestros cursos de idiomas.
+Tenemos grupos por nivel y cupos según horario.
 
-Para que nos conozcas mejor, te dejo nuestro Instagram:
-https://www.instagram.com/ikaruga.idiomas/
-
-Si querés, te llamo brevemente y vemos qué grupo se ajusta mejor a tu nivel y objetivo.
-
-¿Preferís hoy por la tarde o mañana por la mañana? 📞</div>
+Para decirte cuál te corresponde, ¿empiezas desde cero o ya tienes base?</div>
   </div>
 
   <div class="divider"></div>
 
-  <h3>📅 A la semana</h3>
-  <div class="info-block">Este mensaje cierra el seguimiento de forma elegante: mantiene autoridad, ordena el proceso y deja la puerta abierta sin rogar.</div>
+  <h3>📅 A los 5-7 días</h3>
+  <div class="info-block">Cerrar el seguimiento sin presionar y dejando la puerta abierta.</div>
 
   <div class="msg-card">
     <div class="msg-card-header">
       <div class="msg-card-title">Mensaje semana · Puerta abierta</div>
       <button class="copy-btn" onclick="copyMsg('msg-7', this)">Copiar</button>
     </div>
-    <div class="msg-body" id="msg-7">¡Hola! 👋 Soy {NOMBRE} de IKARUGA. ⛩️
+    <div class="msg-body" id="msg-7">¡Hola! Cierro el seguimiento de tu consulta para no insistirte de más.
 
-Te escribo por última vez para cerrar el seguimiento de tu consulta.
+Si todavía quieres ver opciones de {IDIOMA}, puedo ayudarte a revisar nivel, horarios y modalidad.
 
-Como trabajamos con cupos por grupo y orientación previa, si todavía querés revisar opciones puedo llamarte brevemente y vemos qué curso corresponde a tu caso.
-
-¿Te queda mejor hoy por la tarde o mañana por la mañana?
-
-En caso de que prefieras avanzar más adelante, dejamos tu consulta en pausa sin problema. 😊</div>
-    <div class="msg-note">✅ Usar cuando ya pasaron varios días sin respuesta y querés cerrar el seguimiento sin bajar autoridad.</div>
+¿Quieres que lo dejemos en pausa o seguimos viendo opciones?</div>
+    <div class="msg-note">✅ Usar cuando ya pasaron varios días sin respuesta y quieres cerrar el seguimiento sin bajar autoridad.</div>
   </div>
+</div>
+
+<!-- SEGUIMIENTO OPTIMIZADO -->
+<div class="section" id="seguimiento-optimizado">
+  <div class="section-header">
+    <div class="section-tag">Seguimiento comercial</div>
+    <h1 class="section-title">Seguimientos</h1>
+    <p class="section-desc">Usar según el momento real del lead: no es lo mismo alguien que no respondió al primer mensaje que alguien que ya tuvo llamada y pidió pensarlo.</p>
+  </div>
+
+  <div class="info-block" style="margin-bottom:18px;">
+    <strong>Regla simple:</strong> si todavía no respondió, el objetivo es abrir conversación. Si ya hubo llamada, el objetivo es ayudar a decidir sin presionar.
+  </div>
+
+  <h3>1 · No respondió al primer mensaje</h3>
+  <div class="info-block" style="margin-bottom:18px;">Usar cuando se envió el saludo inicial o una primera orientación y el lead no contestó. A las 24 hs se ofrece una salida fácil: llamada breve o seguir por mensaje.</div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">24 hs · Llamada o mensaje <span class="badge badge-green">Recomendado</span></div><button class="copy-btn" onclick="copyMsg('seg-noresponde-opcion',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-noresponde-opcion">👋 ¡Hola! Te escribo para retomar tu consulta por {IDIOMA}.
+
+Para orientarte bien podemos hacerlo de dos formas:
+
+📞 Una llamada breve de 5 minutos, si quieres resolverlo más rápido.
+💬 O por mensaje, si prefieres que te haga unas preguntas y te pase una opción concreta.
+
+¿Qué te resulta mejor?</div>
+    <div class="msg-note">Usar a las 24 hs si no respondió al primer mensaje. Da control al lead y evita sonar insistente.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">48 hs · Abrir respuesta <span class="badge badge-teal">Suave</span></div><button class="copy-btn" onclick="copyMsg('seg-noresponde-24',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-noresponde-24">👋 ¡Hola! Te escribo para no dejar tu consulta perdida.
+
+📚 Si todavía te interesa estudiar {IDIOMA}, puedo orientarte con una opción según tu nivel y disponibilidad.
+
+💬 Para empezar simple: ¿buscas arrancar desde cero o ya tienes alguna base?</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">72 hs · Nutrir con valor <span class="badge badge-gold">Sin presión</span></div><button class="copy-btn" onclick="copyMsg('seg-noresponde-48',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-noresponde-48">👋 ¡Hola! Te comparto algo breve sobre {IDIOMA}.
+
+📚 Cuando alguien empieza un idioma, lo más importante no es avanzar rápido, sino entrar en un grupo acorde a su nivel y sostener una rutina posible.
+
+En IKARUGA trabajamos con grupos por nivel, clases en vivo y acompañamiento para que el proceso sea más claro desde el inicio.
+
+✨ Si quieres, puedo revisar qué opción tendría más sentido para ti según tu nivel y horarios.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">5-7 días · Nutrición mensual <span class="badge badge-accent">Contenido útil</span></div><button class="copy-btn" onclick="copyMsg('seg-noresponde-cierre',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-noresponde-cierre">👋 Te dejo un dato útil sobre {IDIOMA}.
+
+Muchas personas postergan empezar porque esperan “tener más tiempo”, pero en realidad ayuda más tener una estructura semanal y un grupo que acompañe.
+
+📌 Cuando abramos próximos inicios o novedades de {IDIOMA}, puedo compartirte la opción más cercana a tu perfil.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>2 · Después de la llamada / pidió pensarlo</h3>
+  <div class="info-block" style="margin-bottom:18px;">Usar cuando ya hubo conversación, ya entiende la propuesta, pero pidió tiempo, necesita comparar, hablarlo con alguien o revisar presupuesto.</div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Mismo día · Resumen post-llamada <span class="badge badge-green">Recomendado</span></div><button class="copy-btn" onclick="copyMsg('seg-postllamada-resumen',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-postllamada-resumen">👋 Gracias por la llamada.
+
+Te dejo resumido lo que vimos para que puedas revisarlo con calma:
+
+📚 Curso: {CURSO}
+🕒 Horario: {HORARIO}
+🎯 Objetivo: {OBJETIVO}
+💳 Inversión: {PRECIO}
+
+Si esta opción te sigue haciendo sentido, puedo ayudarte a reservar el cupo.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">24 hs post-llamada · Ayudar a decidir</div><button class="copy-btn" onclick="copyMsg('seg-postllamada-24',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-postllamada-24">👋 ¡Hola! Te escribo para saber si pudiste revisar la opción que vimos.
+
+🎯 Más que apurarte, quiero ayudarte a decidir bien: ¿lo que más estás evaluando es horario, inversión o si el nivel es el correcto para ti?</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">48 hs post-llamada · Resolver objeción</div><button class="copy-btn" onclick="copyMsg('seg-postllamada-48',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-postllamada-48">👋 Retomo por aquí.
+
+📌 Si todavía lo estás pensando, puedo ayudarte a revisar la duda principal antes de que tomes una decisión.
+
+💬 ¿Qué punto te gustaría aclarar: horarios, forma de pago, nivel o contenidos del curso?</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Cierre post-llamada · Sin presión</div><button class="copy-btn" onclick="copyMsg('seg-postllamada-cierre',this)">Copiar</button></div>
+    <div class="msg-body" id="seg-postllamada-cierre">👋 Te dejo este último mensaje para no insistirte.
+
+Si decides avanzar, puedo ayudarte con la reserva del cupo y los datos de inscripción.
+
+Si prefieres retomarlo más adelante, no hay problema: dejamos la consulta abierta para cuando sea mejor momento.</div>
+  </div>
+
+  <h3>Mensajes de apoyo</h3>
+  <table class="schedule-table" style="margin-bottom:24px;">
+    <thead><tr><th>Interés</th><th>Señal del lead</th><th>Siguiente paso</th></tr></thead>
+    <tbody>
+      <tr><td><span class="level-pill">Alto</span></td><td>Pregunta horarios, precio, cupos, inscripción o forma de pago.</td><td>Enviar opción concreta y pedir decisión: llamada breve, horario o datos de inscripción.</td></tr>
+      <tr><td><span class="level-pill">Medio</span></td><td>Responde, pero duda o pide info general.</td><td>Hacer 1 pregunta útil: idioma, nivel, país, horario u objetivo.</td></tr>
+      <tr><td><span class="level-pill">Bajo</span></td><td>Solo saluda, vio el mensaje o contesta poco.</td><td>Mensaje corto, humano y con una sola pregunta fácil.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1 · Saludo inicial</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">WhatsApp / Webmail · Argentina</div><button class="copy-btn" onclick="copyMsg('opt-saludo-ar',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-saludo-ar">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+
+📩 Vi tu consulta por nuestros cursos de idiomas.
+
+🎯 Para orientarte bien y no mandarte información genérica, ¿qué idioma quieres estudiar y desde qué nivel empezarías?
+
+📚 También dime si buscas grupo, clase privada o continuar con un nivel superior.</div>
+  </div>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Exterior · primera respuesta</div><button class="copy-btn" onclick="copyMsg('opt-saludo-ext',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-saludo-ext">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+
+🌎 Gracias por escribirnos.
+
+🎯 Para pasarte horarios y valores correctos según tu país, ¿me dices qué idioma te interesa, tu país y si ya tienes algún nivel previo?</div>
+  </div>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Instagram · corto</div><button class="copy-btn" onclick="copyMsg('opt-saludo-ig',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-saludo-ig">👋 ¡Hola! Gracias por escribirnos.
+
+🌐 ¿Qué idioma te interesa y desde qué país nos consultas?
+
+✅ Con eso te paso la opción más cercana a tu nivel y horarios.</div>
+  </div>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Referido · confianza</div><button class="copy-btn" onclick="copyMsg('opt-saludo-ref',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-saludo-ref">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+
+⭐ Te escribo porque nos conectaron por recomendación.
+
+🎯 Para orientarte bien, ¿qué idioma quieres estudiar y cuál sería tu objetivo principal: viaje, trabajo, cultura, estudio o continuidad de nivel?</div>
+  </div>
+
+  <h3>2 · Cuando pregunta precios</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Precio sin perder diagnóstico</div><button class="copy-btn" onclick="copyMsg('opt-precio',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-precio">Sí, te paso valores.
+
+Antes necesito confirmar 3 datos para no cotizarte mal: idioma, país desde donde pagarías y si buscas curso grupal o privado.
+
+Con eso te mando precio, horarios disponibles y forma de pago exacta.</div>
+    <div class="msg-note">No ofrecer descuento automático. Primero clasificar curso, país y modalidad.</div>
+  </div>
+
+  <h3>3 · Seguimiento inicial</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Mismo día · Retomar con valor</div><button class="copy-btn" onclick="copyMsg('opt-seg-inicial',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-seg-inicial">👋 ¡Hola! Te retomo por aquí para ayudarte con {IDIOMA}.
+
+🎯 La idea no es mandarte información genérica, sino ubicar qué opción te sirve según tu nivel, país, horarios y objetivo.
+
+📞 Si puedes, lo resolvemos en una llamada breve de 5 minutos.
+
+💬 Si prefieres mensaje, respóndeme: ¿empiezas desde cero o ya tienes base?</div>
+    <div class="msg-note">Usar cuando ya hubo saludo inicial, pero el lead todavía no dio datos suficientes para cotizar o avanzar.</div>
+  </div>
+
+  <h3>4 · Seguimiento 24 horas</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">24 hs · suave</div><button class="copy-btn" onclick="copyMsg('opt-24',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-24">👋 ¡Hola! Te escribo para no dejar tu consulta sin respuesta.
+
+📚 ¿Seguís con interés en estudiar {IDIOMA}?
+
+🎯 Si quieres, te paso una opción concreta según tu país, nivel y horario disponible.</div>
+  </div>
+
+  <h3>5 · Seguimiento 48 horas</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">48 hs · ordenar decisión</div><button class="copy-btn" onclick="copyMsg('opt-48',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-48">👋 ¡Hola! Retomo tu consulta por {IDIOMA}.
+
+🕒 Tenemos grupos por nivel y cupos limitados según horario.
+
+🎯 Para decirte cuál te corresponde, ¿empiezas desde cero o ya tienes base?</div>
+  </div>
+
+  <h3>6 · Seguimiento 5 a 7 días</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">5-7 días · puerta abierta</div><button class="copy-btn" onclick="copyMsg('opt-7dias',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-7dias">👋 ¡Hola! Cierro el seguimiento de tu consulta para no insistirte de más.
+
+📚 Si todavía quieres ver opciones de {IDIOMA}, puedo ayudarte a revisar nivel, horarios y modalidad.
+
+💬 ¿Quieres que lo dejemos en pausa o seguimos viendo opciones?</div>
+  </div>
+
+  <h3>7 · Cuando dice que es caro</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Objeción precio · sin descuento automático</div><button class="copy-btn" onclick="copyMsg('opt-caro',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-caro">Te entiendo. Es una inversión, por eso prefiero ayudarte a ver si realmente tiene sentido para tu objetivo.
+
+✅ El curso incluye clases en vivo, acompañamiento, campus, evaluaciones y certificado según el programa.
+
+🎯 Para comparar bien, ¿tu prioridad hoy es precio, horario o avanzar con una certificación/resultado concreto?</div>
+  </div>
+
+  <h3>8 · Cuando deja de contestar</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Silencio · humano</div><button class="copy-btn" onclick="copyMsg('opt-silencio',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-silencio">👋 ¡Hola! Me quedé pendiente de tu consulta.
+
+🕒 No sé si se complicó, si ya no estás buscando o si necesitas otra opción de horario.
+
+💬 ¿Quieres que te deje una alternativa más simple para revisar?</div>
+  </div>
+
+  <h3>9 · Mensaje de cierre</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Cierre · próximo paso</div><button class="copy-btn" onclick="copyMsg('opt-cierre',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-cierre">Perfecto. Por lo que me contás, la mejor opción sería {CURSO} en {HORARIO}.
+
+✅ El siguiente paso es reservar tu lugar con los datos de inscripción y el pago inicial.
+
+📩 ¿Te paso ahora los datos para avanzar?</div>
+  </div>
+
+  <h3>10 · Posterior al pago</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Pago recibido · contención</div><button class="copy-btn" onclick="copyMsg('opt-postpago',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-postpago">¡Gracias! Recibimos tu comprobante.
+
+✅ Ahora dejamos registrada tu inscripción a {CURSO}.
+
+📚 Te vamos a compartir la bienvenida oficial con los pasos de acceso, grupo y materiales.
+
+📩 Quedá pendiente de este chat por cualquier confirmación del equipo académico.</div>
+  </div>
+
+  <h3>11 · Reactivación de clientes antiguos</h3>
+  <div class="msg-card">
+    <div class="msg-card-header"><div class="msg-card-title">Cliente antiguo · reactivar sin presión</div><button class="copy-btn" onclick="copyMsg('opt-reactivar',this)">Copiar</button></div>
+    <div class="msg-body" id="opt-reactivar">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+
+📩 Te escribo porque en su momento consultaste por {IDIOMA}.
+
+📚 Estamos actualizando grupos y niveles disponibles.
+
+🎯 Si todavía te interesa, puedo revisar qué opción encaja mejor hoy según tu nivel, país y horarios.
+
+💬 ¿Quieres que lo veamos?</div>
+  </div>
+
+  <h3>Qué debe registrar el vendedor</h3>
+  <table class="schedule-table" style="margin-bottom:18px;">
+    <thead><tr><th>Campo</th><th>Cómo registrarlo</th></tr></thead>
+    <tbody>
+      <tr><td><span class="level-pill">Medio</span></td><td>WhatsApp, Webmail/Web, Tawk, Instagram. Unificar errores: WSP/WhatsApp = WhatsApp; Webmeil = Webmail/Web; Twak/Twalk = Tawk; IG/Insta = Instagram.</td></tr>
+      <tr><td><span class="level-pill">Origen</span></td><td>Facebook, Instagram, Japatonic, referido, campaña, orgánico u otro. No confundir con medio.</td></tr>
+      <tr><td><span class="level-pill">Datos comerciales</span></td><td>País, idioma, curso/nivel, modalidad, horario pedido, objetivo y presupuesto si aparece naturalmente.</td></tr>
+      <tr><td><span class="level-pill">Seguimiento</span></td><td>Etapa: saludo, 24 hs, 48 hs, 5-7 días, llamada, precio enviado, inscripción, pago, perdido.</td></tr>
+      <tr><td><span class="level-pill">Resultado</span></td><td>Vendido, en seguimiento, no responde, perdido. Si se pierde, registrar motivo: precio, horario, país/medio de pago, eligió otra opción, sin interés, duplicado.</td></tr>
+      <tr><td><span class="level-pill">Duplicados</span></td><td>Revisar teléfono, correo y nombres parecidos antes de cargar como nuevo lead.</td></tr>
+    </tbody>
+  </table>
+  <div class="info-block"><strong>Regla de conteo:</strong> si una ficha incluye dos personas o dos cursos, cuenta como 2 ventas. El vendedor es quien envía la ficha de venta. No incluir vendedores sin ventas dentro del equipo activo.</div>
 </div>
 
 <!-- EXO -->
@@ -6324,7 +6826,7 @@ document.addEventListener('keydown', (event) => {
 function copyMsgText(id, btn) {
   const el = document.getElementById(id);
   if (!el) return;
-  navigator.clipboard.writeText(el.innerText).then(() => {
+  navigator.clipboard.writeText(applyPersonalization(el.innerText)).then(() => {
     btn.textContent = '✓ Copiado';
     btn.classList.add('copied');
     setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
@@ -6336,10 +6838,21 @@ function copyMsgText(id, btn) {
 // ---- NOMBRE DEL CLOSER ----
 let nombreActual = 'Isabel';
 
+function getSelectedNombre() {
+  return document.getElementById('nombre-selector')?.value || nombreActual || 'Isabel';
+}
+
+function applyPersonalization(text) {
+  const nombre = getSelectedNombre();
+  return text
+    .replace(/\{NOMBRE\}/g, nombre)
+    .replace(/\{TITULO\}/g, getTitulo(nombre));
+}
+
 function updateNombre(nombre) {
   nombreActual = nombre;
   // Update all static message bodies
-  document.querySelectorAll('.msg-body').forEach(el => {
+  document.querySelectorAll('.msg-body, .playbook-message').forEach(el => {
     el.textContent = el.textContent; // trigger re-render via dataset
   });
   // Re-render static messages from source
@@ -6351,22 +6864,20 @@ function updateNombre(nombre) {
 const mensajesOriginales = {};
 
 function initMessages() {
-  document.querySelectorAll('.msg-body[id]').forEach(el => {
+  document.querySelectorAll('.msg-body[id], .playbook-message[id]').forEach(el => {
     mensajesOriginales[el.id] = el.innerText;
   });
 }
 
-const nombresFemeninos = ['Isabel', 'Laura', 'Natalia'];
+const nombresFemeninos = ['Isabel', 'Natalia'];
 
 function getTitulo(nombre) {
-  return nombresFemeninos.includes(nombre)
-    ? 'tu asesora académica'
-    : 'tu asesor académico';
+  return 'el equipo académico';
 }
 
 function renderStaticMessages(nombre) {
   const titulo = getTitulo(nombre);
-  document.querySelectorAll('.msg-body[id]').forEach(el => {
+  document.querySelectorAll('.msg-body[id], .playbook-message[id]').forEach(el => {
     if (mensajesOriginales[el.id]) {
       el.innerText = mensajesOriginales[el.id]
         .replace(/\{NOMBRE\}/g, nombre)
@@ -6666,7 +7177,7 @@ function showTab(groupId, tabId, btn) {
 }
 
 function copyMsg(id, btn) {
-  const text = document.getElementById(id).innerText;
+  const text = applyPersonalization(document.getElementById(id).innerText);
   navigator.clipboard.writeText(text).then(() => {
     btn.textContent = '✓ Copiado';
     btn.classList.add('copied');
