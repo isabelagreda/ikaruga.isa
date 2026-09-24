@@ -5248,7 +5248,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
 
   <div class="tab-content" id="hor-noviembre">
     <div class="info-block" style="margin-bottom:14px;">
-      <strong>Noviembre:</strong> datos actualizados desde el planificador.
+      <strong>Noviembre:</strong> datos actualizados desde el planificador. Las comisiones visibles figuran con 4 módulos.
     </div>
     <table class="schedule-table">
       <thead><tr><th>Curso</th><th>Comisión</th><th>Módulos</th><th>Día</th><th>Horario ARG</th><th>Inicio</th><th>Finaliza</th><th>Estado</th></tr></thead>
@@ -6713,6 +6713,11 @@ function getMesesDisponibles(idioma, nivel) {
   return meses.length ? meses : [{ value: 'todos', label: 'Consultar mes' }];
 }
 
+function monthHasModuleCount(idioma, nivel, mes, modules) {
+  const horariosMes = filtrarHorariosPorMes(horariosARG[idioma]?.[nivel] || [], mes);
+  return horariosMes.some(h => new RegExp(`${modules}\\s*módulos`, 'i').test(h));
+}
+
 function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
   const esJpSeptiembre4 = idioma === 'japones' && ["Japonés 1", "Japonés 2"].includes(nivel) && mes === 'septiembre';
   const esAlemanSeptiembre4 = idioma === 'aleman' && nivel === 'Alemán A1' && mes === 'septiembre';
@@ -6723,7 +6728,8 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
     (idioma === 'tailandes' && nivel === 'Tailandés 1')
   );
   const esDiciembre4 = mes === 'diciembre' && ['japones','coreano','chino','tailandes','aleman'].includes(idioma);
-  if (esJpSeptiembre4 || esAlemanSeptiembre4 || esOctubre4 || esDiciembre4) {
+  const mesTiene4Modulos = !['ingles', 'italiano'].includes(idioma) && monthHasModuleCount(idioma, nivel, mes, 4);
+  if (esJpSeptiembre4 || esAlemanSeptiembre4 || esOctubre4 || esDiciembre4 || mesTiene4Modulos) {
     return getPrecio4Modulos(pais, descKey);
   }
   return getPrecio(idioma, pais, descKey, nivel);
@@ -6747,7 +6753,7 @@ function getCotizadorMaxCuotas(idioma, nivel, mes, descKey = '') {
   if (mes === 'diciembre' && isDiscountUpTo30(descKey)) {
     return 5;
   }
-  if (mes === 'octubre' || mes === 'diciembre') {
+  if (mes === 'octubre' || mes === 'noviembre' || mes === 'diciembre') {
     return ['ingles', 'italiano'].includes(idioma) ? 3 : 4;
   }
   const key = getTablaKey(idioma, nivel);
@@ -8668,9 +8674,11 @@ function updateJp1Precio() {
   const esJp1 = nivel === 'Japonés 1';
   const tieneSeptiembre4 = ["Japonés 1", "Japonés 2"].includes(nivel);
   const tieneOctubre4 = ["Japonés 1", "Japonés 2"].includes(nivel);
+  const tieneNoviembre4 = filtrarHorariosPorMes(horariosARG.japones?.[nivel] || [], 'noviembre').length > 0;
   const tieneDiciembre4 = filtrarHorariosPorMes(horariosARG.japones?.[nivel] || [], 'diciembre').length > 0;
   const mostrarSeptiembre = tieneSeptiembre4 && (mes === 'todos' || mes === 'septiembre');
   const mostrarOctubre = tieneOctubre4 && (mes === 'todos' || mes === 'octubre');
+  const mostrarNoviembre = tieneNoviembre4 && (mes === 'todos' || mes === 'noviembre');
   const mostrarDiciembre = tieneDiciembre4 && (mes === 'todos' || mes === 'diciembre');
   const mostrarAgosto = (mes === 'todos' || mes === 'agosto') && filtrarHorariosPorMes(horariosARG.japones?.[nivel] || [], 'agosto').length > 0;
   const maxCuotas = getCotizadorMaxCuotas('japones', nivel, mes, descKey);
@@ -8678,13 +8686,15 @@ function updateJp1Precio() {
   const cuotasAgosto = Math.min(cuotasSeleccionadas, 3);
   const cuotasSeptiembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'septiembre', descKey));
   const cuotasOctubre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'octubre', descKey));
+  const cuotasNoviembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'noviembre', descKey));
   const cuotasDiciembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'diciembre', descKey));
   const agostoTexto = mostrarAgosto ? buildPrecioCopyBlock(p, cuotasAgosto, `*${nivel} · agosto · 5 módulos*`) : '';
   const septiembreTexto = mostrarSeptiembre ? `${mostrarAgosto ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasSeptiembre, `*${nivel} · septiembre · 4 módulos*`)}` : '';
   const octubreTexto = mostrarOctubre ? `${(mostrarAgosto || mostrarSeptiembre) ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasOctubre, `*${nivel} · octubre · 4 módulos*`)}` : '';
-  const diciembreTexto = mostrarDiciembre ? `${(mostrarAgosto || mostrarSeptiembre || mostrarOctubre) ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasDiciembre, `*${nivel} · diciembre · 4 módulos*`)}` : '';
+  const noviembreTexto = mostrarNoviembre ? `${(mostrarAgosto || mostrarSeptiembre || mostrarOctubre) ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasNoviembre, `*${nivel} · noviembre · 4 módulos*`)}` : '';
+  const diciembreTexto = mostrarDiciembre ? `${(mostrarAgosto || mostrarSeptiembre || mostrarOctubre || mostrarNoviembre) ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasDiciembre, `*${nivel} · diciembre · 4 módulos*`)}` : '';
 
-  const precioTexto = `${agostoTexto}${septiembreTexto}${octubreTexto}${diciembreTexto}`;
+  const precioTexto = `${agostoTexto}${septiembreTexto}${octubreTexto}${noviembreTexto}${diciembreTexto}`;
   target.innerText = precioTexto || 'Consultar cotización disponible para el mes seleccionado.';
   updatePostCallSafetyPanel('pc-jp');
 }
