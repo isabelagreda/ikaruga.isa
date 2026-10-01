@@ -2743,7 +2743,6 @@ La idea es que avances con un grupo acorde a tu nivel, una rutina posible y acom
           <option value="2">2 cuotas</option>
           <option value="3">3 cuotas</option>
           <option value="4" selected>4 cuotas</option>
-          <option value="5">5 cuotas</option>
         </select>
       </div>
       <div>
@@ -2912,7 +2911,6 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
           <option value="2">2 cuotas</option>
           <option value="3">3 cuotas</option>
           <option value="4" selected>4 cuotas</option>
-          <option value="5">5 cuotas</option>
         </select>
       </div>
     </div>
@@ -3091,7 +3089,6 @@ Además, al formar parte de IKARUGA, contás con una comunidad académica organi
             <option value="2">2 cuotas</option>
             <option value="3">3 cuotas</option>
             <option value="4" selected>4 cuotas</option>
-            <option value="5">5 cuotas</option>
           </select>
         </div>
       </div>
@@ -3936,7 +3933,6 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
             <option value="2">2 cuotas</option>
             <option value="3" selected>3 cuotas</option>
             <option value="4">4 cuotas</option>
-            <option value="5">5 cuotas</option>
           </select>
         </div>
       </div>
@@ -6545,7 +6541,9 @@ function setCuotasMax(selectId, maxCuotas, fallback = maxCuotas) {
   if (!select) return fallback;
   Array.from(select.options).forEach(opt => {
     const val = parseInt(opt.value, 10);
-    opt.disabled = val > maxCuotas;
+    const blocked = val > maxCuotas;
+    opt.disabled = blocked;
+    opt.hidden = blocked;
   });
   let value = parseInt(select.value, 10) || fallback;
   if (value > maxCuotas) {
@@ -6738,29 +6736,10 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
   return getPrecio(idioma, pais, descKey, nivel);
 }
 
-function getDiscountNumber(descKey) {
-  return parseInt(String(descKey || '').replace(/\D/g, ''), 10) || 0;
-}
-
-function isDiscountUpTo30(descKey) {
-  const value = getDiscountNumber(descKey);
-  return value > 0 && value <= 30;
-}
-
 function getCotizadorMaxCuotas(idioma, nivel, mes, descKey = '') {
-  if (mes === 'agosto') return ['ingles', 'italiano'].includes(idioma) ? 2 : 3;
-  if (mes === 'septiembre') {
-    const horariosSeptiembre = filtrarHorariosPorMes(horariosARG[idioma]?.[nivel] || [], 'septiembre');
-    return horariosSeptiembre.some(h => /4 módulos/i.test(h)) ? 3 : 4;
-  }
-  if (mes === 'diciembre' && isDiscountUpTo30(descKey)) {
-    return 5;
-  }
-  if (mes === 'octubre' || mes === 'noviembre' || mes === 'diciembre') {
-    return ['ingles', 'italiano'].includes(idioma) ? 3 : 4;
-  }
-  const key = getTablaKey(idioma, nivel);
-  return tablaDescuentos[key]?.cuotas || 4;
+  if (mes === 'septiembre') return 2;
+  if (mes === 'octubre') return 3;
+  return 4;
 }
 
 function updateCotizadorNiveles() {
