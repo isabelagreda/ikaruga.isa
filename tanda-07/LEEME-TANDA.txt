@@ -1,0 +1,1 @@
+Subir el CONTENIDO de esta tanda al repositorio, respetando carpetas internas. No subir la carpeta tanda como carpeta final.
