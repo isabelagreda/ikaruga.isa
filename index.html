@@ -4684,7 +4684,7 @@ Este nivel está pensado para que empieces desde cero con una base real: lectura
         </div>
       </div>
       <div class="msg-body" id="pc-ru-precio"></div>
-      <div class="msg-note">✅ Ruso 1 usa modalidad de 4 módulos · 3 horas semanales para septiembre.</div>
+      <div class="msg-note">⚠️ Ruso 1 no tiene comisión vigente cargada para venta. No enviar precio ni inscripción sin confirmar nueva apertura.</div>
     </div>
 
     <div class="msg-card">
@@ -5158,27 +5158,12 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
   </div>
 
   <div class="tabs" id="horarios-tabs">
-    <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-septiembre',this)">Septiembre 2026</button>
-    <button class="tab-btn" onclick="showTab('horarios-tabs','hor-octubre',this)">Octubre 2026</button>
+    <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-octubre',this)">Octubre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-noviembre',this)">Noviembre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-diciembre',this)">Diciembre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-zonas',this)">Horarios por país</button>
   </div>
-<div class="tab-content active" id="hor-septiembre">
-    <div class="info-block" style="margin-bottom:14px;">
-      <strong>Septiembre:</strong> solo se muestran comisiones disponibles para vender.
-    </div>
-    <table class="schedule-table">
-      <thead><tr><th>Curso</th><th>Comisión</th><th>Módulos</th><th>Día</th><th>Horario ARG</th><th>Inicio</th><th>Finaliza</th><th>Estado</th></tr></thead>
-      <tbody>
-        <tr><td><span class="level-pill">Japonés 2</span></td><td>H</td><td>4</td><td>Jueves</td><td>21:00 – 00:00</td><td>17/09</td><td>10/12</td><td>Disponible</td></tr>
-        <tr><td><span class="level-pill">Ruso 1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/09</td><td>12/12</td><td>Disponible</td></tr>
-        <tr><td><span class="level-pill">Diseño y programación</span></td><td>A</td><td>4</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/09</td><td>13/12</td><td>Disponible</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="tab-content" id="hor-octubre">
+  <div class="tab-content active" id="hor-octubre">
     <div class="info-block" style="margin-bottom:14px;">
       <strong>Octubre:</strong> comisiones nuevas disponibles para vender. La mayoría son 4 módulos.
     </div>
@@ -5264,7 +5249,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
       <tr><td>🇲🇽 México (CDMX)</td><td>−3 hs</td><td>13:00</td><td>11:00</td><td>18:00</td><td>17:00</td></tr>
       <tr><td>🇧🇴 Bolivia</td><td>−1 h</td><td>15:00</td><td>13:00</td><td>20:00</td><td>19:00</td></tr>
       <tr><td>🇵🇾 Paraguay</td><td>−1 h</td><td>15:00</td><td>13:00</td><td>20:00</td><td>19:00</td></tr>
-      <tr><td>🇨🇱 Chile continental</td><td>−1 h</td><td>15:00</td><td>13:00</td><td>20:00</td><td>19:00</td></tr>
+      <tr><td>🇨🇱 Chile continental</td><td>igual que ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
       <tr><td>🇨🇴 Colombia</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
       <tr><td>🇵🇪 Perú</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
       <tr><td>🇪🇨 Ecuador</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
@@ -5280,7 +5265,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
   </div>
 
   <div class="info-block">
-    <strong>Ruso 1 · Septiembre:</strong> Sábados de 16:00 a 19:00 hs Argentina. En México (CDMX): 13:00 a 16:00 · Chile continental/Bolivia/Paraguay: 15:00 a 18:00 · Colombia/Perú/Ecuador/Panamá: 14:00 a 17:00 · Honduras/El Salvador/Costa Rica: 13:00 a 16:00.
+    <strong>Referencia de conversión:</strong> para un horario de 16:00 a 19:00 hs Argentina, en Chile continental se mantiene 16:00 a 19:00; en México (CDMX) corresponde 13:00 a 16:00; Bolivia/Paraguay 15:00 a 18:00; Colombia/Perú/Ecuador/Panamá 14:00 a 17:00; Honduras/El Salvador/Costa Rica 13:00 a 16:00.
   </div>
 </div>
 </div>
@@ -6276,7 +6261,6 @@ const horariosARG = {
       "Comisión Z · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)"
     ],
     "Japonés 2": [
-      "Comisión H · Jueves de 21:00 a 00:00 hs. (Inicia 17/09 · Finaliza 10/12 · Septiembre 4 módulos)",
       "Comisión I · Sábados de 16:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)",
       "Comisión L · Lunes de 21:00 a 00:00 hs. (Inicia 19/10 · Finaliza 11/01 · Octubre 4 módulos)",
       "Comisión J · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)",
@@ -6327,13 +6311,11 @@ const horariosARG = {
       "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)"
     ],
     "Tailandés 3": [
-      "Comisión A · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 13/12 · Septiembre 5 módulos)",
       "Comisión B · Lunes de 21:00 a 00:00 hs. (Inicia 21/12 · Finaliza 08/03 · Diciembre 4 módulos)"
     ]
   },
   ingles: {
     "Inglés A1": [
-      "Comisión D · Sábados de 16:00 a 18:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)",
       "Comisión E · Sábados de 17:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)",
       "Comisión F · Martes de 20:00 a 22:00 hs. (Inicia 22/12 · Finaliza 09/03 · Diciembre 4 módulos)"
     ],
@@ -6346,16 +6328,15 @@ const horariosARG = {
       "Comisión D · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)"
     ],
     "Alemán A2": [
-      "Comisión B · Domingos de 14:00 a 17:00 hs. (Inicia 20/09 · Finaliza 10/01 · Septiembre 5 módulos)",
       "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)"
     ]
   },
   italiano: {
     "Italiano A1": ["Comisión C · Sábados de 17:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)"],
-    "Italiano A2": ["Comisión A · Sábados de 17:00 a 19:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)"]
+    "Italiano A2": []
   },
   ruso: {
-    "Ruso 1": ["Comisión A · Sábados de 16:00 a 19:00 hs. (Inicia 19/09 · Finaliza 12/12 · Septiembre 4 módulos)"]
+    "Ruso 1": []
   }
 };
 
@@ -6587,7 +6568,7 @@ function buildMsg(pais, idioma, nivel, horarios, cierre_tipo, descKey) {
   const p = getPrecio(idioma, pais, descKey, nivel);
   const horStr = horarios.map(h => `• ${h}`).join('\n');
   const incluyeStr = buildIncluyeStr(idioma, nivel);
-  const hs = ["japones","coreano","chino","aleman","tailandes"].includes(idioma) ? "3 hs semanales" : "2 hs semanales";
+  const hs = ["japones","coreano","chino","aleman","tailandes","ruso"].includes(idioma) ? "3 hs semanales" : "2 hs semanales";
   const durStr = `${p.meses} módulos · ${hs} en vivo`;
   // Compute cuota from precio_hoy string
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
