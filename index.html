@@ -4684,7 +4684,7 @@ Este nivel está pensado para que empieces desde cero con una base real: lectura
         </div>
       </div>
       <div class="msg-body" id="pc-ru-precio"></div>
-      <div class="msg-note">⚠️ Ruso 1 no tiene comisión vigente cargada para venta. No enviar precio ni inscripción sin confirmar nueva apertura.</div>
+      <div class="msg-note">✅ Ruso 1: 3 horas semanales, 4 módulos. En diciembre usa la misma tabla de valor que Japonés 1.</div>
     </div>
 
     <div class="msg-card">
@@ -5230,6 +5230,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
         <tr><td><span class="level-pill">Tailandés 3</span></td><td>B</td><td>4</td><td>Lunes</td><td>21:00 – 00:00</td><td>21/12</td><td>08/03</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Alemán A1</span></td><td>D</td><td>4</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/12</td><td>14/03</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Alemán A2</span></td><td>C</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>13/03</td><td>Disponible</td></tr>
+        <tr><td><span class="level-pill">Ruso 1</span></td><td>B</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>13/03</td><td>Disponible</td></tr>
       </tbody>
     </table>
   </div>
@@ -6343,7 +6344,9 @@ const horariosARG = {
     "Italiano A2": []
   },
   ruso: {
-    "Ruso 1": []
+    "Ruso 1": [
+      "Comisión B · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)"
+    ]
   }
 };
 
@@ -6441,7 +6444,7 @@ const desgloseRegular = {
 
 function getTablaKey(idioma, nivel) {
   if (["japones","coreano","chino","aleman"].includes(idioma)) return "japones_coreano_chino_aleman";
-  if (idioma === "ruso") return "tailandes1";
+  if (idioma === "ruso") return "japones_coreano_chino_aleman";
   if (idioma === "tailandes") return (nivel === "Tailandés 1") ? "tailandes1" : "tailandes2";
   return idioma;
 }
@@ -6642,7 +6645,7 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
     (idioma === 'chino' && nivel === 'Chino 1') ||
     (idioma === 'tailandes' && nivel === 'Tailandés 1')
   );
-  const esDiciembre4 = mes === 'diciembre' && ['japones','coreano','chino','tailandes','aleman'].includes(idioma);
+  const esDiciembre4 = mes === 'diciembre' && ['japones','coreano','chino','tailandes','aleman','ruso'].includes(idioma);
   const mesTiene4Modulos = !['ingles', 'italiano'].includes(idioma) && monthHasModuleCount(idioma, nivel, mes, 4);
   if (esOctubre4 || esDiciembre4 || mesTiene4Modulos) {
     return getPrecio4Modulos(pais, descKey);
@@ -9043,10 +9046,14 @@ function syncRu1Pais(pais) {
 }
 
 function updateRu1Precio() {
+  const pais = document.getElementById('pc-ru-precio-pais')?.value || document.getElementById('pc-ru-pais')?.value || 'ARG';
+  const descKey = document.getElementById('pc-ru-descuento')?.value || 'd30';
   const target = document.getElementById('pc-ru-precio');
   if (!target) return;
 
-  target.innerText = 'Ruso 1 no tiene apertura vigente para enviar precio desde la guía. Confirmar nueva comisión, módulos y valores antes de cotizar.';
+  const p = getPrecio('ruso', pais, descKey, 'Ruso 1');
+  const cuotas = getPostCallSelectedCuotas('pc-ru', getCotizadorMaxCuotas('ruso', 'Ruso 1', 'diciembre', descKey));
+  target.innerText = buildPrecioCopyBlock(p, cuotas, '*Ruso 1 · diciembre · 4 módulos*');
   updatePostCallSafetyPanel('pc-ru');
 }
 
