@@ -5157,6 +5157,10 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
     <strong>Diciembre:</strong> ya está habilitado para ventas públicas. Para cotizar diciembre, usá la tabla de 4 módulos. Inglés e Italiano mantienen la tabla de 2 horas.
   </div>
 
+  <div class="info-block" style="margin-bottom:18px;">
+    <strong>Cuotas:</strong> las comisiones de diciembre y enero permiten calcular hasta 5 cuotas fijas, según la cotización seleccionada.
+  </div>
+
   <div class="tabs" id="horarios-tabs">
     <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-octubre',this)">Octubre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-noviembre',this)">Noviembre 2026</button>
@@ -6480,6 +6484,12 @@ function parsePrecioNumero(valor) {
 function setCuotasMax(selectId, maxCuotas, fallback = maxCuotas) {
   const select = document.getElementById(selectId);
   if (!select) return fallback;
+  if (maxCuotas >= 5 && !Array.from(select.options).some(opt => opt.value === '5')) {
+    const option = document.createElement('option');
+    option.value = '5';
+    option.textContent = '5 cuotas';
+    select.appendChild(option);
+  }
   Array.from(select.options).forEach(opt => {
     const val = parseInt(opt.value, 10);
     const blocked = val > maxCuotas;
@@ -6676,6 +6686,7 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
 
 function getCotizadorMaxCuotas(idioma, nivel, mes, descKey = '') {
   if (mes === 'octubre') return 3;
+  if (mes === 'diciembre' || mes === 'enero') return 5;
   return 4;
 }
 
