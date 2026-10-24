@@ -5146,7 +5146,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
   <div class="section-header">
     <div class="section-tag">Planificador 2026</div>
     <h1 class="section-title">Calendario de cursos disponibles</h1>
-    <p class="section-desc">Horarios base en Argentina. Datos actualizados desde el Planificador de cursos IKARUGA para Octubre, Noviembre y Diciembre 2026. Solo se muestran cursos vigentes y disponibles para vender.</p>
+    <p class="section-desc">Horarios base en Argentina. Datos actualizados desde el Planificador de cursos IKARUGA para Octubre, Noviembre, Diciembre 2026 y Enero 2027. Solo se muestran cursos vigentes y disponibles para vender.</p>
   </div>
 
   <div class="info-block" style="margin-bottom:18px;">
@@ -5161,6 +5161,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
     <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-octubre',this)">Octubre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-noviembre',this)">Noviembre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-diciembre',this)">Diciembre 2026</button>
+    <button class="tab-btn" onclick="showTab('horarios-tabs','hor-enero',this)">Enero 2027</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-zonas',this)">Horarios por país</button>
   </div>
   <div class="tab-content active" id="hor-octubre">
@@ -5231,6 +5232,21 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
         <tr><td><span class="level-pill">Alemán A1</span></td><td>D</td><td>4</td><td>Domingos</td><td>14:00 – 17:00</td><td>20/12</td><td>14/03</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Alemán A2</span></td><td>C</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>13/03</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Ruso 1</span></td><td>B</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>19/12</td><td>13/03</td><td>Disponible</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-enero">
+    <div class="info-block">
+      <strong>Enero 2027:</strong> actualizado desde el planificador. Las comisiones visibles figuran con 4 módulos.
+    </div>
+    <table class="schedule-table">
+      <thead><tr><th>Curso</th><th>Comisión</th><th>Módulos</th><th>Día</th><th>Horario ARG</th><th>Inicio</th><th>Finaliza</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Inglés A1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 18:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
+        <tr><td><span class="level-pill">Coreano 1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
+        <tr><td><span class="level-pill">Japonés 3</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
       </tbody>
     </table>
   </div>
@@ -6258,7 +6274,7 @@ const idiomaConfig = {
 };
 
 // ---- Horarios base en hora Argentina ----
-// Horarios confirmados desde Planificador de cursos IKARUGA — Octubre/Noviembre/Diciembre 2026
+// Horarios confirmados desde Planificador de cursos IKARUGA — Octubre/Noviembre/Diciembre 2026 y Enero 2027
 const horariosARG = {
   japones: {
     "Japonés 1": [
@@ -6266,7 +6282,8 @@ const horariosARG = {
       "Comisión AA · Lunes de 21:00 a 00:00 hs. (Inicia 23/11 · Finaliza 08/02 · Noviembre 4 módulos)",
       "Comisión AC · Domingos de 14:00 a 17:00 hs. (Inicia 22/11 · Finaliza 14/02 · Noviembre 4 módulos)",
       "Comisión Y · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)",
-      "Comisión Z · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)"
+      "Comisión Z · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)",
+      "Comisión A · Sábados de 16:00 a 19:00 hs. (Inicia 23/01 · Finaliza 10/04 · Enero 4 módulos)"
     ],
     "Japonés 2": [
       "Comisión I · Sábados de 16:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)",
@@ -6277,7 +6294,8 @@ const horariosARG = {
     ],
     "Japonés 3": [
       "Comisión E · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)",
-      "Comisión F · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)"
+      "Comisión F · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)",
+      "Comisión A · Sábados de 16:00 a 19:00 hs. (Inicia 23/01 · Finaliza 10/04 · Enero 4 módulos)"
     ],
     "Japonés 4": [
       "Comisión B · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)",
@@ -6288,7 +6306,8 @@ const horariosARG = {
     "Coreano 1": [
       "Comisión F · Domingos de 14:00 a 17:00 hs. (Inicia 18/10 · Finaliza 10/01 · Octubre 4 módulos)",
       "Comisión G · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)",
-      "Comisión H · Miércoles de 21:00 a 00:00 hs. (Inicia 23/12 · Finaliza 10/03 · Diciembre 4 módulos)"
+      "Comisión H · Miércoles de 21:00 a 00:00 hs. (Inicia 23/12 · Finaliza 10/03 · Diciembre 4 módulos)",
+      "Comisión A · Sábados de 16:00 a 19:00 hs. (Inicia 23/01 · Finaliza 10/04 · Enero 4 módulos)"
     ],
     "Coreano 2": [
       "Comisión E · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)",
@@ -6325,7 +6344,8 @@ const horariosARG = {
   ingles: {
     "Inglés A1": [
       "Comisión E · Sábados de 17:00 a 19:00 hs. (Inicia 24/10 · Finaliza 09/01 · Octubre 4 módulos)",
-      "Comisión F · Martes de 20:00 a 22:00 hs. (Inicia 22/12 · Finaliza 09/03 · Diciembre 4 módulos)"
+      "Comisión F · Martes de 20:00 a 22:00 hs. (Inicia 22/12 · Finaliza 09/03 · Diciembre 4 módulos)",
+      "Comisión A · Sábados de 16:00 a 18:00 hs. (Inicia 23/01 · Finaliza 10/04 · Enero 4 módulos)"
     ],
     "Inglés A2": ["Comisión B · Jueves de 20:00 a 22:00 hs. (Inicia 19/11 · Finaliza 11/02 · Noviembre 4 módulos)", "Comisión C · Sábados de 16:00 a 18:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)"],
     "Inglés B1": ["Comisión A · Miércoles de 20:00 a 22:00 hs. (Inicia 23/12 · Finaliza 10/03 · Diciembre 4 módulos)"]
@@ -9072,6 +9092,7 @@ Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscr
 </script>
 </body>
 </html>
+
 
 
 
