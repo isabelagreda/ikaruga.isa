@@ -6650,6 +6650,7 @@ function getMesesDisponibles(idioma, nivel) {
   if (horarios.some(h => /octubre/i.test(h))) meses.push({ value: 'octubre', label: 'Octubre' });
   if (horarios.some(h => /noviembre/i.test(h))) meses.push({ value: 'noviembre', label: 'Noviembre' });
   if (horarios.some(h => /diciembre/i.test(h))) meses.push({ value: 'diciembre', label: 'Diciembre' });
+  if (horarios.some(h => /enero/i.test(h))) meses.push({ value: 'enero', label: 'Enero' });
   return meses.length ? meses : [{ value: 'todos', label: 'Consultar mes' }];
 }
 
