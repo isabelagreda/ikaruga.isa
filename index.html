@@ -6481,7 +6481,7 @@ function parsePrecioNumero(valor) {
   return parseFloat((valor || '0').replace(/\./g,'').replace(',','.'));
 }
 
-function setCuotasMax(selectId, maxCuotas, fallback = maxCuotas) {
+function setCuotasMax(selectId, maxCuotas, fallback = maxCuotas, forceMax = false) {
   const select = document.getElementById(selectId);
   if (!select) return fallback;
   if (maxCuotas >= 5 && !Array.from(select.options).some(opt => opt.value === '5')) {
@@ -6497,7 +6497,7 @@ function setCuotasMax(selectId, maxCuotas, fallback = maxCuotas) {
     opt.hidden = blocked;
   });
   let value = parseInt(select.value, 10) || fallback;
-  if (value > maxCuotas) {
+  if (forceMax || value > maxCuotas) {
     value = maxCuotas;
     select.value = String(value);
   }
@@ -6734,7 +6734,7 @@ function updateCotizadorAgil() {
   const horariosLocal = convertHorarios(horariosBase, tzDiff[pais] ?? 0);
   const p = getCotizadorPrecio(idioma, nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas(idioma, nivel, mes, descKey);
-  const cuotas = setCuotasMax('ca-cuotas', maxCuotas, maxCuotas);
+  const cuotas = setCuotasMax('ca-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
   const lineasHorarios = horariosLocal.length
     ? horariosLocal.map(h => `• ${h}`).join('\n')
@@ -7324,7 +7324,7 @@ function updateExoMessage() {
   const mesPrecio = getExoPrecioMes(idiomaId, nivelSiguiente);
   const precio = getCotizadorPrecio(idiomaId, nivelSiguiente, pais, descKey, mesPrecio);
   const maxCuotas = getCotizadorMaxCuotas(idiomaId, nivelSiguiente, mesPrecio, descKey);
-  const cuotas = setCuotasMax('exo-cuotas', maxCuotas, maxCuotas);
+  const cuotas = setCuotasMax('exo-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
   const horariosTexto = buildExoHorarioTexto(idiomaId, nivelSiguiente, pais);
   const paisLabel = paisNombres[pais] || 'tu país';
   const duracion = `${precio.meses} módulos · ${precio.hs} semanales en vivo`;
@@ -8136,7 +8136,9 @@ function syncPostCallTopControlsFromMsgId(msgId) {
     const cfg = postCallScheduleConfig[msgId] || {};
     const currentDiscount = getPostCallCurrentDiscount(msgId);
     const maxCuotas = getCotizadorMaxCuotas(cfg.idioma, nivel, mesSelect.value || mes, currentDiscount) || 4;
-    const currentCuotas = Math.min(parseInt(getPostCallCurrentCuotas(msgId), 10) || maxCuotas, maxCuotas);
+    const currentCuotas = currentDiscount === 'd45'
+      ? maxCuotas
+      : Math.min(parseInt(getPostCallCurrentCuotas(msgId), 10) || maxCuotas, maxCuotas);
     const cuotasOptions = Array.from({ length: maxCuotas }, (_, i) => {
       const value = String(i + 1);
       return { value, label: value === '1' ? '1 pago' : `${value} cuotas` };
@@ -8204,7 +8206,8 @@ function applyPostCallTopParams() {
   syncPostCallTopControlsFromMsgId(msgId);
 }
 
-function getPostCallSelectedCuotas(msgId, fallback) {
+function getPostCallSelectedCuotas(msgId, fallback, forceMax = false) {
+  if (forceMax) return fallback;
   const raw = selectedPostCallCuotas[msgId] || document.getElementById('postcall-param-cuotas')?.value;
   const value = parseInt(raw, 10);
   if (!Number.isFinite(value)) return fallback;
@@ -8286,7 +8289,11 @@ function getPostCallPrecioConfig(msgId) {
   const p = getCotizadorPrecio(cfg?.idioma, nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas(cfg?.idioma, nivel, mes, descKey);
   const cuotasSelect = priceCfg.cuotasId ? document.getElementById(priceCfg.cuotasId) : null;
-  const cuotas = cuotasSelect ? Math.min(parseInt(cuotasSelect.value, 10) || maxCuotas, maxCuotas) : getPostCallSelectedCuotas(msgId, maxCuotas);
+  const cuotas = descKey === 'd45'
+    ? maxCuotas
+    : (cuotasSelect
+      ? Math.min(parseInt(cuotasSelect.value, 10) || maxCuotas, maxCuotas)
+      : getPostCallSelectedCuotas(msgId, maxCuotas));
   return { p, cuotas, pais, descKey, nivel, mes };
 }
 
@@ -8640,7 +8647,7 @@ function updateJp1Precio() {
   const mostrarNoviembre = tieneNoviembre4 && (mes === 'todos' || mes === 'noviembre');
   const mostrarDiciembre = tieneDiciembre4 && (mes === 'todos' || mes === 'diciembre');
   const maxCuotas = getCotizadorMaxCuotas('japones', nivel, mes, descKey);
-  const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas);
+  const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
   const cuotasOctubre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'octubre', descKey));
   const cuotasNoviembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'noviembre', descKey));
   const cuotasDiciembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'diciembre', descKey));
@@ -8832,7 +8839,7 @@ function updateKr1Precio() {
   const mes = document.getElementById('pc-kr-mes')?.value || 'todos';
   const p = getCotizadorPrecio('coreano', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('coreano', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-kr', maxCuotas);
+  const cuotas = getPostCallSelectedCuotas('pc-kr', maxCuotas, descKey === 'd45');
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
@@ -8875,7 +8882,7 @@ function updateZh1Precio() {
   const mes = document.getElementById('pc-zh-mes')?.value || 'todos';
   const p = getCotizadorPrecio('chino', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('chino', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-zh', maxCuotas);
+  const cuotas = getPostCallSelectedCuotas('pc-zh', maxCuotas, descKey === 'd45');
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
@@ -8918,7 +8925,7 @@ function updateTh1Precio() {
   const mes = document.getElementById('pc-th-mes')?.value || 'todos';
   const p = getCotizadorPrecio('tailandes', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('tailandes', nivel, mes, descKey);
-  const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas, maxCuotas);
+  const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
   const moduloLabel = `${p.meses} módulos`;
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${moduloLabel}*`);
@@ -8961,7 +8968,7 @@ function updateEnA1Precio() {
   const p = getPrecio('ingles', pais, descKey, nivel);
   const mes = document.getElementById('pc-en-mes')?.value || 'todos';
   const maxCuotas = getCotizadorMaxCuotas('ingles', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-en', maxCuotas);
+  const cuotas = getPostCallSelectedCuotas('pc-en', maxCuotas, descKey === 'd45');
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-en');
 }
@@ -9002,7 +9009,7 @@ function updateDeA1Precio() {
   const mes = document.getElementById('pc-de-mes')?.value || 'todos';
   const p = getCotizadorPrecio('aleman', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('aleman', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-de', maxCuotas);
+  const cuotas = getPostCallSelectedCuotas('pc-de', maxCuotas, descKey === 'd45');
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
@@ -9044,7 +9051,7 @@ function updateItA1Precio() {
   const nivel = selectedPostCallLevels['pc-it'] || 'Italiano A1';
   const p = getPrecio('italiano', pais, descKey, nivel);
   const mes = document.getElementById('pc-it-mes')?.value || 'todos';
-  const cuotas = getPostCallSelectedCuotas('pc-it', getCotizadorMaxCuotas('italiano', nivel, mes, descKey));
+  const cuotas = getPostCallSelectedCuotas('pc-it', getCotizadorMaxCuotas('italiano', nivel, mes, descKey), descKey === 'd45');
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-it');
 }
@@ -9085,7 +9092,7 @@ function updateRu1Precio() {
   if (!target) return;
 
   const p = getPrecio('ruso', pais, descKey, 'Ruso 1');
-  const cuotas = getPostCallSelectedCuotas('pc-ru', getCotizadorMaxCuotas('ruso', 'Ruso 1', 'diciembre', descKey));
+  const cuotas = getPostCallSelectedCuotas('pc-ru', getCotizadorMaxCuotas('ruso', 'Ruso 1', 'diciembre', descKey), descKey === 'd45');
   target.innerText = buildPrecioCopyBlock(p, cuotas, '*Ruso 1 · diciembre · 4 módulos*');
   updatePostCallSafetyPanel('pc-ru');
 }
