@@ -2874,6 +2874,7 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
           <option value="chino">Chino Mandarín</option>
           <option value="tailandes">Tailandés</option>
           <option value="ingles">Inglés</option>
+          <option value="portugues">Portugués</option>
           <option value="aleman">Alemán</option>
           <option value="italiano">Italiano</option>
           <option value="ruso">Ruso</option>
@@ -3165,6 +3166,7 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
           <option value="pc-zh">🇨🇳 Chino</option>
           <option value="pc-th">🇹🇭 Tailandés</option>
           <option value="pc-en">🇬🇧 Inglés</option>
+          <option value="pc-pt">🇧🇷 Portugués</option>
           <option value="pc-de">🇩🇪 Alemán</option>
           <option value="pc-it">🇮🇹 Italiano</option>
           <option value="pc-ru">🇷🇺 Ruso</option>
@@ -3228,6 +3230,7 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-zh',this)">🇨🇳 Chino</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-th',this)">🇹🇭 Tailandés</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-en',this)">🇬🇧 Inglés</button>
+    <button class="tab-btn" onclick="showTab('lang-tabs','tab-pt',this)">🇧🇷 Portugués</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-de',this)">🇩🇪 Alemán</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-it',this)">🇮🇹 Italiano</button>
     <button class="tab-btn" onclick="showTab('lang-tabs','tab-ru',this)">🇷🇺 Ruso</button>
@@ -4199,6 +4202,79 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
 
 ¡Bienvenido/a a la comunidad IKARUGA! 🇬🇧</div>
       <div class="msg-note">✅ Enviá este mensaje cuando el lead ya completó el formulario o cuando confirmaste el alta.</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-pt">
+    <div style="margin-bottom:14px;">
+      <p style="font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Seleccioná el nivel para pre-completar el mensaje:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <button class="level-sel-btn" onclick="setNivel('pc-pt','Portugués A1',this)">🇧🇷 Portugués A1</button>
+      </div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Portugués A1</div><button class="copy-btn" onclick="copyMsg('pc-pt',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-pt">¡Fue un placer hablar con vos! 😊
+
+Te comparto la información de Portugués A1 para que puedas revisar con calma cómo sería este primer recorrido.</div>
+      <div class="msg-note">✅ Enviá este primer bloque solo. Los contenidos, PDF, horario y cotización van en mensajes separados.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 2 · Contenidos y modalidad</div><button class="copy-btn" onclick="copyMsg('pc-pt-beneficios',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-pt-beneficios">🇧🇷 *¿QUÉ VAS A TRABAJAR EN PORTUGUÉS A1?*
+
+• Alfabeto, reglas de lectura y pronunciación para que puedas hablar con seguridad desde el inicio.
+• Saludos, presentaciones, profesiones y vocabulario para situaciones cotidianas.
+• Rutinas, tiempo, clima, viajes y expresiones de uso real.
+• Gramática, escritura y práctica oral guiada en cada clase.
+• Cultura brasileña: historia, tradiciones, música, gastronomía y turismo.
+
+💻 Las clases son online en vivo por Zoom. Además, tenés campus virtual con lecciones, ejercicios, trabajos prácticos y materiales de estudio.</div>
+      <div class="msg-note">✅ Usá este bloque para dar valor antes de hablar de la inversión.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · PDF del programa</div><button class="copy-btn" onclick="copyMsg('pc-pt-pdf',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-pt-pdf">Te comparto también el programa de Portugués A1 para que puedas mirar los contenidos y la modalidad con tranquilidad. 🇧🇷
+
+📄 Programa Portugués A1: portugues-a1-programa.pdf</div>
+      <div class="msg-note">✅ Adjuntá el PDF al enviar este mensaje. Archivo disponible: <a href="portugues-a1-programa.pdf" target="_blank" rel="noopener">portugues-a1-programa.pdf</a></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Certificación IKARUGA</div><button class="copy-btn" onclick="copyMsg('pc-pt-certificado',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-pt-certificado">Al finalizar el recorrido y aprobar la evaluación correspondiente, recibís tu certificado institucional IKARUGA. 🎓
+
+Es una forma de acreditar el nivel cursado dentro de un programa con seguimiento, trabajos prácticos y evaluación final.</div>
+      <div class="msg-note">✅ Compartilo después del PDF si el lead consulta por respaldo o certificación.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Horario</div><button class="copy-btn" onclick="copyMsg('pc-pt-horario',this)">Copiar</button></div>
+      <div style="margin:10px 0 12px;display:flex;flex-wrap:wrap;gap:12px;">
+        <div style="flex:1;min-width:220px;"><label for="pc-pt-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País del lead</label><select id="pc-pt-pais" onchange="syncPtPais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="ARG">Argentina</option><option value="MEX">México (CDMX)</option><option value="CHL">Chile continental</option><option value="COL">Colombia</option><option value="PER">Perú</option><option value="ECU">Ecuador</option><option value="USD">Otro país</option></select></div>
+        <div style="flex:1;min-width:190px;"><label for="pc-pt-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes</label><select id="pc-pt-mes" onchange="updatePtHorarioPais(); updatePtPrecio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="enero">Enero 2027</option></select></div>
+      </div>
+      <div class="msg-body" id="pc-pt-horario"></div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Precio y financiación</div><button class="copy-btn" onclick="copyMsg('pc-pt-precio',this)">Copiar</button></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
+        <div><label for="pc-pt-precio-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label><select id="pc-pt-precio-pais" onchange="syncPtPais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="ARG">Argentina · ARS</option><option value="MEX">México · MXN</option><option value="USD">Otros países · USD</option></select></div>
+        <div><label for="pc-pt-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label><select id="pc-pt-descuento" onchange="updatePtPrecio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="d30">30% OFF</option><option value="d25">25% OFF</option><option value="d20">20% OFF</option><option value="d15">15% OFF</option></select></div>
+      </div>
+      <div class="msg-body" id="pc-pt-precio"></div>
+      <div class="msg-note">✅ Portugués A1 usa los mismos valores comerciales de Inglés y corresponde a enero: se habilitan hasta 5 cuotas.</div>
+    </div>
+
+    <div class="msg-card">
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 7 · Cierre de inscripción</div><button class="copy-btn" onclick="copyMsg('pc-pt-cierre',this)">Copiar</button></div>
+      <div class="msg-body" id="pc-pt-cierre">Si esta comisión y la forma de pago te resultan cómodas, puedo ayudarte a dejar tu inscripción encaminada hoy. 😊
+
+Para avanzar, solo necesitaría tu nombre completo y el correo que vas a usar en el campus académico.</div>
     </div>
   </div>
 
@@ -5248,9 +5324,11 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
       <thead><tr><th>Curso</th><th>Comisión</th><th>Módulos</th><th>Día</th><th>Horario ARG</th><th>Inicio</th><th>Finaliza</th><th>Estado</th></tr></thead>
       <tbody>
         <tr><td><span class="level-pill">Inglés A1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 18:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
+        <tr><td><span class="level-pill">Japonés 1</span></td><td>B</td><td>4</td><td>Lunes</td><td>21:00 – 00:00</td><td>18/01</td><td>12/04</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Japonés 1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Coreano 1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Japonés 3</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
+        <tr><td><span class="level-pill">Portugués A1</span></td><td>A1</td><td>4</td><td>Sábados</td><td>16:00 – 18:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
       </tbody>
     </table>
   </div>
@@ -6265,6 +6343,11 @@ const idiomaConfig = {
     inmersion: false,
     preparacion: () => false
   },
+  portugues: {
+    cert: "Certificación Oficial de competencias IKARUGA",
+    inmersion: false,
+    preparacion: () => false
+  },
   italiano:  {
     cert: "Doble Certificación (IKARUGA + UAI 🎓)",
     inmersion: false,
@@ -6287,6 +6370,7 @@ const horariosARG = {
       "Comisión AC · Domingos de 14:00 a 17:00 hs. (Inicia 22/11 · Finaliza 14/02 · Noviembre 4 módulos)",
       "Comisión Y · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)",
       "Comisión Z · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)",
+      "Comisión B · Lunes de 21:00 a 00:00 hs. (Inicia 18/01 · Finaliza 12/04 · Enero 4 módulos)",
       "Comisión A · Sábados de 16:00 a 19:00 hs. (Inicia 23/01 · Finaliza 10/04 · Enero 4 módulos)"
     ],
     "Japonés 2": [
@@ -6366,6 +6450,11 @@ const horariosARG = {
   italiano: {
     "Italiano A1": ["Comisión C · Sábados de 17:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)"],
     "Italiano A2": []
+  },
+  portugues: {
+    "Portugués A1": [
+      "Comisión A1 · Sábados de 16:00 a 18:00 hs. (Inicia 23/01 · Finaliza 10/04 · Enero 4 módulos)"
+    ]
   },
   ruso: {
     "Ruso 1": [
@@ -6467,6 +6556,7 @@ const desgloseRegular = {
 };
 
 function getTablaKey(idioma, nivel) {
+  if (idioma === "portugues") return "ingles";
   if (["japones","coreano","chino","aleman"].includes(idioma)) return "japones_coreano_chino_aleman";
   if (idioma === "ruso") return "japones_coreano_chino_aleman";
   if (idioma === "tailandes") return (nivel === "Tailandés 1") ? "tailandes1" : "tailandes2";
@@ -6646,13 +6736,14 @@ const nivelesPorIdioma = {
   chino:     [{nivel:"Chino 1",cierre:"cupos"},{nivel:"Chino 2",cierre:"promo"},{nivel:"Chino 3",cierre:"promo"}],
   tailandes: [{nivel:"Tailandés 1",cierre:"promo"},{nivel:"Tailandés 2",cierre:"promo"},{nivel:"Tailandés 3",cierre:"promo"}],
   ingles:    [{nivel:"Inglés A1",cierre:"promo"},{nivel:"Inglés A2",cierre:"promo"},{nivel:"Inglés B1",cierre:"promo"}],
+  portugues: [{nivel:"Portugués A1",cierre:"promo"}],
   aleman:    [{nivel:"Alemán A1",cierre:"promo"},{nivel:"Alemán A2",cierre:"promo"}],
   italiano:  [{nivel:"Italiano A1",cierre:"promo"},{nivel:"Italiano A2",cierre:"promo"}],
   ruso:      [{nivel:"Ruso 1",cierre:"promo"}]
 };
 
 const paisNombres = {ARG:"Argentina",MEX:"México (CDMX)",BOL:"Bolivia",PRY:"Paraguay",CHL:"Chile continental",COL:"Colombia",PER:"Perú",ECU:"Ecuador",PAN:"Panamá",HND:"Honduras",SLV:"El Salvador",CRI:"Costa Rica"};
-const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",aleman:"Alemán",italiano:"Italiano",ruso:"Ruso"};
+const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",portugues:"Portugués",aleman:"Alemán",italiano:"Italiano",ruso:"Ruso"};
 
 function getMesesDisponibles(idioma, nivel) {
   const horarios = (horariosARG[idioma]?.[nivel] || []).filter(horarioTieneCupo);
@@ -6677,7 +6768,7 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
     (idioma === 'tailandes' && nivel === 'Tailandés 1')
   );
   const esDiciembre4 = mes === 'diciembre' && ['japones','coreano','chino','tailandes','aleman','ruso'].includes(idioma);
-  const mesTiene4Modulos = !['ingles', 'italiano'].includes(idioma) && monthHasModuleCount(idioma, nivel, mes, 4);
+  const mesTiene4Modulos = !['ingles', 'italiano', 'portugues'].includes(idioma) && monthHasModuleCount(idioma, nivel, mes, 4);
   if (esOctubre4 || esDiciembre4 || mesTiene4Modulos) {
     return getPrecio4Modulos(pais, descKey);
   }
@@ -7003,6 +7094,8 @@ document.addEventListener('DOMContentLoaded', () => {
   updateEnA1HorarioPais();
   updateEnA1Precio();
   updateEnA1Pago();
+  updatePtHorarioPais();
+  updatePtPrecio();
   updateDeA1HorarioPais();
   updateDeA1Precio();
   updateDeA1Pago();
@@ -7840,6 +7933,38 @@ Este nivel está pensado para consolidar la base A2 y avanzar hacia una comunica
       }
     }
   },
+  'pc-pt': {
+    benefitId: 'pc-pt-beneficios',
+    pdfId: 'pc-pt-pdf',
+    defaultPdfIntro: 'Te comparto también el PDF del programa para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso. 🇧🇷',
+    levels: {
+      'Portugués A1': {
+        pdf: 'portugues-a1-programa.pdf',
+        desc: `🇧🇷 *CURSO DE PORTUGUÉS A1*
+Programa inicial de portugués brasileño con certificación institucional IKARUGA
+
+Es una propuesta para empezar desde cero y construir una base real: comprender, leer, escribir y expresarte en portugués en situaciones cotidianas.
+
+📅 *MODALIDAD Y DURACIÓN*
+• Recorrido de 4 módulos.
+• Clases online en vivo de 2 horas semanales.
+• Campus virtual con lecciones, ejercicios, trabajos prácticos y materiales.
+
+📚 *¿QUÉ VAS A TRABAJAR?*
+• Alfabeto, reglas de lectura, acento y pronunciación.
+• Saludos, presentaciones, profesiones y vocabulario de uso diario.
+• Rutinas, clima, viajes, indicaciones temporales y conversación guiada.
+• Cultura brasileña: historia, música, gastronomía, tradiciones y turismo.`,
+        benefits: `🏆 *RESPALDO Y MODALIDAD IKARUGA*
+• Clases en vivo por Zoom con espacio para practicar y consultar.
+• Campus virtual disponible durante la cursada con lecciones, ejercicios y materiales.
+• Grupo de WhatsApp para información académica y novedades del instituto.
+• Certificado institucional IKARUGA al aprobar la evaluación final.
+
+✅ *Para aprobar:* 75% de asistencia, trabajos prácticos y examen final.`
+      }
+    }
+  },
   'pc-de': {
     benefitId: 'pc-de-respaldo',
     pdfId: 'pc-de-pdf',
@@ -7992,6 +8117,7 @@ const selectedPostCallLevels = {
   'pc-zh': 'Chino 1',
   'pc-th': 'Tailandés 1',
   'pc-en': 'Inglés A1',
+  'pc-pt': 'Portugués A1',
   'pc-de': 'Alemán A1',
   'pc-it': 'Italiano A1',
   'pc-ru': 'Ruso 1'
@@ -8006,6 +8132,7 @@ const postCallScheduleConfig = {
   'pc-zh': { idioma: 'chino', paisId: 'pc-zh-pais', mesId: 'pc-zh-mes', horarioId: 'pc-zh-horario', emoji: '🇨🇳' },
   'pc-th': { idioma: 'tailandes', paisId: 'pc-th-pais', mesId: 'pc-th-mes', horarioId: 'pc-th-horario', emoji: '🇹🇭' },
   'pc-en': { idioma: 'ingles', paisId: 'pc-en-pais', mesId: 'pc-en-mes', horarioId: 'pc-en-horario', emoji: '🇬🇧' },
+  'pc-pt': { idioma: 'portugues', paisId: 'pc-pt-pais', mesId: 'pc-pt-mes', horarioId: 'pc-pt-horario', emoji: '🇧🇷' },
   'pc-de': { idioma: 'aleman', paisId: 'pc-de-pais', mesId: 'pc-de-mes', horarioId: 'pc-de-horario', emoji: '🇩🇪' },
   'pc-it': { idioma: 'italiano', paisId: 'pc-it-pais', horarioId: 'pc-it-horario', emoji: '🇮🇹' },
   'pc-ru': { idioma: 'ruso', paisId: 'pc-ru-pais', mesId: 'pc-ru-mes', horarioId: 'pc-ru-horario', emoji: '🇷🇺' }
@@ -8017,6 +8144,7 @@ const postCallTabIds = {
   'pc-zh': 'tab-zh',
   'pc-th': 'tab-th',
   'pc-en': 'tab-en',
+  'pc-pt': 'tab-pt',
   'pc-de': 'tab-de',
   'pc-it': 'tab-it',
   'pc-ru': 'tab-ru'
@@ -8028,6 +8156,7 @@ const postCallPriceSelectors = {
   'pc-zh': { paisId: 'pc-zh-precio-pais', descId: 'pc-zh-descuento' },
   'pc-th': { paisId: 'pc-th-precio-pais', descId: 'pc-th-descuento', cuotasId: 'pc-th-cuotas' },
   'pc-en': { paisId: 'pc-en-precio-pais', descId: 'pc-en-descuento' },
+  'pc-pt': { paisId: 'pc-pt-precio-pais', descId: 'pc-pt-descuento' },
   'pc-de': { paisId: 'pc-de-precio-pais', descId: 'pc-de-descuento' },
   'pc-it': { paisId: 'pc-it-precio-pais', descId: 'pc-it-descuento' },
   'pc-ru': { paisId: 'pc-ru-precio-pais', descId: 'pc-ru-descuento' }
@@ -8093,6 +8222,7 @@ function updatePostCallPriceByMsgId(msgId) {
   if (msgId === 'pc-zh') updateZh1Precio();
   if (msgId === 'pc-th') updateTh1Precio();
   if (msgId === 'pc-en') updateEnA1Precio();
+  if (msgId === 'pc-pt') updatePtPrecio();
   if (msgId === 'pc-de') updateDeA1Precio();
   if (msgId === 'pc-it') updateItA1Precio();
   if (msgId === 'pc-ru') updateRu1Precio();
@@ -8443,6 +8573,7 @@ function setNivel(msgId, nivel, btn) {
   if (msgId === 'pc-zh') updateZh1Precio();
   if (msgId === 'pc-th') updateTh1Precio();
   if (msgId === 'pc-en') updateEnA1Precio();
+  if (msgId === 'pc-pt') updatePtPrecio();
   if (msgId === 'pc-de') updateDeA1Precio();
   if (msgId === 'pc-it') updateItA1Precio();
   if (msgId === 'pc-ru') updateRu1Precio();
@@ -8984,6 +9115,33 @@ function updateEnA1Pago() {
 ${datos}
 
 Cuando lo realices, envíame el comprobante para avanzar con el alta de tu inscripción.`;
+}
+
+function updatePtHorarioPais() {
+  updatePostCallSchedule('pc-pt');
+}
+
+function syncPtPais(pais) {
+  const horarioPais = document.getElementById('pc-pt-pais');
+  const precioPais = document.getElementById('pc-pt-precio-pais');
+  if (horarioPais && horarioPais.value !== pais && [...horarioPais.options].some(opt => opt.value === pais)) horarioPais.value = pais;
+  if (precioPais && precioPais.value !== pais && [...precioPais.options].some(opt => opt.value === pais)) precioPais.value = pais;
+  updatePtHorarioPais();
+  updatePtPrecio();
+}
+
+function updatePtPrecio() {
+  const pais = document.getElementById('pc-pt-precio-pais')?.value || document.getElementById('pc-pt-pais')?.value || 'ARG';
+  const descKey = document.getElementById('pc-pt-descuento')?.value || 'd30';
+  const target = document.getElementById('pc-pt-precio');
+  if (!target) return;
+
+  const nivel = 'Portugués A1';
+  const mes = document.getElementById('pc-pt-mes')?.value || 'enero';
+  const p = getPrecio('portugues', pais, descKey, nivel);
+  const cuotas = getPostCallSelectedCuotas('pc-pt', getCotizadorMaxCuotas('portugues', nivel, mes, descKey), descKey === 'd45');
+  target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · Enero 2027 · ${p.meses} módulos*`);
+  updatePostCallSafetyPanel('pc-pt');
 }
 
 function updateDeA1HorarioPais() {
