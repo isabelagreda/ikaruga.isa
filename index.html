@@ -6683,17 +6683,18 @@ function buildIncluyeStr(idioma, nivel) {
 }
 
 // ---- CONSTRUCCIÓN DEL MENSAJE COMPLETO ----
-function buildMsg(pais, idioma, nivel, horarios, cierre_tipo, descKey) {
+function buildMsg(pais, idioma, nivel, horarios, cierre_tipo, descKey, modulos = null, mes = 'todos') {
   const cfg = idiomaConfig[idioma];
-  const p = getPrecio(idioma, pais, descKey, nivel);
+  const p = getCotizadorPrecio(idioma, nivel, pais, descKey, mes);
   const horStr = horarios.map(h => `• ${h}`).join('\n');
   const incluyeStr = buildIncluyeStr(idioma, nivel);
   const hs = ["japones","coreano","chino","aleman","tailandes","ruso"].includes(idioma) ? "3 hs semanales" : "2 hs semanales";
-  const durStr = `${p.meses} módulos · ${hs} en vivo`;
+  const durStr = `${modulos || p.meses} módulos · ${hs} en vivo`;
   // Compute cuota from precio_hoy string
   const precioNum = parseFloat((p.precio_hoy || '0').replace(/\./g,'').replace(',','.'));
-  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / p.cuotas).toLocaleString('es-AR') : '—';
-  const finStr = `${p.cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
+  const cuotas = getCotizadorMaxCuotas(idioma, nivel, mes, descKey);
+  const cuotaCalc = precioNum > 0 ? Math.round(precioNum / cuotas).toLocaleString('es-AR') : '—';
+  const finStr = `${cuotas} cuotas fijas de *${p.simbolo}${cuotaCalc}* vía transferencia.`;
   const cierreTexto = cierre_tipo === 'cupos'
     ? 'Como los cupos ya se están reservando... ¿Te aseguro tu lugar para este nuevo ciclo o preferís que revisemos si queda alguna vacante para iniciar de inmediato? 👇'
     : (idioma === 'japones'
@@ -6875,21 +6876,34 @@ function filterPromoFull() {
   results.style.display = 'block';
 
   let html = `<div style="margin-bottom:16px;padding:12px 16px;background:var(--teal-light);border-radius:10px;font-size:13px;color:var(--teal);">
-    <strong>${paisNombres[pais]} · ${idiomaNombres[idioma]}</strong> — ${niveles.length} nivel(es) disponibles · <strong>${pHeader.descuento} OFF</strong> · ${pHeader.cuotas} cuotas
+    <strong>${paisNombres[pais]} · ${idiomaNombres[idioma]}</strong> — ${niveles.length} nivel(es) disponibles · <strong>${pHeader.descuento} OFF</strong> · cuotas según comisión
   </div>`;
 
-  niveles.forEach((n, i) => {
+  let mensajeIndex = 0;
+  niveles.forEach(n => {
     const horariosBase = horariosARG[idioma][n.nivel] || [];
-    const horariosLocal = convertHorarios(horariosBase, diff);
-    const msg = buildMsg(pais, idioma, n.nivel, horariosLocal, n.cierre, descKey);
-    const msgId = `pf-msg-${pais}-${idioma}-${i}`;
-    html += `<div class="msg-card">
+    const gruposPorComision = horariosBase.reduce((grupos, horario) => {
+      const modulos = Number((horario.match(/(4|5)\s*módulos/i) || [])[1]) || 0;
+      const mes = (horario.match(/\b(noviembre|diciembre|enero|marzo)\b/i) || [])[1]?.toLowerCase() || 'todos';
+      const key = `${mes}|${modulos}`;
+      (grupos[key] ||= { mes, modulos, horarios: [] }).horarios.push(horario);
+      return grupos;
+    }, {});
+
+    Object.values(gruposPorComision).forEach(({ mes, modulos, horarios: horariosGrupo }) => {
+      const horariosLocal = convertHorarios(horariosGrupo, diff);
+      const msg = buildMsg(pais, idioma, n.nivel, horariosLocal, n.cierre, descKey, modulos || null, mes);
+      const msgId = `pf-msg-${pais}-${idioma}-${mensajeIndex++}`;
+      const mesLabel = mes === 'todos' ? '' : ` · ${mes.charAt(0).toUpperCase()}${mes.slice(1)}`;
+      const titulo = modulos ? `${n.nivel}${mesLabel} · ${modulos} módulos` : `${n.nivel}${mesLabel}`;
+      html += `<div class="msg-card">
       <div class="msg-card-header">
-        <div class="msg-card-title"><span class="level-pill">${n.nivel}</span></div>
+        <div class="msg-card-title"><span class="level-pill">${titulo}</span></div>
         <button class="copy-btn" onclick="copyMsgText('${msgId}',this)">Copiar</button>
       </div>
       <div class="msg-body" id="${msgId}">${msg}</div>
     </div>`;
+    });
   });
 
   results.innerHTML = html;
@@ -8761,25 +8775,12 @@ function updateJp1Precio() {
   if (!target) return;
 
   const nivel = selectedPostCallLevels['pc-jp'] || 'Japonés 1';
-  const p4Modulos = getPrecio4Modulos(pais, descKey);
   const mes = document.getElementById('pc-jp-mes')?.value || 'todos';
-  const tieneOctubre4 = ["Japonés 1", "Japonés 2"].includes(nivel);
-  const tieneNoviembre4 = filtrarHorariosPorMes(horariosARG.japones?.[nivel] || [], 'noviembre').length > 0;
-  const tieneDiciembre4 = filtrarHorariosPorMes(horariosARG.japones?.[nivel] || [], 'diciembre').length > 0;
-  const mostrarOctubre = tieneOctubre4 && (mes === 'todos' || mes === 'octubre');
-  const mostrarNoviembre = tieneNoviembre4 && (mes === 'todos' || mes === 'noviembre');
-  const mostrarDiciembre = tieneDiciembre4 && (mes === 'todos' || mes === 'diciembre');
+  const p = getCotizadorPrecio('japones', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('japones', nivel, mes, descKey);
-  const cuotasSeleccionadas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
-  const cuotasOctubre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'octubre', descKey));
-  const cuotasNoviembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'noviembre', descKey));
-  const cuotasDiciembre = Math.min(cuotasSeleccionadas, getCotizadorMaxCuotas('japones', nivel, 'diciembre', descKey));
-  const octubreTexto = mostrarOctubre ? `${buildPrecioCopyBlock(p4Modulos, cuotasOctubre, `*${nivel} · octubre · 4 módulos*`)}` : '';
-  const noviembreTexto = mostrarNoviembre ? `${mostrarOctubre ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasNoviembre, `*${nivel} · noviembre · 4 módulos*`)}` : '';
-  const diciembreTexto = mostrarDiciembre ? `${(mostrarOctubre || mostrarNoviembre) ? '\n\n' : ''}${buildPrecioCopyBlock(p4Modulos, cuotasDiciembre, `*${nivel} · diciembre · 4 módulos*`)}` : '';
-
-  const precioTexto = `${octubreTexto}${noviembreTexto}${diciembreTexto}`;
-  target.innerText = precioTexto || 'Consultar cotización disponible para el mes seleccionado.';
+  const cuotas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
+  const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
+  target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-jp');
 }
 
