@@ -2712,6 +2712,38 @@ Si tenés 5 minutos, puedo explicarte la cursada, revisar horarios y dejarte la 
     <div class="msg-note">La llamada se ofrece después de que el lead validó la recomendación. Si prefiere mensaje, seguir con país, horario y cotización sin insistir.</div>
   </div>
 
+  <div class="info-block" style="margin-top:18px;">
+    <strong>Después de esa pregunta, elegí una sola ruta.</strong> Si acepta hablar, confirmá el momento y llamá. Si prefiere mensaje, no vuelvas a insistir con la llamada: recomendá, mostrale cómo es la experiencia y llevá la conversación a horarios y cotización.
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Si responde: “puedo hablar” <span class="badge badge-teal">Confirmar llamada</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-confirma-llamada', this)">Copiar mensaje</button>
+    </div>
+    <div class="msg-body" id="msg-confirma-llamada">Perfecto, gracias. 😊
+
+En cinco minutos te explico cómo sería la cursada, revisamos el horario que mejor te puede funcionar y te dejo la propuesta clara.
+
+¿Te llamo por este mismo número ahora?</div>
+    <div class="msg-note">Llamá solo después de que confirme. Al terminar, abrí “Después de la llamada” para enviar el resumen que corresponda.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Si responde: “prefiero mensaje” / “no puedo hablar” <span class="badge badge-gold">Venta por WhatsApp</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-sigue-por-mensaje', this)">Copiar mensaje</button>
+    </div>
+    <div class="msg-body" id="msg-sigue-por-mensaje">Perfecto, lo resolvemos por acá. 😊
+
+Por lo que me contaste, te recomendaría *[CURSO]* porque [EXPLICÁ EN UNA FRASE POR QUÉ ENCAJA CON SU OBJETIVO].
+
+📚 La cursada es online en vivo, con docente, materiales, campus y grabaciones para que puedas repasar cuando lo necesites.
+
+¿Desde qué país nos escribís? Así te comparto los horarios y la cotización correctos para vos.</div>
+    <div class="msg-note">Si ya sabés su país, no lo preguntes de nuevo: personalizá la recomendación y abrí <strong>Cotizador ágil → Propuesta después de diagnóstico</strong>. Ahí seguís con horarios y precio, sin necesidad de llamada.</div>
+  </div>
+
   <div class="msg-card">
     <div class="msg-card-header">
       <div class="msg-card-title">Continuación · Antes de cotizar <span class="badge badge-gold">País / moneda</span></div>
