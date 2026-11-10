@@ -7472,6 +7472,7 @@ function applyPersonalization(text) {
   const nombre = getSelectedNombre();
   return text
     .replace(/\{NOMBRE\}/g, nombre)
+    .replace(/\{ASESOR\}/g, nombre)
     .replace(/\{TITULO\}/g, getTitulo(nombre));
 }
 
@@ -7507,6 +7508,7 @@ function renderStaticMessages(nombre) {
     if (mensajesOriginales[el.id]) {
       el.innerText = mensajesOriginales[el.id]
         .replace(/\{NOMBRE\}/g, nombre)
+        .replace(/\{ASESOR\}/g, nombre)
         .replace(/\{TITULO\}/g, titulo);
     }
   });
