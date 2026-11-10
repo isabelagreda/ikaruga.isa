@@ -3698,7 +3698,6 @@ A continuación te comparto la información del curso que acordamos:
         <label for="pc-zh-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin:12px 0 7px;">Mes / campaña</label>
         <select id="pc-zh-mes" onchange="refreshPostCallDescription('pc-zh'); updateZh1HorarioPais(); updateZh1Precio();" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
-          <option value="octubre">Octubre</option>
         </select>
       </div>
       <div class="msg-body" id="pc-zh-horario"></div>
@@ -5222,7 +5221,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
   <div class="section-header">
     <div class="section-tag">Planificador 2026</div>
     <h1 class="section-title">Calendario de cursos disponibles</h1>
-    <p class="section-desc">Horarios base en Argentina. Datos actualizados desde el Planificador de cursos IKARUGA para Noviembre y Diciembre 2026, y Enero 2027. Solo se muestran cursos vigentes y disponibles para vender.</p>
+    <p class="section-desc">Horarios base en Argentina. Datos actualizados desde el Planificador de cursos IKARUGA para Noviembre y Diciembre 2026, y Enero y Marzo 2027. Solo se muestran cursos vigentes y disponibles para vender.</p>
   </div>
 
   <div class="info-block" style="margin-bottom:18px;">
@@ -5241,6 +5240,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
     <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-noviembre',this)">Noviembre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-diciembre',this)">Diciembre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-enero',this)">Enero 2027</button>
+    <button class="tab-btn" onclick="showTab('horarios-tabs','hor-marzo',this)">Marzo 2027</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-zonas',this)">Horarios por país</button>
   </div>
   <div class="tab-content active" id="hor-noviembre">
@@ -5310,6 +5310,19 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
         <tr><td><span class="level-pill">Coreano 1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Japonés 3</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
         <tr><td><span class="level-pill">Portugués A1</span></td><td>A1</td><td>4</td><td>Sábados</td><td>16:00 – 18:00</td><td>23/01</td><td>10/04</td><td>Disponible</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="hor-marzo">
+    <div class="info-block">
+      <strong>Marzo 2027:</strong> grupos confirmados desde el planificador. Ambos recorridos son de 4 módulos.
+    </div>
+    <table class="schedule-table">
+      <thead><tr><th>Curso</th><th>Comisión</th><th>Módulos</th><th>Día</th><th>Horario ARG</th><th>Inicio</th><th>Finaliza</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td><span class="level-pill">Chino 1</span></td><td>A</td><td>4</td><td>Sábados</td><td>16:00 – 19:00</td><td>20/03</td><td>10/07</td><td>Disponible</td></tr>
+        <tr><td><span class="level-pill">Alemán A1</span></td><td>A</td><td>4</td><td>Miércoles</td><td>21:00 – 00:00</td><td>24/03</td><td>14/07</td><td>Disponible</td></tr>
       </tbody>
     </table>
   </div>
@@ -6342,7 +6355,7 @@ const idiomaConfig = {
 };
 
 // ---- Horarios base en hora Argentina ----
-// Horarios confirmados desde Planificador de cursos IKARUGA — Noviembre/Diciembre 2026 y Enero 2027
+// Horarios confirmados desde Planificador de cursos IKARUGA — Noviembre/Diciembre 2026 y Enero/Marzo 2027
 const horariosARG = {
   japones: {
     "Japonés 1": [
@@ -6386,7 +6399,8 @@ const horariosARG = {
   chino: {
     "Chino 1": [
       "Comisión E · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)",
-      "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 21/12 · Finaliza 08/03 · Diciembre 4 módulos)"
+      "Comisión F · Lunes de 21:00 a 00:00 hs. (Inicia 21/12 · Finaliza 08/03 · Diciembre 4 módulos)",
+      "Comisión A · Sábados de 16:00 a 19:00 hs. (Inicia 20/03 · Finaliza 10/07 · Marzo 4 módulos)"
     ],
     "Chino 2": [
       "Comisión E · Miércoles de 21:00 a 00:00 hs. (Inicia 23/12 · Finaliza 10/03 · Diciembre 4 módulos)"
@@ -6416,7 +6430,8 @@ const horariosARG = {
   },
   aleman: {
     "Alemán A1": [
-      "Comisión D · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)"
+      "Comisión D · Domingos de 14:00 a 17:00 hs. (Inicia 20/12 · Finaliza 14/03 · Diciembre 4 módulos)",
+      "Comisión A · Miércoles de 21:00 a 00:00 hs. (Inicia 24/03 · Finaliza 14/07 · Marzo 4 módulos)"
     ],
     "Alemán A2": [
       "Comisión C · Sábados de 16:00 a 19:00 hs. (Inicia 19/12 · Finaliza 13/03 · Diciembre 4 módulos)"
@@ -6727,6 +6742,7 @@ function getMesesDisponibles(idioma, nivel) {
   if (horarios.some(h => /noviembre/i.test(h))) meses.push({ value: 'noviembre', label: 'Noviembre' });
   if (horarios.some(h => /diciembre/i.test(h))) meses.push({ value: 'diciembre', label: 'Diciembre' });
   if (horarios.some(h => /enero/i.test(h))) meses.push({ value: 'enero', label: 'Enero' });
+  if (horarios.some(h => /marzo/i.test(h))) meses.push({ value: 'marzo', label: 'Marzo' });
   return meses.length ? meses : [{ value: 'todos', label: 'Consultar mes' }];
 }
 
@@ -6753,7 +6769,8 @@ function getCotizadorPrecio(idioma, nivel, pais, descKey, mes) {
 function getCotizadorMaxCuotas(idioma, nivel, mes, descKey = '') {
   if (descKey === 'd45') return 4;
   if (mes === 'octubre') return 3;
-  if (mes === 'diciembre' || mes === 'enero') return 5;
+  if (mes === 'diciembre') return 4;
+  if (mes === 'enero') return 5;
   return 4;
 }
 
