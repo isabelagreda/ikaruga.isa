@@ -2577,13 +2577,14 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
         <div class="playbook-steps">
           <div class="playbook-step"><span>1</span><div>Usar cuando la consulta ya indica idioma o dejó una pista concreta.</div></div>
           <div class="playbook-step"><span>2</span><div>Nombrar ese interés para que sienta que leíste su consulta.</div></div>
-          <div class="playbook-step"><span>3</span><div>Con una respuesta ya alcanza: después ofrecé llamada breve, sin sacarle toda la información por chat.</div></div>
+          <div class="playbook-step"><span>3</span><div>Si el formulario ya incluye su objetivo, no lo preguntes: reconocé ese dato y ofrecé llamada breve. Si no, hacé la pregunta final.</div></div>
         </div>
         <div class="playbook-message" id="msg-inicial">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
 
 Vi que te interesaba *[IDIOMA]*. Acá trabajamos con clases en vivo, docente y una ruta clara para que no te quedes aprendiendo palabras sueltas. 📚
 
 Para orientarte bien: ¿te gustaría aprenderlo por viaje, trabajo, estudio o algo más personal?</div>
+        <div class="msg-note">Si la consulta ya dice, por ejemplo, “quiero japonés para viajar”, no copies la última pregunta. Retomá “vi que querés prepararte para viajar” y pasá al puente a llamada.</div>
         <div class="playbook-actions">
           <span class="badge badge-green">Abrir conversación</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial', this)">Copiar mensaje</button>
@@ -2640,13 +2641,14 @@ Gracias por escribirnos. Tenemos cursos online en vivo, con docente, materiales 
         <div class="playbook-steps">
           <div class="playbook-step"><span>1</span><div>Nombrar que viene recomendado sin hacerlo pesado.</div></div>
           <div class="playbook-step"><span>2</span><div>Usar la confianza para entender qué busca antes de recomendar.</div></div>
-          <div class="playbook-step"><span>3</span><div>Después de su primera respuesta, proponé una llamada breve para orientarlo mejor.</div></div>
+          <div class="playbook-step"><span>3</span><div>Si ya llegó con idioma y objetivo definidos, no los preguntes de nuevo: retomá ambos y proponé llamada breve.</div></div>
         </div>
         <div class="playbook-message" id="msg-inicial-referido">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
 
 Me alegra que hayas llegado por recomendación. Acá trabajamos cada idioma con clases en vivo y una ruta clara para que puedas avanzar acompañado/a. ✨
 
 Vi que llegaste por recomendación y quería ayudarte a encontrar una propuesta que te sirva de verdad. ¿Qué idioma tenías en mente y para qué te gustaría usarlo?</div>
+        <div class="msg-note">Si el referido ya indicó idioma u objetivo, reemplazá la pregunta final por una referencia concreta a lo que contó y seguí al puente a llamada.</div>
         <div class="playbook-actions">
           <span class="badge badge-teal">Confianza</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial-referido', this)">Copiar mensaje</button>
@@ -2665,7 +2667,7 @@ Vi que llegaste por recomendación y quería ayudarte a encontrar una propuesta 
       <div class="msg-card-title">Paso 2 · Puente a llamada <span class="badge badge-teal">Después de su primera respuesta</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-puente-llamada-inicial', this)">Copiar mensaje</button>
     </div>
-    <div class="msg-body" id="msg-puente-llamada-inicial">Qué lindo lo que me contás. 😊
+    <div class="msg-body" id="msg-puente-llamada-inicial">Buenísimo, gracias por contármelo. 😊
 
 Para poder orientarte bien y no llenarte de preguntas por acá, en una llamada breve puedo explicarte cómo es la cursada, ver qué nivel y horario te convienen y dejarte una propuesta clara.
 
@@ -2674,19 +2676,30 @@ Para poder orientarte bien y no llenarte de preguntas por acá, en una llamada b
   </div>
 
   <h3>Si no puede o no quiere llamada: venta por WhatsApp</h3>
-  <div class="info-block">No insistas. Este es el plan B completo: una pregunta por vez, recomendación antes de precio y luego horarios, cotización y cierre.</div>
+  <div class="info-block"><strong>No repitas lo que ya respondió.</strong> Este es el plan B completo: una pregunta por vez, recomendación antes de precio y luego horarios, cotización y cierre.<br><br><strong>Atajo:</strong> si ya sabés idioma y objetivo, salteá al <strong>paso 3 · nivel</strong>. Si sabés idioma pero falta el objetivo, usá el mensaje de objetivo. Si no sabés el idioma, preguntá solo eso primero.</div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Paso 2 por WhatsApp · Objetivo <span class="badge badge-accent">Si no puede hablar</span></div>
+      <div class="msg-card-title">Paso 2A por WhatsApp · Falta idioma <span class="badge badge-accent">Un dato</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-diagnostico-idioma', this)">Copiar mensaje</button>
+    </div>
+    <div class="msg-body" id="msg-diagnostico-idioma">Perfecto, lo resolvemos por acá. 😊
+
+Para poder orientarte bien, ¿qué idioma te gustaría aprender?</div>
+    <div class="msg-note">Usar solo cuando el lead todavía no nombró ningún idioma. Cuando responda, seguí con el paso 2B: objetivo.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Paso 2B por WhatsApp · Falta objetivo <span class="badge badge-accent">Ya sabés el idioma</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-diagnostico-escrito', this)">Copiar mensaje</button>
     </div>
     <div class="msg-body" id="msg-diagnostico-escrito">Perfecto, lo vemos por acá. 😊
 
-🎯 Para no mandarte información genérica, contame primero: ¿qué idioma te gustaría aprender y para qué te gustaría usarlo?
+🎯 Para no mandarte información genérica: ¿para qué te gustaría aprender *[IDIOMA]*?
 
 Con eso te cuento qué opción puede acompañarte mejor y después vemos nivel, horarios y valores.</div>
-    <div class="msg-note">Hacé una pregunta por vez. Si ya dijo el idioma o el objetivo, no lo repitas: retomá ese dato y seguí al paso 3.</div>
+    <div class="msg-note">Usar solo si ya sabés el idioma pero todavía falta el motivo. Si el objetivo ya está en el chat, no copies esto: salteá directo al paso 3.</div>
   </div>
 
   <div class="msg-card">
@@ -2725,7 +2738,7 @@ Por eso te recomendaría *[CURSO]*: te permite construir una base ordenada y ava
 🌎 ¿Desde qué país nos escribís?
 
 Así te paso los horarios en tu zona y una cotización en la moneda que corresponde.</div>
-    <div class="msg-note">Usar cuando ya hubo ida y vuelta. Suena más natural que preguntar país y pago en el primer mensaje.</div>
+    <div class="msg-note">Usar únicamente si el país todavía no apareció en el chat. Si ya lo sabés, abrí el cotizador; no preguntes país ni moneda otra vez.</div>
   </div>
 
   <div class="msg-card">
