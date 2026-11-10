@@ -3079,15 +3079,42 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
   <div class="section-header">
     <div class="section-tag">Venta rápida</div>
     <h1 class="section-title">Cotizador ágil</h1>
-    <p class="section-desc">Seleccioná curso, mes, país, descuento y cuotas. El resultado queda listo para copiar y enviar.</p>
+    <p class="section-desc">Armá una propuesta clara sin perder el hilo humano de la conversación. Primero recomendá; después mostrale horarios, valor y la forma real de avanzar.</p>
+  </div>
+
+  <div class="info-block" style="margin-bottom:18px;">
+    <strong>Antes de cotizar:</strong> confirmá idioma, punto de partida, país y objetivo. La propuesta tiene que sentirse recomendada, no enviada en masa. Si todavía no conocés esos datos, usá el primer contacto o el Método ISA antes de pasar un valor.
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Mini calculadora comercial <span class="badge badge-green">Listo para copiar</span></div>
+      <div class="msg-card-title">Propuesta comercial <span class="badge badge-green">Datos reales + mensaje humano</span></div>
       <button class="copy-btn" onclick="copyMsg('cotizador-agil-resultado',this)">Copiar resultado</button>
     </div>
     <div style="padding:18px 20px;border-bottom:1px solid var(--border);background:var(--paper2);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;">
+      <div>
+        <label for="ca-nombre" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Nombre <span style="font-weight:400;">(opcional)</span></label>
+        <input id="ca-nombre" type="text" placeholder="Ej. Valentina" oninput="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+      </div>
+      <div>
+        <label for="ca-objetivo" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Objetivo del lead</label>
+        <select id="ca-objetivo" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <option value="general">Aprender con una base sólida</option>
+          <option value="viaje">Viajar y desenvolverse con más autonomía</option>
+          <option value="cultura">Conectar más con la cultura e intereses personales</option>
+          <option value="trabajo">Sumar una herramienta para lo profesional</option>
+          <option value="estudio">Prepararse para un proyecto de estudio</option>
+          <option value="continuidad">Retomar y avanzar desde la base que ya tiene</option>
+        </select>
+      </div>
+      <div>
+        <label for="ca-etapa" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Momento de conversación</label>
+        <select id="ca-etapa" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <option value="propuesta">Propuesta después de diagnóstico</option>
+          <option value="postllamada">Seguimiento después de llamada</option>
+          <option value="directa">Pidió valor y horarios directamente</option>
+        </select>
+      </div>
       <div>
         <label for="ca-idioma" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Idioma</label>
         <select id="ca-idioma" onchange="updateCotizadorNiveles()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
@@ -3142,7 +3169,7 @@ Si preferís retomarlo más adelante, dejamos tu consulta en pausa sin problema.
       </div>
     </div>
     <div class="msg-body" id="cotizador-agil-resultado"></div>
-    <div class="msg-note">✅ Si una comisión está marcada como completo/cerrado, no aparece en el resultado. Solo se muestran grupos vigentes.</div>
+    <div class="msg-note">✅ Si una comisión está marcada como completo/cerrado, no aparece. Verificá siempre promoción, cuotas y condición de pago antes de copiar: el cotizador organiza datos vigentes, no habilita condiciones nuevas.</div>
   </div>
 </div>
 
@@ -7115,6 +7142,14 @@ const nivelesPorIdioma = {
 
 const paisNombres = {ARG:"Argentina",MEX:"México (CDMX)",BOL:"Bolivia",PRY:"Paraguay",CHL:"Chile continental",COL:"Colombia",PER:"Perú",ECU:"Ecuador",PAN:"Panamá",HND:"Honduras",SLV:"El Salvador",CRI:"Costa Rica"};
 const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",portugues:"Portugués",aleman:"Alemán",italiano:"Italiano",ruso:"Ruso"};
+const cotizadorObjetivos = {
+  general: 'construir una base sólida y avanzar con una guía clara',
+  viaje: 'viajar y desenvolverte con más autonomía',
+  cultura: 'conectar más con la cultura y tus intereses personales',
+  trabajo: 'sumar una herramienta concreta a tu perfil profesional',
+  estudio: 'prepararte con una base ordenada para tu proyecto de estudio',
+  continuidad: 'retomar lo que ya sabés y avanzar de forma sostenida'
+};
 
 function getMesesDisponibles(idioma, nivel) {
   const horarios = (horariosARG[idioma]?.[nivel] || []).filter(horarioTieneCupo);
@@ -7186,6 +7221,9 @@ function updateCotizadorDescuentos() {
 }
 
 function updateCotizadorAgil() {
+  const nombre = document.getElementById('ca-nombre')?.value.trim() || '';
+  const objetivoKey = document.getElementById('ca-objetivo')?.value || 'general';
+  const etapa = document.getElementById('ca-etapa')?.value || 'propuesta';
   const idioma = document.getElementById('ca-idioma')?.value || 'japones';
   const nivel = document.getElementById('ca-nivel')?.value || 'Japonés 1';
   const mes = document.getElementById('ca-mes')?.value || 'todos';
@@ -7206,14 +7244,33 @@ function updateCotizadorAgil() {
       ? '• Diciembre visible para ventas públicas. Confirmar comisión vigente antes de copiar.'
       : '• Consultar disponibilidad.');
 
-  target.innerText = `Te comparto la cotización para *${nivel}* (${mesLabel}) en ${paisNombres[pais]}:
+  const saludo = nombre ? `¡Hola, ${nombre}!` : '¡Hola!';
+  const objetivo = cotizadorObjetivos[objetivoKey] || cotizadorObjetivos.general;
+  const apertura = etapa === 'postllamada'
+    ? `Estuve revisando lo que hablamos y, por tu objetivo de ${objetivo}, la opción que mejor acompaña ese camino es *${nivel}*.`
+    : etapa === 'directa'
+      ? `Te comparto la información ordenada de *${nivel}* para que puedas ver horarios y la inversión completa.`
+      : `Por lo que me contás, te recomendaría *${nivel}* porque te permite ${objetivo}.`;
+  const cierre = etapa === 'postllamada'
+    ? '¿Qué te quedaría por ordenar para avanzar: el horario, el contenido o la forma de pago?'
+    : etapa === 'directa'
+      ? '¿Cuál de estos horarios sentís que te resultaría más posible?'
+      : '¿Cuál de estas opciones de horario sentís que podrías sostener mejor?';
+
+  target.innerText = `${saludo}
+
+${apertura}
+
+📚 La cursada es online en vivo, con docente, materiales, campus y grabaciones para que puedas repasar durante el proceso.
+
+Te comparto la cotización para *${nivel}* (${mesLabel}) en ${paisNombres[pais]}:
 
 📅 *Horarios con cupo:*
 ${lineasHorarios}
 
 ${buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos · ${p.hs} semanales*`)}
 
-Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.`;
+${cierre}`;
 }
 
 function updateDescuentoSelector() {
