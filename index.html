@@ -2339,7 +2339,7 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
 
 En IKARUGA trabajamos con clases en vivo, docentes, materiales y acompañamiento para que no tengas que aprender palabras sueltas por tu cuenta. ✨
 
-Para ubicarte bien: ¿qué idioma te interesa aprender?</div>
+Para ubicarte bien: ¿qué idioma te interesa aprender y qué te hizo querer hacerlo?</div>
         <div class="playbook-actions">
           <span class="badge badge-green">Abrir conversación</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial', this)">Copiar mensaje</button>
@@ -2435,28 +2435,41 @@ Con eso te cuento qué opción puede acompañarte mejor y después vemos nivel, 
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Continuación · Si responde idioma y nivel <span class="badge badge-teal">Ida y vuelta</span></div>
+      <div class="msg-card-title">Continuación · Si responde idioma y motivo <span class="badge badge-teal">Ida y vuelta</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-diagnostico-continuacion', this)">Copiar mensaje</button>
     </div>
-    <div class="msg-body" id="msg-diagnostico-continuacion">Perfecto 🙌
+    <div class="msg-body" id="msg-diagnostico-continuacion">Qué lindo objetivo. 🙌
 
-Por lo que me contás, podemos buscar una propuesta que te dé estructura y te permita avanzar con continuidad. ✨
+Entonces busquemos una propuesta que te ayude a avanzar de forma ordenada y que puedas sostener en el tiempo.
 
 Para recomendarte el nivel correcto: ¿empezarías desde cero o ya estudiaste/usaste alguna app antes?</div>
-    <div class="msg-note">Después de esto explicá brevemente por qué recomendás ese curso. Recién luego mostrale horarios con cupo.</div>
+    <div class="msg-note">Si ya comentó nivel, no lo vuelvas a preguntar. Retomá su objetivo y pasá a confirmar lo que entendiste.</div>
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Puente a llamada · Después de entender su punto de partida <span class="badge badge-teal">Opcional</span></div>
+      <div class="msg-card-title">Confirmar y recomendar <span class="badge badge-teal">Antes de hablar de precio</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-puente-llamada', this)">Copiar mensaje</button>
     </div>
-    <div class="msg-body" id="msg-puente-llamada">Perfecto, con lo que me contás ya puedo orientarte hacia *[CURSO]*. ✨
+    <div class="msg-body" id="msg-puente-llamada">Entonces, si entendí bien: querés aprender *[IDIOMA]* para *[OBJETIVO]* y partirías desde *[NIVEL]*. ¿Es así? 😊
 
-Es una propuesta pensada para que avances con clases en vivo, docente, materiales y una ruta clara desde tu nivel actual.
+Por eso te recomendaría *[CURSO]*: te permite construir una base ordenada y avanzar hacia ese objetivo con clases en vivo, docente y materiales de apoyo.
 
-Antes de pasarte horarios y cotización, ¿te resulta más cómodo que te lo explique en una llamada cortita de 5 minutos o preferís que sigamos por acá? Así lo vemos de la forma que te quede mejor.</div>
-    <div class="msg-note">Usar solo cuando ya conocés idioma, punto de partida y motivo. Reemplazá [CURSO] con la recomendación real. Si prefiere mensaje, no insistir con llamada: seguir con país, horario y cotización.</div>
+¿Sentís que esta opción va en la dirección de lo que estabas buscando?</div>
+    <div class="msg-note">Usar solo cuando ya conocés idioma, punto de partida y motivo. Reemplazá los campos entre corchetes con datos reales. La recomendación siempre tiene que explicar el porqué.</div>
+  </div>
+
+  <div class="msg-card">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Puente a llamada · Cuando valida la recomendación <span class="badge badge-teal">Opcional</span></div>
+      <button class="copy-btn" onclick="copyMsg('msg-llamada-despues-recomendacion', this)">Copiar mensaje</button>
+    </div>
+    <div class="msg-body" id="msg-llamada-despues-recomendacion">Buenísimo, me alegra que te cierre. 🙌
+
+Si tenés 5 minutos, puedo explicarte la cursada, revisar horarios y dejarte la opción más conveniente bien ordenada.
+
+¿Te queda cómodo hablar ahora o preferís que sigamos por mensaje?</div>
+    <div class="msg-note">La llamada se ofrece después de que el lead validó la recomendación. Si prefiere mensaje, seguir con país, horario y cotización sin insistir.</div>
   </div>
 
   <div class="msg-card">
