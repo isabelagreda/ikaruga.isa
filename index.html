@@ -35,6 +35,178 @@
     --lang-extra: #72b739;
   }
 
+  /* Capa visual compartida: mantiene la guía densa y usable sin volverla un folleto. */
+  body {
+    background: #f7f6f2;
+    background-image: linear-gradient(90deg, rgba(1,1,1,0.025) 1px, transparent 1px), linear-gradient(rgba(1,1,1,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .sidebar {
+    border-right: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 14px 0 36px rgba(1,1,1,0.1);
+  }
+
+  .sidebar-logo {
+    background: linear-gradient(145deg, #171717 0%, #010101 72%);
+  }
+
+  .nav-link {
+    margin: 1px 10px;
+    width: calc(100% - 20px);
+    border-radius: 6px;
+    padding-left: 14px;
+  }
+
+  .nav-link.active {
+    border-left: 0;
+    padding-left: 14px;
+  }
+
+  .nav-link:hover { transform: translateX(2px); }
+
+  .section {
+    max-width: 1120px;
+    padding: 52px 60px 72px;
+  }
+
+  .section-header {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 0 0 22px;
+  }
+
+  .section-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 54px;
+    height: 3px;
+    background: var(--red);
+  }
+
+  .section-title { font-size: 30px; letter-spacing: 0; }
+  .msg-card, .playbook-card { box-shadow: 0 8px 22px rgba(1,1,1,0.045); }
+
+  /* Método ISA */
+  .isa-intro {
+    background: #171715;
+    color: #fff;
+    border-radius: 8px;
+    padding: 26px 28px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(210px, .8fr);
+    gap: 24px;
+    align-items: end;
+  }
+
+  .isa-eyebrow {
+    color: #f5c54d;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .isa-intro h2 { font-family: 'Montserrat', sans-serif; font-size: 24px; line-height: 1.25; margin-bottom: 10px; }
+  .isa-intro p { color: rgba(255,255,255,.76); font-size: 13px; line-height: 1.65; }
+
+  .isa-rule {
+    border-left: 2px solid #f5c54d;
+    padding: 4px 0 4px 14px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .isa-scan {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    gap: 8px;
+    margin: 0 0 28px;
+  }
+
+  .isa-scan-item {
+    min-height: 88px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--teal);
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  .isa-scan-item:nth-child(2n) { border-top-color: var(--gold); }
+  .isa-scan-item:nth-child(3n) { border-top-color: var(--red); }
+  .isa-scan-item b { display: block; color: var(--ink); font-size: 12px; margin-bottom: 5px; }
+  .isa-scan-item span { color: var(--ink3); font-size: 11px; line-height: 1.35; }
+
+  .isa-flow {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(145px, 1fr));
+    gap: 10px;
+    margin: 0 0 30px;
+  }
+
+  .isa-step {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 14px 14px;
+    min-height: 208px;
+  }
+
+  .isa-step-number {
+    display: inline-grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .isa-step h3 { font-size: 13px; line-height: 1.3; margin-bottom: 8px; }
+  .isa-step p { color: var(--ink3); font-size: 11px; line-height: 1.5; }
+  .isa-step strong { color: var(--ink2); }
+
+  .isa-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; margin-bottom: 26px; }
+  .isa-panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+  .isa-panel h3 { font-size: 15px; margin-bottom: 14px; }
+  .isa-panel p { font-size: 12px; color: var(--ink3); line-height: 1.6; }
+
+  .isa-do, .isa-avoid { padding: 12px 13px; border-radius: 6px; font-size: 12px; line-height: 1.55; margin-top: 9px; }
+  .isa-do { background: var(--green-light); border-left: 3px solid var(--green); color: #24501d; }
+  .isa-avoid { background: var(--red-light); border-left: 3px solid var(--red); color: #7f2424; }
+
+  .isa-close-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .isa-close { border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: var(--paper); }
+  .isa-close b { display: block; font-size: 12px; margin-bottom: 6px; color: var(--ink); }
+  .isa-close p { margin: 0; font-size: 12px; color: var(--ink2); }
+
+  .isa-checklist { list-style: none; display: grid; gap: 8px; }
+  .isa-checklist li { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--ink2); }
+  .isa-checklist li:last-child { border-bottom: 0; }
+
+  @media (max-width: 940px) {
+    .section { padding: 36px 24px 56px; }
+    .isa-intro, .isa-grid { grid-template-columns: 1fr; }
+    .isa-scan { grid-template-columns: repeat(3, 1fr); }
+    .isa-flow { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .section-title { font-size: 25px; }
+    .isa-scan, .isa-flow, .isa-close-grid { grid-template-columns: 1fr; }
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
@@ -1015,6 +1187,9 @@
       <div class="nav-group-label">Equipo</div>
       <button class="nav-link" onclick="showSection('testimonios')">
         <span class="dot"></span> ⭐ Testimonios
+      </button>
+      <button class="nav-link" onclick="showSection('metodo-isa')">
+        <span class="dot"></span> ✦ Método ISA
       </button>
       <button class="nav-link" onclick="showSection('manual')">
         <span class="dot"></span> 📋 Manual de Operaciones
@@ -5959,6 +6134,115 @@ Si querés avanzar, el siguiente paso es validar disponibilidad docente y horari
 
 </div>
 
+
+<!-- MÉTODO ISA -->
+<div class="section" id="metodo-isa">
+  <div class="section-header">
+    <div class="section-tag">Equipo · Método comercial</div>
+    <h1 class="section-title">Método ISA</h1>
+    <p class="section-desc">Una ruta para llevar conversaciones de venta con escucha, criterio y dirección. No es un libreto: es una forma de leer a la persona y ayudarla a decidir.</p>
+  </div>
+
+  <div class="isa-intro">
+    <div>
+      <div class="isa-eyebrow">La idea central</div>
+      <h2>No vendemos un curso aislado.<br>Ayudamos a que una persona empiece un camino posible.</h2>
+      <p>La conversación se sostiene en cuatro cosas: entender por qué consulta, recomendar con fundamento, convertir características en algo útil para su vida y facilitar el siguiente paso.</p>
+    </div>
+    <div class="isa-rule">Escuchá lo suficiente para recomendar bien. Después, conducí la decisión con claridad.</div>
+  </div>
+
+  <div class="section-tag" style="margin-bottom:10px;">Antes de responder</div>
+  <div class="isa-scan">
+    <div class="isa-scan-item"><b>Contexto</b><span>¿Qué dijo ya? Leé toda la charla antes de escribir.</span></div>
+    <div class="isa-scan-item"><b>Motivador</b><span>Viaje, cultura, trabajo, estudio, confianza o comunidad.</span></div>
+    <div class="isa-scan-item"><b>Punto de partida</b><span>Desde cero, experiencia previa o nivel a recuperar.</span></div>
+    <div class="isa-scan-item"><b>País</b><span>Moneda, horario local y condiciones correctas para esa persona.</span></div>
+    <div class="isa-scan-item"><b>Disponibilidad</b><span>Recién se valida cuando la opción ya tiene sentido.</span></div>
+    <div class="isa-scan-item"><b>Siguiente paso</b><span>Una pregunta concreta, no un “avisame cualquier cosa”.</span></div>
+  </div>
+
+  <div class="section-tag" style="margin-bottom:10px;">La conversación en seis movimientos</div>
+  <div class="isa-flow">
+    <article class="isa-step">
+      <span class="isa-step-number">1</span>
+      <h3>Leer y conectar</h3>
+      <p>Retomá lo que ya compartió. Si no hay contexto, abrí con calidez y una pregunta útil.</p>
+      <p><strong>Meta:</strong> que sienta que no va a recibir una respuesta genérica.</p>
+    </article>
+    <article class="isa-step">
+      <span class="isa-step-number">2</span>
+      <h3>Descubrir el motivo</h3>
+      <p>Buscá qué quiere poder hacer, no solo qué idioma nombra.</p>
+      <p><strong>Pregunta:</strong> “¿Qué te gustaría lograr con el idioma?”</p>
+    </article>
+    <article class="isa-step">
+      <span class="isa-step-number">3</span>
+      <h3>Hacer espejo</h3>
+      <p>Devolvé su objetivo en sus propias palabras y resumí el punto de partida.</p>
+      <p><strong>Puente:</strong> “Por lo que me contás, buscás…”</p>
+    </article>
+    <article class="isa-step">
+      <span class="isa-step-number">4</span>
+      <h3>Recomendar una ruta</h3>
+      <p>Elegí una opción concreta y explicá por qué encaja. No abras un catálogo de posibilidades.</p>
+      <p><strong>Clave:</strong> nivel + modalidad + beneficio relevante.</p>
+    </article>
+    <article class="isa-step">
+      <span class="isa-step-number">5</span>
+      <h3>Construir valor</h3>
+      <p>Traducí el curso a consecuencia real: vivo, grabaciones, docente, campus, materiales o comunidad.</p>
+      <p><strong>Recién después:</strong> horario y cotización vigente.</p>
+    </article>
+    <article class="isa-step">
+      <span class="isa-step-number">6</span>
+      <h3>Facilitar la decisión</h3>
+      <p>Cuando hay encaje, no sigas demostrando. Confirmá dudas y proponé una alternativa real para avanzar.</p>
+      <p><strong>Cierre:</strong> forma de pago, reserva o inscripción.</p>
+    </article>
+  </div>
+
+  <div class="isa-grid">
+    <section class="isa-panel">
+      <h3>Lo que distingue una conversación ISA</h3>
+      <div class="isa-do"><strong>Hacer:</strong> “Por lo que me contás, te recomendaría empezar por esta opción porque te permite construir la base que necesitás para [objetivo]”.</div>
+      <div class="isa-do"><strong>Hacer:</strong> explicar un beneficio cuando responde a algo que la persona dijo. Las grabaciones no son un dato: sirven para repasar si tiene una semana complicada.</div>
+      <div class="isa-avoid"><strong>Evitar:</strong> enumerar cursos, descuentos o características sin contexto. Tampoco prometer resultados, cupos o condiciones que no estén confirmados.</div>
+      <div class="isa-avoid"><strong>Evitar:</strong> cerrar con “avisame cualquier cosa”. Cada mensaje tiene que dejar un movimiento simple para el otro lado.</div>
+    </section>
+
+    <section class="isa-panel">
+      <h3>Reglas de precisión</h3>
+      <ul class="isa-checklist">
+        <li>☐ Confirmar país antes de cotizar o convertir moneda.</li>
+        <li>☐ Usar curso, comisión, precio y cuotas vigentes.</li>
+        <li>☐ No llamar “mensual” a un valor por módulo ni equiparar módulo con mes.</li>
+        <li>☐ Presentar beneficios, certificación y condiciones tal como corresponden a la opción.</li>
+        <li>☐ Si hay una objeción, entenderla antes de ofrecer una alternativa.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="section-tag" style="margin-bottom:10px;">Cómo acompañar el momento de decidir</div>
+  <div class="isa-close-grid">
+    <div class="isa-close">
+      <b>Cuando ya está decidido</b>
+      <p>“Me alegra, porque por lo que me contaste siento que esta opción te puede hacer muy bien. ¿Te resultaría más cómodo resolverlo con [alternativa vigente A] o [alternativa vigente B]?”</p>
+    </div>
+    <div class="isa-close">
+      <b>Cuando necesita comparar</b>
+      <p>“Te lo ordeno por mensaje así lo mirás tranquila/o. Para dejarlo realmente útil: ¿qué necesitás terminar de confirmar, horarios, contenido o inversión?”</p>
+    </div>
+    <div class="isa-close">
+      <b>Cuando aparece el dinero como freno</b>
+      <p>“Entiendo. Veamos si hay una alternativa vigente que te permita organizarlo sin perder el camino que veníamos viendo.” Antes de ofrecerla, confirmá monto, fecha y condición real.</p>
+    </div>
+    <div class="isa-close">
+      <b>Cuando no responde</b>
+      <p>Volvé con un motivo: su objetivo, una disponibilidad nueva o una duda pendiente. Saludá si pasó otro día y cerrá con una pregunta fácil de responder.</p>
+    </div>
+  </div>
+</div>
 
 <!-- MANUAL DE OPERACIONES -->
 <div class="section" id="manual">
