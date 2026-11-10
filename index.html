@@ -1124,61 +1124,58 @@
   </div>
   <nav>
     <div class="nav-group">
-      <div class="nav-group-label">Primer contacto</div>
+      <div class="nav-group-label">1 · Empezar conversación</div>
       <button class="nav-link active" onclick="showSection('saludo')">
         <span class="dot"></span> Saludo inicial
       </button>
-      <button class="nav-link" onclick="showSection('seguimiento-optimizado')">
-        <span class="dot"></span> Seguimiento optimizado
-      </button>
     </div>
     <div class="nav-group">
-      <div class="nav-group-label">Recuperación</div>
-      <button class="nav-link" onclick="showSection('recontacto')">
-        <span class="dot"></span> Recontacto de lead
-      </button>
-      <button class="nav-link" onclick="showSection('exo')">
-        <span class="dot"></span> EXO · Siguiente nivel
-      </button>
-    </div>
-    <div class="nav-group">
-      <div class="nav-group-label">Post-llamada</div>
+      <div class="nav-group-label">2 · Recomendar y cotizar</div>
       <button class="nav-link" onclick="showSection('cotizador-agil')">
         <span class="dot"></span> Cotizador ágil
       </button>
-      <button class="nav-link" onclick="showSection('videojuegos')">
-        <span class="dot"></span> Curso videojuegos
+      <button class="nav-link" onclick="showSection('horarios')">
+        <span class="dot"></span> Horarios por país
       </button>
+      <button class="nav-link" onclick="showSection('precios')">
+        <span class="dot"></span> Precios y cuotas
+      </button>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">3 · Continuar y cerrar</div>
       <button class="nav-link" onclick="showSection('postcall')">
-        <span class="dot"></span> Qué enviar tras la llamada
+        <span class="dot"></span> Después de la llamada
       </button>
+      <button class="nav-link" onclick="showSection('seguimiento-optimizado')">
+        <span class="dot"></span> Seguimientos
+      </button>
+      <button class="nav-link" onclick="showSection('recontacto')">
+        <span class="dot"></span> Recuperar lead
+      </button>
+      <button class="nav-link" onclick="showSection('exo')">
+        <span class="dot"></span> Continuidad de alumno
+      </button>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Casos especiales</div>
       <button class="nav-link" onclick="showSection('precios-privadas')">
         <span class="dot"></span> Clases privadas
       </button>
       <button class="nav-link" onclick="showSection('pregrabados')">
         <span class="dot"></span> Pregrabados
       </button>
+      <button class="nav-link" onclick="showSection('videojuegos')">
+        <span class="dot"></span> Curso videojuegos
+      </button>
     </div>
     <div class="nav-group">
-      <div class="nav-group-label">Nurturing</div>
+      <div class="nav-group-label">Recursos para vender</div>
       <button class="nav-link" onclick="showSection('nurturing')">
         <span class="dot"></span> Imágenes para WhatsApp
       </button>
-    </div>
-    <div class="nav-group">
-      <div class="nav-group-label">Horarios 2026</div>
-      <button class="nav-link" onclick="showSection('horarios')">
-        <span class="dot"></span> Calendario y horarios por país
+      <button class="nav-link" onclick="showSection('testimonios')">
+        <span class="dot"></span> Testimonios
       </button>
-    </div>
-    <div class="nav-group">
-      <div class="nav-group-label">Precios</div>
-      <button class="nav-link" onclick="showSection('precios')">
-        <span class="dot"></span> Tablas de precios
-      </button>
-    </div>
-    <div class="nav-group">
-      <div class="nav-group-label">Materiales</div>
       <button class="nav-link" onclick="showSection('audio-venta')">
         <span class="dot"></span> Audio de venta
       </button>
@@ -1188,9 +1185,6 @@
     </div>
     <div class="nav-group">
       <div class="nav-group-label">Equipo</div>
-      <button class="nav-link" onclick="showSection('testimonios')">
-        <span class="dot"></span> ⭐ Testimonios
-      </button>
       <button class="nav-link" onclick="showSection('metodo-isa')">
         <span class="dot"></span> ✦ Método ISA
       </button>
@@ -2484,11 +2478,11 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
   <div class="section-header">
     <div class="section-tag">Primer contacto</div>
     <h1 class="section-title">Saludo inicial</h1>
-    <p class="section-desc">Objetivo del primer contacto: abrir una conversación real, entender qué busca la persona y orientar con una propuesta que le sirva. La llamada suma cuando aporta claridad; por mensaje también se puede vender muy bien.</p>
+    <p class="section-desc">Abrí una charla que dé confianza. No intentes calificar todo de entrada: explicá brevemente cómo trabajamos y pedí un solo dato que permita seguir.</p>
   </div>
 
   <div class="info-block" style="margin-bottom:22px;">
-    <strong>Secuencia recomendada:</strong> leer antes de preguntar. Conectar con lo que contó, dar una razón breve para confiar en el curso, hacer una sola pregunta útil y avanzar así: necesidad, producto, horario, inversión e inscripción. No pedir todos los datos juntos ni mandar un precio sin contexto.
+    <strong>Ruta rápida:</strong> 1. Saludo y contexto. 2. Idioma y motivación. 3. Nivel. 4. Recomendación y beneficios. 5. País, horario y cotización. 6. Pregunta de avance. La llamada es una opción, nunca la condición para poder orientarlo.
   </div>
 
   <div class="playbook-grid">
@@ -2511,13 +2505,11 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
           <div class="playbook-step"><span>2</span><div>Retomar lo que preguntó y abrir con una pregunta simple.</div></div>
           <div class="playbook-step"><span>3</span><div>Ofrecer llamada solo si suma; si prefiere escribir, guiar sin apuro.</div></div>
         </div>
-        <div class="playbook-message" id="msg-inicial">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+        <div class="playbook-message" id="msg-inicial">¡Hola! 😊 Soy {NOMBRE}, de IKARUGA.
 
-📩 Vi tu consulta por nuestros cursos de idiomas.
+Gracias por escribirnos. Te ayudo a encontrar una opción que realmente te sirva: trabajamos con clases en vivo, docente, materiales, campus y grabaciones para acompañarte durante la cursada. 📚
 
-En IKARUGA trabajamos con clases en vivo, docentes, materiales y acompañamiento para que no tengas que aprender palabras sueltas por tu cuenta. ✨
-
-Para ubicarte bien: ¿qué idioma te interesa aprender y qué te hizo querer hacerlo?</div>
+¿Qué idioma te gustaría aprender? Así te cuento cómo se trabaja y vemos qué opción puede ir mejor con vos.</div>
         <div class="playbook-actions">
           <span class="badge badge-green">Abrir conversación</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial', this)">Copiar mensaje</button>
@@ -2542,16 +2534,14 @@ Para ubicarte bien: ¿qué idioma te interesa aprender y qué te hizo querer hac
       <div class="playbook-body">
         <div class="playbook-steps">
           <div class="playbook-step"><span>1</span><div>Usar cuando falta país, moneda o nivel.</div></div>
-          <div class="playbook-step"><span>2</span><div>Ofrecer llamada para evitar mandar información incorrecta.</div></div>
-          <div class="playbook-step"><span>3</span><div>Si responde por mensaje, pedir país, nivel y objetivo.</div></div>
+          <div class="playbook-step"><span>2</span><div>Confirmar país antes de cotizar, sin convertir el chat en un formulario.</div></div>
+          <div class="playbook-step"><span>3</span><div>La llamada se propone solo si le facilita decidir; por mensaje también se lo puede orientar.</div></div>
         </div>
-        <div class="playbook-message" id="msg-inicial-valor">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+        <div class="playbook-message" id="msg-inicial-valor">¡Hola! 😊 Soy {NOMBRE}, de IKARUGA.
 
-🌎 Gracias por escribirnos.
+Gracias por escribirnos. Nuestros cursos son online en vivo, con docente, campus, materiales y grabaciones para acompañarte estés donde estés. ✨
 
-Tenemos cursos online en vivo, con docente, campus y grabaciones para repasar; por eso podemos acompañarte estés donde estés. ✨
-
-¿Qué idioma te gustaría aprender y desde qué país nos escribís? Así te cuento las opciones reales que tenés.</div>
+¿Qué idioma te interesa aprender y desde qué país nos escribís? Así puedo contarte las opciones reales para vos.</div>
         <div class="playbook-actions">
           <span class="badge badge-gold">Llamada o mensaje</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial-valor', this)">Copiar mensaje</button>
@@ -2575,16 +2565,14 @@ Tenemos cursos online en vivo, con docente, campus y grabaciones para repasar; p
       <div class="playbook-body">
         <div class="playbook-steps">
           <div class="playbook-step"><span>1</span><div>Nombrar que viene recomendado sin hacerlo pesado.</div></div>
-          <div class="playbook-step"><span>2</span><div>Usar la confianza para proponer una llamada corta.</div></div>
-          <div class="playbook-step"><span>3</span><div>Si no puede, pedir objetivo y nivel por mensaje.</div></div>
+          <div class="playbook-step"><span>2</span><div>Usar la confianza para entender qué busca antes de recomendar.</div></div>
+          <div class="playbook-step"><span>3</span><div>Si hace falta, la llamada se propone después; el chat puede avanzar completo.</div></div>
         </div>
-        <div class="playbook-message" id="msg-inicial-referido">👋 ¡Hola! Soy {NOMBRE} de IKARUGA.
+        <div class="playbook-message" id="msg-inicial-referido">¡Hola! 😊 Soy {NOMBRE}, de IKARUGA.
 
-⭐ Te escribo porque nos conectaron por recomendación.
+Me alegra que hayas llegado por recomendación. Acá trabajamos cada idioma con clases en vivo y una ruta clara para que puedas avanzar acompañado/a. ✨
 
-Me alegra que hayas llegado a IKARUGA. Acá trabajamos cada idioma con clases en vivo y una ruta clara para que puedas avanzar de verdad. ✨
-
-Contame, ¿qué idioma te interesaba y qué te gustaría lograr con él?</div>
+¿Qué idioma te interesaba aprender? Así te oriento desde el punto que necesites.</div>
         <div class="playbook-actions">
           <span class="badge badge-teal">Confianza</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial-referido', this)">Copiar mensaje</button>
