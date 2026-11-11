@@ -3147,19 +3147,19 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
 <!-- COTIZADOR AGIL -->
 <div class="section" id="cotizador-agil">
   <div class="section-header">
-    <div class="section-tag">Venta rápida</div>
+    <div class="section-tag">Apoyo durante la asesoría</div>
     <h1 class="section-title">Cotizador ágil</h1>
-    <p class="section-desc">Armá una propuesta clara sin perder el hilo humano de la conversación. Primero recomendá; después mostrale horarios, valor y la forma real de avanzar.</p>
+    <p class="section-desc">Tu apoyo interno durante la llamada: elegí curso, nivel, mes y país mientras conversás para ver horarios, valor y cuotas reales sin hacer cuentas ni perder el hilo.</p>
   </div>
 
   <div class="info-block" style="margin-bottom:18px;">
-    <strong>Cuándo entrar:</strong> después de una llamada o cuando por WhatsApp ya conocés idioma, nivel y país. Primero recomendá; después mostrale horarios, valor y la forma real de avanzar. Si el lead pide valor directo, respondé con datos reales, pero no inventes una motivación: usá la etapa “Pidió valor y horarios directamente”. Copiá una propuesta y esperá respuesta antes de seguir.
+    <strong>Cómo usarlo en llamada:</strong> mientras el lead te cuenta lo que busca, cargá solo los datos que ya surgieron: idioma, nivel, mes posible y país. Con eso podés revisar en el momento las opciones reales y explicarle una recomendación clara. El texto copiable queda para enviarlo después de hablar o si la asesoría continúa por WhatsApp.
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Propuesta comercial <span class="badge badge-green">Datos reales + mensaje humano</span></div>
-      <button class="copy-btn" onclick="copyMsg('cotizador-agil-resultado',this)">Copiar resultado</button>
+      <div class="msg-card-title">Cotización de apoyo <span class="badge badge-green">Durante llamada</span></div>
+      <button class="copy-btn" onclick="copyMsg('cotizador-agil-resultado',this)">Copiar para enviar después</button>
     </div>
     <div style="padding:18px 20px;border-bottom:1px solid var(--border);background:var(--paper2);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;">
       <div>
@@ -3167,7 +3167,7 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
         <input id="ca-nombre" type="text" placeholder="Ej. Valentina" oninput="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
       </div>
       <div>
-        <label for="ca-objetivo" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Objetivo del lead</label>
+        <label for="ca-objetivo" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Objetivo <span style="font-weight:400;">(opcional para el texto)</span></label>
         <select id="ca-objetivo" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="" selected>Seleccionar el objetivo que dijo</option>
           <option value="viaje">Viajar y desenvolverse con más autonomía</option>
@@ -3178,9 +3178,9 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
         </select>
       </div>
       <div>
-        <label for="ca-etapa" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Momento de conversación</label>
+        <label for="ca-etapa" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Uso del resultado</label>
         <select id="ca-etapa" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
-          <option value="propuesta">Propuesta después de diagnóstico</option>
+          <option value="propuesta">Durante asesoría / propuesta</option>
           <option value="postllamada">Seguimiento después de llamada</option>
           <option value="directa">Pidió valor y horarios directamente</option>
         </select>
@@ -3239,7 +3239,7 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
       </div>
     </div>
     <div class="msg-body" id="cotizador-agil-resultado"></div>
-    <div class="msg-note">✅ Si una comisión está marcada como completo/cerrado, no aparece. Verificá siempre promoción, cuotas y condición de pago antes de copiar: el cotizador organiza datos vigentes, no habilita condiciones nuevas.</div>
+    <div class="msg-note">✅ Si una comisión está marcada como completo/cerrado, no aparece. Usalo para consultar durante la llamada; antes de enviar el resultado, verificá promoción, cuotas y condición de pago. El cotizador organiza datos vigentes, no habilita condiciones nuevas.</div>
   </div>
 </div>
 
