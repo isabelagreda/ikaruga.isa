@@ -3158,15 +3158,21 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Cotización de apoyo <span class="badge badge-green">Durante llamada</span></div>
-      <button class="copy-btn" onclick="copyMsg('cotizador-agil-resultado',this)">Copiar para enviar después</button>
+      <div class="msg-card-title">Calculadora en vivo <span class="badge badge-green">Durante llamada</span></div>
+      <button class="copy-btn" onclick="copyMsg('cotizador-agil-resultado',this)">Copiar resumen al finalizar</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-bottom:1px solid var(--border);background:#fff8e8;">
+      <div style="padding:12px 16px;border-right:1px solid var(--border);font-size:12px;"><strong style="color:var(--red);">1. Curso</strong><br><span style="color:var(--ink3);">Idioma y nivel</span></div>
+      <div style="padding:12px 16px;border-right:1px solid var(--border);font-size:12px;"><strong style="color:var(--red);">2. Comisión</strong><br><span style="color:var(--ink3);">Mes y país</span></div>
+      <div style="padding:12px 16px;border-right:1px solid var(--border);font-size:12px;"><strong style="color:var(--red);">3. Inversión</strong><br><span style="color:var(--ink3);">Descuento y cuotas</span></div>
+      <div style="padding:12px 16px;font-size:12px;"><strong style="color:var(--red);">4. Seguís hablando</strong><br><span style="color:var(--ink3);">No copies nada todavía</span></div>
     </div>
     <div style="padding:18px 20px;border-bottom:1px solid var(--border);background:var(--paper2);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;">
-      <div>
+      <div style="order:8;">
         <label for="ca-nombre" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Nombre <span style="font-weight:400;">(opcional)</span></label>
         <input id="ca-nombre" type="text" placeholder="Ej. Valentina" oninput="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
       </div>
-      <div>
+      <div style="order:9;">
         <label for="ca-objetivo" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Objetivo <span style="font-weight:400;">(opcional para el texto)</span></label>
         <select id="ca-objetivo" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="" selected>Seleccionar el objetivo que dijo</option>
@@ -3177,7 +3183,7 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
           <option value="continuidad">Retomar y avanzar desde la base que ya tiene</option>
         </select>
       </div>
-      <div>
+      <div style="order:10;">
         <label for="ca-etapa" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Uso del resultado</label>
         <select id="ca-etapa" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="propuesta">Durante asesoría / propuesta</option>
@@ -3185,7 +3191,7 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
           <option value="directa">Pidió valor y horarios directamente</option>
         </select>
       </div>
-      <div>
+      <div style="order:1;">
         <label for="ca-idioma" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Idioma</label>
         <select id="ca-idioma" onchange="updateCotizadorNiveles()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="japones">Japonés</option>
@@ -3199,15 +3205,15 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
           <option value="ruso">Ruso</option>
         </select>
       </div>
-      <div>
+      <div style="order:2;">
         <label for="ca-nivel" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Nivel</label>
         <select id="ca-nivel" onchange="updateCotizadorMeses()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"></select>
       </div>
-      <div>
+      <div style="order:3;">
         <label for="ca-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes</label>
         <select id="ca-mes" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"></select>
       </div>
-      <div>
+      <div style="order:4;">
         <label for="ca-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label>
         <select id="ca-pais" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="ARG">Argentina · ARS</option>
@@ -3224,11 +3230,11 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
           <option value="CRI">Costa Rica · USD</option>
         </select>
       </div>
-      <div>
+      <div style="order:5;">
         <label for="ca-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Descuento</label>
         <select id="ca-descuento" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"></select>
       </div>
-      <div>
+      <div style="order:6;">
         <label for="ca-cuotas" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Cuotas</label>
         <select id="ca-cuotas" onchange="updateCotizadorAgil()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="1">1 pago</option>
@@ -3236,6 +3242,9 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
           <option value="3">3 cuotas</option>
           <option value="4" selected>4 cuotas</option>
         </select>
+      </div>
+      <div style="order:7;grid-column:1/-1;padding-top:4px;border-top:1px dashed var(--border);font-size:12px;color:var(--ink3);">
+        <strong style="color:var(--ink);">Opcional para el resumen que enviarás después:</strong> completá nombre, objetivo y uso solo cuando ya tengas la propuesta resuelta.
       </div>
     </div>
     <div class="msg-body" id="cotizador-agil-resultado"></div>
