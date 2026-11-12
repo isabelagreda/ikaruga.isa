@@ -1195,6 +1195,52 @@
   .close-rule strong { display:block; color:var(--red); margin-bottom:3px; }
   @media (max-width:700px) { .close-answer-body { grid-template-columns:1fr; } .close-answer-head { align-items:flex-start; flex-direction:column; } .close-scan { grid-template-columns:1fr; } }
 
+  /* Interfaz operativa: lectura veloz, sin apariencia de documento. */
+  body { background: #edf2f3; background-image: none; }
+  .sidebar { width: 276px; background: #142630; box-shadow: 8px 0 28px rgba(15, 31, 40, .16); }
+  .sidebar-logo { min-height: 116px; padding: 26px 22px 20px; border-bottom: 1px solid rgba(255,255,255,.11); }
+  .sidebar-logo::after { content: ''; display: block; width: 38px; height: 3px; margin-top: 13px; background: #f0ba3a; }
+  .main { margin-left: 276px; }
+  .nav-group { margin: 6px 9px 10px; padding: 0 0 10px; }
+  .nav-group-label { padding: 11px 9px 6px; font-size: 10px; letter-spacing: 1.6px; }
+  .nav-link { min-height: 35px; margin: 2px 0; padding: 8px 10px; border: 1px solid transparent; border-radius: 6px; font-size: 13px; }
+  .nav-link:hover { transform: none; border-color: rgba(240,186,58,.38); background: rgba(255,255,255,.08); }
+  .nav-link.active { padding-left: 10px; border-left: 3px solid #f0ba3a; border-color: #c62532; background: #c62532; box-shadow: none; }
+  .nav-link.active .dot { background: #f0ba3a; box-shadow: none; }
+
+  .section { max-width: 1220px; padding: 54px 64px 82px; }
+  .section-header { margin-bottom: 30px; padding-bottom: 19px; border-bottom: 1px solid #c6d1d5; }
+  .section-header::before { width: 58px; height: 4px; }
+  .section-tag { border-radius: 5px; padding: 5px 8px; font-size: 10px; letter-spacing: 1.6px; font-weight: 800; }
+  .section-title { margin-top: 9px; font-size: 34px; line-height: 1.12; }
+  .section-desc { max-width: 760px; font-size: 14px; line-height: 1.6; }
+
+  .msg-card, .playbook-card, .close-answer { border-radius: 8px; box-shadow: 0 8px 20px rgba(28, 51, 61, .06); }
+  .msg-card { border-color: #cbd8dc; overflow: hidden; }
+  .msg-card-header { min-height: 54px; padding: 14px 19px; border-bottom: 1px solid #d9e2e4; }
+  .msg-body { padding: 20px; }
+  .msg-note { border-radius: 0; }
+  .info-block { padding: 16px 18px; border-radius: 0 7px 7px 0; }
+  .copy-btn { min-height: 34px; border-radius: 5px; }
+  .playbook-card { overflow: hidden; border-color: #cbd8dc; }
+  .playbook-top { padding: 15px 17px; }
+  .playbook-message { border-radius: 6px; }
+
+  .tab-btn { min-height: 38px; border-radius: 5px; font-weight: 700; }
+  .schedule-table, .price-table { border-radius: 7px; overflow: hidden; }
+  .schedule-table th, .price-table th { padding: 13px 14px; }
+  .schedule-table td, .price-table td { padding: 12px 14px; }
+  #testimonios-grid > div { border: 1px solid #cbd8dc; background: #fff; }
+  #testimonios-grid > div > div:nth-child(2) { padding: 18px !important; min-height: 232px; }
+  #testimonios-grid h3 { font-size: 16px !important; }
+
+  @media (max-width: 940px) {
+    .sidebar { width: 100%; }
+    .main { margin-left: 0; }
+    .section { padding: 38px 24px 62px; }
+    .section-title { font-size: 29px; }
+  }
+
   @media (max-width: 940px) { .section { padding: 36px 24px 58px; } }
 </style>
 </head>
@@ -1554,7 +1600,7 @@ Con eso veo las comisiones con cupo, te cuento cómo es la cursada y te paso el 
 <div class="section" id="audio-venta">
   <div class="section-header">
     <div class="section-tag">Materiales</div>
-    <h1 class="section-title">Audio de venta</h1>
+    <h1 class="section-title">Guion de audio</h1>
     <p class="section-desc">Acceso al material de audio para revisar ejemplos, práctica comercial y recursos del equipo de ventas.</p>
   </div>
 
@@ -1573,7 +1619,7 @@ https://drive.google.com/drive/folders/1VPRvi4Bpz7EmAVkpQevPN-4Jdm8S9ky_</div>
 <div class="section" id="videos-clases">
   <div class="section-header">
     <div class="section-tag">Materiales</div>
-    <h1 class="section-title">Videos de clases</h1>
+    <h1 class="section-title">Muestras de clase</h1>
     <p class="section-desc">Accesos rápidos a videos de muestra o clases grabadas por idioma y nivel. Iremos completando cada curso a medida que tengamos los links.</p>
   </div>
 
@@ -1660,7 +1706,7 @@ https://www.youtube.com/watch?v=xootuwhggPY</div>
 <div class="section" id="seguimiento-optimizado">
   <div class="section-header">
     <div class="section-tag">Seguimiento comercial</div>
-    <h1 class="section-title">Seguimientos</h1>
+    <h1 class="section-title">Seguimiento 24 h–7 días</h1>
     <p class="section-desc">Un seguimiento no es repetir información: es retomar algo real de la charla, aportar una razón para volver y dejar un paso sencillo para responder.</p>
   </div>
 
@@ -1881,7 +1927,7 @@ https://maps.app.goo.gl/JXtd62n6t8sVLpsSA</div>
 <div class="section" id="recontacto">
   <div class="section-header">
     <div class="section-tag">Recuperación de lead</div>
-    <h1 class="section-title">Recontacto de leads 2026</h1>
+    <h1 class="section-title">Reactivar lead</h1>
     <p class="section-desc">Para recuperar un chat que ya no está en el seguimiento inmediato: pasó más de una semana, no llegó a la llamada pactada o la conversación se enfrió. Elegí la variante según la situación.</p>
   </div>
 
@@ -2026,7 +2072,7 @@ Si hoy no es el momento, está perfecto. ¿Preferís que revisemos una opción v
 <div class="section" id="videojuegos">
   <div class="section-header">
     <div class="section-tag">Curso especial</div>
-    <h1 class="section-title">Curso videojuegos</h1>
+    <h1 class="section-title">Videojuegos 3D</h1>
     <p class="section-desc">Mensajes para leads interesados en Diseño y Programación de Videojuegos 3D con Unity 6.</p>
   </div>
 
@@ -4284,7 +4330,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
 <div class="section" id="horarios">
   <div class="section-header">
     <div class="section-tag">Planificador vigente</div>
-    <h1 class="section-title">Calendario de cursos disponibles</h1>
+    <h1 class="section-title">Horarios con cupo</h1>
     <p class="section-desc">Horarios base en Argentina. Datos actualizados desde el Planificador de cursos IKARUGA para Noviembre y Diciembre 2026, y Enero y Marzo 2027. Solo se muestran cursos vigentes y disponibles para vender.</p>
   </div>
 
@@ -4431,7 +4477,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
 <div class="section" id="precios">
   <div class="section-header">
     <div class="section-tag">Tabla de precios</div>
-    <h1 class="section-title">Tablas de precios</h1>
+    <h1 class="section-title">Valores y cuotas</h1>
     <p class="section-desc">Valores de referencia por tipo de curso. Usá esta solapa para validar una cuenta; para enviar una propuesta al lead, usá el Cotizador ágil.</p>
   </div>
 
@@ -4536,7 +4582,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
 <div class="section" id="precios-privadas">
   <div class="section-header">
     <div class="section-tag">Post-llamada · venta privada</div>
-    <h1 class="section-title">Clases privadas</h1>
+    <h1 class="section-title">Propuesta privada</h1>
     <p class="section-desc">Guía súper simple para vender clases particulares cuando el lead no encaja en grupo, necesita una solución a medida o pide una propuesta más personalizada.</p>
   </div>
 
