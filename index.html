@@ -1190,6 +1190,10 @@
   .close-answer-head strong { font-size:15px; }
   .close-answer-body { padding:20px; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(220px,.85fr); gap:20px; }
   .close-next { white-space:pre-line; background:#f6f9fa; border-left:4px solid var(--teal); padding:16px; font-size:14px; line-height:1.7; }
+  .close-message-variants { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+  .close-message-variants.is-hidden { display:none; }
+  .close-message-variant { min-height:31px; padding:6px 10px; border:1px solid #bfcfd3; border-radius:5px; background:#fff; color:var(--ink2); font:inherit; font-size:12px; font-weight:700; cursor:pointer; }
+  .close-message-variant.active { border-color:#137f95; background:#e7f4f6; color:#075e70; }
   .close-rules { display:grid; gap:10px; }
   .close-rule { border:1px solid var(--border); border-radius:7px; padding:12px; font-size:12px; line-height:1.5; }
   .close-rule strong { display:block; color:var(--red); margin-bottom:3px; }
@@ -1399,6 +1403,7 @@
       <div>
         <div class="close-next" id="modo-cerrar-action">HACÉ AHORA
 Saludá y preguntá únicamente qué idioma le interesa. Cuando responda, proponé una asesoría personalizada breve.</div>
+        <div class="close-message-variants is-hidden" id="modo-cerrar-variants"></div>
         <div class="msg-body" id="modo-cerrar-message" style="margin-top:14px;">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
 
 Gracias por escribirnos. ¿Qué idioma te gustaría aprender?</div>
@@ -6627,8 +6632,12 @@ function downloadTestimonio(dataUrl, filename, btn) {
 const modoCerrarStages = {
   nuevo: {
     title: 'Recién llegó · activá la respuesta',
-    action: 'HACÉ AHORA\nSaludá y preguntá únicamente qué idioma le interesa. Cuando responda, proponé una asesoría personalizada breve.',
+    action: 'HACÉ AHORA\nElegí una sola entrada: indagá el idioma cuando falta ese dato, o presentá de entrada la asesoría personalizada si el lead parece listo para ser orientado.',
     message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nGracias por escribirnos. ¿Qué idioma te gustaría aprender?',
+    variants: [
+      { key: 'idioma', label: 'Indagar idioma', message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nGracias por escribirnos. ¿Qué idioma te gustaría aprender?' },
+      { key: 'canal', label: 'Asesoría o mensaje', message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nPara orientarte bien desde el inicio, podemos coordinar una asesoría personalizada breve o, si te resulta más cómodo, resolverlo por mensaje.\n\n¿Qué opción preferís?' }
+    ],
     no: 'No preguntes país, nivel, horario y presupuesto juntos.',
     destination: 'Saludo inicial',
     section: 'saludo'
@@ -6710,6 +6719,7 @@ const modoCerrarStages = {
 };
 
 let modoCerrarActual = 'nuevo';
+const modoCerrarVariantes = {};
 
 const programasModoCerrar = [
   ['japones-i-programa-liviano.pdf', 'Japonés 1'], ['japones-ii-programa-liviano.pdf', 'Japonés 2'], ['japones-iii-programa-liviano.pdf', 'Japonés 3'], ['japones-iv-programa.pdf', 'Japonés 4'],
@@ -6767,6 +6777,29 @@ function renderModoCerrarHelp(help) {
   controls.innerHTML = '';
 }
 
+function renderModoCerrarVariants(data) {
+  const wrap = document.getElementById('modo-cerrar-variants');
+  if (!wrap) return;
+  if (!data.variants?.length) {
+    wrap.classList.add('is-hidden');
+    wrap.innerHTML = '';
+    return;
+  }
+  const selected = modoCerrarVariantes[modoCerrarActual] || data.variants[0].key;
+  modoCerrarVariantes[modoCerrarActual] = selected;
+  wrap.classList.remove('is-hidden');
+  wrap.innerHTML = data.variants.map(variant => `<button type="button" class="close-message-variant${variant.key === selected ? ' active' : ''}" onclick="setModoCerrarVariant('${variant.key}')">${variant.label}</button>`).join('');
+  const current = data.variants.find(variant => variant.key === selected) || data.variants[0];
+  document.getElementById('modo-cerrar-message').textContent = applyPersonalization(current.message);
+}
+
+function setModoCerrarVariant(key) {
+  const data = modoCerrarStages[modoCerrarActual];
+  if (!data?.variants?.some(variant => variant.key === key)) return;
+  modoCerrarVariantes[modoCerrarActual] = key;
+  renderModoCerrarVariants(data);
+}
+
 function setModoCerrar(stage, btn) {
   const data = modoCerrarStages[stage];
   if (!data) return;
@@ -6777,6 +6810,7 @@ function setModoCerrar(stage, btn) {
   document.getElementById('modo-cerrar-no').textContent = data.no;
   document.getElementById('modo-cerrar-destination').textContent = data.destination;
   renderModoCerrarHelp(data.help);
+  renderModoCerrarVariants(data);
   document.querySelectorAll('.close-stage-btn').forEach(item => item.classList.toggle('active', item.dataset.stage === stage));
 }
 
