@@ -4361,6 +4361,30 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
     <strong>Cuotas:</strong> las comisiones de diciembre permiten hasta 4 cuotas fijas. Las de enero y marzo pueden cotizarse hasta en 5 cuotas fijas, según la cotización seleccionada.
   </div>
 
+  <div class="msg-card" style="margin-bottom:22px;border-left:4px solid var(--teal);">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Consulta rápida de horarios <span class="badge badge-teal">Solo cupos vigentes</span></div>
+      <button class="copy-btn" type="button" onclick="copyMsg('horarios-rapidos-resultado', this)">Copiar horarios</button>
+    </div>
+    <div class="msg-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;">
+        <label style="font-size:12px;font-weight:700;color:var(--ink2);">Idioma
+          <select id="hr-idioma" onchange="updateHorariosRapidosNiveles()" style="width:100%;margin-top:5px;padding:9px 10px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink);font:inherit;"></select>
+        </label>
+        <label style="font-size:12px;font-weight:700;color:var(--ink2);">Nivel
+          <select id="hr-nivel" onchange="updateHorariosRapidosMeses()" style="width:100%;margin-top:5px;padding:9px 10px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink);font:inherit;"></select>
+        </label>
+        <label style="font-size:12px;font-weight:700;color:var(--ink2);">Inicio
+          <select id="hr-mes" onchange="updateHorariosRapidos()" style="width:100%;margin-top:5px;padding:9px 10px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink);font:inherit;"></select>
+        </label>
+        <label style="font-size:12px;font-weight:700;color:var(--ink2);">País del lead
+          <select id="hr-pais" onchange="updateHorariosRapidos()" style="width:100%;margin-top:5px;padding:9px 10px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink);font:inherit;"></select>
+        </label>
+      </div>
+      <div class="close-next" id="horarios-rapidos-resultado" style="margin-top:16px;"></div>
+    </div>
+  </div>
+
   <div class="tabs" id="horarios-tabs">
     <button class="tab-btn active" onclick="showTab('horarios-tabs','hor-noviembre',this)">Noviembre 2026</button>
     <button class="tab-btn" onclick="showTab('horarios-tabs','hor-diciembre',this)">Diciembre 2026</button>
@@ -5754,6 +5778,49 @@ function convertHorarios(nivHorarios, diff) {
   });
 }
 
+function initHorariosRapidos() {
+  const idioma = document.getElementById('hr-idioma');
+  const pais = document.getElementById('hr-pais');
+  if (!idioma || !pais) return;
+  const disponibles = Object.entries(horariosARG)
+    .filter(([, niveles]) => Object.values(niveles).some(lista => lista.some(horarioTieneCupo)));
+  idioma.innerHTML = disponibles.map(([key]) => `<option value="${key}">${idiomaNombres[key]}</option>`).join('');
+  pais.innerHTML = Object.entries(paisNombres).map(([key, label]) => `<option value="${key}">${label}</option>`).join('');
+  updateHorariosRapidosNiveles();
+}
+
+function updateHorariosRapidosNiveles() {
+  const idioma = document.getElementById('hr-idioma')?.value;
+  const nivel = document.getElementById('hr-nivel');
+  if (!idioma || !nivel) return;
+  const niveles = Object.keys(horariosARG[idioma] || {}).filter(nombre => (horariosARG[idioma][nombre] || []).some(horarioTieneCupo));
+  nivel.innerHTML = niveles.map(nombre => `<option value="${nombre}">${nombre}</option>`).join('');
+  updateHorariosRapidosMeses();
+}
+
+function updateHorariosRapidosMeses() {
+  const idioma = document.getElementById('hr-idioma')?.value;
+  const nivel = document.getElementById('hr-nivel')?.value;
+  const mes = document.getElementById('hr-mes');
+  if (!idioma || !nivel || !mes) return;
+  mes.innerHTML = getMesesDisponibles(idioma, nivel).map(item => `<option value="${item.value}">${item.label}</option>`).join('');
+  updateHorariosRapidos();
+}
+
+function updateHorariosRapidos() {
+  const idioma = document.getElementById('hr-idioma')?.value;
+  const nivel = document.getElementById('hr-nivel')?.value;
+  const mes = document.getElementById('hr-mes')?.value;
+  const pais = document.getElementById('hr-pais')?.value || 'ARG';
+  const target = document.getElementById('horarios-rapidos-resultado');
+  if (!idioma || !nivel || !mes || !target) return;
+  const disponibles = filtrarHorariosPorMes(horariosARG[idioma]?.[nivel] || [], mes);
+  const horarios = convertHorarios(disponibles, tzDiff[pais] ?? 0);
+  const nombreMes = mes === 'todos' ? 'próxima comisión' : `${mes.charAt(0).toUpperCase()}${mes.slice(1)}`;
+  const lineas = horarios.length ? horarios.map(h => `• ${h}`).join('\n') : '• No hay una comisión con cupo cargada para esta combinación.';
+  target.textContent = `*${nivel}* · ${nombreMes} · ${paisNombres[pais]}\n\n📅 *Horarios con cupo:*\n${lineas}`;
+}
+
 // ---- PRECIOS por idioma y país ----
 // Financiación: el máximo se ajusta por mes, idioma y cantidad de módulos.
 // ── TABLA COMPLETA DE DESCUENTOS POR IDIOMA Y PAÍS ──────────────────────────
@@ -6362,6 +6429,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderStaticMessages(nombreActual);
   initTestimonials();
   updateVideojuegosPrecio();
+  initHorariosRapidos();
   updateCotizadorNiveles();
   hideCursosCompletos();
   normalizePostCallCardTitles();
