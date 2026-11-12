@@ -1369,48 +1369,45 @@
   <div class="section-header">
     <div class="section-tag">Método ISA · decisión rápida</div>
     <h1 class="section-title">Modo cerrar</h1>
-    <p class="section-desc">Elegí el punto exacto en el que está el lead. La guía te devuelve un solo movimiento: qué decir ahora, qué no repetir y a qué herramienta ir después.</p>
+    <p class="section-desc">Usalo cuando ya hablaste con el lead o ya tenés su interés ubicado. Desde la recomendación hasta la inscripción, elegí el punto exacto y resolvé un solo movimiento.</p>
   </div>
 
   <div class="info-block" style="margin-bottom:18px;">
-    <strong>Regla ISA:</strong> un mensaje, un movimiento. No intentes explicar el curso, el precio y el pago en el mismo bloque. Primero abrís, después recomendás, luego mostrás disponibilidad y recién entonces cotizás.
+    <strong>Regla ISA:</strong> esta solapa no inicia el chat: para eso usá <strong>Saludo inicial</strong>. Acá el orden es recomendación → horarios → valor del curso → cotización → inscripción.
   </div>
 
   <div class="close-scan" aria-label="Uso rápido de la guía">
-    <div class="close-scan-item"><b>01</b><span>Leé el último intercambio, no todo el historial.</span></div>
-    <div class="close-scan-item"><b>02</b><span>Elegí la etapa exacta del lead.</span></div>
-    <div class="close-scan-item"><b>03</b><span>Copiá un solo mensaje y esperá su respuesta.</span></div>
+    <div class="close-scan-item"><b>01</b><span>Retomá solo el dato que ya conocés.</span></div>
+    <div class="close-scan-item"><b>02</b><span>Elegí la etapa posterior a la conversación.</span></div>
+    <div class="close-scan-item"><b>03</b><span>Avanzá una decisión por mensaje.</span></div>
   </div>
 
   <div class="close-stage-grid" aria-label="Elegir etapa del lead">
-    <button class="close-stage-btn active" type="button" data-stage="nuevo" onclick="setModoCerrar('nuevo', this)"><strong>1. Recién llegó</strong><span>No dijo idioma o dejó un mensaje muy general.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="idioma" onclick="setModoCerrar('idioma', this)"><strong>2. Ya dijo idioma</strong><span>Activá la asesoría sin convertirlo en entrevista.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="mensaje" onclick="setModoCerrar('mensaje', this)"><strong>3. Prefiere mensaje</strong><span>Avanzá por WhatsApp, un dato por vez.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="recomendacion" onclick="setModoCerrar('recomendacion', this)"><strong>4. Ya lo ubicás</strong><span>Recomendá el curso antes de hablar de valor.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="horarios" onclick="setModoCerrar('horarios', this)"><strong>5. Mostrá horarios</strong><span>Ofrecé solo las comisiones con cupo.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="recursos" onclick="setModoCerrar('recursos', this)"><strong>6. Mostrá el valor del curso</strong><span>Contenido, programa o respaldo, según su duda.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>7. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>8. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>9. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
+    <button class="close-stage-btn active" type="button" data-stage="recomendacion" onclick="setModoCerrar('recomendacion', this)"><strong>1. Recomendá el curso</strong><span>Explicá por qué le conviene antes de hablar de valor.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="horarios" onclick="setModoCerrar('horarios', this)"><strong>2. Mostrá horarios</strong><span>Ofrecé solo las comisiones con cupo.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="recursos" onclick="setModoCerrar('recursos', this)"><strong>3. Mostrá el valor del curso</strong><span>Contenido, programa o respaldo, según su duda.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>4. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>5. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>6. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
   </div>
 
   <div class="close-answer" aria-live="polite">
     <div class="close-answer-head">
-      <strong id="modo-cerrar-title">Recién llegó · activá la respuesta</strong>
+      <strong id="modo-cerrar-title">Ya lo ubicás · recomendá antes de cotizar</strong>
       <button class="copy-btn" type="button" onclick="copyMsg('modo-cerrar-message', this)">Copiar mensaje</button>
     </div>
     <div class="close-answer-body">
       <div>
         <div class="close-next" id="modo-cerrar-action">HACÉ AHORA
-Saludá y preguntá únicamente qué idioma le interesa. Cuando responda, proponé una asesoría personalizada breve.</div>
+Explicá en una idea por qué ese curso le conviene. No repitas todo lo que dijo ni pases precio todavía.</div>
         <div class="close-message-variants is-hidden" id="modo-cerrar-variants"></div>
-        <div class="msg-body" id="modo-cerrar-message" style="margin-top:14px;">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
+        <div class="msg-body" id="modo-cerrar-message" style="margin-top:14px;">Por lo que me contás, te recomiendo *[CURSO]*. Es una muy buena base para avanzar de forma ordenada, con clases en vivo, docente y materiales de apoyo. 📚
 
-Gracias por escribirnos. ¿Qué idioma te gustaría aprender?</div>
+Ahora reviso qué comisión puede acompañar mejor tu rutina.</div>
       </div>
       <div class="close-rules">
-        <div class="close-rule"><strong id="modo-cerrar-no-title">NO HAGAS</strong><span id="modo-cerrar-no">No preguntes país, nivel, horario y presupuesto juntos.</span></div>
-        <div class="close-rule"><strong>SIGUIENTE HERRAMIENTA</strong><span id="modo-cerrar-destination">Saludo inicial</span><button class="copy-btn" type="button" style="margin-top:9px;" onclick="goToModoSection()">Abrir sección</button></div>
+        <div class="close-rule"><strong id="modo-cerrar-no-title">NO HAGAS</strong><span id="modo-cerrar-no">No hagas una recapitulación larga ni pidas que vuelva a confirmar datos que ya compartió.</span></div>
+        <div class="close-rule"><strong>SIGUIENTE HERRAMIENTA</strong><span id="modo-cerrar-destination">Horarios y cupos</span><button class="copy-btn" type="button" style="margin-top:9px;" onclick="goToModoSection()">Abrir sección</button></div>
       </div>
     </div>
     <div class="close-inline-help is-hidden" id="modo-cerrar-help">
@@ -1476,24 +1473,24 @@ Gracias por escribirnos. Acá trabajamos con clases online en vivo, docente y un
           </svg>
         </div>
         <div>
-          <div class="playbook-title">Dato conocido · Idioma definido</div>
-          <div class="playbook-subtitle">Cuando el formulario, pauta o conversación ya indica el idioma</div>
+          <div class="playbook-title">Consulta abierta · elegí canal</div>
+          <div class="playbook-subtitle">Para ofrecer asesoría breve o continuar por mensaje desde el inicio</div>
         </div>
       </div>
       <div class="playbook-body">
         <div class="playbook-steps">
-          <div class="playbook-step"><span>1</span><div>Usar cuando ya sabés qué idioma le interesa.</div></div>
-          <div class="playbook-step"><span>2</span><div>Nombrar ese interés para que sienta que leíste su consulta.</div></div>
-          <div class="playbook-step"><span>3</span><div>Ofrecer asesoría breve. El objetivo, nivel y disponibilidad se descubren mejor en esa conversación.</div></div>
+          <div class="playbook-step"><span>1</span><div>Usar cuando el lead quiere información pero no da un dato concreto.</div></div>
+          <div class="playbook-step"><span>2</span><div>Presentar la asesoría como la opción más completa, sin forzarla.</div></div>
+          <div class="playbook-step"><span>3</span><div>Si elige mensaje, recién ahí pedí el primer dato que falte.</div></div>
         </div>
         <div class="playbook-message" id="msg-inicial-valor">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
 
-Vi que te interesaba *[IDIOMA]*. Acá trabajamos con clases en vivo, docente y una ruta clara para que no te quedes aprendiendo palabras sueltas. 📚
+Para orientarte bien desde el inicio, podemos coordinar una asesoría personalizada breve o, si te resulta más cómodo, resolverlo por mensaje.
 
-Para orientarte de forma personalizada y revisar la comisión que mejor te convenga, ¿preferís que coordinemos una asesoría breve de 5 minutos o que lo resolvamos directamente por mensaje?</div>
-        <div class="msg-note"><strong>Siguiente paso:</strong> si acepta, la llamada descubre lo demás. Si prefiere WhatsApp, pedí solo el próximo dato que realmente falte. No preguntes objetivo, nivel y país por rutina.</div>
+¿Qué opción preferís?</div>
+        <div class="msg-note"><strong>Siguiente paso:</strong> si acepta, la llamada descubre lo demás. Si prefiere WhatsApp, pedí solo el próximo dato que realmente falte. No preguntes idioma, objetivo, nivel y país por rutina.</div>
         <div class="playbook-actions">
-          <span class="badge badge-gold">Idioma conocido</span>
+          <span class="badge badge-gold">Asesoría o mensaje</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial-valor', this)">Copiar mensaje</button>
         </div>
       </div>
@@ -6436,6 +6433,7 @@ Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.`;
 document.addEventListener('DOMContentLoaded', () => {
   initMessages();
   renderStaticMessages(nombreActual);
+  setModoCerrar('recomendacion');
   initTestimonials();
   updateVideojuegosPrecio();
   initHorariosRapidos();
@@ -6718,7 +6716,7 @@ const modoCerrarStages = {
   }
 };
 
-let modoCerrarActual = 'nuevo';
+let modoCerrarActual = 'recomendacion';
 const modoCerrarVariantes = {};
 
 const programasModoCerrar = [
