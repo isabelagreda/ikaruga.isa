@@ -2596,9 +2596,11 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
     <button class="close-stage-btn active" type="button" data-stage="nuevo" onclick="setModoCerrar('nuevo', this)"><strong>1. Recién llegó</strong><span>No dijo idioma o dejó un mensaje muy general.</span></button>
     <button class="close-stage-btn" type="button" data-stage="idioma" onclick="setModoCerrar('idioma', this)"><strong>2. Ya dijo idioma</strong><span>Activá la asesoría sin convertirlo en entrevista.</span></button>
     <button class="close-stage-btn" type="button" data-stage="mensaje" onclick="setModoCerrar('mensaje', this)"><strong>3. Prefiere mensaje</strong><span>Avanzá por WhatsApp, un dato por vez.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>4. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>5. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>6. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="recomendacion" onclick="setModoCerrar('recomendacion', this)"><strong>4. Ya lo ubicás</strong><span>Recomendá el curso antes de hablar de valor.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="horarios" onclick="setModoCerrar('horarios', this)"><strong>5. Mostrá horarios</strong><span>Ofrecé solo las comisiones con cupo.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>6. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>7. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>8. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
   </div>
 
   <div class="close-answer" aria-live="polite">
@@ -7887,6 +7889,22 @@ const modoCerrarStages = {
     no: 'No mandes horarios ni precio hasta poder explicar por qué esa opción le conviene.',
     destination: 'Saludo inicial · venta por mensaje',
     section: 'saludo'
+  },
+  recomendacion: {
+    title: 'Ya lo ubicás · recomendá antes de cotizar',
+    action: 'HACÉ AHORA\nExplicá en una idea por qué ese curso le conviene. No repitas todo lo que dijo ni pases precio todavía.',
+    message: 'Por lo que me contás, te recomiendo *[CURSO]*. Es una muy buena base para avanzar de forma ordenada, con clases en vivo, docente y materiales de apoyo. 📚\n\nAhora reviso qué comisión puede acompañar mejor tu rutina.',
+    no: 'No hagas una recapitulación larga ni pidas que vuelva a confirmar datos que ya compartió.',
+    destination: 'Horarios y cupos',
+    section: 'saludo'
+  },
+  horarios: {
+    title: 'Horarios con cupo · llevá a la cotización',
+    action: 'HACÉ AHORA\nMostrá solo las opciones reales y en la zona horaria del lead. Cuando elija una, abrí el cotizador y pasá el valor exacto.',
+    message: 'Para *[CURSO]* tengo estas comisiones con cupo:\n\n📅 *[COMISIÓN A]* · [DÍA Y HORARIO LOCAL]\n📅 *[COMISIÓN B]* · [DÍA Y HORARIO LOCAL]\n\n¿Cuál se acomodaría mejor a tu rutina?',
+    no: 'No inventes horarios, no muestres comisiones completas y no cotices antes de confirmar país y comisión.',
+    destination: 'Cotizador ágil',
+    section: 'cotizador-agil'
   },
   cotizacion: {
     title: 'Ya recibió valor · abrí la decisión',
