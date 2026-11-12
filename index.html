@@ -1476,7 +1476,7 @@ Somos un instituto de idiomas online: trabajamos con clases en vivo, docentes, m
         </div>
         <div>
           <div class="playbook-title">Consulta abierta · elegí canal</div>
-          <div class="playbook-subtitle">Para ofrecer asesoría breve o continuar por mensaje desde el inicio</div>
+          <div class="playbook-subtitle">Para ofrecer una llamada de asesoría o continuar por mensaje desde el inicio</div>
         </div>
       </div>
       <div class="playbook-body">
@@ -1487,7 +1487,7 @@ Somos un instituto de idiomas online: trabajamos con clases en vivo, docentes, m
         </div>
         <div class="playbook-message" id="msg-inicial-valor">¡Hola! 😊 Soy {ASESOR}, de IKARUGA.
 
-Somos un instituto de idiomas online con clases en vivo, docentes, materiales y un campus para acompañarte durante toda la cursada. Para orientarte bien desde el inicio, podemos coordinar una asesoría personalizada breve o, si te resulta más cómodo, resolverlo por mensaje.
+Somos un instituto de idiomas online con clases en vivo, docentes, materiales y un campus para acompañarte durante toda la cursada. Para orientarte bien desde el inicio, podemos coordinar una llamada telefónica de asesoría personalizada o, si te resulta más cómodo, resolverlo por mensaje.
 
 ¿Qué opción preferís?</div>
         <div class="msg-note"><strong>Siguiente paso:</strong> si acepta, la llamada descubre lo demás. Si prefiere WhatsApp, pedí solo el próximo dato que realmente falte. No preguntes idioma, objetivo, nivel y país por rutina.</div>
@@ -1515,7 +1515,7 @@ Somos un instituto de idiomas online con clases en vivo, docentes, materiales y 
         <div class="playbook-steps">
           <div class="playbook-step"><span>1</span><div>Nombrar que viene recomendado sin hacerlo pesado.</div></div>
           <div class="playbook-step"><span>2</span><div>Usar la confianza para activar la respuesta, sin hacer dos preguntas juntas.</div></div>
-          <div class="playbook-step"><span>3</span><div>Cuando responda, proponé asesoría breve. Si ya llegó con idioma y objetivo definidos, retomá ambos y pasá directo a ese puente.</div></div>
+          <div class="playbook-step"><span>3</span><div>Cuando responda, proponé una llamada telefónica breve. Si ya llegó con idioma y objetivo definidos, retomá ambos y pasá directo a ese puente.</div></div>
         </div>
         <div class="playbook-message" id="msg-inicial-referido">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
 
@@ -1543,9 +1543,9 @@ Para orientarte bien, ¿qué idioma tenías en mente?</div>
     </div>
     <div class="msg-body" id="msg-puente-llamada-inicial">Buenísimo, gracias por contármelo. 😊
 
-Para orientarte de forma realmente personalizada, lo ideal es que coordinemos una asesoría breve de 5 minutos. Así puedo entender bien lo que buscás, revisar los horarios que mejor te encajen y dejarte una propuesta clara.
+Para orientarte de forma realmente personalizada, lo ideal es que coordinemos una llamada telefónica breve de 5 minutos. Así puedo entender bien lo que buscás, revisar los horarios que mejor te encajen y dejarte una propuesta clara.
 
-¿Preferís que coordinemos esa asesoría breve o que lo resolvamos directamente por mensaje?</div>
+¿Preferís que coordinemos esa llamada o que lo resolvamos directamente por mensaje?</div>
     <div class="msg-note">Si responde que puede hablar, llamá: ahí relevás objetivo, nivel, país, disponibilidad y forma de pago. Si prefiere mensaje, seguí con la ruta “Venta por WhatsApp” y pedí solo el próximo dato que falte.</div>
   </div>
 
@@ -2293,7 +2293,7 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
 <!-- GUION DE LLAMADA -->
 <div class="section" id="postcall">
   <div class="section-header">
-    <div class="section-tag">Método ISA · asesoría personalizada</div>
+    <div class="section-tag">Método ISA · asesoría telefónica personalizada</div>
     <h1 class="section-title">Guion de llamada</h1>
     <p class="section-desc">Tu orden para presentar la propuesta y cerrar durante la asesoría. Usá los bloques como guía de conversación; solo enviá por WhatsApp lo que el lead necesite conservar.</p>
   </div>
@@ -6247,11 +6247,11 @@ function downloadTestimonio(dataUrl, filename, btn) {
 const modoCerrarStages = {
   nuevo: {
     title: 'Recién llegó · activá la respuesta',
-    action: 'HACÉ AHORA\nElegí una sola entrada: indagá el idioma cuando falta ese dato, o presentá de entrada la asesoría personalizada si el lead parece listo para ser orientado.',
+    action: 'HACÉ AHORA\nElegí una sola entrada: indagá el idioma cuando falta ese dato, o presentá de entrada la llamada telefónica de asesoría si el lead parece listo para ser orientado.',
     message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nGracias por escribirnos. ¿Qué idioma te gustaría aprender?',
     variants: [
       { key: 'idioma', label: 'Indagar idioma', message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nGracias por escribirnos. ¿Qué idioma te gustaría aprender?' },
-      { key: 'canal', label: 'Asesoría o mensaje', message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nPara orientarte bien desde el inicio, podemos coordinar una asesoría personalizada breve o, si te resulta más cómodo, resolverlo por mensaje.\n\n¿Qué opción preferís?' }
+      { key: 'canal', label: 'Llamada o mensaje', message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nPara orientarte bien desde el inicio, podemos coordinar una llamada telefónica de asesoría personalizada o, si te resulta más cómodo, resolverlo por mensaje.\n\n¿Qué opción preferís?' }
     ],
     no: 'No preguntes país, nivel, horario y presupuesto juntos.',
     destination: 'Saludo inicial',
@@ -6259,8 +6259,8 @@ const modoCerrarStages = {
   },
   idioma: {
     title: 'Ya dijo idioma · llevá a asesoría',
-    action: 'HACÉ AHORA\nNo sigas sacando datos por chat. Presentá la asesoría breve como la forma más útil de recomendarle una comisión real.',
-    message: 'Buenísimo, gracias por contármelo. 😊\n\nPara orientarte de forma realmente personalizada, lo ideal es que coordinemos una asesoría breve de 5 minutos. Así puedo entender bien lo que buscás, revisar los horarios que mejor te encajen y dejarte una propuesta clara.\n\n¿Preferís que coordinemos esa asesoría breve o que lo resolvamos directamente por mensaje?',
+    action: 'HACÉ AHORA\nNo sigas sacando datos por chat. Presentá la llamada telefónica breve como la forma más útil de recomendarle una comisión real.',
+    message: 'Buenísimo, gracias por contármelo. 😊\n\nPara orientarte de forma realmente personalizada, lo ideal es que coordinemos una llamada telefónica breve de 5 minutos. Así puedo entender bien lo que buscás, revisar los horarios que mejor te encajen y dejarte una propuesta clara.\n\n¿Preferís que coordinemos esa llamada o que lo resolvamos directamente por mensaje?',
     no: 'No vuelvas a preguntar el idioma. Si ya contó el objetivo, tampoco lo repitas.',
     destination: 'Saludo inicial · puente a asesoría',
     section: 'saludo'
