@@ -1193,6 +1193,15 @@
   .close-rules { display:grid; gap:10px; }
   .close-rule { border:1px solid var(--border); border-radius:7px; padding:12px; font-size:12px; line-height:1.5; }
   .close-rule strong { display:block; color:var(--red); margin-bottom:3px; }
+  .close-inline-help { margin-top: 16px; padding: 16px 18px; border: 1px solid #bdd3d8; border-radius: 8px; background: #f6fbfc; }
+  .close-inline-help.is-hidden { display: none; }
+  .close-inline-help-title { color: #137f95; font-size: 11px; font-weight: 800; letter-spacing: 1.25px; }
+  .close-inline-help-copy { margin-top: 7px; color: var(--ink2); font-size: 13px; line-height: 1.6; white-space: pre-line; }
+  .close-helper-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; margin-top: 13px; }
+  .close-helper-controls label { display: grid; gap: 5px; color: var(--ink3); font-size: 11px; font-weight: 700; }
+  .close-helper-controls select, .close-helper-controls input { min-height: 35px; border: 1px solid #bfcfd3; border-radius: 5px; background: #fff; color: var(--ink); font: inherit; padding: 6px 9px; }
+  .close-helper-result { min-height: 35px; display: flex; align-items: center; color: #174452; font-size: 13px; font-weight: 700; }
+  .close-helper-link { display: inline-flex; align-items: center; min-height: 35px; padding: 6px 11px; border-radius: 5px; background: #137f95; color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; }
   @media (max-width:700px) { .close-answer-body { grid-template-columns:1fr; } .close-answer-head { align-items:flex-start; flex-direction:column; } .close-scan { grid-template-columns:1fr; } }
 
   /* Interfaz operativa: lectura veloz, sin apariencia de documento. */
@@ -1398,6 +1407,11 @@ Gracias por escribirnos. ¿Qué idioma te gustaría aprender?</div>
         <div class="close-rule"><strong id="modo-cerrar-no-title">NO HAGAS</strong><span id="modo-cerrar-no">No preguntes país, nivel, horario y presupuesto juntos.</span></div>
         <div class="close-rule"><strong>SIGUIENTE HERRAMIENTA</strong><span id="modo-cerrar-destination">Saludo inicial</span><button class="copy-btn" type="button" style="margin-top:9px;" onclick="goToModoSection()">Abrir sección</button></div>
       </div>
+    </div>
+    <div class="close-inline-help is-hidden" id="modo-cerrar-help">
+      <div class="close-inline-help-title" id="modo-cerrar-help-title"></div>
+      <div class="close-inline-help-copy" id="modo-cerrar-help-copy"></div>
+      <div class="close-helper-controls" id="modo-cerrar-help-controls"></div>
     </div>
   </div>
 </div>
@@ -6576,14 +6590,24 @@ const modoCerrarStages = {
     action: 'HACÉ AHORA\nMostrá solo las opciones reales y en la zona horaria del lead. Cuando elija una, hacé tangible el curso con un recurso útil y después abrí el cotizador.',
     message: 'Para *[CURSO]* tengo estas comisiones con cupo:\n\n📅 *[COMISIÓN A]* · [DÍA Y HORARIO LOCAL]\n📅 *[COMISIÓN B]* · [DÍA Y HORARIO LOCAL]\n\n¿Cuál se acomodaría mejor a tu rutina?',
     no: 'No inventes horarios, no muestres comisiones completas y no cotices antes de confirmar país y comisión.',
+    help: {
+      title: 'AYUDA PARA ENVIAR HORARIOS',
+      text: 'Usá siempre la hora local del lead. Elegí su país e ingresá la hora Argentina de la comisión: la guía te devuelve la conversión antes de copiar el mensaje.',
+      type: 'horarios'
+    },
     destination: 'Cotizador ágil',
     section: 'cotizador-agil'
   },
   recursos: {
     title: 'Mostrá el valor del curso · antes del precio',
     action: 'HACÉ AHORA\nEnviá la información de beneficios y el PDF del programa para que vea contenidos, modalidad y recorrido. Sumá la muestra del certificado UAI únicamente cuando corresponda a ese curso. Después pasá a la cotización.',
-    message: 'Antes de hablar del valor, quiero que tengas claro qué vas a encontrar en el curso. 😊\n\nTe comparto el programa para que veas los temas, cómo son las clases y el recorrido que vas a hacer. Así también podés mirar con calma los beneficios de la propuesta antes de que veamos el valor.\n\n¿Te lo envío?',
+    message: 'Antes de hablar del valor, quiero que tengas claro qué vas a encontrar en el curso. 😊\n\nTe comparto la información de beneficios y el programa para que veas los temas, cómo son las clases y el recorrido que vas a hacer. Así podés mirar con calma la propuesta antes de que veamos el valor.',
     no: 'No envíes certificado UAI si no corresponde a ese curso. Evitá mandar PDF, certificado y video juntos: primero beneficios + programa; el certificado se suma solo cuando aporta y aplica.',
+    help: {
+      title: 'AYUDA PARA ENVIAR RECURSOS',
+      text: 'Enviá juntos: beneficios del curso + PDF del programa. Elegí abajo el archivo del nivel. La muestra del certificado UAI se adjunta solo cuando la propuesta de ese curso indica que corresponde.',
+      type: 'recursos'
+    },
     destination: 'Guion de llamada · recursos por idioma',
     section: 'postcall'
   },
@@ -6615,6 +6639,62 @@ const modoCerrarStages = {
 
 let modoCerrarActual = 'nuevo';
 
+const programasModoCerrar = [
+  ['japones-i-programa-liviano.pdf', 'Japonés 1'], ['japones-ii-programa-liviano.pdf', 'Japonés 2'], ['japones-iii-programa-liviano.pdf', 'Japonés 3'], ['japones-iv-programa.pdf', 'Japonés 4'],
+  ['coreano-i-programa.pdf', 'Coreano 1'], ['coreano-ii-programa.pdf', 'Coreano 2'], ['coreano-iii-programa.pdf', 'Coreano 3'],
+  ['chino-i-programa.pdf', 'Chino 1'], ['chino-ii-programa.pdf', 'Chino 2'], ['chino-iii-programa.pdf', 'Chino 3'],
+  ['tailandes-i-programa.pdf', 'Tailandés 1'], ['tailandes-ii-programa.pdf', 'Tailandés 2'], ['tailandes-iii-programa.pdf', 'Tailandés 3'],
+  ['ingles-a1-programa.pdf', 'Inglés A1'], ['ingles-a2-programa.pdf', 'Inglés A2'], ['ingles-b1-programa.pdf', 'Inglés B1'],
+  ['portugues-a1-programa.pdf', 'Portugués A1'], ['aleman-a1-programa-liviano.pdf', 'Alemán A1'], ['aleman-a2-programa.pdf', 'Alemán A2'],
+  ['italiano-a1-programa.pdf', 'Italiano A1'], ['italiano-a2-programa.pdf', 'Italiano A2'], ['ruso-i-programa.pdf', 'Ruso 1']
+];
+
+function updateModoCerrarHora() {
+  const pais = document.getElementById('mc-horario-pais')?.value || 'ARG';
+  const hora = document.getElementById('mc-horario-arg')?.value || '20:00';
+  const output = document.getElementById('mc-horario-result');
+  if (!output) return;
+  const [h, m] = hora.split(':').map(Number);
+  const local = (h + (tzDiff[pais] ?? 0) + 24) % 24;
+  const label = paisNombres[pais] || pais;
+  output.textContent = `Argentina ${hora} → ${label} ${String(local).padStart(2, '0')}:${String(m).padStart(2, '0')} hs`;
+}
+
+function updateModoCerrarPrograma() {
+  const select = document.getElementById('mc-programa-select');
+  const link = document.getElementById('mc-programa-link');
+  if (!select || !link) return;
+  link.href = select.value;
+  link.textContent = 'Abrir PDF del programa';
+}
+
+function renderModoCerrarHelp(help) {
+  const wrap = document.getElementById('modo-cerrar-help');
+  const title = document.getElementById('modo-cerrar-help-title');
+  const copy = document.getElementById('modo-cerrar-help-copy');
+  const controls = document.getElementById('modo-cerrar-help-controls');
+  if (!wrap || !title || !copy || !controls) return;
+  if (!help) {
+    wrap.classList.add('is-hidden');
+    controls.innerHTML = '';
+    return;
+  }
+  wrap.classList.remove('is-hidden');
+  title.textContent = help.title;
+  copy.textContent = help.text;
+  if (help.type === 'horarios') {
+    controls.innerHTML = `<label>País del lead<select id="mc-horario-pais" onchange="updateModoCerrarHora()">${Object.entries(paisNombres).map(([key, label]) => `<option value="${key}">${label}</option>`).join('')}</select></label><label>Hora Argentina<input id="mc-horario-arg" type="time" value="20:00" onchange="updateModoCerrarHora()"></label><div class="close-helper-result" id="mc-horario-result"></div>`;
+    updateModoCerrarHora();
+    return;
+  }
+  if (help.type === 'recursos') {
+    controls.innerHTML = `<label>PDF del programa<select id="mc-programa-select" onchange="updateModoCerrarPrograma()">${programasModoCerrar.map(([file, label]) => `<option value="${file}">${label}</option>`).join('')}</select></label><a class="close-helper-link" id="mc-programa-link" target="_blank" rel="noopener"></a><a class="close-helper-link" href="certificado-uai-muestra.pdf" target="_blank" rel="noopener">Abrir muestra UAI</a>`;
+    updateModoCerrarPrograma();
+    return;
+  }
+  controls.innerHTML = '';
+}
+
 function setModoCerrar(stage, btn) {
   const data = modoCerrarStages[stage];
   if (!data) return;
@@ -6624,6 +6704,7 @@ function setModoCerrar(stage, btn) {
   document.getElementById('modo-cerrar-message').textContent = data.message;
   document.getElementById('modo-cerrar-no').textContent = data.no;
   document.getElementById('modo-cerrar-destination').textContent = data.destination;
+  renderModoCerrarHelp(data.help);
   document.querySelectorAll('.close-stage-btn').forEach(item => item.classList.toggle('active', item.dataset.stage === stage));
 }
 
