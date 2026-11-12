@@ -614,13 +614,12 @@
     word-break: break-word;
   }
 
-  #testimonios-grid button,
-  #testimonios-grid a { display: none !important; }
-
   #testimonios-grid { align-items:stretch; }
   #testimonios-grid > div { height:100%; border-radius:8px !important; box-shadow:0 8px 22px rgba(1,1,1,.05); }
-  #testimonios-grid > div > div:first-child { aspect-ratio:4 / 5; overflow:hidden; background:#edf1f2; }
-  #testimonios-grid img { width:100% !important; height:100% !important; max-height:none !important; object-fit:cover !important; }
+  #testimonios-grid > div > div:first-child { aspect-ratio:auto; overflow:visible; background:#fff; }
+  #testimonios-grid img { width:100% !important; height:auto !important; max-height:none !important; object-fit:contain !important; }
+  #testimonios-grid a:not(.testimonial-image-download) { display:none !important; }
+  .testimonial-image-download { display:inline-flex; align-items:center; justify-content:center; width:100%; min-height:36px; margin-top:10px; padding:8px 11px; border:0; border-radius:6px; background:#137f95; color:#fff; font:inherit; font-size:12px; font-weight:700; cursor:pointer; }
   #testimonios-grid > div > div:nth-child(2) { min-height:280px; }
 
   .testimonial-hidden { display: none !important; }
@@ -6573,14 +6572,25 @@ function initTestimonials() {
       area.value = fullCopy;
       area.onclick = () => area.select();
 
-      const linkedin = document.createElement('div');
-      linkedin.className = 'testimonial-linkedin-line';
-      linkedin.innerHTML = `<strong>LinkedIn:</strong> ${profile.linkedin}`;
+    const linkedin = document.createElement('div');
+    linkedin.className = 'testimonial-linkedin-line';
+    linkedin.innerHTML = `<strong>LinkedIn:</strong> ${profile.linkedin}`;
 
-      box.appendChild(label);
-      box.appendChild(area);
-      box.appendChild(linkedin);
-      actions.appendChild(box);
+    const image = card.querySelector('img');
+    const download = document.createElement('button');
+    download.type = 'button';
+    download.className = 'testimonial-image-download';
+    download.textContent = 'Descargar imagen completa para WhatsApp';
+    download.onclick = () => {
+      const filename = `${profile.match.replace(/[^a-zA-Z0-9]+/g, '_')}_IKARUGA.jpg`;
+      downloadTestimonio(image?.getAttribute('src') || '', filename, download);
+    };
+
+    box.appendChild(label);
+    box.appendChild(area);
+    box.appendChild(linkedin);
+    box.appendChild(download);
+    actions.appendChild(box);
     }
   });
   filterTestimonials();
