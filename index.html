@@ -1168,6 +1168,22 @@
   .isa-scan-item:nth-child(2n) { border-top-color: #c98718; }
   .isa-scan-item:nth-child(3n) { border-top-color: #c62532; }
 
+  #modo-cerrar .section-header { border-bottom-color: #c62532; }
+  .close-stage-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(165px,1fr)); gap:10px; margin:22px 0; }
+  .close-stage-btn { min-height:92px; text-align:left; border:1px solid var(--border); border-radius:8px; background:#fff; color:var(--ink); padding:14px; font:inherit; cursor:pointer; transition:.18s ease; }
+  .close-stage-btn:hover, .close-stage-btn.active { border-color:var(--red); background:#fff1f2; box-shadow:0 5px 14px rgba(198,37,50,.12); }
+  .close-stage-btn strong { display:block; font-size:13px; margin-bottom:5px; }
+  .close-stage-btn span { display:block; font-size:12px; line-height:1.45; color:var(--ink3); }
+  .close-answer { border:1px solid var(--border); border-radius:8px; background:#fff; overflow:hidden; box-shadow:0 9px 22px rgba(25,48,61,.07); }
+  .close-answer-head { background:#213743; color:#fff; padding:16px 20px; display:flex; justify-content:space-between; gap:12px; align-items:center; }
+  .close-answer-head strong { font-size:15px; }
+  .close-answer-body { padding:20px; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(220px,.85fr); gap:20px; }
+  .close-next { white-space:pre-line; background:#f6f9fa; border-left:4px solid var(--teal); padding:16px; font-size:14px; line-height:1.7; }
+  .close-rules { display:grid; gap:10px; }
+  .close-rule { border:1px solid var(--border); border-radius:7px; padding:12px; font-size:12px; line-height:1.5; }
+  .close-rule strong { display:block; color:var(--red); margin-bottom:3px; }
+  @media (max-width:700px) { .close-answer-body { grid-template-columns:1fr; } .close-answer-head { align-items:flex-start; flex-direction:column; } }
+
   @media (max-width: 940px) { .section { padding: 36px 24px 58px; } }
 </style>
 </head>
@@ -1198,8 +1214,14 @@
   </div>
   <nav>
     <div class="nav-group">
+      <div class="nav-group-label">Acceso rápido</div>
+      <button class="nav-link active" onclick="showSection('modo-cerrar')">
+        <span class="dot"></span> Modo cerrar
+      </button>
+    </div>
+    <div class="nav-group">
       <div class="nav-group-label">1 · Empezar conversación</div>
-      <button class="nav-link active" onclick="showSection('saludo')">
+      <button class="nav-link" onclick="showSection('saludo')">
         <span class="dot"></span> Saludo inicial
       </button>
     </div>
@@ -2547,8 +2569,50 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
 </div>
 
 
+<!-- MODO CERRAR -->
+<div class="section active" id="modo-cerrar">
+  <div class="section-header">
+    <div class="section-tag">Método ISA · decisión rápida</div>
+    <h1 class="section-title">Modo cerrar</h1>
+    <p class="section-desc">Elegí el punto exacto en el que está el lead. La guía te devuelve un solo movimiento: qué decir ahora, qué no repetir y a qué herramienta ir después.</p>
+  </div>
+
+  <div class="info-block" style="margin-bottom:18px;">
+    <strong>Regla ISA:</strong> un mensaje, un movimiento. No intentes explicar el curso, el precio y el pago en el mismo bloque. Primero abrís, después recomendás, luego mostrás disponibilidad y recién entonces cotizás.
+  </div>
+
+  <div class="close-stage-grid" aria-label="Elegir etapa del lead">
+    <button class="close-stage-btn active" type="button" data-stage="nuevo" onclick="setModoCerrar('nuevo', this)"><strong>1. Recién llegó</strong><span>No dijo idioma o dejó un mensaje muy general.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="idioma" onclick="setModoCerrar('idioma', this)"><strong>2. Ya dijo idioma</strong><span>Activá la asesoría sin convertirlo en entrevista.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="mensaje" onclick="setModoCerrar('mensaje', this)"><strong>3. Prefiere mensaje</strong><span>Avanzá por WhatsApp, un dato por vez.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>4. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>5. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>6. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
+  </div>
+
+  <div class="close-answer" aria-live="polite">
+    <div class="close-answer-head">
+      <strong id="modo-cerrar-title">Recién llegó · activá la respuesta</strong>
+      <button class="copy-btn" type="button" onclick="copyMsg('modo-cerrar-message', this)">Copiar mensaje</button>
+    </div>
+    <div class="close-answer-body">
+      <div>
+        <div class="close-next" id="modo-cerrar-action">HACÉ AHORA
+Saludá y preguntá únicamente qué idioma le interesa. Cuando responda, proponé una asesoría personalizada breve.</div>
+        <div class="msg-body" id="modo-cerrar-message" style="margin-top:14px;">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
+
+Gracias por escribirnos. ¿Qué idioma te gustaría aprender?</div>
+      </div>
+      <div class="close-rules">
+        <div class="close-rule"><strong id="modo-cerrar-no-title">NO HAGAS</strong><span id="modo-cerrar-no">No preguntes país, nivel, horario y presupuesto juntos.</span></div>
+        <div class="close-rule"><strong>SIGUIENTE HERRAMIENTA</strong><span id="modo-cerrar-destination">Saludo inicial</span><button class="copy-btn" type="button" style="margin-top:9px;" onclick="goToModoSection()">Abrir sección</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SALUDO INICIAL -->
-<div class="section active" id="saludo">
+<div class="section" id="saludo">
   <div class="section-header">
     <div class="section-tag">Primer contacto</div>
     <h1 class="section-title">Saludo inicial</h1>
@@ -7790,6 +7854,82 @@ function downloadTestimonio(dataUrl, filename, btn) {
   btn.innerHTML = '✓ Descargando...';
   btn.style.background = 'var(--green)';
   setTimeout(() => { btn.innerHTML = orig; btn.style.background = 'var(--teal)'; }, 2000);
+}
+
+const modoCerrarStages = {
+  nuevo: {
+    title: 'Recién llegó · activá la respuesta',
+    action: 'HACÉ AHORA\nSaludá y preguntá únicamente qué idioma le interesa. Cuando responda, proponé una asesoría personalizada breve.',
+    message: '¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.\n\nGracias por escribirnos. ¿Qué idioma te gustaría aprender?',
+    no: 'No preguntes país, nivel, horario y presupuesto juntos.',
+    destination: 'Saludo inicial',
+    section: 'saludo'
+  },
+  idioma: {
+    title: 'Ya dijo idioma · llevá a asesoría',
+    action: 'HACÉ AHORA\nNo sigas sacando datos por chat. Presentá la asesoría breve como la forma más útil de recomendarle una comisión real.',
+    message: 'Buenísimo, gracias por contármelo. 😊\n\nPara orientarte de forma realmente personalizada, lo ideal es que coordinemos una asesoría breve de 5 minutos. Así puedo entender bien lo que buscás, revisar los horarios que mejor te encajen y dejarte una propuesta clara.\n\n¿Preferís que coordinemos esa asesoría breve o que lo resolvamos directamente por mensaje?',
+    no: 'No vuelvas a preguntar el idioma. Si ya contó el objetivo, tampoco lo repitas.',
+    destination: 'Saludo inicial · puente a asesoría',
+    section: 'saludo'
+  },
+  mensaje: {
+    title: 'Prefiere mensaje · avanzá sin interrogar',
+    action: 'HACÉ AHORA\nPedí solamente el próximo dato que te falta. Si ya sabés su objetivo, preguntá nivel; si ya sabés nivel, recomendá el curso.',
+    message: 'Perfecto, lo resolvemos por acá. 😊\n\nPara ubicarte bien y recomendarte una opción concreta: ¿arrancarías desde cero o ya tenés alguna base?',
+    no: 'No mandes horarios ni precio hasta poder explicar por qué esa opción le conviene.',
+    destination: 'Después de la llamada · venta por mensaje',
+    section: 'postcall'
+  },
+  cotizacion: {
+    title: 'Ya recibió valor · abrí la decisión',
+    action: 'HACÉ AHORA\nNo reenvíes el precio. Recuperá la propuesta y abrí una sola duda concreta para saber qué necesita resolver.',
+    message: 'Quería saber cómo viste la propuesta que armamos para vos. 😊\n\nPara no suponer, ¿qué te ayudaría más a decidir: revisar el horario, conocer mejor el contenido o ver cómo organizar el pago?',
+    no: 'No agregues una promoción nueva ni ofrezcas cuotas que no estén vigentes para esa comisión.',
+    destination: 'Seguimientos',
+    section: 'seguimiento-optimizado'
+  },
+  pago: {
+    title: 'Le frena el pago · cuidá la viabilidad',
+    action: 'HACÉ AHORA\nValidá curso, comisión, país y condición vigente. Solo después ofrecé cuotas, seña o reserva si realmente aplica.',
+    message: 'Entiendo, y prefiero que lo veamos con claridad antes de que descartes la posibilidad. 😊\n\nReviso qué alternativa vigente aplica a tu comisión y te digo exactamente cómo podrías organizarlo. ¿Lo que necesitás es bajar el pago inicial o distribuir mejor el total?',
+    no: 'No inventes descuentos, pagos con tarjeta, cuotas ni reservas.',
+    destination: 'Cotizador ágil',
+    section: 'cotizador-agil'
+  },
+  seguimiento: {
+    title: 'Se enfrió · recuperá con contexto',
+    action: 'HACÉ AHORA\nLeé el último intercambio y retomá un dato real: idioma, objetivo, horario o propuesta. Dejale una pregunta fácil de responder.',
+    message: '¡Buen día, [NOMBRE]! 😊\n\nRetomo lo que vimos de [IDIOMA] porque había quedado pendiente encontrar una opción que te resulte posible.\n\n¿Seguís con ganas de avanzar? Si es así, reviso qué comisión vigente puede acomodarse mejor a tu rutina.',
+    no: 'No reinicies con “Hola, soy…”, no copies toda la cotización y no insistas si ya dejó claro que no quiere continuar.',
+    destination: 'Recuperar lead',
+    section: 'recontacto'
+  }
+};
+
+let modoCerrarActual = 'nuevo';
+
+function setModoCerrar(stage, btn) {
+  const data = modoCerrarStages[stage];
+  if (!data) return;
+  modoCerrarActual = stage;
+  document.getElementById('modo-cerrar-title').textContent = data.title;
+  document.getElementById('modo-cerrar-action').textContent = data.action;
+  document.getElementById('modo-cerrar-message').textContent = data.message;
+  document.getElementById('modo-cerrar-no').textContent = data.no;
+  document.getElementById('modo-cerrar-destination').textContent = data.destination;
+  document.querySelectorAll('.close-stage-btn').forEach(item => item.classList.toggle('active', item.dataset.stage === stage));
+}
+
+function goToModoSection() {
+  const target = modoCerrarStages[modoCerrarActual]?.section;
+  if (!target) return;
+  document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+  document.getElementById(target)?.classList.add('active');
+  const navLink = Array.from(document.querySelectorAll('.nav-link')).find(link => link.getAttribute('onclick') === `showSection('${target}')`);
+  navLink?.classList.add('active');
+  window.scrollTo(0, 0);
 }
 
 function showSection(id) {
