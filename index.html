@@ -6332,6 +6332,10 @@ function updateNombre(nombre) {
   });
   // Re-render static messages from source
   renderStaticMessages(nombre);
+  // Keep the currently selected closing route personalized as well.
+  if (typeof setModoCerrar === 'function' && typeof modoCerrarActual !== 'undefined') {
+    setModoCerrar(modoCerrarActual);
+  }
   if (typeof initializePostCallDefaults === 'function') initializePostCallDefaults();
   if (typeof updateExoMessage === 'function') updateExoMessage();
 }
@@ -6769,7 +6773,7 @@ function setModoCerrar(stage, btn) {
   modoCerrarActual = stage;
   document.getElementById('modo-cerrar-title').textContent = data.title;
   document.getElementById('modo-cerrar-action').textContent = data.action;
-  document.getElementById('modo-cerrar-message').textContent = data.message;
+  document.getElementById('modo-cerrar-message').textContent = applyPersonalization(data.message);
   document.getElementById('modo-cerrar-no').textContent = data.no;
   document.getElementById('modo-cerrar-destination').textContent = data.destination;
   renderModoCerrarHelp(data.help);
