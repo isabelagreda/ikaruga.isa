@@ -1169,6 +1169,11 @@
   .isa-scan-item:nth-child(3n) { border-top-color: #c62532; }
 
   #modo-cerrar .section-header { border-bottom-color: #c62532; }
+  .close-scan { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; margin:18px 0 22px; }
+  .close-scan-item { min-height:76px; padding:13px 14px; border:1px solid var(--border); border-radius:8px; background:#fff; display:flex; align-items:center; gap:11px; font-size:12px; font-weight:700; line-height:1.35; }
+  .close-scan-item b { width:28px; height:28px; flex:0 0 28px; display:grid; place-items:center; border-radius:50%; background:#213743; color:#fff; font-size:11px; }
+  .close-scan-item:nth-child(2) b { background:#137f95; }
+  .close-scan-item:nth-child(3) b { background:#c62532; }
   .close-stage-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(165px,1fr)); gap:10px; margin:22px 0; }
   .close-stage-btn { min-height:92px; text-align:left; border:1px solid var(--border); border-radius:8px; background:#fff; color:var(--ink); padding:14px; font:inherit; cursor:pointer; transition:.18s ease; }
   .close-stage-btn:hover, .close-stage-btn.active { border-color:var(--red); background:#fff1f2; box-shadow:0 5px 14px rgba(198,37,50,.12); }
@@ -1182,7 +1187,7 @@
   .close-rules { display:grid; gap:10px; }
   .close-rule { border:1px solid var(--border); border-radius:7px; padding:12px; font-size:12px; line-height:1.5; }
   .close-rule strong { display:block; color:var(--red); margin-bottom:3px; }
-  @media (max-width:700px) { .close-answer-body { grid-template-columns:1fr; } .close-answer-head { align-items:flex-start; flex-direction:column; } }
+  @media (max-width:700px) { .close-answer-body { grid-template-columns:1fr; } .close-answer-head { align-items:flex-start; flex-direction:column; } .close-scan { grid-template-columns:1fr; } }
 
   @media (max-width: 940px) { .section { padding: 36px 24px 58px; } }
 </style>
@@ -2581,6 +2586,12 @@ Si querés, escribime "INGLÉS" y te cuento cómo empezar.</div>
     <strong>Regla ISA:</strong> un mensaje, un movimiento. No intentes explicar el curso, el precio y el pago en el mismo bloque. Primero abrís, después recomendás, luego mostrás disponibilidad y recién entonces cotizás.
   </div>
 
+  <div class="close-scan" aria-label="Uso rápido de la guía">
+    <div class="close-scan-item"><b>01</b><span>Leé el último intercambio, no todo el historial.</span></div>
+    <div class="close-scan-item"><b>02</b><span>Elegí la etapa exacta del lead.</span></div>
+    <div class="close-scan-item"><b>03</b><span>Copiá un solo mensaje y esperá su respuesta.</span></div>
+  </div>
+
   <div class="close-stage-grid" aria-label="Elegir etapa del lead">
     <button class="close-stage-btn active" type="button" data-stage="nuevo" onclick="setModoCerrar('nuevo', this)"><strong>1. Recién llegó</strong><span>No dijo idioma o dejó un mensaje muy general.</span></button>
     <button class="close-stage-btn" type="button" data-stage="idioma" onclick="setModoCerrar('idioma', this)"><strong>2. Ya dijo idioma</strong><span>Activá la asesoría sin convertirlo en entrevista.</span></button>
@@ -2674,14 +2685,14 @@ Gracias por escribirnos. Acá trabajamos con clases online en vivo, docente y un
         <div class="playbook-steps">
           <div class="playbook-step"><span>1</span><div>Usar cuando ya sabés qué idioma le interesa.</div></div>
           <div class="playbook-step"><span>2</span><div>Nombrar ese interés para que sienta que leíste su consulta.</div></div>
-          <div class="playbook-step"><span>3</span><div>Preguntar solo por su objetivo; después de responder, ofrecé llamada breve.</div></div>
+          <div class="playbook-step"><span>3</span><div>Ofrecer asesoría breve. El objetivo, nivel y disponibilidad se descubren mejor en esa conversación.</div></div>
         </div>
         <div class="playbook-message" id="msg-inicial-valor">¡Hola, [NOMBRE]! 😊 Soy {ASESOR}, de IKARUGA.
 
 Vi que te interesaba *[IDIOMA]*. Acá trabajamos con clases en vivo, docente y una ruta clara para que no te quedes aprendiendo palabras sueltas. 📚
 
-Para orientarte bien: ¿te gustaría aprenderlo por viaje, trabajo, estudio o algo más personal?</div>
-        <div class="msg-note"><strong>Siguiente paso:</strong> cuando responda el objetivo, usá el puente a asesoría. Si el objetivo ya figura en la consulta, no lo repitas: retomalo y pasá directo al puente.</div>
+Para orientarte de forma personalizada y revisar la comisión que mejor te convenga, ¿preferís que coordinemos una asesoría breve de 5 minutos o que lo resolvamos directamente por mensaje?</div>
+        <div class="msg-note"><strong>Siguiente paso:</strong> si acepta, la llamada descubre lo demás. Si prefiere WhatsApp, pedí solo el próximo dato que realmente falte. No preguntes objetivo, nivel y país por rutina.</div>
         <div class="playbook-actions">
           <span class="badge badge-gold">Idioma conocido</span>
           <button class="copy-btn" onclick="copyMsg('msg-inicial-valor', this)">Copiar mensaje</button>
@@ -2741,45 +2752,41 @@ Para orientarte de forma realmente personalizada, lo ideal es que coordinemos un
   </div>
 
   <h3>Si no puede o no quiere llamada: venta por WhatsApp</h3>
-  <div class="info-block"><strong>El idioma ya está dicho.</strong> Llegaste a esta parte porque el lead respondió al saludo inicial o porque el idioma venía en el dato. No se vuelve a preguntar.<br><br><strong>Atajo:</strong> si también conocés su objetivo, salteá al <strong>paso 3 · nivel</strong>. Si falta el objetivo, usá el mensaje siguiente.</div>
+  <div class="info-block"><strong>El idioma ya está dicho.</strong> Llegaste a esta parte porque el lead respondió al saludo inicial o porque el idioma venía en el dato. No se vuelve a preguntar.<br><br><strong>Regla:</strong> elegí una sola ruta. Si ya conocés el objetivo o el nivel, no lo vuelvas a pedir: recomendá y avanzá a horarios. Si falta un dato que cambia la recomendación, pedí únicamente ese.</div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Paso 2 por WhatsApp · Falta objetivo <span class="badge badge-accent">Idioma ya conocido</span></div>
+      <div class="msg-card-title">Si falta contexto <span class="badge badge-accent">Usar solo cuando cambie la recomendación</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-diagnostico-escrito', this)">Copiar mensaje</button>
     </div>
     <div class="msg-body" id="msg-diagnostico-escrito">Perfecto, lo vemos por acá. 😊
 
-🎯 Para no mandarte información genérica: ¿para qué te gustaría aprender *[IDIOMA]*?
+🎯 Para recomendarte una opción que realmente te sirva: ¿para qué te gustaría aprender *[IDIOMA]*?
 
-Con eso te cuento qué opción puede acompañarte mejor y después vemos nivel, horarios y valores.</div>
-    <div class="msg-note">Usar solo si ya sabés el idioma pero todavía falta el motivo. Si el objetivo ya está en el chat, no copies esto: salteá directo al paso 3.</div>
+Con eso veo si hay algo importante que deba tener en cuenta antes de recomendarte la comisión.</div>
+    <div class="msg-note">Usar solo si ya sabés el idioma pero el motivo define una recomendación distinta. Si el objetivo ya está en el chat, no copies esto.</div>
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Paso 3 · Si responde idioma y motivo <span class="badge badge-teal">Nivel</span></div>
+      <div class="msg-card-title">Si falta punto de partida <span class="badge badge-teal">Nivel</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-diagnostico-continuacion', this)">Copiar mensaje</button>
     </div>
-    <div class="msg-body" id="msg-diagnostico-continuacion">Qué lindo objetivo. 🙌
-
-Entonces busquemos una propuesta que te ayude a avanzar de forma ordenada y que puedas sostener en el tiempo.
+    <div class="msg-body" id="msg-diagnostico-continuacion">Perfecto, lo tengo. 🙌
 
 Para recomendarte el nivel correcto: ¿empezarías desde cero o ya estudiaste/usaste alguna app antes?</div>
-    <div class="msg-note">Si ya comentó nivel, no lo vuelvas a preguntar. Retomá su objetivo y pasá al paso 4: confirmar y recomendar.</div>
+    <div class="msg-note">Usar solo si todavía no sabés desde dónde parte. Si ya comentó nivel, no lo vuelvas a preguntar: recomendá directamente.</div>
   </div>
 
   <div class="msg-card">
     <div class="msg-card-header">
-      <div class="msg-card-title">Paso 4 · Confirmar y recomendar <span class="badge badge-teal">Antes de hablar de precio</span></div>
+      <div class="msg-card-title">Recomendá y seguí a horarios <span class="badge badge-teal">Antes de hablar de precio</span></div>
       <button class="copy-btn" onclick="copyMsg('msg-puente-llamada', this)">Copiar mensaje</button>
     </div>
-    <div class="msg-body" id="msg-puente-llamada">Entonces, si entendí bien: querés aprender *[IDIOMA]* para *[OBJETIVO]* y partirías desde *[NIVEL]*. ¿Es así? 😊
+    <div class="msg-body" id="msg-puente-llamada">Por lo que me contás, te recomiendo *[CURSO]*. Es una muy buena base para avanzar de forma ordenada, con clases en vivo, docente y materiales de apoyo. 📚
 
-Por eso te recomendaría *[CURSO]*: te permite construir una base ordenada y avanzar hacia ese objetivo con clases en vivo, docente y materiales de apoyo.
-
-¿Sentís que esta opción va en la dirección de lo que estabas buscando?</div>
-    <div class="msg-note">Usar solo cuando ya conocés idioma, punto de partida y motivo. Reemplazá los campos entre corchetes con datos reales. Si valida la recomendación, seguí con país (si falta), horarios y cotización.</div>
+Ahora reviso qué comisión puede acompañar mejor tu rutina.</div>
+    <div class="msg-note">No hagas una recapitulación que lo obligue a validar datos que ya dio. Nombrá únicamente lo que aporta a la recomendación. Si el país falta, pedilo; si ya lo sabés, seguí directo a horarios.</div>
   </div>
 
   <div class="msg-card">
@@ -7878,8 +7885,8 @@ const modoCerrarStages = {
     action: 'HACÉ AHORA\nPedí solamente el próximo dato que te falta. Si ya sabés su objetivo, preguntá nivel; si ya sabés nivel, recomendá el curso.',
     message: 'Perfecto, lo resolvemos por acá. 😊\n\nPara ubicarte bien y recomendarte una opción concreta: ¿arrancarías desde cero o ya tenés alguna base?',
     no: 'No mandes horarios ni precio hasta poder explicar por qué esa opción le conviene.',
-    destination: 'Después de la llamada · venta por mensaje',
-    section: 'postcall'
+    destination: 'Saludo inicial · venta por mensaje',
+    section: 'saludo'
   },
   cotizacion: {
     title: 'Ya recibió valor · abrí la decisión',
