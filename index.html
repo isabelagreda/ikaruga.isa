@@ -1375,9 +1375,10 @@
     <button class="close-stage-btn" type="button" data-stage="mensaje" onclick="setModoCerrar('mensaje', this)"><strong>3. Prefiere mensaje</strong><span>Avanzá por WhatsApp, un dato por vez.</span></button>
     <button class="close-stage-btn" type="button" data-stage="recomendacion" onclick="setModoCerrar('recomendacion', this)"><strong>4. Ya lo ubicás</strong><span>Recomendá el curso antes de hablar de valor.</span></button>
     <button class="close-stage-btn" type="button" data-stage="horarios" onclick="setModoCerrar('horarios', this)"><strong>5. Mostrá horarios</strong><span>Ofrecé solo las comisiones con cupo.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>6. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>7. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>8. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="recursos" onclick="setModoCerrar('recursos', this)"><strong>6. Mostrá el valor del curso</strong><span>Contenido, programa o respaldo, según su duda.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>7. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>8. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>9. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
   </div>
 
   <div class="close-answer" aria-live="polite">
@@ -6571,12 +6572,20 @@ const modoCerrarStages = {
     section: 'saludo'
   },
   horarios: {
-    title: 'Horarios con cupo · llevá a la cotización',
-    action: 'HACÉ AHORA\nMostrá solo las opciones reales y en la zona horaria del lead. Cuando elija una, abrí el cotizador y pasá el valor exacto.',
+    title: 'Horarios con cupo · prepará la cotización',
+    action: 'HACÉ AHORA\nMostrá solo las opciones reales y en la zona horaria del lead. Cuando elija una, hacé tangible el curso con un recurso útil y después abrí el cotizador.',
     message: 'Para *[CURSO]* tengo estas comisiones con cupo:\n\n📅 *[COMISIÓN A]* · [DÍA Y HORARIO LOCAL]\n📅 *[COMISIÓN B]* · [DÍA Y HORARIO LOCAL]\n\n¿Cuál se acomodaría mejor a tu rutina?',
     no: 'No inventes horarios, no muestres comisiones completas y no cotices antes de confirmar país y comisión.',
     destination: 'Cotizador ágil',
     section: 'cotizador-agil'
+  },
+  recursos: {
+    title: 'Mostrá el valor del curso · antes del precio',
+    action: 'HACÉ AHORA\nElegí un único recurso que despeje la duda real: contenidos, PDF del programa, respaldo de certificación o una muestra de clase. Solo enviá el que corresponda al curso y nivel. Después pasá a la cotización.',
+    message: 'Antes de pasarte el valor, quiero que puedas ver bien cómo es la propuesta. 📚\n\nPuedo compartirte el programa para que revises contenidos, modalidad y recorrido del curso. Y, cuando corresponda, también explicarte el respaldo y la certificación al finalizar.\n\n¿Te gustaría que te envíe el programa para verlo con calma?',
+    no: 'No mandes PDF, certificado y video juntos. Un recurso bien elegido suma valor; una lista de archivos frena la conversación. Nunca afirmes una certificación sin verificar que aplique a ese curso.',
+    destination: 'Guion de llamada · recursos por idioma',
+    section: 'postcall'
   },
   cotizacion: {
     title: 'Ya recibió valor · abrí la decisión',
