@@ -1231,7 +1231,10 @@
       </button>
     </div>
     <div class="nav-group">
-      <div class="nav-group-label">2 · Recomendar y cotizar</div>
+      <div class="nav-group-label">2 · Durante la llamada</div>
+      <button class="nav-link" onclick="showSection('postcall')">
+        <span class="dot"></span> Guion de llamada
+      </button>
       <button class="nav-link" onclick="showSection('cotizador-agil')">
         <span class="dot"></span> Cotizador ágil
       </button>
@@ -1243,10 +1246,7 @@
       </button>
     </div>
     <div class="nav-group">
-      <div class="nav-group-label">3 · Continuar y cerrar</div>
-      <button class="nav-link" onclick="showSection('postcall')">
-        <span class="dot"></span> Después de la llamada
-      </button>
+      <div class="nav-group-label">3 · Seguimiento y cierre</div>
       <button class="nav-link" onclick="showSection('seguimiento-optimizado')">
         <span class="dot"></span> Seguimientos
       </button>
@@ -3494,33 +3494,33 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
   </div>
 </div>
 
-<!-- POST LLAMADA -->
+<!-- GUION DE LLAMADA -->
 <div class="section" id="postcall">
   <div class="section-header">
-    <div class="section-tag">Luego de la llamada</div>
-    <h1 class="section-title">Qué enviar tras hablar con el lead</h1>
-    <p class="section-desc">Secuencia para sostener la conversación después de una llamada. No mandes un folleto en diez mensajes: usá solo los bloques que responden a lo que esa persona necesita decidir.</p>
+    <div class="section-tag">Método ISA · asesoría personalizada</div>
+    <h1 class="section-title">Guion de llamada</h1>
+    <p class="section-desc">Tu orden para presentar la propuesta y cerrar durante la asesoría. Usá los bloques como guía de conversación; solo enviá por WhatsApp lo que el lead necesite conservar.</p>
   </div>
 
   <div class="info-block">
-    <strong>Regla ISA:</strong> el mensaje posllamada retoma lo que la persona dijo. Enviá el resumen y, como máximo, uno o dos recursos de respaldo antes de horario y cotización. Después esperá respuesta.
+    <strong>Regla ISA:</strong> no recites un folleto. Retomá lo que contó, recomendá, explicá la experiencia, mostrale el horario que le sirve y recién entonces la inversión. El PDF, la certificación o el video aparecen solo si aportan a su decisión.
   </div>
 
   <ul class="checklist" style="margin-bottom:28px;">
-    <li><strong>1.</strong> Resumen personalizado: objetivo, nivel recomendado y por qué.</li>
-    <li><strong>2.</strong> Experiencia del curso: dinámica, actividades o beneficio que conecte con ese objetivo.</li>
-    <li><strong>3.</strong> Un solo respaldo relevante: PDF, muestra de certificación o video; no todo junto.</li>
-    <li><strong>4.</strong> Horario y fecha de la comisión que le resulte posible.</li>
-    <li><strong>5.</strong> Cotización completa con condición y cuotas reales.</li>
-    <li><strong>6.</strong> Pregunta de avance: horario, contenido o forma de pago.</li>
+    <li><strong>1.</strong> Retomá su objetivo y recomendá el nivel que le corresponde.</li>
+    <li><strong>2.</strong> Mostrá cómo se vive el curso: dinámica, actividades y beneficios que conecten con eso.</li>
+    <li><strong>3.</strong> Sumá un respaldo relevante solo si lo necesita: PDF, certificación o video.</li>
+    <li><strong>4.</strong> Mostrá horario y fecha de la comisión que le resulte posible.</li>
+    <li><strong>5.</strong> Presentá la inversión completa con condición y cuotas reales.</li>
+    <li><strong>6.</strong> Cerrá con una pregunta de avance: horario, contenido o forma de pago.</li>
   </ul>
 
   <div class="divider"></div>
 
   <div class="msg-card" style="margin-bottom:22px;">
     <div class="msg-card-header">
-      <div class="msg-card-title">Parámetros antes de copiar</div>
-      <span style="font-size:12px;color:var(--ink3);">Elegí una vez y copiá los mensajes listos</span>
+      <div class="msg-card-title">Datos de la asesoría</div>
+      <span style="font-size:12px;color:var(--ink3);">Elegí una vez y usá los bloques durante la conversación</span>
     </div>
     <div style="padding:16px 18px;background:var(--paper2);display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;align-items:end;">
       <div>
@@ -3586,7 +3586,7 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
         </select>
       </div>
     </div>
-    <div class="msg-note">✅ Estos parámetros actualizan descripción, horario y precio. Elegí los bloques que aporten a esa conversación; no los envíes todos de corrido.</div>
+    <div class="msg-note">✅ Estos parámetros actualizan descripción, horario y precio. No recorras todos los bloques por obligación: elegí los que ayuden a esa persona a decidir.</div>
   </div>
 
   <div class="tabs" id="lang-tabs">
@@ -3612,16 +3612,16 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
       </div>
     </div>
     <div class="info-block">
-      <strong>Antes de copiar:</strong> seleccioná el nivel y el mes/campaña. El Mensaje 1, horarios y precio se ajustan a esos parámetros para evitar ofrecer 5 módulos cuando la comisión es de 4.
+      <strong>Antes de empezar:</strong> seleccioná nivel y mes/campaña. La explicación, horarios y precio se ajustan a esos parámetros para evitar ofrecer 5 módulos cuando la comisión es de 4.
     </div>
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Japonés</div><button class="copy-btn" onclick="copyMsg('pc-jp',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Japonés</div><button class="copy-btn" onclick="copyMsg('pc-jp',this)">Copiar</button></div>
       <div class="msg-body" id="pc-jp">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
 
 📘 *Descripción del curso:* Japonés [NIVEL] — módulos según comisión vigente · 3 hs semanales en vivo · Doble: IKARUGA + UAI 🎓 · Inmersión cultural real. Kana, kanji, conversación y cultura japonesa desde el inicio.</div>
-      <div class="msg-note">✅ Primer mensaje breve: enviá solo la descripción del curso. PDF, certificación, horario y precio van en mensajes separados.</div>
+      <div class="msg-note">✅ Empezá por esta explicación del curso. Sumá PDF, certificación, horario o precio solo cuando aporten a esa decisión.</div>
     </div>
 
     <div class="msg-card">
@@ -3817,7 +3817,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
       </div>
     </div>
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Coreano</div><button class="copy-btn" onclick="copyMsg('pc-kr',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Coreano</div><button class="copy-btn" onclick="copyMsg('pc-kr',this)">Copiar</button></div>
       <div class="msg-body" id="pc-kr">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
@@ -4005,7 +4005,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
       </div>
     </div>
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Chino</div><button class="copy-btn" onclick="copyMsg('pc-zh',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Chino</div><button class="copy-btn" onclick="copyMsg('pc-zh',this)">Copiar</button></div>
       <div class="msg-body" id="pc-zh">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
@@ -4192,7 +4192,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
       </div>
     </div>
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Tailandés</div><button class="copy-btn" onclick="copyMsg('pc-th',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Tailandés</div><button class="copy-btn" onclick="copyMsg('pc-th',this)">Copiar</button></div>
       <div class="msg-body" id="pc-th">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
@@ -4394,7 +4394,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
       </div>
     </div>
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Inglés</div><button class="copy-btn" onclick="copyMsg('pc-en',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Inglés</div><button class="copy-btn" onclick="copyMsg('pc-en',this)">Copiar</button></div>
       <div class="msg-body" id="pc-en">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
@@ -4578,7 +4578,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
     </div>
 
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Portugués A1</div><button class="copy-btn" onclick="copyMsg('pc-pt',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Portugués A1</div><button class="copy-btn" onclick="copyMsg('pc-pt',this)">Copiar</button></div>
       <div class="msg-body" id="pc-pt">¡Fue un placer hablar con vos! 😊
 
 Te comparto la información de Portugués A1 para que puedas revisar con calma cómo sería este primer recorrido.</div>
@@ -4651,7 +4651,7 @@ Para avanzar, solo necesitaría tu nombre completo y el correo que vas a usar en
       </div>
     </div>
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Alemán</div><button class="copy-btn" onclick="copyMsg('pc-de',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Alemán</div><button class="copy-btn" onclick="copyMsg('pc-de',this)">Copiar</button></div>
       <div class="msg-body" id="pc-de">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
@@ -4837,7 +4837,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
       </div>
     </div>
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Italiano</div><button class="copy-btn" onclick="copyMsg('pc-it',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Italiano</div><button class="copy-btn" onclick="copyMsg('pc-it',this)">Copiar</button></div>
       <div class="msg-body" id="pc-it">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
@@ -5012,7 +5012,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
     </div>
 
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje post-llamada · Ruso</div><button class="copy-btn" onclick="copyMsg('pc-ru',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Bloque 1 · Presentar el curso · Ruso</div><button class="copy-btn" onclick="copyMsg('pc-ru',this)">Copiar</button></div>
       <div class="msg-body" id="pc-ru">¡Fue un placer hablar con vos! 🌸
 
 A continuación te comparto la información del curso que acordamos:
@@ -9119,7 +9119,7 @@ function updatePostCallLevelDetails(msgId, nivel) {
   if (benefitEl && data.benefits) {
     benefitEl.innerText = data.benefits;
     const title = benefitEl.closest('.msg-card')?.querySelector('.msg-card-title');
-    if (title) title.childNodes[0].nodeValue = `Mensaje 2 · Beneficios y respaldo · ${nivel}`;
+    if (title) title.childNodes[0].nodeValue = `Bloque 2 · Beneficios y respaldo · ${nivel}`;
   }
 
   const pdfEl = document.getElementById(group.pdfId);
@@ -9127,7 +9127,7 @@ function updatePostCallLevelDetails(msgId, nivel) {
     const intro = group.defaultPdfIntro || 'Te comparto también el PDF del programa para que puedas revisar con calma los contenidos, la modalidad y el recorrido del curso.';
     pdfEl.innerText = `${intro}\n\n📄 Programa ${nivel}: ${data.pdf}`;
     const title = pdfEl.closest('.msg-card')?.querySelector('.msg-card-title');
-    if (title) title.childNodes[0].nodeValue = `Mensaje 3 · PDF del programa · ${nivel}`;
+    if (title) title.childNodes[0].nodeValue = `Bloque 3 · PDF del programa · ${nivel}`;
     const note = pdfEl.nextElementSibling;
     if (note?.classList?.contains('msg-note')) {
       note.innerHTML = `✅ Adjuntá el PDF al enviar este mensaje. También podés abrirlo desde aquí: <a href="${data.pdf}" target="_blank" rel="noopener">${data.pdf}</a>`;
