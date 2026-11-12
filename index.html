@@ -2750,7 +2750,7 @@ Para orientarte bien, ¿qué idioma tenías en mente?</div>
 Para orientarte de forma realmente personalizada, lo ideal es que coordinemos una asesoría breve de 5 minutos. Así puedo entender bien lo que buscás, revisar los horarios que mejor te encajen y dejarte una propuesta clara.
 
 ¿Preferís que coordinemos esa asesoría breve o que lo resolvamos directamente por mensaje?</div>
-    <div class="msg-note">Si responde que puede hablar, llamá: ahí relevás objetivo, nivel, país, disponibilidad y forma de pago. Si prefiere mensaje, seguí directamente con el paso “Objetivo por escrito” de abajo.</div>
+    <div class="msg-note">Si responde que puede hablar, llamá: ahí relevás objetivo, nivel, país, disponibilidad y forma de pago. Si prefiere mensaje, seguí con la ruta “Venta por WhatsApp” y pedí solo el próximo dato que falte.</div>
   </div>
 
   <h3>Si no puede o no quiere llamada: venta por WhatsApp</h3>
@@ -7870,8 +7870,10 @@ function hideCursosCompletos() {
 }
 
 function normalizePostCallCardTitles() {
-  document.querySelectorAll('.msg-card-title').forEach(el => {
-    el.textContent = el.textContent.replace(/ · (Coreano 1|Chino 1|Tailandés 1|Inglés A1|Alemán A1|Italiano A1)$/u, '');
+  document.querySelectorAll('#postcall .msg-card-title').forEach(el => {
+    el.textContent = el.textContent
+      .replace(/^Mensaje (\d+)/u, 'Bloque $1')
+      .replace(/ · (Coreano 1|Chino 1|Tailandés 1|Inglés A1|Alemán A1|Italiano A1)$/u, '');
   });
 }
 
@@ -9101,7 +9103,7 @@ function updatePostCallLevelDetails(msgId, nivel) {
   } else if (pdfEl && data.pdf === null) {
     pdfEl.innerText = `El programa específico de ${nivel} está pendiente de adjuntar en la guía.\n\nMientras tanto, usá el resumen del curso, horarios y precio actualizados antes de enviar documentación.`;
     const title = pdfEl.closest('.msg-card')?.querySelector('.msg-card-title');
-    if (title) title.childNodes[0].nodeValue = `Mensaje 3 · Programa pendiente · ${nivel}`;
+    if (title) title.childNodes[0].nodeValue = `Bloque 3 · Programa pendiente · ${nivel}`;
     const note = pdfEl.nextElementSibling;
     if (note?.classList?.contains('msg-note')) {
       note.innerHTML = `⚠️ No adjuntar PDF de ${nivel} hasta que esté cargado el programa correcto.`;
@@ -9137,7 +9139,7 @@ function updatePostCallSchedule(msgId) {
   const lineas = horariosLocal.length ? horariosLocal.map(h => `• ${h}`).join('\n') : `• No hay horarios con cupo para *${nivel}*${mesTexto}. Consultar otra comisión o mes disponible.`;
 
   const title = target.closest('.msg-card')?.querySelector('.msg-card-title');
-  if (title) title.childNodes[0].nodeValue = `Mensaje 5 · Horarios por país · ${nivel}`;
+  if (title) title.childNodes[0].nodeValue = `Bloque 5 · Horarios por país · ${nivel}`;
 
   target.innerText = `Perfecto, te comparto ${plural ? 'los horarios disponibles' : 'el horario disponible'} para *${nivel}*${mesTexto} en ${paisLabel}. ${cfg.emoji}
 
