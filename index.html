@@ -1286,7 +1286,7 @@
     <div class="nav-group">
       <div class="nav-group-label">Acceso rápido</div>
       <button class="nav-link active" onclick="showSection('modo-cerrar')">
-        <span class="dot"></span> Modo cerrar
+        <span class="dot"></span> Conversación por WhatsApp
       </button>
     </div>
     <div class="nav-group">
@@ -1367,47 +1367,49 @@
 <!-- MODO CERRAR -->
 <div class="section active" id="modo-cerrar">
   <div class="section-header">
-    <div class="section-tag">Método ISA · decisión rápida</div>
-    <h1 class="section-title">Modo cerrar</h1>
-    <p class="section-desc">Usalo cuando ya hablaste con el lead o ya tenés su interés ubicado. Desde la recomendación hasta la inscripción, elegí el punto exacto y resolvé un solo movimiento.</p>
+    <div class="section-tag">Método ISA · venta por mensaje</div>
+    <h1 class="section-title">Conversación por WhatsApp</h1>
+    <p class="section-desc">Usala después del saludo cuando la persona prefiere seguir por mensaje. Elegí dónde está la charla y avanzá de forma clara, útil y natural hasta la inscripción.</p>
   </div>
 
   <div class="info-block" style="margin-bottom:18px;">
-    <strong>Regla ISA:</strong> esta solapa no inicia el chat: para eso usá <strong>Saludo inicial</strong>. Acá el orden es recomendación → horarios → valor del curso → cotización → inscripción.
+    <strong>Recorrido:</strong> saludo inicial → eligió WhatsApp → entender lo mínimo → recomendar → horarios → beneficios y programa → cotización → inscripción. Si acepta una llamada, usá el <strong>Guion de llamada</strong>.
   </div>
 
   <div class="close-scan" aria-label="Uso rápido de la guía">
-    <div class="close-scan-item"><b>01</b><span>Retomá solo el dato que ya conocés.</span></div>
-    <div class="close-scan-item"><b>02</b><span>Elegí la etapa posterior a la conversación.</span></div>
-    <div class="close-scan-item"><b>03</b><span>Avanzá una decisión por mensaje.</span></div>
+    <div class="close-scan-item"><b>01</b><span>Leé el último mensaje y no preguntes lo que ya dijo.</span></div>
+    <div class="close-scan-item"><b>02</b><span>Elegí el próximo paso de la conversación.</span></div>
+    <div class="close-scan-item"><b>03</b><span>Mandá un bloque útil y esperá respuesta.</span></div>
   </div>
 
   <div class="close-stage-grid" aria-label="Elegir etapa del lead">
-    <button class="close-stage-btn active" type="button" data-stage="recomendacion" onclick="setModoCerrar('recomendacion', this)"><strong>1. Recomendá el curso</strong><span>Explicá por qué le conviene antes de hablar de valor.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="horarios" onclick="setModoCerrar('horarios', this)"><strong>2. Mostrá horarios</strong><span>Ofrecé solo las comisiones con cupo.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="recursos" onclick="setModoCerrar('recursos', this)"><strong>3. Mostrá el valor del curso</strong><span>Contenido, programa o respaldo, según su duda.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>4. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>5. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
-    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>6. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
+    <button class="close-stage-btn active" type="button" data-stage="mensaje" onclick="setModoCerrar('mensaje', this)"><strong>1. Prefiere WhatsApp</strong><span>Pedí solo el próximo dato que falte.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="recomendacion" onclick="setModoCerrar('recomendacion', this)"><strong>2. Recomendá el curso</strong><span>Explicá por qué le conviene antes de hablar de valor.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="horarios" onclick="setModoCerrar('horarios', this)"><strong>3. Mostrá horarios</strong><span>Ofrecé solo las comisiones con cupo.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="recursos" onclick="setModoCerrar('recursos', this)"><strong>4. Mostrá propuesta</strong><span>Beneficios, contenidos y programa del curso.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="cotizacion" onclick="setModoCerrar('cotizacion', this)"><strong>5. Ya recibió valor</strong><span>Detectá qué necesita para decidir.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="inscripcion" onclick="setModoCerrar('inscripcion', this)"><strong>6. Quiere avanzar</strong><span>Llevá el interés a la inscripción.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="pago" onclick="setModoCerrar('pago', this)"><strong>7. Le frena el pago</strong><span>Revisá una alternativa real, no prometas de más.</span></button>
+    <button class="close-stage-btn" type="button" data-stage="seguimiento" onclick="setModoCerrar('seguimiento', this)"><strong>8. Se enfrió</strong><span>Retomá con contexto y una pregunta concreta.</span></button>
   </div>
 
   <div class="close-answer" aria-live="polite">
     <div class="close-answer-head">
-      <strong id="modo-cerrar-title">Ya lo ubicás · recomendá antes de cotizar</strong>
+      <strong id="modo-cerrar-title">Prefiere mensaje · avanzá sin interrogar</strong>
       <button class="copy-btn" type="button" onclick="copyMsg('modo-cerrar-message', this)">Copiar mensaje</button>
     </div>
     <div class="close-answer-body">
       <div>
         <div class="close-next" id="modo-cerrar-action">HACÉ AHORA
-Explicá en una idea por qué ese curso le conviene. No repitas todo lo que dijo ni pases precio todavía.</div>
+Pedí solamente el próximo dato que te falta. Si ya sabés su objetivo, preguntá nivel; si ya sabés nivel, recomendá el curso.</div>
         <div class="close-message-variants is-hidden" id="modo-cerrar-variants"></div>
-        <div class="msg-body" id="modo-cerrar-message" style="margin-top:14px;">Por lo que me contás, te recomiendo *[CURSO]*. Es una muy buena base para avanzar de forma ordenada, con clases en vivo, docente y materiales de apoyo. 📚
+        <div class="msg-body" id="modo-cerrar-message" style="margin-top:14px;">Perfecto, lo resolvemos por acá. 😊
 
-Ahora reviso qué comisión puede acompañar mejor tu rutina.</div>
+Para ubicarte bien y recomendarte una opción concreta: ¿arrancarías desde cero o ya tenés alguna base?</div>
       </div>
       <div class="close-rules">
-        <div class="close-rule"><strong id="modo-cerrar-no-title">NO HAGAS</strong><span id="modo-cerrar-no">No hagas una recapitulación larga ni pidas que vuelva a confirmar datos que ya compartió.</span></div>
-        <div class="close-rule"><strong>SIGUIENTE HERRAMIENTA</strong><span id="modo-cerrar-destination">Horarios y cupos</span><button class="copy-btn" type="button" style="margin-top:9px;" onclick="goToModoSection()">Abrir sección</button></div>
+        <div class="close-rule"><strong id="modo-cerrar-no-title">NO HAGAS</strong><span id="modo-cerrar-no">No mandes horarios ni precio hasta poder explicar por qué esa opción le conviene.</span></div>
+        <div class="close-rule"><strong>SIGUIENTE HERRAMIENTA</strong><span id="modo-cerrar-destination">Saludo inicial · venta por mensaje</span><button class="copy-btn" type="button" style="margin-top:9px;" onclick="goToModoSection()">Abrir sección</button></div>
       </div>
     </div>
     <div class="close-inline-help is-hidden" id="modo-cerrar-help">
@@ -6433,7 +6435,7 @@ Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.`;
 document.addEventListener('DOMContentLoaded', () => {
   initMessages();
   renderStaticMessages(nombreActual);
-  setModoCerrar('recomendacion');
+  setModoCerrar('mensaje');
   initTestimonials();
   updateVideojuegosPrecio();
   initHorariosRapidos();
@@ -6661,8 +6663,8 @@ const modoCerrarStages = {
     action: 'HACÉ AHORA\nExplicá en una idea por qué ese curso le conviene. No repitas todo lo que dijo ni pases precio todavía.',
     message: 'Por lo que me contás, te recomiendo *[CURSO]*. Es una muy buena base para avanzar de forma ordenada, con clases en vivo, docente y materiales de apoyo. 📚\n\nAhora reviso qué comisión puede acompañar mejor tu rutina.',
     no: 'No hagas una recapitulación larga ni pidas que vuelva a confirmar datos que ya compartió.',
-    destination: 'Horarios y cupos',
-    section: 'saludo'
+    destination: 'Horarios con cupo',
+    section: 'horarios'
   },
   horarios: {
     title: 'Horarios con cupo · prepará la cotización',
@@ -6695,8 +6697,16 @@ const modoCerrarStages = {
     action: 'HACÉ AHORA\nNo reenvíes el precio. Recuperá la propuesta y abrí una sola duda concreta para saber qué necesita resolver.',
     message: 'Quería saber cómo viste la propuesta que armamos para vos. 😊\n\nPara no suponer, ¿qué te ayudaría más a decidir: revisar el horario, conocer mejor el contenido o ver cómo organizar el pago?',
     no: 'No agregues una promoción nueva ni ofrezcas cuotas que no estén vigentes para esa comisión.',
-    destination: 'Seguimientos',
-    section: 'seguimiento-optimizado'
+    destination: 'Inscripción',
+    section: 'modo-cerrar'
+  },
+  inscripcion: {
+    title: 'Quiere avanzar · llevá a inscripción',
+    action: 'HACÉ AHORA\nConfirmá curso, comisión y condición vigente. Pedí solo los datos necesarios para registrar la inscripción y enviá el paso de pago que corresponda.',
+    message: 'Buenísimo, me alegra que quieras avanzar. 😊\n\nPara dejar registrada tu inscripción y enviarte el paso de pago correspondiente, necesito tu nombre completo y el correo que vas a usar en el campus académico.\n\nCon esos datos te dejo todo encaminado.',
+    no: 'No pidas datos administrativos antes de que la persona haya elegido curso, comisión y forma de pago.',
+    destination: 'No hace falta otra herramienta',
+    section: 'modo-cerrar'
   },
   pago: {
     title: 'Le frena el pago · cuidá la viabilidad',
@@ -6716,7 +6726,7 @@ const modoCerrarStages = {
   }
 };
 
-let modoCerrarActual = 'recomendacion';
+let modoCerrarActual = 'mensaje';
 const modoCerrarVariantes = {};
 
 const programasModoCerrar = [
