@@ -1208,6 +1208,9 @@
   .close-helper-controls label { display: grid; gap: 5px; color: var(--ink3); font-size: 11px; font-weight: 700; }
   .close-helper-controls select, .close-helper-controls input { min-height: 35px; border: 1px solid #bfcfd3; border-radius: 5px; background: #fff; color: var(--ink); font: inherit; padding: 6px 9px; }
   .close-helper-result { width: 100%; min-height: 35px; white-space: pre-line; padding: 12px; border: 1px solid #c4d9de; border-radius: 6px; background: #fff; color: #174452; font-size: 13px; line-height: 1.55; }
+  .close-inline-help:has(#mc-horario-idioma) { background: #eef7f8; border-color: #9fcbd3; }
+  .close-inline-help:has(#mc-horario-idioma) .close-inline-help-title { font-size: 13px; color: #174452; }
+  .close-inline-help:has(#mc-horario-idioma) .close-helper-controls { padding-top: 2px; }
   .close-helper-link { display: inline-flex; align-items: center; min-height: 35px; padding: 6px 11px; border-radius: 5px; background: #137f95; color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; }
   @media (max-width:700px) { .close-answer-body { grid-template-columns:1fr; } .close-answer-head { align-items:flex-start; flex-direction:column; } .close-scan { grid-template-columns:1fr; } }
 
@@ -1446,7 +1449,7 @@
   <div class="close-answer" aria-live="polite">
     <div class="close-answer-head">
       <strong id="modo-cerrar-title">Prefiere mensaje · avanzá sin interrogar</strong>
-      <button class="copy-btn" type="button" onclick="copyMsg('modo-cerrar-message', this)">Copiar mensaje</button>
+      <button class="copy-btn" id="modo-cerrar-copy" type="button" onclick="copyMsg('modo-cerrar-message', this)">Copiar mensaje</button>
     </div>
     <div class="close-answer-body">
       <div>
@@ -6336,13 +6339,13 @@ const modoCerrarStages = {
     section: 'horarios'
   },
   horarios: {
-    title: 'Horarios con cupo · prepará la cotización',
-    action: 'HACÉ AHORA\nMostrá solo las opciones reales y en la zona horaria del lead. Cuando elija una, hacé tangible el curso con un recurso útil y después abrí el cotizador.',
-    message: 'Para *[CURSO]* tengo estas comisiones con cupo:\n\n📅 *[COMISIÓN A]* · [DÍA Y HORARIO LOCAL]\n📅 *[COMISIÓN B]* · [DÍA Y HORARIO LOCAL]\n\n¿Cuál se acomodaría mejor a tu rutina?',
+    title: 'Cotizador de horarios por país',
+    action: 'HACÉ AHORA\nElegí idioma, nivel, inicio y país. La guía muestra únicamente las comisiones con cupo en la hora local del lead. Copiá el resultado y envialo.',
+    message: '',
     no: 'No inventes horarios, no muestres comisiones completas y no cotices antes de confirmar país y comisión.',
     help: {
-      title: 'AYUDA PARA ENVIAR HORARIOS',
-      text: 'Usá siempre la hora local del lead. Elegí su país e ingresá la hora Argentina de la comisión: la guía te devuelve la conversión antes de copiar el mensaje.',
+      title: 'HORARIOS CON CUPO · LISTOS PARA ENVIAR',
+      text: 'Elegí los cuatro datos. El mensaje se actualiza solo con las comisiones vigentes en la hora local del lead.',
       type: 'horarios'
     },
     destination: 'Cotizador ágil',
@@ -6524,7 +6527,12 @@ function setModoCerrar(stage, btn) {
   modoCerrarActual = stage;
   document.getElementById('modo-cerrar-title').textContent = data.title;
   document.getElementById('modo-cerrar-action').textContent = data.action;
-  document.getElementById('modo-cerrar-message').textContent = applyPersonalization(data.message);
+  const message = document.getElementById('modo-cerrar-message');
+  const copyButton = document.getElementById('modo-cerrar-copy');
+  const isScheduleFinder = data.help?.type === 'horarios';
+  message.textContent = applyPersonalization(data.message);
+  message.classList.toggle('is-hidden', isScheduleFinder);
+  copyButton.classList.toggle('is-hidden', isScheduleFinder);
   document.getElementById('modo-cerrar-no').textContent = data.no;
   document.getElementById('modo-cerrar-destination').textContent = data.destination;
   renderModoCerrarHelp(data.help);
