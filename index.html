@@ -1207,7 +1207,7 @@
   .close-helper-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; margin-top: 13px; }
   .close-helper-controls label { display: grid; gap: 5px; color: var(--ink3); font-size: 11px; font-weight: 700; }
   .close-helper-controls select, .close-helper-controls input { min-height: 35px; border: 1px solid #bfcfd3; border-radius: 5px; background: #fff; color: var(--ink); font: inherit; padding: 6px 9px; }
-  .close-helper-result { min-height: 35px; display: flex; align-items: center; color: #174452; font-size: 13px; font-weight: 700; }
+  .close-helper-result { width: 100%; min-height: 35px; white-space: pre-line; padding: 12px; border: 1px solid #c4d9de; border-radius: 6px; background: #fff; color: #174452; font-size: 13px; line-height: 1.55; }
   .close-helper-link { display: inline-flex; align-items: center; min-height: 35px; padding: 6px 11px; border-radius: 5px; background: #137f95; color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; }
   @media (max-width:700px) { .close-answer-body { grid-template-columns:1fr; } .close-answer-head { align-items:flex-start; flex-direction:column; } .close-scan { grid-template-columns:1fr; } }
 
@@ -6408,15 +6408,56 @@ const programasModoCerrar = [
   ['italiano-a1-programa.pdf', 'Italiano A1'], ['italiano-a2-programa.pdf', 'Italiano A2'], ['ruso-i-programa.pdf', 'Ruso 1']
 ];
 
-function updateModoCerrarHora() {
+function initModoCerrarHorarios() {
+  const idioma = document.getElementById('mc-horario-idioma');
+  const pais = document.getElementById('mc-horario-pais');
+  if (!idioma || !pais) return;
+  const disponibles = Object.entries(horariosARG)
+    .filter(([, niveles]) => Object.values(niveles).some(lista => lista.some(horarioTieneCupo)));
+  idioma.innerHTML = disponibles.map(([key]) => `<option value="${key}">${idiomaNombres[key]}</option>`).join('');
+  pais.innerHTML = Object.entries(paisNombres).map(([key, label]) => `<option value="${key}">${label}</option>`).join('');
+  updateModoCerrarHorariosNiveles();
+}
+
+function updateModoCerrarHorariosNiveles() {
+  const idioma = document.getElementById('mc-horario-idioma')?.value;
+  const nivel = document.getElementById('mc-horario-nivel');
+  if (!idioma || !nivel) return;
+  const niveles = Object.keys(horariosARG[idioma] || {}).filter(nombre => (horariosARG[idioma][nombre] || []).some(horarioTieneCupo));
+  nivel.innerHTML = niveles.map(nombre => `<option value="${nombre}">${nombre}</option>`).join('');
+  updateModoCerrarHorariosMeses();
+}
+
+function updateModoCerrarHorariosMeses() {
+  const idioma = document.getElementById('mc-horario-idioma')?.value;
+  const nivel = document.getElementById('mc-horario-nivel')?.value;
+  const mes = document.getElementById('mc-horario-mes');
+  if (!idioma || !nivel || !mes) return;
+  mes.innerHTML = getMesesDisponibles(idioma, nivel).map(item => `<option value="${item.value}">${item.label}</option>`).join('');
+  updateModoCerrarHorarios();
+}
+
+function updateModoCerrarHorarios() {
+  const idioma = document.getElementById('mc-horario-idioma')?.value;
+  const nivel = document.getElementById('mc-horario-nivel')?.value;
+  const mes = document.getElementById('mc-horario-mes')?.value;
   const pais = document.getElementById('mc-horario-pais')?.value || 'ARG';
-  const hora = document.getElementById('mc-horario-arg')?.value || '20:00';
   const output = document.getElementById('mc-horario-result');
-  if (!output) return;
-  const [h, m] = hora.split(':').map(Number);
-  const local = (h + (tzDiff[pais] ?? 0) + 24) % 24;
-  const label = paisNombres[pais] || pais;
-  output.textContent = `Argentina ${hora} → ${label} ${String(local).padStart(2, '0')}:${String(m).padStart(2, '0')} hs`;
+  if (!idioma || !nivel || !mes || !output) return;
+  const horarios = convertHorarios(filtrarHorariosPorMes(horariosARG[idioma]?.[nivel] || [], mes), tzDiff[pais] ?? 0);
+  const mesLabel = mes === 'todos' ? 'próximas comisiones' : `${mes.charAt(0).toUpperCase()}${mes.slice(1)}`;
+  const lineas = horarios.length ? horarios.map(h => `• ${h}`).join('\n') : '• No hay una comisión con cupo cargada para esta combinación.';
+  output.textContent = `Te comparto los horarios con cupo para *${nivel}* (${mesLabel}) en ${paisNombres[pais]}. 😊\n\n📅 *Horarios disponibles:*\n${lineas}\n\n¿Cuál se acomodaría mejor a tu rutina?`;
+}
+
+function copyModoCerrarHorarios(btn) {
+  const text = document.getElementById('mc-horario-result')?.innerText || '';
+  if (!text) return;
+  navigator.clipboard.writeText(applyPersonalization(text)).then(() => {
+    const original = btn.textContent;
+    btn.textContent = 'Copiado';
+    setTimeout(() => { btn.textContent = original; }, 1600);
+  });
 }
 
 function updateModoCerrarPrograma() {
@@ -6442,8 +6483,8 @@ function renderModoCerrarHelp(help) {
   title.textContent = help.title;
   copy.textContent = help.text;
   if (help.type === 'horarios') {
-    controls.innerHTML = `<label>País del lead<select id="mc-horario-pais" onchange="updateModoCerrarHora()">${Object.entries(paisNombres).map(([key, label]) => `<option value="${key}">${label}</option>`).join('')}</select></label><label>Hora Argentina<input id="mc-horario-arg" type="time" value="20:00" onchange="updateModoCerrarHora()"></label><div class="close-helper-result" id="mc-horario-result"></div>`;
-    updateModoCerrarHora();
+    controls.innerHTML = `<label>Idioma<select id="mc-horario-idioma" onchange="updateModoCerrarHorariosNiveles()"></select></label><label>Nivel<select id="mc-horario-nivel" onchange="updateModoCerrarHorariosMeses()"></select></label><label>Inicio<select id="mc-horario-mes" onchange="updateModoCerrarHorarios()"></select></label><label>País del lead<select id="mc-horario-pais" onchange="updateModoCerrarHorarios()"></select></label><div class="close-helper-result" id="mc-horario-result"></div><button class="copy-btn" type="button" onclick="copyModoCerrarHorarios(this)">Copiar horarios</button>`;
+    initModoCerrarHorarios();
     return;
   }
   if (help.type === 'recursos') {
