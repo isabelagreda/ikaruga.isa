@@ -1307,6 +1307,68 @@
     .sales-flow { padding: 10px 14px; }
     .quick-handoff { align-items: flex-start; flex-direction: column; }
   }
+
+  /* Centro de conversión: capa visual final para uso continuo en ventas. */
+  body { background: #eef3f5; }
+  .sidebar { width: 292px; background: #142632; box-shadow: 5px 0 24px rgba(13, 32, 43, .12); }
+  .sidebar-logo { min-height: 128px; background: #142632; }
+  .sidebar-logo .torii { font-size: 26px; letter-spacing: 2.2px; }
+  .sidebar-logo .subtitle { color: #f4bf42; font-weight: 800; }
+  .sidebar nav { padding-top: 15px; }
+  .nav-group { margin: 7px 14px 13px; padding-bottom: 12px; }
+  .nav-group-label { padding: 9px 9px 7px; font-size: 9px; font-weight: 800; letter-spacing: 1.8px; }
+  .nav-link { min-height: 39px; padding: 9px 11px; border-radius: 7px; font-weight: 600; }
+  .nav-link.active { border-left: 0; background: #d72435; box-shadow: 0 7px 16px rgba(215,36,53,.22); }
+  .nav-link .dot { width: 6px; height: 6px; }
+  .main { margin-left: 292px; background: #eef3f5; }
+  .section { max-width: 1280px; padding: 42px 64px 86px; }
+  .section-header { margin-bottom: 24px; padding-bottom: 16px; }
+  .section-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border-radius: 999px; background: #dcecef; color: #176e80; font-size: 10px; font-weight: 800; letter-spacing: 1px; }
+  .section-title { font-size: clamp(31px, 3vw, 43px); letter-spacing: 0; }
+  .section-desc { max-width: 780px; color: #50616b; font-size: 15px; line-height: 1.65; }
+  .sales-flow { gap: 6px; padding: 13px 32px; background: #fff; box-shadow: 0 2px 12px rgba(20,38,50,.06); }
+  .sales-flow button { min-height: 40px; border-radius: 6px; padding: 9px 14px; }
+  .sales-flow button.active { background: #142632; border-color: #142632; box-shadow: 0 5px 13px rgba(20,38,50,.18); }
+  .sales-flow b { color: #e3a820; }
+  .ops-deck { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(220px,.65fr); gap: 14px; margin: 0 0 22px; }
+  .ops-intro { padding: 23px 25px; border-radius: 10px; background: #142632; color: #fff; }
+  .ops-kicker { color: #f4bf42; font-size: 10px; font-weight: 800; letter-spacing: 1.8px; }
+  .ops-intro h2 { margin: 8px 0 7px; font-size: 23px; letter-spacing: 0; }
+  .ops-intro p { margin: 0; color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.55; }
+  .ops-status { display: grid; gap: 9px; padding: 14px; border: 1px solid #cadadd; border-radius: 10px; background: #fff; }
+  .ops-status-item { display: flex; gap: 10px; align-items: center; padding: 8px 9px; border-radius: 6px; background: #f4f8f9; }
+  .ops-status-item b { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; background: #dcecef; color: #176e80; font-size: 11px; }
+  .ops-status-item span { color: #485962; font-size: 12px; line-height: 1.3; }
+  .ops-status-item strong { display: block; color: #172b36; font-size: 12px; }
+  #modo-cerrar .info-block { border: 1px solid #c9dcdf; border-left: 4px solid #137f95; border-radius: 8px; background: #f8fcfc; color: #25434c; }
+  .close-scan { gap: 0; border: 1px solid #cbdadd; border-radius: 9px; overflow: hidden; background: #fff; }
+  .close-scan-item { min-height: 88px; padding: 17px 18px; border-right: 1px solid #d7e1e3; }
+  .close-scan-item:last-child { border-right: 0; }
+  .close-scan-item b { color: #d72435; font-size: 21px; }
+  .close-stage-grid { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; margin: 22px 0 14px; }
+  .close-stage-btn { position: relative; min-height: 103px; padding: 16px 15px 14px; border-radius: 8px; border-color: #c9d7db; background: #fff; }
+  .close-stage-btn::before { content: ''; position: absolute; top: 0; left: 15px; right: 15px; height: 3px; border-radius: 0 0 3px 3px; background: #dce8eb; }
+  .close-stage-btn:hover { transform: translateY(-2px); border-color: #86b7c1; background: #fff; box-shadow: 0 10px 20px rgba(20,38,50,.09); }
+  .close-stage-btn.active { transform: translateY(-2px); border-color: #d72435; background: #fff8f8; box-shadow: 0 10px 20px rgba(215,36,53,.12); }
+  .close-stage-btn.active::before { background: #d72435; }
+  .close-stage-btn strong { font-size: 13px; }
+  .close-stage-btn span { font-size: 11px; line-height: 1.4; }
+  .close-answer { border: 0; border-radius: 10px; box-shadow: 0 15px 32px rgba(20,38,50,.1); }
+  .close-answer-head { min-height: 64px; padding: 17px 21px; background: #142632; }
+  .close-answer-head strong { font-size: 16px; }
+  .close-answer-head .copy-btn { border: 0; background: #f4bf42; color: #142632; }
+  .close-answer-body { padding: 22px; gap: 16px; background: #fff; }
+  .close-next { border-left: 0; border-radius: 7px; padding: 17px; background: #eef6f7; color: #193e49; }
+  .close-rules { gap: 10px; }
+  .close-rule { border-radius: 7px; padding: 14px; border-color: #d2dfe2; }
+  .close-inline-help { margin-top: 14px; border-radius: 9px; box-shadow: 0 8px 18px rgba(20,38,50,.05); }
+  .quick-handoff { margin-top: 16px; border-radius: 9px; background: #fff; }
+  .copy-btn { border-radius: 6px; font-weight: 800; }
+  .msg-card, .playbook-card { border-radius: 9px; box-shadow: 0 10px 24px rgba(20,38,50,.07); }
+  .msg-card-header { background: #fff; }
+  @media (max-width: 1060px) { .close-stage-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } .ops-deck { grid-template-columns: 1fr; } }
+  @media (max-width: 940px) { .main { margin-left: 0; } .section { padding: 30px 20px 64px; } .sidebar { width: 100%; } }
+  @media (max-width: 580px) { .close-stage-grid { grid-template-columns: 1fr; } .close-scan { grid-template-columns: 1fr; } .close-scan-item { border-right: 0; border-bottom: 1px solid #d7e1e3; } .close-scan-item:last-child { border-bottom: 0; } }
 </style>
 </head>
 <body>
@@ -1423,6 +1485,19 @@
     <div class="section-tag">Método ISA · venta por mensaje</div>
     <h1 class="section-title">Conversación por WhatsApp</h1>
     <p class="section-desc">Usala después del saludo cuando la persona prefiere seguir por mensaje. Elegí dónde está la charla y avanzá de forma clara, útil y natural hasta la inscripción.</p>
+  </div>
+
+  <div class="ops-deck">
+    <div class="ops-intro">
+      <div class="ops-kicker">CENTRO DE CONVERSIÓN</div>
+      <h2>Leé el chat. Elegí la etapa. Mové la conversación.</h2>
+      <p>La guía no reemplaza tu criterio: te da el siguiente movimiento correcto, con información real y un mensaje listo para adaptar.</p>
+    </div>
+    <div class="ops-status" aria-label="Reglas de uso rápido">
+      <div class="ops-status-item"><b>01</b><span><strong>Un dato por vez</strong> No conviertas el chat en formulario.</span></div>
+      <div class="ops-status-item"><b>02</b><span><strong>Valor antes del precio</strong> Primero la propuesta que le sirve.</span></div>
+      <div class="ops-status-item"><b>03</b><span><strong>Próximo paso claro</strong> Cada mensaje abre una decisión.</span></div>
+    </div>
   </div>
 
   <div class="info-block" style="margin-bottom:18px;">
