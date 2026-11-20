@@ -4703,15 +4703,17 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
       <tr><td>🇦🇷 Argentina</td><td>—</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
       <tr><td>🇲🇽 México (CDMX)</td><td>−3 hs</td><td>13:00</td><td>11:00</td><td>18:00</td><td>17:00</td></tr>
       <tr><td>🇧🇴 Bolivia</td><td>−1 h</td><td>15:00</td><td>13:00</td><td>20:00</td><td>19:00</td></tr>
-      <tr><td>🇵🇾 Paraguay</td><td>−1 h</td><td>15:00</td><td>13:00</td><td>20:00</td><td>19:00</td></tr>
+      <tr><td>🇵🇾 Paraguay</td><td>igual que ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
       <tr><td>🇨🇱 Chile continental</td><td>igual que ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
       <tr><td>🇨🇴 Colombia</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
       <tr><td>🇵🇪 Perú</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
       <tr><td>🇪🇨 Ecuador</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
-      <tr><td>🇵🇦 Panamá</td><td>−2 hs</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
       <tr><td>🇭🇳 Honduras</td><td>−3 hs</td><td>13:00</td><td>11:00</td><td>18:00</td><td>17:00</td></tr>
       <tr><td>🇸🇻 El Salvador</td><td>−3 hs</td><td>13:00</td><td>11:00</td><td>18:00</td><td>17:00</td></tr>
-      <tr><td>🇨🇷 Costa Rica</td><td>−3 hs</td><td>13:00</td><td>11:00</td><td>18:00</td><td>17:00</td></tr>
+      <tr><td>🇪🇸 España peninsular</td><td>+4 hs*</td><td>20:00</td><td>18:00</td><td>01:00</td><td>00:00</td></tr>
+      <tr><td>🇨🇺 Cuba</td><td>−2 hs*</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇺🇸 Estados Unidos (Este)</td><td>−2 hs*</td><td>14:00</td><td>12:00</td><td>19:00</td><td>18:00</td></tr>
+      <tr><td>🇺🇾 Uruguay</td><td>igual que ARG</td><td>16:00</td><td>14:00</td><td>21:00</td><td>20:00</td></tr>
     </tbody>
   </table>
 
@@ -4720,7 +4722,11 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
   </div>
 
   <div class="info-block">
-    <strong>Referencia de conversión:</strong> para un horario de 16:00 a 19:00 hs Argentina, en Chile continental se mantiene 16:00 a 19:00; en México (CDMX) corresponde 13:00 a 16:00; Bolivia/Paraguay 15:00 a 18:00; Colombia/Perú/Ecuador/Panamá 14:00 a 17:00; Honduras/El Salvador/Costa Rica 13:00 a 16:00.
+    <strong>* España, Cuba y Estados Unidos:</strong> la diferencia puede variar una hora por el cambio estacional. España toma horario peninsular y Estados Unidos toma hora del Este. Confirmá ciudad y fecha antes de enviar el horario definitivo.
+  </div>
+
+  <div class="info-block">
+    <strong>Referencia de conversión:</strong> para un horario de 16:00 a 19:00 hs Argentina, Chile, Paraguay y Uruguay mantienen 16:00 a 19:00; México (CDMX), Honduras y El Salvador usan 13:00 a 16:00; Bolivia usa 15:00 a 18:00; Colombia, Perú, Ecuador, Cuba y Estados Unidos Este usan 14:00 a 17:00; España peninsular usa 20:00 a 23:00 como referencia estacional.
   </div>
 </div>
 </div>
@@ -5591,15 +5597,18 @@ const horariosARG = {
 };
 
 // ---- Diferencias horarias vs Argentina ----
-const tzDiff = {ARG:0, MEX:-3, BOL:-1, PRY:-1, CHL:0, COL:-2, PER:-2, ECU:-2, PAN:-2, HND:-3, SLV:-3, CRI:-3};
+const tzDiff = {ARG:0, MEX:-3, PER:-2, ECU:-2, CHL:0, PRY:0, COL:-2, HND:-3, BOL:-1, ESP:4, CUB:-2, USA:-2, SLV:-3, URY:0};
 
 function convertHorarios(nivHorarios, diff) {
   if (diff === 0) return nivHorarios;
   return nivHorarios.map(h => {
     return h.replace(/(\d{2}):(\d{2}) a (\d{2}):(\d{2})/g, (_, h1, m1, h2, m2) => {
-      let nh1 = (parseInt(h1) + diff + 24) % 24;
-      let nh2 = (parseInt(h2) + diff + 24) % 24;
-      return `${String(nh1).padStart(2,'0')}:${m1} a ${String(nh2).padStart(2,'0')}:${m2}`;
+      const rawH1 = parseInt(h1) + diff;
+      const rawH2 = parseInt(h2) + diff;
+      const nh1 = (rawH1 + 24) % 24;
+      const nh2 = (rawH2 + 24) % 24;
+      const cambioDia = rawH1 >= 24 ? ' (día siguiente)' : rawH1 < 0 ? ' (día anterior)' : '';
+      return `${String(nh1).padStart(2,'0')}:${m1} a ${String(nh2).padStart(2,'0')}:${m2}${cambioDia}`;
     });
   });
 }
@@ -5909,7 +5918,25 @@ const nivelesPorIdioma = {
   ruso:      [{nivel:"Ruso 1",cierre:"promo"}]
 };
 
-const paisNombres = {ARG:"Argentina",MEX:"México (CDMX)",BOL:"Bolivia",PRY:"Paraguay",CHL:"Chile continental",COL:"Colombia",PER:"Perú",ECU:"Ecuador",PAN:"Panamá",HND:"Honduras",SLV:"El Salvador",CRI:"Costa Rica"};
+const paisNombres = {
+  ARG:"Argentina", MEX:"México (CDMX)", PER:"Perú", ECU:"Ecuador",
+  CHL:"Chile continental", PRY:"Paraguay", COL:"Colombia", HND:"Honduras",
+  BOL:"Bolivia", ESP:"España peninsular", CUB:"Cuba",
+  USA:"Estados Unidos (hora del Este)", SLV:"El Salvador", URY:"Uruguay"
+};
+
+function normalizeCountrySelectors() {
+  document.querySelectorAll('select[id*="pais"]').forEach(select => {
+    if (select.id.includes('pago-pais')) return;
+    const previous = select.value;
+    const showCurrency = select.id.includes('precio-pais') || select.id === 'ca-pais' || select.id === 'vg-pais';
+    select.innerHTML = Object.entries(paisNombres).map(([key, label]) => {
+      const currency = key === 'ARG' ? 'ARS' : key === 'MEX' ? 'MXN' : 'USD';
+      return `<option value="${key}">${label}${showCurrency ? ` · ${currency}` : ''}</option>`;
+    }).join('');
+    select.value = Object.hasOwn(paisNombres, previous) ? previous : 'ARG';
+  });
+}
 const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",portugues:"Portugués",aleman:"Alemán",italiano:"Italiano",ruso:"Ruso"};
 function getMesesDisponibles(idioma, nivel) {
   const horarios = (horariosARG[idioma]?.[nivel] || []).filter(horarioTieneCupo);
@@ -6255,6 +6282,7 @@ Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  normalizeCountrySelectors();
   initMessages();
   renderStaticMessages(nombreActual);
   setModoCerrar('mensaje');
