@@ -7970,7 +7970,7 @@ function updatePostCallSchedule(msgId) {
   const target = document.getElementById(cfg.horarioId);
   if (!target) return;
 
-  const mes = cfg.mesId ? (document.getElementById(cfg.mesId)?.value || 'todos') : 'todos';
+  const mes = getPostCallMes(msgId);
   const horariosBase = filtrarHorariosPorMes(horariosARG[cfg.idioma]?.[nivel] || [], mes);
   const diff = tzDiff[pais] ?? 0;
   const horariosLocal = convertHorarios(horariosBase, diff);
@@ -8627,7 +8627,7 @@ function updateItA1Precio() {
 
   const nivel = selectedPostCallLevels['pc-it'] || 'Italiano A1';
   const p = getPrecio('italiano', pais, descKey, nivel);
-  const mes = document.getElementById('pc-it-mes')?.value || 'todos';
+  const mes = getPostCallMes('pc-it');
   const cuotas = getPostCallSelectedCuotas('pc-it', getCotizadorMaxCuotas('italiano', nivel, mes, descKey));
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-it');
