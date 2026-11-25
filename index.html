@@ -4176,8 +4176,6 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
     <p class="section-desc">Mensajes para cursos grabados. Usalos cuando el lead necesita empezar a su ritmo, sin depender de una comisión en vivo.</p>
   </div>
 
-  <div class="info-block" style="margin-bottom:18px;"><strong>Secuencia de uso:</strong> primero confirmá que un pregrabado responde a su necesidad. Enviá el resumen y esperá interés; después, solo los bloques que sumen valor. El precio va después de modalidad y contenido. No presupone una llamada: también funciona en venta por WhatsApp.</div>
-
   <div class="tabs" id="pregrabados-tabs">
     <button class="tab-btn active" onclick="showTab('pregrabados-tabs','pregrabado-jp',this)">🎌 Introductorio Japón</button>
     <button class="tab-btn" onclick="showTab('pregrabados-tabs','pregrabado-de',this)">🇩🇪 Alemán</button>
@@ -4185,20 +4183,30 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
     <button class="tab-btn" onclick="showTab('pregrabados-tabs','pregrabado-kr',this)">🇰🇷 Coreano</button>
   </div>
 
+  <div class="msg-card" id="pregrabado-cotizador">
+    <div class="msg-card-header">
+      <div class="msg-card-title">Cotización por país</div>
+      <button type="button" class="copy-btn" onclick="copyMsg('pregrabado-texto',this)">Copiar para WhatsApp</button>
+    </div>
+    <div class="cotizador-toolbar" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px 16px;">
+      <label for="pregrabado-pais">País</label>
+      <select id="pregrabado-pais" onchange="updatePregrabadoQuote()" style="font:inherit;border:1px solid var(--border);border-radius:8px;padding:8px 10px;max-width:100%;"></select>
+      <strong id="pregrabado-total" aria-live="polite">USD 110</strong>
+    </div>
+    <div class="msg-body" id="pregrabado-texto"></div>
+    <details id="pregrabado-cambio" class="msg-note">
+      <summary id="pregrabado-referencia" style="cursor:pointer;">Tipo de cambio de referencia</summary>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px;">
+        <a id="pregrabado-fuente" target="_blank" rel="noopener">Consultar Google Finance</a>
+        <label for="pregrabado-tasa">Tipo de cambio por USD</label>
+        <input id="pregrabado-tasa" type="number" inputmode="decimal" min="0.00001" step="any" style="width:10ch;font:inherit;" onchange="updatePregrabadoRate(this)">
+      </div>
+    </details>
+  </div>
+
   <div class="tab-content active" id="pregrabado-jp">
     <div class="info-block">
       <strong>Curso introductorio grabado:</strong> usalo para leads que quieren empezar rápido, viajar, destrabarse o probar IKARUGA antes de entrar a un nivel grupal.
-    </div>
-
-    <div class="internal-rule-alert">
-      <div class="internal-rule-alert-title">⚠️ Regla interna obligatoria para asesores</div>
-      <ul>
-        <li>La venta contempla un mínimo de <strong>USD 60</strong> o su equivalente como pago del curso al instituto.</li>
-        <li>El restante queda como <strong>comisión para el vendedor</strong>.</li>
-        <li>Los cálculos están pensados dejando un mínimo aproximado de <strong>USD 20</strong> para el vendedor.</li>
-        <li>Se puede vender a un mejor precio si el asesor logra sostener más valor.</li>
-        <li>El precio con tarjeta es más alto porque ese servicio tiene costo operativo.</li>
-      </ul>
     </div>
 
     <div class="msg-card">
@@ -4228,52 +4236,24 @@ Es ideal si querés empezar de forma práctica, sin esperar la apertura de una c
 
     <div class="msg-card">
       <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · Beneficio de continuidad</div><button class="copy-btn" onclick="copyMsg('intro-jp-beneficio',this)">Copiar</button></div>
-      <div class="msg-body" id="intro-jp-beneficio">🎓 *Beneficio exclusivo de continuidad*
-
-Al finalizar este introductorio, desbloqueás un *40% de descuento exclusivo* para sumarte más adelante a nuestros cursos grupales de *Japonés Nivel 1* con certificación IKARUGA + UAI.
-
-Esto te permite empezar ahora con una inversión más accesible y, si después querés continuar el recorrido completo, ya tenés un beneficio reservado para avanzar dentro de IKARUGA. 🚀</div>
+      <div class="msg-body" id="intro-jp-beneficio">Si después de terminar querés seguir con clases en vivo, te puedo orientar para elegir un grupo según tu nivel y tus horarios. 📚</div>
       <div class="msg-note">✅ Este mensaje sube valor y conecta el introductorio con el curso grupal.</div>
     </div>
 
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Propuesta especial</div><button class="copy-btn" onclick="copyMsg('intro-jp-precio',this)">Copiar</button></div>
-    <div class="msg-body" id="intro-jp-precio">Para que puedas evaluarlo con claridad, este pregrabado tiene una propuesta especial válida para todos los idiomas grabados.
-
-📌 *Desglose de la propuesta especial*
-
-🇦🇷 *Argentina*
-• Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
-• Pago único por transferencia: *$119.000*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
-
-🌎 *Internacional*
-• PayPal: *USD 80*
-• En *2 pagos*: primera cuota mínima de *USD 60*
-
-🇲🇽 *México*
-• Transferencia: *$1.400 MXN*
-• Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
-
-Con cualquiera de las opciones ya accedés al programa completo, las 13 clases grabadas y los materiales de apoyo.</div>
-      <div class="msg-note">✅ Precio claro, separado del resumen para no saturar el primer mensaje.</div>
-    </div>
-
-    <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Datos para avanzar</div><button class="copy-btn" onclick="copyMsg('intro-jp-datos',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Datos para avanzar</div><button class="copy-btn" onclick="copyMsg('intro-jp-datos',this)">Copiar</button></div>
       <div class="msg-body" id="intro-jp-datos">Para avanzar con tu acceso al programa, indícame:
 
 • Nombre completo.
 • Correo electrónico donde querés recibir el acceso.
 • Medio de pago que preferís usar.
 
-Con esos datos te guío con el siguiente paso y dejamos reservado el valor especial.</div>
+Con esos datos te guío con el siguiente paso y te confirmo cómo activar el acceso.</div>
       <div class="msg-note">✅ Cierre simple para pasar del interés a la inscripción.</div>
     </div>
 
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('intro-jp-accesos',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('intro-jp-accesos',this)">Copiar</button></div>
       <div class="msg-body" id="intro-jp-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
 
 1️⃣ *Acceso*
@@ -4324,40 +4304,12 @@ Es ideal si querés comenzar alemán de forma progresiva antes de sumarte a un c
 
     <div class="msg-card">
       <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · Beneficio de continuidad</div><button class="copy-btn" onclick="copyMsg('pre-de-beneficio',this)">Copiar</button></div>
-      <div class="msg-body" id="pre-de-beneficio">🎓 *Beneficio exclusivo de continuidad*
-
-Al finalizar este pregrabado, desbloqueás un *40% de descuento exclusivo* para sumarte más adelante a nuestro curso grupal de *Alemán A1* con certificación IKARUGA + UAI.
-
-Esto te permite empezar ahora con una inversión más accesible y, si después querés continuar el recorrido completo, ya tenés un beneficio reservado para avanzar dentro de IKARUGA. 🚀</div>
+      <div class="msg-body" id="pre-de-beneficio">Si después de terminar querés seguir con clases en vivo, te puedo orientar para elegir un grupo según tu nivel y tus horarios. 📚</div>
       <div class="msg-note">✅ Este mensaje conecta el pregrabado con el curso grupal.</div>
     </div>
 
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Propuesta especial</div><button class="copy-btn" onclick="copyMsg('pre-de-precio',this)">Copiar</button></div>
-    <div class="msg-body" id="pre-de-precio">Para que puedas evaluarlo con claridad, este pregrabado tiene una propuesta especial válida para todos los idiomas grabados.
-
-📌 *Desglose de la propuesta especial*
-
-🇦🇷 *Argentina*
-• Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
-• Pago único por transferencia: *$119.000*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
-
-🌎 *Internacional*
-• PayPal: *USD 80*
-• En *2 pagos*: primera cuota mínima de *USD 60*
-
-🇲🇽 *México*
-• Transferencia: *$1.400 MXN*
-• Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
-
-Con cualquiera de las opciones ya accedés al programa completo, las 11 clases grabadas y los materiales de apoyo.</div>
-      <div class="msg-note">✅ Mismos valores para todos los pregrabados.</div>
-    </div>
-
-    <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-de-accesos',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-de-accesos',this)">Copiar</button></div>
       <div class="msg-body" id="pre-de-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
 
 1️⃣ *Acceso*
@@ -4408,40 +4360,12 @@ Es ideal si querés comenzar chino mandarín de forma progresiva antes de sumart
 
     <div class="msg-card">
       <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · Beneficio de continuidad</div><button class="copy-btn" onclick="copyMsg('pre-zh-beneficio',this)">Copiar</button></div>
-      <div class="msg-body" id="pre-zh-beneficio">🎓 *Beneficio exclusivo de continuidad*
-
-Al finalizar este pregrabado, desbloqueás un *40% de descuento exclusivo* para sumarte más adelante a nuestro curso grupal de *Chino Mandarín 1* con certificación IKARUGA + UAI.
-
-Esto te permite empezar ahora con una inversión más accesible y, si después querés continuar el recorrido completo, ya tenés un beneficio reservado para avanzar dentro de IKARUGA. 🚀</div>
+      <div class="msg-body" id="pre-zh-beneficio">Si después de terminar querés seguir con clases en vivo, te puedo orientar para elegir un grupo según tu nivel y tus horarios. 📚</div>
       <div class="msg-note">✅ Este mensaje conecta el pregrabado con el curso grupal.</div>
     </div>
 
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Propuesta especial</div><button class="copy-btn" onclick="copyMsg('pre-zh-precio',this)">Copiar</button></div>
-    <div class="msg-body" id="pre-zh-precio">Para que puedas evaluarlo con claridad, este pregrabado tiene una propuesta especial válida para todos los idiomas grabados.
-
-📌 *Desglose de la propuesta especial*
-
-🇦🇷 *Argentina*
-• Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
-• Pago único por transferencia: *$119.000*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
-
-🌎 *Internacional*
-• PayPal: *USD 80*
-• En *2 pagos*: primera cuota mínima de *USD 60*
-
-🇲🇽 *México*
-• Transferencia: *$1.400 MXN*
-• Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
-
-Con cualquiera de las opciones ya accedés al programa completo, las 10 clases grabadas y los materiales de apoyo.</div>
-      <div class="msg-note">✅ Mismos valores para todos los pregrabados.</div>
-    </div>
-
-    <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-zh-accesos',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-zh-accesos',this)">Copiar</button></div>
       <div class="msg-body" id="pre-zh-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
 
 1️⃣ *Acceso*
@@ -4492,40 +4416,12 @@ Es ideal si querés comenzar coreano de forma progresiva antes de sumarte a un c
 
     <div class="msg-card">
       <div class="msg-card-header"><div class="msg-card-title">Mensaje 3 · Beneficio de continuidad</div><button class="copy-btn" onclick="copyMsg('pre-kr-beneficio',this)">Copiar</button></div>
-      <div class="msg-body" id="pre-kr-beneficio">🎓 *Beneficio exclusivo de continuidad*
-
-Al finalizar este pregrabado, desbloqueás un *40% de descuento exclusivo* para sumarte más adelante a nuestro curso grupal de *Coreano 1* con certificación IKARUGA + UAI.
-
-Esto te permite empezar ahora con una inversión más accesible y, si después querés continuar el recorrido completo, ya tenés un beneficio reservado para avanzar dentro de IKARUGA. 🚀</div>
+      <div class="msg-body" id="pre-kr-beneficio">Si después de terminar querés seguir con clases en vivo, te puedo orientar para elegir un grupo según tu nivel y tus horarios. 📚</div>
       <div class="msg-note">✅ Este mensaje conecta el pregrabado con el curso grupal.</div>
     </div>
 
     <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Propuesta especial</div><button class="copy-btn" onclick="copyMsg('pre-kr-precio',this)">Copiar</button></div>
-    <div class="msg-body" id="pre-kr-precio">Para que puedas evaluarlo con claridad, este pregrabado tiene una propuesta especial válida para todos los idiomas grabados.
-
-📌 *Desglose de la propuesta especial*
-
-🇦🇷 *Argentina*
-• Tarjeta de crédito: *$153.000* en *3 cuotas sin interés*
-• Pago único por transferencia: *$119.000*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$88.600*
-
-🌎 *Internacional*
-• PayPal: *USD 80*
-• En *2 pagos*: primera cuota mínima de *USD 60*
-
-🇲🇽 *México*
-• Transferencia: *$1.400 MXN*
-• Tarjeta: *$1.650 MXN* en *3 cuotas sin interés*
-• En *2 cuotas sin interés por transferencia*: primera cuota mínima de *$1.055 MXN*
-
-Con cualquiera de las opciones ya accedés al programa completo, las 7 clases grabadas y los materiales de apoyo.</div>
-      <div class="msg-note">✅ Mismos valores para todos los pregrabados.</div>
-    </div>
-
-    <div class="msg-card">
-      <div class="msg-card-header"><div class="msg-card-title">Mensaje 5 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-kr-accesos',this)">Copiar</button></div>
+      <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Bienvenida y accesos</div><button class="copy-btn" onclick="copyMsg('pre-kr-accesos',this)">Copiar</button></div>
       <div class="msg-body" id="pre-kr-accesos">👋 ¡Te damos la Bienvenida oficial a la comunidad de IKARUGA! 🎉
 
 1️⃣ *Acceso*
@@ -5913,6 +5809,65 @@ function normalizeCountrySelectors() {
   });
 }
 const idiomaNombres = {japones:"Japonés",coreano:"Coreano",chino:"Chino Mandarín",tailandes:"Tailandés",ingles:"Inglés",portugues:"Portugués",aleman:"Alemán",italiano:"Italiano",ruso:"Ruso"};
+
+const pregrabadoUSD = 110;
+const pregrabadoRates = {
+  ARG: ['ARS', 1592.4782], MEX: ['MXN', 19.7179], PER: ['PEN', 3.4760],
+  CHL: ['CLP', 1032.9300], PRY: ['PYG', 6420.6450], COL: ['COP', 3525.4417],
+  HND: ['HNL', 27.0800], BOL: ['BOB', 11.7715], ESP: ['EUR', 0.9142],
+  CUB: ['CUP', 23.9938], URY: ['UYU', 40.5186], DOM: ['DOP', 59.7176]
+};
+const pregrabadoManualRates = {};
+const pregrabadoCourses = {
+  jp: ['Introducción a Japón', 13], de: ['Alemán', 11],
+  zh: ['Chino', 10], kr: ['Coreano', 7]
+};
+
+function updatePregrabadoQuote() {
+  const country = document.getElementById('pregrabado-pais').value;
+  const courseId = document.querySelector('#pregrabados .tab-content.active').id;
+  const [course, lessons] = pregrabadoCourses[courseId.slice(-2)];
+  const conversion = pregrabadoRates[country];
+  const reference = document.getElementById('pregrabado-cambio');
+  const usd = 'USD ' + pregrabadoUSD;
+  let localAmount = '';
+
+  reference.hidden = !conversion;
+  if (conversion) {
+    const [currency, sourceRate] = conversion;
+    const manualRate = pregrabadoManualRates[country];
+    const rate = manualRate ?? sourceRate;
+    const formatted = (pregrabadoUSD * rate).toLocaleString('es-AR', {
+      minimumFractionDigits: 2, maximumFractionDigits: 2
+    });
+    localAmount = currency + ' ' + formatted;
+    document.getElementById('pregrabado-tasa').value = rate;
+    document.getElementById('pregrabado-fuente').href = 'https://www.google.com/finance/quote/USD-' + currency;
+    document.getElementById('pregrabado-referencia').textContent = manualRate
+      ? 'Tipo de cambio ingresado por el asesor'
+      : 'Referencia Google Finance del 25/11/2026 · Actualizar tipo de cambio';
+  }
+
+  document.getElementById('pregrabado-total').textContent = localAmount
+    ? usd + ' ≈ ' + localAmount : usd;
+  const equivalent = localAmount ? ' (aprox. ' + localAmount + ')' : '';
+  document.getElementById('pregrabado-texto').textContent =
+    '📚 El curso pregrabado de *' + course + '* incluye ' + lessons +
+    ' clases y materiales de apoyo para que avances a tu ritmo.\n\n' +
+    'La inversión por el curso completo es de *' + usd + '*' + equivalent +
+    '. ¿Querés que te comparta cómo acceder?';
+}
+
+function updatePregrabadoRate(input) {
+  const country = document.getElementById('pregrabado-pais').value;
+  if (input.valueAsNumber > 0 && input.validity.valid) {
+    pregrabadoManualRates[country] = input.valueAsNumber;
+  } else {
+    delete pregrabadoManualRates[country];
+  }
+  updatePregrabadoQuote();
+}
+
 function getMesesDisponibles(idioma, nivel) {
   const horarios = (horariosARG[idioma]?.[nivel] || []).filter(horarioTieneCupo);
   const meses = [];
@@ -6257,6 +6212,7 @@ Si este horario te queda bien, puedo ayudarte a avanzar con la inscripción.`;
 
 document.addEventListener('DOMContentLoaded', () => {
   normalizeCountrySelectors();
+  updatePregrabadoQuote();
   initMessages();
   renderStaticMessages(nombreActual);
   setModoCerrar('mensaje');
@@ -6744,6 +6700,7 @@ function showTab(groupId, tabId, btn) {
   container.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById(tabId).classList.add('active');
+  if (groupId === 'pregrabados-tabs') updatePregrabadoQuote();
   if (groupId === 'lang-tabs' && typeof syncPostCallTopControlsFromTab === 'function') {
     syncPostCallTopControlsFromTab(tabId);
   }
