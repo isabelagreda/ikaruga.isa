@@ -5647,23 +5647,15 @@ function parsePrecioNumero(valor) {
   return parseFloat((valor || '0').replace(/\./g,'').replace(',','.'));
 }
 
-function setCuotasMax(selectId, maxCuotas) {
+function setCuotasMax(selectId, maxCuotas, preferredValue = null) {
   const select = document.getElementById(selectId);
   if (!select) return maxCuotas;
-  if (maxCuotas >= 5 && !Array.from(select.options).some(opt => opt.value === '5')) {
-    const option = document.createElement('option');
-    option.value = '5';
-    option.textContent = '5 cuotas';
-    select.appendChild(option);
-  }
-  Array.from(select.options).forEach(opt => {
-    const val = parseInt(opt.value, 10);
-    const blocked = val > maxCuotas;
-    opt.disabled = blocked;
-    opt.hidden = blocked;
-  });
-  const current = parseInt(select.value, 10);
-  const value = Math.min(current || maxCuotas, maxCuotas);
+  const requested = parseInt(preferredValue ?? select.value, 10);
+  select.innerHTML = Array.from({ length: maxCuotas }, (_, index) => {
+    const value = index + 1;
+    return `<option value="${value}">${value === 1 ? '1 pago' : `${value} cuotas`}</option>`;
+  }).join('');
+  const value = Math.min(Math.max(requested || maxCuotas, 1), maxCuotas);
   select.value = String(value);
   return value;
 }
@@ -7810,7 +7802,10 @@ function applyPostCallTopParams() {
   setSelectValueIfExists(priceCfg.paisId, pais);
   setSelectValueIfExists(`${msgId}-pago-pais`, pais);
   setSelectValueIfExists(priceCfg.descId, descuento);
-  setSelectValueIfExists(priceCfg.cuotasId, cuotas);
+  if (priceCfg.cuotasId) {
+    const maxCuotas = getCotizadorMaxCuotas(cfg.idioma, nivel, mes, descuento) || 4;
+    setCuotasMax(priceCfg.cuotasId, maxCuotas, cuotas);
+  }
   syncingPostCallTopControls = false;
 
   refreshPostCallDescription(msgId);
