@@ -4594,16 +4594,20 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
   <div class="tab-content active" id="precios-3hs">
   <h3>Idiomas de 3 horas — 5 módulos</h3>
   <div class="info-block">
-    <strong>Base 5 módulos · idiomas de 3 horas:</strong><br>
+    <strong>Base regular para descuentos del 40% hacia abajo · con certificado:</strong><br>
     Cuota por módulo: $179.000 ARS · USD 91 · $1.780 MXN<br>
     Matrícula y materiales: $290.000 ARS · USD 94 · $1.830 MXN<br>
     Certificado: $51.000 ARS · USD 35 · $630 MXN<br>
-    Precio regular total: <strong>$1.236.000 ARS · USD 584 · $11.360 MXN</strong>
+    Precio regular total: <strong>$1.236.000 ARS · USD 584 · $11.360 MXN</strong><br><br>
+    <strong>Base actualizada exclusiva para 45% · sin certificado:</strong><br>
+    Cuota por módulo: $195.000 ARS · USD 100 · $1.950 MXN<br>
+    Matrícula y materiales: $305.000 ARS · USD 111 · $2.105 MXN<br>
+    Total regular de campaña: <strong>$1.280.000 ARS · USD 611 · $11.855 MXN</strong>
   </div>
   <table class="price-table">
     <thead><tr><th>Descuento</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
     <tbody>
-      <tr class="highlight-row"><td>45% 🔥</td><td>$704.000</td><td>USD 336</td><td>$6.520</td></tr>
+      <tr class="highlight-row"><td>45% 🔥<br><small>Sin certificado</small></td><td>$704.000</td><td>USD 336</td><td>$6.520</td></tr>
       <tr class="highlight-row"><td>40% 🔥</td><td>$764.000</td><td>USD 364</td><td>$7.060</td></tr>
       <tr><td>35%</td><td>$823.000</td><td>USD 391</td><td>$7.600</td></tr>
       <tr><td>30%</td><td>$883.000</td><td>USD 418</td><td>$8.130</td></tr>
@@ -4612,19 +4616,24 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
       <tr><td>15%</td><td>$1.061.000</td><td>USD 500</td><td>$9.740</td></tr>
     </tbody>
   </table>
+  <p style="font-size:12px;color:var(--ink3);margin-top:8px;">* El 45% usa únicamente la base actualizada sin certificado. Los descuentos del 40% hacia abajo conservan el desglose regular con certificado.</p>
 
   <h3 style="margin-top:28px;">Idiomas de 3 horas — 4 módulos</h3>
   <div class="info-block">
-    <strong>Base 4 módulos · idiomas de 3 horas:</strong><br>
+    <strong>Base regular para descuentos del 40% hacia abajo · con certificado:</strong><br>
     Cuota por módulo: $179.000 ARS · USD 91 · $1.780 MXN<br>
     Matrícula y materiales: $290.000 ARS · USD 94 · $1.830 MXN<br>
     Certificado: $51.000 ARS · USD 35 · $630 MXN<br>
-    Precio regular total: <strong>$1.057.000 ARS · USD 493 · $9.580 MXN</strong>
+    Precio regular total: <strong>$1.057.000 ARS · USD 493 · $9.580 MXN</strong><br><br>
+    <strong>Base actualizada exclusiva para 45% · sin certificado:</strong><br>
+    Cuota por módulo: $195.000 ARS · USD 103 · $2.000 MXN<br>
+    Matrícula y materiales: $322.000 ARS · USD 108 · $2.091 MXN<br>
+    Total regular de campaña: <strong>$1.102.000 ARS · USD 520 · $10.091 MXN</strong>
   </div>
   <table class="price-table">
     <thead><tr><th>Descuento</th><th>Pesos ARG</th><th>Dólares USD</th><th>Pesos MXN</th></tr></thead>
     <tbody>
-      <tr class="highlight-row"><td>45% 🔥</td><td>$606.000</td><td>USD 286</td><td>$5.550</td></tr>
+      <tr class="highlight-row"><td>45% 🔥<br><small>Sin certificado</small></td><td>$606.000</td><td>USD 286</td><td>$5.550</td></tr>
       <tr class="highlight-row"><td>40% 🔥</td><td>$656.000</td><td>USD 309</td><td>$5.990</td></tr>
       <tr><td>35%</td><td>$706.000</td><td>USD 332</td><td>$6.440</td></tr>
       <tr><td>30%</td><td>$757.000</td><td>USD 355</td><td>$6.890</td></tr>
@@ -4633,7 +4642,7 @@ Contraseña: CoreanoporIkaruga2026PT2FL</div>
       <tr><td>15%</td><td>$908.000</td><td>USD 423</td><td>$8.230</td></tr>
     </tbody>
   </table>
-  <p style="font-size:12px;color:var(--ink3);margin-top:8px;">* Elegí el mes y la cantidad de cuotas en el cotizador antes de compartir una propuesta.</p>
+  <p style="font-size:12px;color:var(--ink3);margin-top:8px;">* El 45% usa únicamente la base actualizada indicada arriba y no incluye certificado. Los demás descuentos conservan el desglose regular con certificado. Elegí el mes y las cuotas antes de compartir.</p>
   </div>
 
   <div class="tab-content" id="precios-it-tab">
@@ -5600,6 +5609,27 @@ const desgloseRegular = {
   }
 };
 
+// BLACK IKARUGA · 45% (cursos de 4 y 5 módulos / 3 hs)
+// Base comercial actualizada sin certificado. El resto de los descuentos
+// conserva el valor regular y el desglose general definidos arriba.
+const desglosePromocion45 = {
+  japones_coreano_chino_aleman: {
+    ARG: { mensual: '195.000', matricula: '305.000', total: '1.280.000' },
+    MEX: { mensual: '1.950',   matricula: '2.105',   total: '11.855' },
+    USD: { mensual: '100',     matricula: '111',     total: '611' }
+  },
+  tailandes1: {
+    ARG: { mensual: '195.000', matricula: '322.000', total: '1.102.000' },
+    MEX: { mensual: '2.000',   matricula: '2.091',   total: '10.091' },
+    USD: { mensual: '103',     matricula: '108',     total: '520' }
+  },
+  tailandes2: {
+    ARG: { mensual: '195.000', matricula: '305.000', total: '1.280.000' },
+    MEX: { mensual: '1.950',   matricula: '2.105',   total: '11.855' },
+    USD: { mensual: '100',     matricula: '111',     total: '611' }
+  }
+};
+
 function getTablaKey(idioma, nivel) {
   if (idioma === "portugues") return "ingles";
   if (["japones","coreano","chino","aleman"].includes(idioma)) return "japones_coreano_chino_aleman";
@@ -5693,17 +5723,35 @@ function getPrecio(idioma, pais, descKey, nivel) {
   const pct = selectedOpt.pct;
   const cuotaNum = t.cuotas;
   const precioHoy = row[dk] || row.d30;
-  return { precio_reg: row.reg, descuento: pct, precio_hoy: precioHoy, cuotas: cuotaNum, simbolo, meses: t.meses, hs: t.hs, tablaKey: tKey, paisKey: pKey };
+  const desglose45 = dk === 'd45' ? desglosePromocion45[tKey]?.[pKey] : null;
+  return {
+    precio_reg: desglose45?.total || row.reg,
+    descuento: pct,
+    descuentoKey: dk,
+    precio_hoy: precioHoy,
+    cuotas: cuotaNum,
+    simbolo,
+    meses: t.meses,
+    hs: t.hs,
+    tablaKey: tKey,
+    paisKey: pKey
+  };
 }
 
 function buildDesgloseRegular(p) {
-  const d = desgloseRegular[p.tablaKey]?.[p.paisKey];
+  const esPromocion45SinCertificado = p.descuentoKey === 'd45' && !!desglosePromocion45[p.tablaKey]?.[p.paisKey];
+  const d = esPromocion45SinCertificado
+    ? desglosePromocion45[p.tablaKey][p.paisKey]
+    : desgloseRegular[p.tablaKey]?.[p.paisKey];
   if (!d) return '';
   const certificado = d.certificado ? `\n• Certificado: ${p.simbolo}${d.certificado}` : '';
+  const aclaracionCertificado = esPromocion45SinCertificado
+    ? '\n• Certificado: no incluido en esta promoción'
+    : '';
   return `📌 *Valor regular desglosado:*
 • Cuota por módulo: ${p.simbolo}${d.mensual}
 • Matrícula y materiales: ${p.simbolo}${d.matricula}${certificado}
-• Total regular: ${p.simbolo}${p.precio_reg}`;
+• Total regular: ${p.simbolo}${p.precio_reg}${aclaracionCertificado}`;
 }
 
 function buildPrecioCopyBlock(p, cuotas, titulo = '') {
