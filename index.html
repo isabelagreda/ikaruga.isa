@@ -2666,7 +2666,7 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
         </div>
         <div style="flex:1;min-width:190px;">
         <label for="pc-jp-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
-        <select id="pc-jp-mes" onchange="refreshPostCallDescription('pc-jp'); updateJp1HorarioPais(); updateJp1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+        <select id="pc-jp-mes" onchange="refreshPostCallDescription('pc-jp'); updateJp1HorarioPais(); updateJp1Precio(); syncPostCallTopControlsFromMsgId('pc-jp')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
         </select>
         </div>
@@ -2697,7 +2697,7 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
         </div>
         <div style="flex:1;min-width:150px;">
           <label for="pc-jp-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-jp-descuento" onchange="updateJp1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-jp-descuento" onchange="updateJp1Precio(); syncPostCallTopControlsFromMsgId('pc-jp')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d45">45% OFF</option>
             <option value="d40">40% OFF</option>
             <option value="d35" selected>35% OFF</option>
@@ -2709,7 +2709,7 @@ Con eso puedo ayudarte a confirmar si estás en condiciones de comenzar sin inco
         </div>
         <div style="flex:1;min-width:150px;">
           <label for="pc-jp-cuotas" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Cuotas</label>
-          <select id="pc-jp-cuotas" onchange="updateJp1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-jp-cuotas" onchange="updateJp1Precio(); syncPostCallTopControlsFromMsgId('pc-jp')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="1">1 pago</option>
             <option value="2">2 cuotas</option>
             <option value="3">3 cuotas</option>
@@ -2861,7 +2861,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
           <option value="SLV">El Salvador</option>
         </select>
         <label for="pc-kr-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin:12px 0 7px;">Mes / campaña</label>
-        <select id="pc-kr-mes" onchange="refreshPostCallDescription('pc-kr'); updateKr1HorarioPais(); updateKr1Precio();" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+        <select id="pc-kr-mes" onchange="refreshPostCallDescription('pc-kr'); updateKr1HorarioPais(); updateKr1Precio(); syncPostCallTopControlsFromMsgId('pc-kr')" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
           <option value="octubre">Octubre</option>
         </select>
@@ -2891,7 +2891,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
         </div>
         <div>
           <label for="pc-kr-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-kr-descuento" onchange="updateKr1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-kr-descuento" onchange="updateKr1Precio(); syncPostCallTopControlsFromMsgId('pc-kr')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d35">35%</option>
             <option value="d45">45%</option>
             <option value="d40">40%</option>
@@ -3045,7 +3045,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
           <option value="SLV">El Salvador</option>
         </select>
         <label for="pc-zh-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin:12px 0 7px;">Mes / campaña</label>
-        <select id="pc-zh-mes" onchange="refreshPostCallDescription('pc-zh'); updateZh1HorarioPais(); updateZh1Precio();" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+        <select id="pc-zh-mes" onchange="refreshPostCallDescription('pc-zh'); updateZh1HorarioPais(); updateZh1Precio(); syncPostCallTopControlsFromMsgId('pc-zh')" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
         </select>
       </div>
@@ -3074,7 +3074,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
         </div>
         <div>
           <label for="pc-zh-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-zh-descuento" onchange="updateZh1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-zh-descuento" onchange="updateZh1Precio(); syncPostCallTopControlsFromMsgId('pc-zh')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d35">35%</option>
             <option value="d45">45%</option>
             <option value="d40">40%</option>
@@ -3233,7 +3233,7 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
         </div>
         <div style="flex:1;min-width:190px;">
         <label for="pc-th-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
-        <select id="pc-th-mes" onchange="refreshPostCallDescription('pc-th'); updateTh1HorarioPais(); updateTh1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+        <select id="pc-th-mes" onchange="refreshPostCallDescription('pc-th'); updateTh1HorarioPais(); updateTh1Precio(); syncPostCallTopControlsFromMsgId('pc-th')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
         </select>
         </div>
@@ -3263,7 +3263,7 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
         </div>
         <div>
           <label for="pc-th-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-th-descuento" onchange="updateTh1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-th-descuento" onchange="updateTh1Precio(); syncPostCallTopControlsFromMsgId('pc-th')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d35">35%</option>
             <option value="d45">45%</option>
             <option value="d40">40%</option>
@@ -3275,7 +3275,7 @@ Importante: en Tailandés no se ofrece preparación para examen oficial. El dife
         </div>
         <div>
           <label for="pc-th-cuotas" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Cuotas</label>
-          <select id="pc-th-cuotas" onchange="updateTh1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-th-cuotas" onchange="updateTh1Precio(); syncPostCallTopControlsFromMsgId('pc-th')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="1">1 pago</option>
             <option value="2">2 cuotas</option>
             <option value="3" selected>3 cuotas</option>
@@ -3426,7 +3426,7 @@ Al finalizar el programa y aprobar la evaluación correspondiente, recibís tu c
         </div>
         <div style="flex:1;min-width:190px;">
         <label for="pc-en-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
-        <select id="pc-en-mes" onchange="refreshPostCallDescription('pc-en'); updateEnA1HorarioPais(); updateEnA1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+        <select id="pc-en-mes" onchange="refreshPostCallDescription('pc-en'); updateEnA1HorarioPais(); updateEnA1Precio(); syncPostCallTopControlsFromMsgId('pc-en')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
         </select>
         </div>
@@ -3456,7 +3456,7 @@ Al finalizar el programa y aprobar la evaluación correspondiente, recibís tu c
         </div>
         <div>
           <label for="pc-en-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-en-descuento" onchange="updateEnA1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-en-descuento" onchange="updateEnA1Precio(); syncPostCallTopControlsFromMsgId('pc-en')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d30">30%</option>
             <option value="d25">25%</option>
             <option value="d20">20%</option>
@@ -3593,7 +3593,7 @@ Es una forma de acreditar el nivel cursado dentro de un programa con seguimiento
       <div class="msg-card-header"><div class="msg-card-title">Mensaje 4 · Horario</div><button class="copy-btn" onclick="copyMsg('pc-pt-horario',this)">Copiar</button></div>
       <div style="margin:10px 0 12px;display:flex;flex-wrap:wrap;gap:12px;">
         <div style="flex:1;min-width:220px;"><label for="pc-pt-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País del lead</label><select id="pc-pt-pais" onchange="syncPtPais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="ARG">Argentina</option><option value="MEX">México (CDMX)</option><option value="CHL">Chile continental</option><option value="COL">Colombia</option><option value="PER">Perú</option><option value="ECU">Ecuador</option><option value="USD">Otro país</option></select></div>
-        <div style="flex:1;min-width:190px;"><label for="pc-pt-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes</label><select id="pc-pt-mes" onchange="updatePtHorarioPais(); updatePtPrecio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="enero">Enero 2027</option></select></div>
+        <div style="flex:1;min-width:190px;"><label for="pc-pt-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes</label><select id="pc-pt-mes" onchange="updatePtHorarioPais(); updatePtPrecio(); syncPostCallTopControlsFromMsgId('pc-pt')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="enero">Enero 2027</option></select></div>
       </div>
       <div class="msg-body" id="pc-pt-horario"></div>
     </div>
@@ -3602,7 +3602,7 @@ Es una forma de acreditar el nivel cursado dentro de un programa con seguimiento
       <div class="msg-card-header"><div class="msg-card-title">Mensaje 6 · Precio y financiación</div><button class="copy-btn" onclick="copyMsg('pc-pt-precio',this)">Copiar</button></div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:10px 0 12px;">
         <div><label for="pc-pt-precio-pais" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">País / moneda</label><select id="pc-pt-precio-pais" onchange="syncPtPais(this.value)" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="ARG">Argentina · ARS</option><option value="MEX">México · MXN</option><option value="USD">Otros países · USD</option></select></div>
-        <div><label for="pc-pt-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label><select id="pc-pt-descuento" onchange="updatePtPrecio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="d30">30% OFF</option><option value="d25">25% OFF</option><option value="d20">20% OFF</option><option value="d15">15% OFF</option></select></div>
+        <div><label for="pc-pt-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label><select id="pc-pt-descuento" onchange="updatePtPrecio(); syncPostCallTopControlsFromMsgId('pc-pt')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;"><option value="d30">30% OFF</option><option value="d25">25% OFF</option><option value="d20">20% OFF</option><option value="d15">15% OFF</option></select></div>
       </div>
       <div class="msg-body" id="pc-pt-precio"></div>
       <div class="msg-note">✅ Portugués A1 usa los mismos valores comerciales de Inglés y corresponde a enero: se habilitan hasta 5 cuotas.</div>
@@ -3677,7 +3677,7 @@ Para avanzar, solo necesitaría tu nombre completo y el correo que vas a usar en
           <option value="SLV">El Salvador</option>
         </select>
         <label for="pc-de-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin:12px 0 7px;">Mes / campaña</label>
-        <select id="pc-de-mes" onchange="refreshPostCallDescription('pc-de'); updateDeA1HorarioPais(); updateDeA1Precio();" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+        <select id="pc-de-mes" onchange="refreshPostCallDescription('pc-de'); updateDeA1HorarioPais(); updateDeA1Precio(); syncPostCallTopControlsFromMsgId('pc-de')" style="width:100%;max-width:340px;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
           <option value="todos">Todos los meses con cupo</option>
         </select>
       </div>
@@ -3706,7 +3706,7 @@ Para avanzar, solo necesitaría tu nombre completo y el correo que vas a usar en
         </div>
         <div>
           <label for="pc-de-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-de-descuento" onchange="updateDeA1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-de-descuento" onchange="updateDeA1Precio(); syncPostCallTopControlsFromMsgId('pc-de')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d35">35%</option>
             <option value="d45">45%</option>
             <option value="d40">40%</option>
@@ -3880,7 +3880,7 @@ Si necesitás ayuda en cualquier momento, estoy por acá para asistirte. 😊
         </div>
         <div>
           <label for="pc-it-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-it-descuento" onchange="updateItA1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-it-descuento" onchange="updateItA1Precio(); syncPostCallTopControlsFromMsgId('pc-it')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d30">30%</option>
             <option value="d25">25%</option>
             <option value="d20">20%</option>
@@ -4044,7 +4044,7 @@ Este nivel está pensado para que empieces desde cero con una base real: lectura
         </div>
         <div>
           <label for="pc-ru-mes" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Mes / campaña</label>
-          <select id="pc-ru-mes" onchange="refreshPostCallDescription('pc-ru'); updateRu1HorarioPais(); updateRu1Precio();" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-ru-mes" onchange="refreshPostCallDescription('pc-ru'); updateRu1HorarioPais(); updateRu1Precio(); syncPostCallTopControlsFromMsgId('pc-ru')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="sin-apertura">Sin apertura vigente</option>
           </select>
         </div>
@@ -4074,7 +4074,7 @@ Este nivel está pensado para que empieces desde cero con una base real: lectura
         </div>
         <div>
           <label for="pc-ru-descuento" style="display:block;font-size:12px;font-weight:600;color:var(--ink3);margin-bottom:7px;">Preventa</label>
-          <select id="pc-ru-descuento" onchange="updateRu1Precio()" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
+          <select id="pc-ru-descuento" onchange="updateRu1Precio(); syncPostCallTopControlsFromMsgId('pc-ru')" style="width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-size:13px;">
             <option value="d45">45% OFF</option>
             <option value="d40">40% OFF</option>
             <option value="d35" selected>35% OFF</option>
@@ -5616,9 +5616,9 @@ function parsePrecioNumero(valor) {
   return parseFloat((valor || '0').replace(/\./g,'').replace(',','.'));
 }
 
-function setCuotasMax(selectId, maxCuotas, fallback = maxCuotas, forceMax = false) {
+function setCuotasMax(selectId, maxCuotas) {
   const select = document.getElementById(selectId);
-  if (!select) return fallback;
+  if (!select) return maxCuotas;
   if (maxCuotas >= 5 && !Array.from(select.options).some(opt => opt.value === '5')) {
     const option = document.createElement('option');
     option.value = '5';
@@ -5632,7 +5632,7 @@ function setCuotasMax(selectId, maxCuotas, fallback = maxCuotas, forceMax = fals
     opt.hidden = blocked;
   });
   const current = parseInt(select.value, 10);
-  const value = forceMax ? maxCuotas : Math.min(current || fallback, maxCuotas);
+  const value = Math.min(current || maxCuotas, maxCuotas);
   select.value = String(value);
   return value;
 }
@@ -5953,7 +5953,7 @@ function updateCotizadorAgil() {
   const horariosLocal = convertHorarios(horariosBase, tzDiff[pais] ?? 0);
   const p = getCotizadorPrecio(idioma, nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas(idioma, nivel, mes, descKey);
-  const cuotas = setCuotasMax('ca-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
+  const cuotas = setCuotasMax('ca-cuotas', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
   const lineasHorarios = horariosLocal.length
     ? horariosLocal.map(h => `• ${h}`).join('\n')
@@ -6823,7 +6823,7 @@ function updateExoMessage() {
   const mesPrecio = getExoPrecioMes(horario.dataset.schedule);
   const precio = getCotizadorPrecio(idiomaId, nivelSiguiente, pais, descKey, mesPrecio);
   const maxCuotas = getCotizadorMaxCuotas(idiomaId, nivelSiguiente, mesPrecio, descKey);
-  const cuotas = setCuotasMax('exo-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
+  const cuotas = setCuotasMax('exo-cuotas', maxCuotas);
   const horariosTexto = '• ' + horario.textContent;
   const paisLabel = paisNombres[pais] || 'tu país';
   const duracion = `${precio.meses} módulos · ${precio.hs} semanales en vivo`;
@@ -7703,9 +7703,7 @@ function syncPostCallTopControlsFromMsgId(msgId) {
     const cfg = postCallScheduleConfig[msgId] || {};
     const currentDiscount = getPostCallCurrentDiscount(msgId);
     const maxCuotas = getCotizadorMaxCuotas(cfg.idioma, nivel, mesSelect.value || mes, currentDiscount) || 4;
-    const currentCuotas = currentDiscount === 'd45'
-      ? maxCuotas
-      : Math.min(parseInt(getPostCallCurrentCuotas(msgId), 10) || maxCuotas, maxCuotas);
+    const currentCuotas = Math.min(parseInt(getPostCallCurrentCuotas(msgId), 10) || maxCuotas, maxCuotas);
     const cuotasOptions = Array.from({ length: maxCuotas }, (_, i) => {
       const value = String(i + 1);
       return { value, label: value === '1' ? '1 pago' : `${value} cuotas` };
@@ -7773,8 +7771,7 @@ function applyPostCallTopParams() {
   syncPostCallTopControlsFromMsgId(msgId);
 }
 
-function getPostCallSelectedCuotas(msgId, fallback, forceMax = false) {
-  if (forceMax) return fallback;
+function getPostCallSelectedCuotas(msgId, fallback) {
   const raw = selectedPostCallCuotas[msgId] || document.getElementById('postcall-param-cuotas')?.value;
   const value = parseInt(raw, 10);
   if (!Number.isFinite(value)) return fallback;
@@ -7858,11 +7855,9 @@ function getPostCallPrecioConfig(msgId) {
   const p = getCotizadorPrecio(cfg?.idioma, nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas(cfg?.idioma, nivel, mes, descKey);
   const cuotasSelect = priceCfg.cuotasId ? document.getElementById(priceCfg.cuotasId) : null;
-  const cuotas = descKey === 'd45'
-    ? maxCuotas
-    : (cuotasSelect
-      ? Math.min(parseInt(cuotasSelect.value, 10) || maxCuotas, maxCuotas)
-      : getPostCallSelectedCuotas(msgId, maxCuotas));
+  const cuotas = cuotasSelect
+    ? Math.min(parseInt(cuotasSelect.value, 10) || maxCuotas, maxCuotas)
+    : getPostCallSelectedCuotas(msgId, maxCuotas);
   return { p, cuotas, pais, descKey, nivel, mes };
 }
 
@@ -8209,7 +8204,7 @@ function updateJp1Precio() {
   const mes = document.getElementById('pc-jp-mes')?.value || 'todos';
   const p = getCotizadorPrecio('japones', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('japones', nivel, mes, descKey);
-  const cuotas = setCuotasMax('pc-jp-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
+  const cuotas = setCuotasMax('pc-jp-cuotas', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-jp');
@@ -8394,7 +8389,7 @@ function updateKr1Precio() {
   const mes = document.getElementById('pc-kr-mes')?.value || 'todos';
   const p = getCotizadorPrecio('coreano', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('coreano', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-kr', maxCuotas, descKey === 'd45');
+  const cuotas = getPostCallSelectedCuotas('pc-kr', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
@@ -8437,7 +8432,7 @@ function updateZh1Precio() {
   const mes = document.getElementById('pc-zh-mes')?.value || 'todos';
   const p = getCotizadorPrecio('chino', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('chino', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-zh', maxCuotas, descKey === 'd45');
+  const cuotas = getPostCallSelectedCuotas('pc-zh', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
@@ -8480,7 +8475,7 @@ function updateTh1Precio() {
   const mes = document.getElementById('pc-th-mes')?.value || 'todos';
   const p = getCotizadorPrecio('tailandes', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('tailandes', nivel, mes, descKey);
-  const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas, maxCuotas, descKey === 'd45');
+  const cuotas = setCuotasMax('pc-th-cuotas', maxCuotas);
   const moduloLabel = `${p.meses} módulos`;
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${moduloLabel}*`);
@@ -8523,7 +8518,7 @@ function updateEnA1Precio() {
   const p = getPrecio('ingles', pais, descKey, nivel);
   const mes = document.getElementById('pc-en-mes')?.value || 'todos';
   const maxCuotas = getCotizadorMaxCuotas('ingles', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-en', maxCuotas, descKey === 'd45');
+  const cuotas = getPostCallSelectedCuotas('pc-en', maxCuotas);
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-en');
 }
@@ -8563,7 +8558,7 @@ function updatePtPrecio() {
   const nivel = 'Portugués A1';
   const mes = document.getElementById('pc-pt-mes')?.value || 'enero';
   const p = getPrecio('portugues', pais, descKey, nivel);
-  const cuotas = getPostCallSelectedCuotas('pc-pt', getCotizadorMaxCuotas('portugues', nivel, mes, descKey), descKey === 'd45');
+  const cuotas = getPostCallSelectedCuotas('pc-pt', getCotizadorMaxCuotas('portugues', nivel, mes, descKey));
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · Enero 2027 · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-pt');
 }
@@ -8591,7 +8586,7 @@ function updateDeA1Precio() {
   const mes = document.getElementById('pc-de-mes')?.value || 'todos';
   const p = getCotizadorPrecio('aleman', nivel, pais, descKey, mes);
   const maxCuotas = getCotizadorMaxCuotas('aleman', nivel, mes, descKey);
-  const cuotas = getPostCallSelectedCuotas('pc-de', maxCuotas, descKey === 'd45');
+  const cuotas = getPostCallSelectedCuotas('pc-de', maxCuotas);
   const mesLabel = mes === 'todos' ? 'mes disponible' : mes.charAt(0).toUpperCase() + mes.slice(1);
 
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${mesLabel} · ${p.meses} módulos*`);
@@ -8633,7 +8628,7 @@ function updateItA1Precio() {
   const nivel = selectedPostCallLevels['pc-it'] || 'Italiano A1';
   const p = getPrecio('italiano', pais, descKey, nivel);
   const mes = document.getElementById('pc-it-mes')?.value || 'todos';
-  const cuotas = getPostCallSelectedCuotas('pc-it', getCotizadorMaxCuotas('italiano', nivel, mes, descKey), descKey === 'd45');
+  const cuotas = getPostCallSelectedCuotas('pc-it', getCotizadorMaxCuotas('italiano', nivel, mes, descKey));
   target.innerText = buildPrecioCopyBlock(p, cuotas, `*${nivel} · ${p.meses} módulos*`);
   updatePostCallSafetyPanel('pc-it');
 }
@@ -8674,7 +8669,7 @@ function updateRu1Precio() {
   if (!target) return;
 
   const p = getCotizadorPrecio('ruso', 'Ruso 1', pais, descKey, 'diciembre');
-  const cuotas = getPostCallSelectedCuotas('pc-ru', getCotizadorMaxCuotas('ruso', 'Ruso 1', 'diciembre', descKey), descKey === 'd45');
+  const cuotas = getPostCallSelectedCuotas('pc-ru', getCotizadorMaxCuotas('ruso', 'Ruso 1', 'diciembre', descKey));
   target.innerText = buildPrecioCopyBlock(p, cuotas, '*Ruso 1 · diciembre · 4 módulos*');
   updatePostCallSafetyPanel('pc-ru');
 }
