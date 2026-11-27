@@ -5672,8 +5672,9 @@ function formatInstallmentPlan(p, cuotas, precioHoy = p.precio_hoy) {
   }) + '*';
 
   if (baseCents === finalCents) return cuotas + ' cuotas fijas de ' + amount(baseCents);
-  return (cuotas - 1) + (cuotas === 2 ? ' cuota de ' : ' cuotas de ') + amount(baseCents) +
-    ' y una última de ' + amount(finalCents);
+  const primerasCuotas = cuotas - 1;
+  return cuotas + ' cuotas: ' + primerasCuotas + ' de ' + amount(baseCents) +
+    ' y 1 de ' + amount(finalCents);
 }
 
 function buildFinanciacionLine(p, cuotas, precioOverride = null, label = 'Financiación') {
